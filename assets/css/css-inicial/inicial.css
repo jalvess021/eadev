@@ -1,0 +1,255 @@
+@charset "UTF-8" ;
+
+#page-top{
+  overflow-x: hidden;
+}
+
+.nav-ini{
+  padding-top: 0.87rem !important;
+  padding-bottom: 0.87rem !important;
+}
+
+.nav-ini img{
+  height: 25px !important;
+  width: 38px !important;
+}
+
+.nav-ini .navbar-brand {
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.1rem !important;
+  font-weight: 700 !important;
+  opacity: 0.96 !important;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+  text-transform: uppercase !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1rem !important;
+}
+
+.all-content{
+  background-color: rgb(228, 228, 228) !important;
+}
+
+header.masthead {
+  position: relative !important;
+  overflow: hidden !important;
+  padding-top: calc(7rem + 72px) !important;
+  padding-bottom: 7rem !important;
+  background: linear-gradient(20deg, #0e0e38 0%, #36a0a0 100%) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: scroll !important;
+  background-size: cover !important;
+}
+header.masthead .masthead-content {
+  z-index: 1 !important;
+  position: relative !important;
+}
+header.masthead .masthead-content .masthead-heading {
+  font-size: 5rem !important;
+  opacity: 0.93 !important;
+  font-weight: 700 !important;
+}
+header.masthead .masthead-content .masthead-subheading {
+  font-size: 3.5rem !important;
+  opacity: 0.83 !important;
+  font-weight: 600 !important;
+}
+header.masthead .bg-circle {
+  z-index: 0 !important;
+  position: absolute !important;
+  border-radius: 100% !important;
+  background: linear-gradient(20deg, #0e0e38 0%, #36a0a0 100%) !important;
+}
+header.masthead .bg-circle-1 {
+  height: 90rem !important;
+  width: 90rem !important;
+  bottom: -55rem !important;
+  left: -55rem !important;
+}
+header.masthead .bg-circle-2 {
+  height: 50rem !important;
+  width: 50rem !important;
+  top: -25rem !important;
+  right: -25rem !important;
+}
+header.masthead .bg-circle-3 {
+  height: 20rem !important;
+  width: 20rem !important;
+  bottom: -10rem !important;
+  right: 5% !important;
+}
+header.masthead .bg-circle-4 {
+  height: 30rem !important;
+  width: 30rem !important;
+  top: -5rem !important;
+  right: 35% !important;
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: calc(10rem + 55px) !important;
+    padding-bottom: 10rem !important;
+  }
+  header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem !important;
+  }
+  header.masthead .masthead-content .masthead-subheading {
+    font-size: 2.5rem !important;
+  }
+}
+
+.btn-ini {
+  color: #fff !important;
+  background: linear-gradient(20deg , #60aaaa, #5f5fa3) !important;
+  border-color: #0e8b8b !important;
+  text-transform: uppercase !important;
+  opacity: 0.87 !important;
+  padding: 1.5rem 3rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1rem !important;
+}
+.btn-ini:hover {
+  color: #fff !important;
+  opacity: 0.75 !important;
+  background: linear-gradient(20deg , #65a8a8, #6f6faf) !important;
+  border-color: #0e6969 !important;
+}
+.btn-check:focus + .btn-ini, .btn-ini:focus {
+  color: #fff !important;
+  background-color: #119292 !important;
+  border-color: #0e6969 !important;
+  box-shadow: 0 0 0 0.25rem rgba(31, 202, 214, 0.5) !important;
+}
+.btn-check:checked + .btn-ini, .btn-check:active + .btn-ini, .btn-ini:active, .btn-ini.active, .show > .btn-ini.dropdown-toggle {
+  color: #fff !important;
+  background-color: #05dbdb !important;
+  border-color: #1e9191 !important;
+}
+.btn-check:checked + .btn-ini:focus, .btn-check:active + .btn-ini:focus, .btn-ini:active:focus, .btn-ini.active:focus, .show > .btn-ini.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(48, 201, 212, 0.699) !important;
+}
+.btn-ini:disabled, .btn-ini.disabled {
+  color: #fff !important;
+  background-color: #0e6969 !important;
+  border-color: #0e6969 !important;
+}
+
+
+/*footer*/
+.footer{
+  background-color: #091320  !important;
+  padding: 30px 0 !important;
+  width: 100vw !important;
+  line-height: 1.5 !important;
+}
+
+.footer-col{
+  width: 25% !important;
+  padding: 0 15px !important;
+}
+
+.footer-col h4{
+  font-size: 16px !important;
+  color: whitesmoke !important;
+  text-transform: capitalize !important;
+  margin-bottom: 35px !important;
+  margin-top: 20px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+}
+
+.footer-col h4::before{
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -10px !important;
+  background-color: #1aaaaa !important;
+  border-radius: 50px !important;
+  height: 3px !important;
+  box-sizing: border-box !important;
+  width: 50px !important;
+}
+
+.footer-col ul{
+  list-style-type: none !important;
+}
+
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px !important;
+}
+
+.footer-col ul li a{
+  font-size: 15px !important;
+  text-transform: capitalize !important;
+  font-weight: 300 !important;
+  color: #bbbbbb !important;
+  display: block !important;
+  margin-left: -30px !important;
+  text-decoration: none !important;
+ 
+}
+
+.footer-col ul li a:hover{
+  transition: all 0.5s ease !important;
+  color: whitesmoke !important;
+  padding-left: 20px !important;
+  
+}
+
+.footer-empresa{
+  color: #bbbbbb !important;
+  text-align: justify !important;
+  font-size: 14px;
+}
+
+.footer-col .social-links a {
+  display: inline-block !important;
+  height: 40px !important;
+  width: 40px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  margin-right: 0 10px 10px 0 !important;
+  text-align: center !important;
+  line-height: 40px !important;
+  border-radius: 50% !important;
+  color: whitesmoke !important;
+  transition: all 0.5s ease !important;
+}
+
+.footer-col .social-links a:hover{
+  color: #24262b !important;
+  background-color: whitesmoke !important;
+}
+
+.center{
+  margin-top: 30px !important;
+  margin-bottom: -30px;
+  text-align: center !important;
+  font-size: 9px !important;
+  color: #bbbbbb !important;
+}
+
+/*responsive*/
+
+@media(max-width:767px){
+  .footer-col{
+      width: 50% !important;
+      margin-bottom: 30px !important;
+  }
+}
+
+@media(max-width:574px){
+  .footer-col{
+      width: 100% !important;
+      
+  }
+  .footer-empresa{
+    padding-right: 90px;
+    font-size: 12.5px;
+  }
+
+}

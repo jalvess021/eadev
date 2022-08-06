@@ -1,0 +1,123 @@
+/* conteúdo de visualização das formações*/
+
+
+.form-cur{
+    margin-top: -5px;
+    background-color: #0bb0b0;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.name-cur{
+    color: #727070;
+    padding: 8px;
+    font-size: 12.5pt;
+    font-weight: 600;
+}
+
+.name-cur:hover{
+    transition: all 0.4s;
+    font-size: 14pt;
+    color: #099898;
+}
+.name-cur:focus{
+    color: #099898;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.grid{
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.grid  article{
+     margin-top: -25px;
+     margin-bottom: 35px;
+     background-color: #f5f2f2b0;
+     border: none;
+     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+     border-radius: 20px;
+     text-align: center;
+     width: 280px;
+     transition: transform .3s;
+    }
+
+.grid  article:hover{
+    transform: translateY(6px);
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid  article img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    filter: brightness(80%);
+}
+
+.icon-card{
+    position:absolute; 
+    z-index: 1; 
+    right:8px; 
+    top:5px; 
+    color: rgb(235, 196, 5);
+    text-shadow: #ffffff 0.4px 0.4px 4px;
+}
+
+.text{
+    padding: 20px 20px 20px;
+}
+
+.text p{
+    font-size: 10pt;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.text button{
+    background-color: #0bb0b0;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 80%;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+
+}
+
+.btn-card-content:hover{
+    transition: all 0.4s ease-in-out;
+    background-color: #099898;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*@media (max-width: 1210px) {
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 934px) {
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid  article{
+        text-align: center;
+    }
+}*/

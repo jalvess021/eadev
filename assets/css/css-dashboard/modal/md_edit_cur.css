@@ -1,0 +1,103 @@
+.modal-edit .modal-header{
+    background-color: var(--destaque-4);
+    border-bottom: rgb(224, 224, 224) 1px solid;
+}
+
+.modal-edit .modal-header h5{
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.modal-edit .modal-body .modal-form{
+box-shadow: inset rgb(0 0 0 / 54%) -0.2px -0.5px 4px;
+border-radius: 20px;
+padding: 1rem;
+background-color: rgb(251, 251, 251);
+}
+
+.modal-edit label{
+    font-weight: 600;
+    --bs-text-opacity: 1;
+    color: #727070 !important;
+}
+
+.form-edit{
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: #727070 !important;
+}
+
+.form-edit::placeholder{
+    font-size: 0.7rem !important;
+    font-weight: 600;
+}
+
+.modal-edit .input-group input{
+font-size: 8pt !important;
+}
+
+.modal-edit textarea{
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5rem !important;
+    letter-spacing: 2px !important;
+    word-spacing: 1.5px !important;
+    word-wrap: break-word !important;
+    padding: 5px 10px;
+}
+
+.modal-edit textarea::placeholder{
+    font-size: 9pt !important;
+}
+
+.modal-edit option{
+    text-align: center;
+}
+
+.modal-edit option:first-child{
+    font-weight: 600;
+}
+
+
+.modal-edit label::after{
+    content: '';
+    display: block;
+    width: 80%;
+    height: 0.2rem;
+    background-color: #76c1c1;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 0px;
+}
+
+#copyDesc{
+    border: #27a342 1px solid !important;
+    background-color: transparent;
+    font-weight: 600;
+    color: #8a8a8a;
+    border-end-start-radius: 15px;
+    border-start-start-radius: 15px;
+}
+
+.desc-ant{
+    color: #727070;
+    font-weight: 600;
+}
+
+#copyDesc:focus{
+box-shadow: none;
+}
+
+#descButton{
+border-start-end-radius: 15px;
+border-end-end-radius: 15px;
+}
+
+#descButton i{
+    padding-right: 3px;
+}
+
+#copyDesc::selection{
+    background-color: transparent !important; 
+}

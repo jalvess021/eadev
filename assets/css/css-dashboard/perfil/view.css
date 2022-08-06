@@ -1,0 +1,130 @@
+/* h3{
+    color: var(--c-destaque-10);
+    font-weight: 800;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 10px;
+} */
+
+.dados_view{
+    color: rgb(145, 145, 145);
+}
+
+.dados_view:hover{
+    color: rgb(56, 56, 56);
+}
+
+.dados_view:focus{
+    color: rgb(56, 56, 56);
+}
+
+/* Dados pessoais */
+
+.content-subtitle{
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    color: rgb(172, 171, 171);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.hr{
+    margin-bottom: 20px;
+}
+
+.block{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3px;
+}
+
+.info-person{
+    text-align: right;
+    margin-left: 15px;
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.person{
+    margin-right: 15px;
+    color: rgba(0, 0, 0, 0.812);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.content-subtitle-sub{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    color: rgb(172, 171, 171);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-password-p{
+    margin-left: 15px;
+    margin-bottom: 8px;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+.view-password{
+    width: 350px;
+    height: 45px;
+    border-radius: 50px;
+    margin-left: 17px;
+    padding: 10px;
+    padding-left: 15px;
+    border: 1px solid rgb(150, 148, 148);
+    outline: none;
+}
+
+.desc-pass{
+    font-size: 7pt;
+}
+
+.button-password button{
+    width: 40%;
+    margin-top: -5px;
+    border: none;
+    background-color: #17a7a7;
+    padding: 0.62rem;
+    margin-left: 15px;
+    border-radius: 500px;
+    cursor: pointer;
+}
+
+.button-password button:hover{
+    transition: all 0.2s;
+    background-color: #099898;
+}
+
+.button-password button a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+@media (max-width: 1006px) {
+    .password-group{
+      display: flex;
+      flex-direction: column;
+    }
+    .view-password-p{
+        padding-top: 15px;
+    }
+}
+
+/* Dados complementares */
+
+
+
+

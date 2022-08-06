@@ -1,0 +1,79 @@
+table{
+    box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.459);
+}
+
+table tr:hover:not(.thead){
+transition: 0.2s ease-out;
+transform: scale(1.002);
+box-shadow: rgba(0, 0, 0, 0.575) 3px 3px 14px;
+}
+
+table tr:hover:not(.thead) td{
+  font-weight: 600;
+  color: #272727c0 !important;
+}
+
+table tr:last-child, table tr:last-child:not(.thead), table{
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+table tr:last-child:not(.thead) td:first-child{
+  border-bottom-left-radius: 10px !important;
+}
+table tr:last-child:not(.thead) td:last-child{
+  border-bottom-right-radius: 10px !important;
+}
+
+.table-striped tr:not(.thead) td{
+  padding: 6px !important;
+  font-weight: 500;
+  color: #202020b7 !important;
+  font-size: 0.95rem !important;
+}
+.table-striped tr:not(.thead) td:first-child{ 
+  font-weight: 700;
+}
+.table-striped tr td:first-child{ 
+  text-align: center;
+}
+.table-striped thead{
+  background-color: #34a5a5 !important;
+  color: whitesmoke !important;
+}
+
+.table-striped thead td{
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  font-weight: bold;
+}
+
+.table-striped td{
+  padding-bottom: 8px !important;
+  padding-right: 8px !important;
+  padding-right: 8px !important;
+  padding-left: 10px !important;
+}
+
+.YtbId{
+  color:#098ea0;
+  font-weight: 600;
+}
+
+.hour{
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.actions{
+  text-align: center;
+}
+
+.table-striped tr:nth-child(2n){
+  background-color:  rgb(201, 218, 221) !important;
+}
+
+.table-striped tr:nth-child(2n+1):not(.thead):hover{
+  background-color: rgb(238, 238, 238) !important ;
+}

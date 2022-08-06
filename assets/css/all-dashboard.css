@@ -1,0 +1,33 @@
+/* Css p/ definir classes, cores etc personalizados*/
+@import 'config.css';
+
+/* Css sidebar*/
+@import 'css-dashboard/crud/crud.css';
+
+/*Css Padrão da Pág. Principal*/
+@import 'css-dashboard/global/style.css';
+
+/*Css local da Pág. Principal*/
+@import 'css-dashboard/global/local.css';
+
+/*Css local do card*/
+@import 'css-dashboard/card/card.css';
+
+/*Css local do crud de perfil*/
+@import 'css-dashboard/perfil/view.css';
+
+/*Css local das tabelas*/
+@import 'css-dashboard/tabelas/tabelas.css';
+
+/*Css local do modal de adição*/
+@import 'css-dashboard/modal/md_add_cur.css';
+
+/*Css local do modal de edição*/
+@import 'css-dashboard/modal/md_edit_cur.css';
+
+/*Css local do modal de exclusão*/
+@import 'css-dashboard/modal/md_delete_cur.css';
+
+/*Bootstrap 4.2.1 link*/
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css');
+

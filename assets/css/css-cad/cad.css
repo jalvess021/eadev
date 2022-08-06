@@ -1,0 +1,205 @@
+/* Fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.bd-cad {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(20deg , #36a0a0, #11113c);
+    font-family:  'Montserrat', sans-serif !important;
+}
+
+.container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    width: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.39);
+    padding: 3rem 3rem 5.2rem 3rem;
+    border-radius: 1.7rem;
+}
+
+.form-header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.4rem; /* 1.5rem*/
+    padding-bottom: 1rem;
+    color: rgb(224, 224, 224);
+}
+
+.logo-cad{
+    display: flex;
+    align-items: center;
+}
+
+.logo-cad img{
+    height: 32.3px;
+    width: 50px;
+}
+
+/*
+.login-button button{
+    border: none;
+    background-color: #0bb0b0;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover{
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.97);
+    background-color: #099898;
+}
+
+.login-button button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(224, 224, 224);
+}
+ */
+ 
+.form-header h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #1aaaaa;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between ;
+    padding: 1rem 0;
+    height: 62%;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: 0;
+    border-bottom: 2px solid #ffffff;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    transition: all .3s ease-out;
+}
+
+.input-box input:focus{
+    border-bottom: 2px solid rgb(174, 174, 174);
+}
+
+.input-box label{
+    font-size: 0,75rem;
+    font-weight: 600;
+    color: whitesmoke;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .5s ease-out;
+}
+
+.input-box input:hover + label,
+.input-box input:valid + label,
+.input-box input:focus + label{
+    font-size: 0.86rem;
+    margin-top: 0;
+    color: whitesmoke ;
+    opacity: 0.75;
+}
+
+.gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+}
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input{
+    margin-right: 0.35rem;
+}
+
+.gender-input label{
+    font-size: 1rem;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.continue-button button{
+    width: 93%;
+    margin-top: 1.8rem;
+    border: none;
+    background-color: #0bb0b0;
+    padding: 0.62rem;
+    border-radius: 500px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.continue-button button:hover{
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.97);
+    background-color: #099898;
+}
+
+.continue-button button a{
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.check label {
+    text-decoration: none;
+    margin-top: 1.5rem;
+    color: whitesmoke;
+    opacity: 0.85;
+}
+
+#termos{
+    font-weight: 700;
+    text-decoration: underline !important;
+    color: black;
+    opacity: 0.68;
+}
+
+#termos:hover {
+    opacity: 0.83;
+
+}
+
+
+
+

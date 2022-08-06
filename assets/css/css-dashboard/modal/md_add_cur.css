@@ -1,0 +1,88 @@
+.modal-add .modal-header{
+    background-color: #1a8654;
+    border-bottom: rgb(224, 224, 224) 1px solid;
+}
+
+.modal-add .modal-header h5{
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.modal-add .modal-body .modal-form{
+box-shadow: inset rgb(0 0 0 / 54%) -0.2px -0.5px 4px;
+border-radius: 20px;
+padding: 1rem;
+background-color: rgb(251, 251, 251);
+}
+
+.modal-add label{
+    font-weight: 600;
+    --bs-text-opacity: 1;
+    color: #727070 !important;
+}
+
+.modal-add input, .modal-add textarea, .modal-add select{
+    font-weight: 500;
+}
+
+.modal-add .input-group input{
+font-size: 8pt !important;
+}
+
+.form-add{
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: #727070 !important;
+}
+
+.form-add::placeholder{
+    font-size: 0.7rem !important;
+    font-weight: 600;
+}
+
+.modal-add textarea{
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5rem !important;
+    letter-spacing: 2px !important;
+    word-spacing: 1.5px !important;
+    word-wrap: break-word !important;
+    padding: 5px 10px;
+}
+
+.modal-add textarea::placeholder{
+    font-size: 9pt !important;
+}
+.modal-add option{
+    text-align: center;
+}
+
+.modal-add option:first-child{
+    font-weight: 600;
+}
+
+.modal-add label::after{
+    content: '';
+    display: block;
+    width: 80%;
+    height: 0.2rem;
+    background-color: #5db971;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 0px;
+}
+
+.add-submit{
+    font-weight: bold !important;
+    background-color: #1d975e !important;
+    color: #fff !important;
+}
+
+.info-min{
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #727070;
+    padding-left: 2px;
+    border-left: #c000006c 2px outset;
+}
