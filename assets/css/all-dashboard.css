@@ -10,6 +10,9 @@
 /*Css local da Pág. Principal*/
 @import 'css-dashboard/global/local.css';
 
+/*Css local da Pág. Painel ADM*/
+@import 'css-dashboard/painel-adm/painel.css';
+
 /*Css local do card*/
 @import 'css-dashboard/card/card.css';
 
