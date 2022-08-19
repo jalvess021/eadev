@@ -2,3 +2,38 @@
     height: 100%;
     width: 100%;
 }
+
+
+
+.tb-control tr:last-child, .tb-control tr:last-child:not(.thead), .tb-control{
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.tb-control tr:last-child:not(.thead) td:first-child{
+  border-bottom-left-radius: 0px !important;
+}
+.tb-control tr:last-child:not(.thead) td:last-child{
+  border-bottom-right-radius: 0px !important;
+}
+
+.tb-hd{
+    background-color: #0ea8a8 !important;
+    color: whitesmoke !important;
+  }
+
+
+.info-con{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2b2b2b;
+    text-align: center;
+}
+
+.info-con-min{
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #727070;
+    text-underline-offset: 4px;
+    text-align: center;
+}
+
