@@ -168,12 +168,41 @@ $.ajax({
 
           google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart);
+
+          let numAlu = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
+                      cache: false, 
+                      success: function(resultAdm){ 
+                      numAdm = parseInt(resultAdm);
+                    }}); 
+          let numAdm = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
+                        cache: false,
+                        success: function(resultAlu){
+                        numAlu = parseInt(resultAlu);
+                    }}); 
+
+          /*  setInterval(() => {
+                $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
+                        cache: false, 
+                        success: function(resultAdm){ 
+                         // numAdm = parseInt(resultAdm);
+                         numAdm = 40;
+                        
+                }}); 
+
+                $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
+                      cache: false,
+                      success: function(resultAlu){
+                        // numAlu = parseInt(resultAlu);
+                        numAlu = 300;
+              }}); 
+          }, 3000); */
+          
           function drawChart() {
 
           var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Alunos',  80],
-            ['Administradores',      5]
+            ['Usuários', 'Quantidade'],
+            ['Alunos',  numAlu],
+            ['Administradores', numAdm]
           ]);
 
           var options = {
