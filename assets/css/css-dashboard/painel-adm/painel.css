@@ -21,12 +21,18 @@
     color: whitesmoke !important;
   }
 
-
+.c2-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .info-con{
     font-size: 0.9rem;
     font-weight: 600;
     color: #2b2b2b;
     text-align: center;
+    margin-top: 25px;
 }
 
 .info-con-min{
@@ -35,5 +41,26 @@
     color: #727070;
     text-underline-offset: 4px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
+#all-count{
+  position:fixed;
+  z-index:9999; 
+  right:40px; 
+  bottom:60px;
+}
+
+.info-count{
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #727070;
+  padding-left: 2px;
+  border-left: #c0000085 2px outset;
+}
+
+
+.info-count #gfTimeUsu{
+  color: #be0606;
+  font-size: 0.68rem;
+}
