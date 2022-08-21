@@ -61,7 +61,7 @@ font-size: 8pt !important;
     font-weight: 600;
 }
 
-.modal-add label::after{
+.modal-add label:not(.custom-file-label)::after{
     content: '';
     display: block;
     width: 80%;

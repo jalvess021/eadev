@@ -52,6 +52,10 @@ $l = mysqli_fetch_array($r);
                        echo           "</select>
                                     </div>
                                 </div>
+                                <div class='custom-file'>
+                                    <input type='file' class='custom-file-input' id='customFile' accept='image/gif, image/jpeg'>
+                                    <label class='custom-file-label' for='customFile' data-browse='Nenhum arquivo escolhido'>Imagem do curso</label>
+                                </div>
                                 <div class='row'>
                                     <div class='form-group col-12'>
                                     <label for='recipient-name' class='col-form-label'>Descrição:</label>  
@@ -73,3 +77,4 @@ $l = mysqli_fetch_array($r);
 
 require_once "scriptAdd.php";
 ?>
+
