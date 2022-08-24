@@ -25,7 +25,7 @@
 					<li class="submenu">
                         <a href="#"><i class="bi bi-search"></i> <span> Consultar </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
-								<li><a href="#"><i class="fa fa-fw fa-user"></i>Administrador</a></li>
+								<li><a href="?content_adm=consulta_adm"><i class="fa fa-fw fa-user"></i>Administrador</a></li>
 								<li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i>Aluno</a></li>
 							</ul>
                     </li>				           

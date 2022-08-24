@@ -46,13 +46,13 @@ $rowAdm = mysqli_num_rows($sqlAdm);
                       <td data-toggle='tooltip' data-placement='top' title='Adm'>Administrativo</td>
                       <td class='text-center'><span id='numeroAdmTb'><?php echo $rowAdm;?></span></td>
                       <td class='actions btn-group-sm'>
-                      <a class='btn btn-info btn-xs' href='' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a>
+                      <a class='btn btn-info btn-xs' href='?content_adm=consulta_adm' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a>
                     </tr>
                     <tr>
                       <td data-toggle='tooltip' data-placement='top' title='Aluno'>Educacional</td>
                       <td class='text-center'> <span id='numeroAluTb'><?php echo $rowAlu;?><span></td>
                       <td class='actions btn-group-sm'>
-                        <a class='btn btn-info btn-xs' href='' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a> 
+                        <a class='btn btn-info btn-xs' href='?content_adm=consulta_alu' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a> 
                       </td>
                     </tr>
                   </tbody>

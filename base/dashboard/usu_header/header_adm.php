@@ -59,7 +59,7 @@
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
 								<!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
+                                    <h5><small><span class="label label-danger pull-xs-right">5</span>Atividades</small></h5>
                                 </div>
 								
                                 <!-- item-->
@@ -69,8 +69,8 @@
                                     </div>
                                     <p class="notify-details">
                                         <b>John Doe</b>
-                                        <span>User registration</span>
-                                        <small class="text-muted">3 minutes ago</small>
+                                        <span>Cadastrou um curso</span>
+                                        <small class="text-muted">15 segundos atrás</small>
                                     </p>
                                 </a>
 
@@ -81,8 +81,8 @@
                                     </div>
                                     <p class="notify-details">
                                         <b>Michael Cox</b>
-                                        <span>Task 2 completed</span>
-                                        <small class="text-muted">12 minutes ago</small>
+                                        <span>Excluiu uma aula</span>
+                                        <small class="text-muted">3 minutos atrás</small>
                                     </p>
                                 </a>
 
@@ -93,14 +93,14 @@
                                     </div>
                                     <p class="notify-details">
                                         <b>Michelle Dolores</b>
-                                        <span>New job completed</span>
-                                        <small class="text-muted">35 minutes ago</small>
+                                        <span>Bloqueou um usuário</span>
+                                        <small class="text-muted">22 minutos atrás</small>
                                     </p>
                                 </a>
 
                                 <!-- All-->
-                                <a href="#" class="dropdown-item notify-item notify-all">
-                                    View All Allerts
+                                <a href="?content_adm=consulta_adm" class="dropdown-item notify-item notify-all">
+                                    Todas as atividades
                                 </a>
 
                             </div>

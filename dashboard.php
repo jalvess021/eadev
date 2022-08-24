@@ -21,8 +21,8 @@
 			
 			<?php include "base/config.php";?>	
 	</head>
-
-	<body class="adminbody">
+<!-- Não deixa ficar arrastando o conteúdo -->
+	<body class="adminbody" ondragstart="return false">
 			<div id="main">
 				
 				<!-- Header -->

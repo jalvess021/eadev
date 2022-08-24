@@ -102,6 +102,17 @@ if(isset($_GET['content_adm'])) {
                 case 'delete_aula':
                     include "base/crud/admin/aulas/excluir_aula.php";
                     break;
+
+
+        //Crud Consulta 
+                    //Aluno
+                case 'consulta_alu':
+                    include "base/crud/admin/consulta/cons_alu.php";
+                    break;
+                    //Adm
+                case 'consulta_adm':
+                    include "base/crud/admin/consulta/cons_adm.php";
+                    break;
 }       
 }  
 else {

@@ -75,5 +75,6 @@ table tr:last-child:not(.thead) td:last-child{
 }
 
 .table-striped tr:nth-child(2n+1):not(.thead):hover{
-  background-color: rgb(238, 238, 238) !important ;
-}
+  background-color: rgb(238, 238, 238) !important;
+} 
+
