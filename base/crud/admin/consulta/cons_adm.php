@@ -8,8 +8,8 @@
 		<div class="all-table-header">
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand cons-adm" href="?content_adm=consulta_adm">Administradores</a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2 search-usu" type="search" placeholder="Nome ou ID" aria-label="Search">
+            <form class="form-inline" id="pesq-adm" action="?content_adm=consulta_adm" method="POST">
+                <input class="form-control mr-sm-2 search-usu" type="search" id="search-adm" placeholder="Nome ou ID" aria-label="Search">
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>
         </nav>  
@@ -32,3 +32,4 @@
 		</div>
 	</div>
 </div>
+<?php require_once "script.php";?>
