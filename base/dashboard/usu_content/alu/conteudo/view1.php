@@ -4,7 +4,7 @@
     <div class="container">
             <br>
             
-            <ul class=" justify-content-center nav nav-pills">
+            <ul class=" justify-content-center nav nav-pills row-form">
             <li class="nav-item">
                 <a class="nav-link form-cur">Formações</a>
             </li>

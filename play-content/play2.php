@@ -10,7 +10,7 @@
 <body>
     <div class="d-flex flex-row background">
 
-        <div class="col">
+        
             <div class="div1">
                 <iframe src="https://www.youtube-nocookie.com/embed/DjOSM72cYac?&theme=dark&autohide=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&start=180" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
@@ -27,7 +27,7 @@
                     <button class="group-button">Concluir</button>
                 </div>
             </div>
-        </div>
+        
 
         <div class="div2">
 
