@@ -22,64 +22,64 @@
                       <a href="?page=login" data-bs-toggle="tooltip" data-bs-placement="top" title="Pág. Login" data-bs-custom-class="custom-tooltip"><img src="arquivos/img/icone/icone2.png" alt="Logo Eadev"></a>
                     </div>
                 </div>
+              <div class="group">
+                  <div class="input-group">
 
-                <div class="input-group">
+                      <div class="input-box">
+                        <input type="text"  id="nome" name="nome" autocomplete="off" required>
+                        <label for="name" class="label-float">Nome completo</label>
+                      </div>
 
-                  <div class="input-box">
-                    <input type="text"  id="nome" name="nome" autocomplete="off" required>
-                    <label for="name" class="label-float">Nome completo</label>
+                        <div class="input-box">
+                          <input type="text"  id="usuario" name="usuario" autocomplete="off" required>
+                          <label for="usuario">Usuário</label>
+                        </div>
+
+                        <div class="input-box">
+                          <input type="text"  id="email" name="email" autocomplete="off" required>
+                          <label for="email">E-mail</label>
+                        </div>
+
+                        <div class="input-box">
+                          <input type="text"  id="telefone" name="telefone" autocomplete="off" required>
+                          <label for="telefone">Telefone</label>
+                        </div> 
+
+                        <div class="input-box">
+                          <input type="password"  id="senha" name="senha" autocomplete="off"  required>
+                          <label for="senha">Senha</label>
+                        </div>
+
+                        <div class="input-box">
+                          <input type="password" id="senha_confirm" autocomplete="off" required>
+                          <label for="senha_confirm">Confirme sua senha</label>
+                        </div>
+
                   </div>
 
-                    <div class="input-box">
-                      <input type="text"  id="usuario" name="usuario" autocomplete="off" required>
-                      <label for="usuario">Usuário</label>
-                    </div>
+                  <div class="gender-inputs ">
+                      <div class="gender-tittle">
+                          <h6 style="color: whitesmoke;"><b>Gênero</b></h6>
+                      </div>
 
-                    <div class="input-box">
-                      <input type="text"  id="email" name="email" autocomplete="off" required>
-                      <label for="email">E-mail</label>
-                    </div>
+                      <div class="gender-group">
+                          <div class="gender-input">
+                              <input type="radio" name="sexo" id="male" value="1">
+                              <label for="male">Masculino</label>
+                          </div>
 
-                    <div class="input-box">
-                      <input type="text"  id="telefone" name="telefone" autocomplete="off" required>
-                      <label for="telefone">Telefone</label>
-                    </div> 
+                          <div class="gender-input">
+                            <input type="radio" name="sexo" id="female" value="2">
+                            <label for="female">Feminino</label>
+                          </div>
 
-                    <div class="input-box">
-                      <input type="password"  id="senha" name="senha" autocomplete="off"  required>
-                      <label for="senha">Senha</label>
-                    </div>
-
-                    <div class="input-box">
-                      <input type="password" id="senha_confirm" autocomplete="off" required>
-                      <label for="senha_confirm">Confirme sua senha</label>
-                    </div>
-
-                </div>
-
-                <div class="gender-inputs ">
-                    <div class="gender-tittle">
-                        <h6 style="color: whitesmoke;"><b>Gênero</b></h6>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input type="radio" name="sexo" id="male" value="1">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                          <input type="radio" name="sexo" id="female" value="2">
-                          <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                          <input type="radio" name="sexo" id="others" value="3">
-                          <label for="others">Outros</label>
-                        </div>
-                    </div>
-                </div>
-
+                          <div class="gender-input">
+                            <input type="radio" name="sexo" id="others" value="3">
+                            <label for="others">Outros</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
                 <div class="check">
                     <input type="checkbox" id="scales" name="scales" required>
                     <label>Li e concordo com os <a href="" id="termos" class="text-decoration-none px-1">Termos de Uso</a> da plataforma.</label>

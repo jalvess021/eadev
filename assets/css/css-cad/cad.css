@@ -200,6 +200,203 @@
 
 }
 
+@media(max-width:764px){
+
+    .form{
+       height: 920px;
+    }
+
+    .form-header{
+        margin-top: 30px;
+    }
+
+    .input-box input{
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: 0;
+        border-bottom: 2px solid #ffffff;
+        background-color: transparent;
+        outline: none;
+        font-size: 16px;
+        color: white;
+        transition: all .3s ease-out;
+        width: 420px;
+    }
+
+    .continue-button{
+        margin-top: -25px
+    }
+
+    .check label {
+        text-decoration: none;
+        margin-top: -80px;
+        margin-bottom: 30px;
+        color: whitesmoke;
+        opacity: 0.85;
+        margin-left: 30px;
+    }
+
+    .check input {
+        margin-top: 2.5rem;
+        margin-left: 5px;
+    }
+}
+
+@media(max-width:576px){
+
+    .form{
+       width: 450px;
+    }
+
+    .form-header{
+        margin-top: 30px;
+    }
+
+    .input-box input{
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: 0;
+        border-bottom: 2px solid #ffffff;
+        background-color: transparent;
+        outline: none;
+        font-size: 16px;
+        color: white;
+        transition: all .3s ease-out;
+        width: 380px;
+    }
+}
+
+@media(max-width:484px){
+
+    .form{
+       width: 400px;
+    }
+
+    .input-box input{
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: 0;
+        border-bottom: 2px solid #ffffff;
+        background-color: transparent;
+        outline: none;
+        font-size: 16px;
+        color: white;
+        transition: all .3s ease-out;
+        width: 330px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-height:px){
+
+    .bd-cad{
+        position: relative;
+        height: 70vh;
+    }
+
+    .form{
+       height: 750px;
+       margin-top: 7rem;
+       margin-bottom: -20px;
+    }
+
+    .form-header{
+        margin-top: 310px;
+    }
+
+    .input-box input{
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: 0;
+        border-bottom: 2px solid #ffffff;
+        background-color: transparent;
+        outline: none;
+        font-size: 16px;
+        color: white;
+        transition: all .3s ease-out;
+        width: 410px;
+    }
+
+    .continue-button{
+        margin-top: -25px
+    }
+
+    .check label {
+        text-decoration: none;
+        margin-top: -80px;
+        margin-bottom: 30px;
+        color: whitesmoke;
+        opacity: 0.85;
+        margin-left: 30px;
+    }
+
+    .check input {
+        margin-top: 2.5rem;
+        margin-left: 5px;
+    }
+
+    .group{
+        margin-top: 10px;
+        height: 50%;
+        display: block;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .group::-webkit-scrollbar {
+        display: none;
+        }
+
+    .gender-inputs{
+        margin-top: 170px;
+    }
+
+    .gender-input input{
+        margin-right: 0.38rem;
+    }
+}
+
 
 
 
