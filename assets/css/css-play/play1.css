@@ -1,11 +1,21 @@
+/*div total*/
+
+.view-overall{
+position: relative;
+height: 100vh;
+width: 100vw;
+}
+
 /*div 1*/
 .gradient{
-    width: 42%;
+    position:absolute;
+    width: 42vw;
     height: 100vh;
     padding: 10px 14px;
     background: linear-gradient(45deg,#002B5B, #2B4865, #256D85, #041C32);
     background-size: 250% 250%;
     animation: colors 15s ease infinite;
+    
 }
 
 .all-class{
@@ -145,7 +155,223 @@
     }
 }
 
+@media(max-width:1199px){
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 27rem;
+        size: 10px;
+    }
+    
+    .icon-cur{
+        margin-top: 18px;
+        margin-left: 30px;
+        color: #ffffff;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 9pt;
+    }
+}
+
+@media(max-width:1167px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 26.8rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 240px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+        
+    }
+}
+
+@media(max-width:1138px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 25.8rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 9pt;
+    }
+
+    .quant-cur{
+        font-size: 9pt;
+    }
+}
+
+@media(max-width:1109px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 25rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 8.5pt;
+    }
+
+    .quant-cur{
+        font-size: 8.5pt;
+    }
+}
+
+@media(max-width:1098px){
+
+    .info-cur{
+        margin-top: 10rem;
+    }
+}
+
+@media(max-width:1089px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 24.8rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 8pt;
+    }
+
+    .quant-cur{
+        font-size: 8pt;
+    }
+}
+
+@media(max-width:1079px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 24.8rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 8pt;
+    }
+
+    .quant-cur{
+        font-size: 8pt;
+    }
+}
+
+@media(max-width:1071px){
+
+    .line{
+        margin-top: 20px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        border: 1px solid #0feeee ;
+        width: 24.8rem;
+        size: 10px;
+    }
+
+    .icon-cur{
+        margin-left: 30px;
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 8pt;
+    }
+
+    .quant-cur{
+        font-size: 8pt;
+    }
+}
+
 /*div 2*/
+
+.all-class{
+    right: 0;
+    position:absolute;
+    width: 58vw;
+    padding: 2rem;
+    
+}
 
 .title-class1{
     margin-top: 50px;
@@ -260,6 +486,7 @@ margin-top: 10px;
     -webkit-box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
     -moz-box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
     text-decoration: none;
+    
 }
 
 .view-lesson:hover{
@@ -275,11 +502,12 @@ margin-top: 10px;
     margin-top: -1px;
     font-size: 20px;
     color: #949494;
+    align-items: center;
     
 }
 
 .name-class{
-    margin-top: 1px;
+    align-items: center;
     margin-left: 15px;
     color: #494949;
     font-weight: 500;
@@ -287,6 +515,7 @@ margin-top: 10px;
 }
 
 .time-class{
+    align-items: center;
     margin-top: 4px;
     margin-left: 180px;
     color: #949494;
@@ -309,6 +538,160 @@ margin-top: 10px;
     border: 1px solid #949494 ;
     width: 39.7rem;
     size: 10px;
+}
+
+@media(max-width:1357px) {
+    .view-lesson{
+        width: 630px;
+        padding: 5px;
+        align-items: center;
+    }
+    .cam{
+        align-items: center;
+    }
+
+    .name-class{
+        align-items: center;
+        margin-top: 12px;
+    }
+
+    .time-class{
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .play{
+        align-items: center;
+        margin-top: 4px;
+    
+    }
+    .line-class{
+        width: 38.9rem;
+    }
+}
+
+@media(max-width:1321px) {
+    .view-lesson{
+        width: 600px;
+        height: 70px;
+        padding: 10px;
+        align-items: center;
+    }
+    .cam{
+        align-items: center;
+    }
+
+    .name-class{
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .time-class{
+        align-items: center;
+        margin-top: 22px;
+    }
+
+    .play{
+        align-items: center;
+        margin-top: 4px;
+    
+    }
+    .line-class{
+        width: 37.1rem;
+    }
+}
 
 
+
+@media(max-width:1260px) {
+    .view-lesson{
+        width: 530px;
+        padding: 10px;
+        align-items: center;
+    }
+    .cam{
+        align-items: center;
+    }
+
+    .name-class{
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .time-class{
+        align-items: center;
+        margin-top: 22px;
+    }
+
+    .play{
+        align-items: center;
+        margin-top: 4px;
+    
+    }
+    .line-class{
+        width: 32.6rem;
+    }
+}
+
+@media(max-width:1138px) {
+    .view-lesson{
+        width: 500px;
+        padding: 10px;
+        align-items: center;
+    }
+    .cam{
+        align-items: center;
+    }
+
+    .name-class{
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .time-class{
+        align-items: center;
+        margin-top: 22px;
+    }
+
+    .play{
+        align-items: center;
+        margin-top: 4px;
+    
+    }
+
+    .line-class{
+        width: 30.7rem;
+    }
+}
+
+@media(max-width:1109px) {
+    .view-lesson{
+        width: 480px;
+        padding: 10px;
+        align-items: center;
+    }
+    .cam{
+        align-items: center;
+    }
+
+    .name-class{
+        align-items: center;
+        margin-top: 20px;
+        
+    }
+
+    .time-class{
+        align-items: center;
+        margin-top: 22px;
+    }
+
+    .play{
+        align-items: center;
+        margin-top: 4px;
+    
+    }
+
+    .line-class{
+        width: 29.6rem;
+    }
 }

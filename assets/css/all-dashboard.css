@@ -13,6 +13,9 @@
 /*Css local da Pág. Painel ADM*/
 @import 'css-dashboard/painel-adm/painel.css';
 
+/*Css local da Pág. Painel Aluno*/
+@import 'css-dashboard/painel-aluno/painel2.css';
+
 /*Css local do card*/
 @import 'css-dashboard/card/card.css';
 

@@ -8,7 +8,7 @@
     <title> Conteúdo | Eadev</title>
 </head>
 <body>
-    <div class="d-flex flex-row ">
+    <div class="d-flex flex-row view-overall">
         <div class="gradient">
             <div class="zoom">
                 <a href="?content_alu=conteudo"><button type="button" class="back"><i class="bi bi-arrow-left"></i> Voltar</button></a>
@@ -25,11 +25,11 @@
                 <hr noshade=”noshade” class="line">
                 <div class=" d-flex flex-row">
                     <div class="icon-cur">
-                        <i class="bi bi-star icon_star"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star icon-star"></i>
+                        <i class="bi bi-star icon-star"></i>
+                        <i class="bi bi-star icon-star"></i>
+                        <i class="bi bi-star icon-star"></i>
+                        <i class="bi bi-star icon-star"></i>
                     </div>
                     <p class="av-cur">Deixe sua avaliação</p>
                 </div>

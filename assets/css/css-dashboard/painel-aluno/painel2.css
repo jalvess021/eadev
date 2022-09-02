@@ -1,0 +1,18 @@
+.alert_view{
+    margin-top: 15%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon-alert{
+   color: rgb(216, 185, 7);
+   font-size: 130px;
+}
+
+.text-alert{
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 12pt;
+    font-weight: 500;
+}

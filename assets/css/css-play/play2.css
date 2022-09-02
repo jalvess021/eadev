@@ -1,30 +1,4 @@
-/*.pag-alert{
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(45deg,#002B5B, #2B4865, #256D85, #041C32);
-    background-size: 250% 250%;
-    animation: colors 15s ease infinite;
-}
 
-
-.alert_view{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.icon-alert{
-   color: yellow;
-   font-size: 130px;
-}
-
-.text-alert{
-    color: whitesmoke;
-    font-size: 12pt;
-    font-weight: 500;
-}*/
 
 /*div 2*/
 

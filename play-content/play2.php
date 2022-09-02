@@ -8,7 +8,7 @@
     <title> Conteúdo | Eadev</title>
 </head>
 <body>
-    <div class="d-flex flex-row background">
+<div class="d-flex flex-row background">
 
         
             <div class="div1">
@@ -153,12 +153,6 @@
 
 
 
-    <!--<div class="pag-alert">
-        <div class="alert_view">
-            <i class="bi bi-exclamation-triangle icon-alert"></i>
-            <p class="text-alert">Atenção!!! Site em construção</p>
-        </div>
-    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</html>-->
+</html>

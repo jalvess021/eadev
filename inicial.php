@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item text-uppercase "><a class="nav-link" href="?page=cadastro">Cadastrar-se</a></li>
-                        <li class="nav-item text-uppercase ps-4"><a class="nav-link" href="?page=login">Entrar</a></li>
+                        <li class="nav-item text-uppercase ms-4"><a class="nav-link" href="?page=login">Entrar</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <h2 class="display-4">Aprenda com comodidade!</h2>
-                                <p>Sistema totalmente adaptado a eficiência e conforto, visando o aprendizado de maneira correspondente ao seu tempo. Excluindo a necessidade de prazos, onde você escolhe se quer um ritmo mais calmo ou mais intenso.</p>
+                                <p>Sistema totalmente adaptado a eficiência e conforto, visando o aprendizado de maneira correspondente ao seu tempo. Excluindo a necessidade de prazos, onde você escolhe se quer um ritmo mais moderado ou mais intenso.</p>
                             </div>
                         </div>
                     </div>
