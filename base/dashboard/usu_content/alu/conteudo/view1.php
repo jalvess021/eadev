@@ -28,7 +28,7 @@
                 $sql1 = "SELECT * FROM formacao order by id_formacao;";
                 $res = mysqli_query($con, $sql1);
                  while ($info3 = mysqli_fetch_array($res)) {
-        echo " <div class='tab-pane fade show active' id='".$info3['nome_formacao']."' role='tabpanel' aria-labelledby='pills-front-end-tab'>
+        echo " <div class='tab-pane fade' id='".$info3['nome_formacao']."' role='tabpanel' aria-labelledby='pills-front-end-tab'>
             <main class='d-flex flex-row justify-content-center grid'>
                 <article>
                     <img src='arquivos/img/ex3.gif' alt=''>
