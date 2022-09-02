@@ -394,9 +394,13 @@
 
     .gender-input input{
         margin-right: 0.38rem;
+@media(max-width:767px){
+
+    .bd-cad{
+        
+    }
+    .form{
+        width: 500px;
+        height: 85vh;
     }
 }
-
-
-
-
