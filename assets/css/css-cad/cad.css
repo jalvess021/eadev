@@ -200,6 +200,17 @@
 
 }
 
+@media(max-width:767px){
+
+    .bd-cad{
+        
+    }
+    .form{
+        width: 500px;
+        height: 85vh;
+    }
+}
+
 
 
 
