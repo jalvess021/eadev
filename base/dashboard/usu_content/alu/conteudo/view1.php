@@ -59,7 +59,7 @@
                 
                  
                     echo " <div class='tab-pane fade show active' id='All-form-row' role='tabpanel' aria-labelledby='pills-front-end-tab'>
-                    <h4 class='caption-card'>Todas as formações</h4>
+                    <h4 class='caption-card'>Cursos</h4>
                     <hr>
                         <main class='grid'>";
                             $sqlff = "SELECT * from curso where id_formacao;";      
@@ -70,7 +70,7 @@
                                 <i class='bi bi-star-fill ml-2 icon-card'></i>
                                 <div class='text'>
                                     <p>".$infoff['nome_curso']."</p>
-                                    <a href='?page=play_curso&curso=".$infoff['id_curso']."'><button  class='btn-card-content'>".$infoff['sigla_curso']."</button></a>
+                                    <a href='?page=play_curso&curso=".$infoff['sigla_curso']."'><button  class='btn-card-content'>".$infoff['sigla_curso']."</button></a>
                                 </div>
                             </article> ";          
                             }    
