@@ -11,21 +11,20 @@
 <body>
 
 <?php 
-include "./base/config.php";
+require "./base/config.php";
 if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
     if (isset($_GET['curso'])) {
 
-        
+        $sigla = $_GET['curso'];
         //Selecionando as informações do curso através da url
         $sqlCur = mysqli_query($con, "SELECT * FROM curso WHERE sigla_curso = '".$_GET['curso']."';");
         $infoCur = mysqli_fetch_array($sqlCur);
-        $cur = $infoCur['id_curso'];
+        $cur = (int) $infoCur['id_curso'];
 
-        if (mysqli_num_rows($sqlCur) > 0) {
+      if (mysqli_num_rows($sqlCur) > 0) {
 
             //Selecionando as informações dos módulos através do curso
-            $sqlMod = mysqli_query($con, "SELECT * modulo where id_curso = '".$cur."';");
-            $infoMod = mysqli_fetch_array($sqlMod);
+            $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
 
             //Selecionando a qntde. de módulos através do curso
             $sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo m WHERE m.id_curso = '".$infoCur['id_curso']."';");
@@ -46,11 +45,9 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         <p class='description-cur'>".$infoCur['desc_curso']."</p>
                         <p class='person-cur'>Preparado por: Eadev</p>
                         <div class='d-flex flex-row'>
-                            <p class='number-cur'><i class='bi bi-layers-fill'></i>".$row1[0]; echo mysqli_num_rows($sql1) > 1 ? "Módulos" : "Módulo"; echo "</p>";
-
+                            <p class='number-cur'><i class='bi bi-layers-fill'></i> ".$row1[0]; echo (mysqli_num_rows($sql1) > 1) ? " Módulos" : " Módulo"; echo "</p>";
                             echo "
-                            <p class='quant-cur'><i class='bi bi-collection-play-fill '></i> ".$row2[0]; 
-                            echo mysqli_num_rows($sql2) > 1 ? "Aulas" : "Aula"; echo "</p>
+                            <p class='quant-cur'><i class='bi bi-collection-play-fill '></i> ".$row2[0];  echo(mysqli_num_rows($sql2) > 1) ? ' Aulas' : ' Aula'; echo "</p>
                         
                         </div>
 
@@ -80,32 +77,28 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         <div class='all-aula'>
                             <div class='all-aula1'> ";
 
-                    while ($infoMod1 = mysqli_fetch_array($sqlMod)){
-                        echo "<h4 class='title-class2'>Módulo 1</h4>";
-                                
+                    while ($infoMod = mysqli_fetch_array($sqlMod)){
+                        
+                        echo "<h4 class='title-class2'>".$infoMod['nome_mod']."</h4>";
+                        
+                            
                             //Selecionando as informações da aula através do módulo
-                           // $sqlAula = ($con, "SELECT * FROM aula where id_mod = '".$infoMod1['id_mod']."';");
+                            $sqlAula = mysqli_query($con, "SELECT * FROM aula where id_mod = '".$infoMod['id_mod']."';");
                             while ($infoAula = mysqli_fetch_array($sqlAula)){
 
                                 // Duração da aula
-                                $start = $info['start_aula'];
-                                $end = $info['end_aula'];
+                                $start = $infoAula['start_aula'];
+                                $end = $infoAula['end_aula'];
                                 $total = $end - $start;
-
-                                // Datas da aula
-                                $s1 = $info['dt_criacao'];
-                                $date1 = strtotime($s1);
-                                $s = $info['dt_alteracao'];
-                                $date = strtotime($s);
                                 
                                 echo "
-                                <a class='d-flex flex-row view-lesson' href='?page=play_video&Aula=".$infoAula['id_aula']."'>
+                                <a class='d-flex flex-row view-lesson' href='?page=play_video&curso=".$infoCur['sigla_curso']."&aula=".$infoAula['id_aula']."'>
                                     <i class='bi bi-camera-video cam'></i>
                                     <p class='name-class'>".$infoAula['tit_aula']."</p>
-                                    <p class='time-class'>".gmdate("i", $total).":".gmdate("s", $total)."</p>
+                                    <p class='time-class'>00:".gmdate("i", $total).":".gmdate("s", $total)."</p>
                                     <span class='play'><i class='bi bi-play-circle'></i></span>
                                 </a>";
-                            }
+                            } 
 
                                 echo "<hr class='line-class'>";
                             }
@@ -118,9 +111,9 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
 
                 </div>
             </div>
-            ";
+            "; 
             
-        }
+        } 
     }
 }
 ?>

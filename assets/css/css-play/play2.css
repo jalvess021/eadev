@@ -35,6 +35,16 @@
     margin-top: 20px;
 }
 
+.group-cur a{
+    text-decoration: none;
+}
+
+.group-cur a:hover .sg-cur{
+    color: #159999;
+    transform: scale(1.06);
+    font-weight: 700;
+}
+
 .sg-cur{
     color: #14aaaa;
     font-size: 10pt;

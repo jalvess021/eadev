@@ -43,7 +43,7 @@
                                 <i class='bi bi-star-fill ml-2 icon-card'></i>
                                 <div class='text'>
                                     <p>".$info4['nome_curso']."</p>
-                                    <a href='?page=play_curso&curso=".$info4['id_curso']."'><button  class='btn-card-content'>".$info4['sigla_curso']."</button></a>
+                                    <a href='?page=play_curso&curso=".$info4['sigla_curso']."'><button  class='btn-card-content'>".$info4['sigla_curso']."</button></a>
                                 </div>
                             </article> ";          
                             }    
