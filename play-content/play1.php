@@ -45,9 +45,9 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         <p class='description-cur'>".$infoCur['desc_curso']."</p>
                         <p class='person-cur'>Preparado por: Eadev</p>
                         <div class='d-flex flex-row'>
-                            <p class='number-cur'><i class='bi bi-layers-fill'></i> ".$row1[0]; echo (mysqli_num_rows($sql1) > 1) ? " Módulos" : " Módulo"; echo "</p>";
+                            <p class='number-cur'><i class='bi bi-layers-fill'></i> ".$row1[0]; echo ($row1[0] <= 1) ? " Módulo" : " Módulos"; echo "</p>";
                             echo "
-                            <p class='quant-cur'><i class='bi bi-collection-play-fill '></i> ".$row2[0];  echo(mysqli_num_rows($sql2) > 1) ? ' Aulas' : ' Aula'; echo "</p>
+                            <p class='quant-cur'><i class='bi bi-collection-play-fill '></i> ".$row2[0];  echo($row2[0] <= 1) ? ' Aula' : ' Aulas'; echo "</p>
                         
                         </div>
 

@@ -89,12 +89,31 @@
     </div>
 
     <script>
-       const rightButtons = Array.from(document.getElementsByClassName('swiper-button-next'));
-        const leftButtons = Array.from(document.getElementsByClassName('swiper-button-prev'));
-        const containers = Array.from(document.getElementsByClassName('grid'));
+       const rightButtons = document.querySelectorAll('.swiper-button-next');
+        const leftButtons = document.querySelectorAll('.swiper-button-prev');
+        const rowScroll = document.querySelectorAll('.grid');
 
         /* array.forEach(element => {
         }); */
+
+        for (let n = 0; n < rowScroll.length; n++) {
+            const sc = rowScroll[n];
+
+            for (let r = 0; r < rightButtons.length; r++) {
+                const rightBtn = rightButtons[r];
+                rightBtn.addEventListener("click", function name(params) {
+                    sc.scrollLeft  += 380;
+                })
+            }
+
+            for (let l = 0; l < leftButtons.length; l++) {
+                const leftBtn = leftButtons[l];
+                leftBtn.addEventListener("click", function () {
+                    container.scrollLeft -= 380;
+                });
+            }            
+        }
+        /*
         let index = 0;
         for (const rightButton of rightButtons) {
             const container = containers[index];
@@ -111,7 +130,7 @@
                 container.scrollLeft -= 380;
             });
             index++;
-        }
+        } */
     </script>
 
 <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-back-end-tab">
