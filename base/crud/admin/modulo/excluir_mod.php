@@ -1,4 +1,7 @@
 <?php
+    include "base/crud/atv_usu/atv.php";
+    $usuario = $_SESSION['UsuarioNome'];
+    $id_usuario = $_SESSION['UsuarioID'];
 
     $id_mod = (int)$_GET['id_mod'];
     
@@ -8,18 +11,31 @@
         // *** mysqli_stmt_bind_param() = Recebe e retorna um statement, onde seta os parametros da variavel; ($prepare, tipo da variavel[tudo junto{i - int || s - string || d - float || b- blob ]}, variavel atribuida para a "?" );
         // *** mysqli_stmt_execute() = Executa a query;
 
-        $sql = "DELETE FROM modulo where id_mod = ?;";
+     /* $sql = "DELETE FROM modulo where id_mod = ?;";
         $res = mysqli_prepare($con, $sql);
         mysqli_stmt_bind_param($res, "i", $id_mod);
         mysqli_stmt_execute($res);
-        mysqli_stmt_close($res);
+        mysqli_stmt_close($res); */
 
-        if ($res){
-            header('Location: \tcc/plataforma.php?content_adm=lista_mod&msg=15');
-            mysqli_close($con);
-        }else{
-            header('Location: \tcc/plataforma.php?content_adm=lista_mod&msg=6');
-            mysqli_close($con);
+        $i = mysqli_query($con, "SELECT * from modulo where id_mod = '".$id_mod."';");
+        $info = mysqli_fetch_array($i);
+
+        if ($info) {
+
+            $sql = "DELETE FROM modulo where id_mod = '".$id_mod."' AND nome_mod = '".$info['nome_mod']."' AND id_curso = '".$info['id_curso']."';";
+            $res = mysqli_query($con, $sql);
+            if ($res){
+                $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
+                if ($usu_atv) {
+                    header('Location: \tcc/plataforma.php?content_adm=lista_mod&msg=15');
+                    mysqli_close($con);
+                }else{
+                    header('Location: \tcc/plataforma.php?content_adm=lista_mod&msg=6');
+                    mysqli_close($con);
+                }
+            }
         }
+
+        
 
 ?>

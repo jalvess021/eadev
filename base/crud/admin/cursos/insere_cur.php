@@ -1,4 +1,8 @@
 <?php
+
+    include "base/crud/atv_usu/atv.php";
+    $usuario = $_SESSION['UsuarioNome'];
+    $id_usuario = $_SESSION['UsuarioID'];
     
     $curso              = $_POST["nome_curso"];
     $sigla              = $_POST['sigla_curso'];
@@ -20,10 +24,15 @@
     $res3 = mysqli_query($con, $sql3) or die(mysqli_error());
 
     if($res1 && $res2 && $res3){
-        header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
-        mysqli_close($con);
-    }else{
-        header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
-        mysqli_close($con);
+
+        $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
+        if ($usu_atv) {
+            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
+            mysqli_close($con);
+        }else{
+            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
+            mysqli_close($con);
+        }
+        
     }
 ?>

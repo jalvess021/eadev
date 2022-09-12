@@ -82,7 +82,7 @@
 					<div class="actions">
 						<div class="d-flex flex-row justify-content-center">
 								<a href="?content_adm=lista_mod" class="btn btn-sm btn-secondary text-white mr-1 font-weight-bold"><i class="bi bi-arrow-left"></i> Voltar</a>
-								<a href="?content_adm=lista_mod&edit_mod=<?php echo $id_curso;?>" class="btn btn-sm b-destaque-4 text-white ml-1 font-weight-bold">Editar <i class="bi bi-pencil-fill"></i></a>
+								<a href="?content_adm=lista_mod&edit_mod=<?php echo $id_mod;?>" class="btn btn-sm b-destaque-4 text-white ml-1 font-weight-bold">Editar <i class="bi bi-pencil-fill"></i></a>
 						</div>
 					</div>
 		</div>

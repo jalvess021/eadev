@@ -88,15 +88,6 @@
     filter: brightness(80%);
 }
 
-.icon-card{
-    position:absolute; 
-    z-index: 1; 
-    right:8px; 
-    top:5px; 
-    color: rgb(235, 196, 5);
-    text-shadow: #ffffff 0.4px 0.4px 4px;
-}
-
 .text{
     padding: 10px 15px 15px 15px;
 }

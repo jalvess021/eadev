@@ -40,7 +40,6 @@
                             while ($info4 = mysqli_fetch_array($res4)) {
                                 echo "<article>
                                 <img src='arquivos/img/ex3.gif' alt='Imagem do curso (".$info4['sigla_curso'].")'>
-                                <i class='bi bi-star-fill ml-2 icon-card'></i>
                                 <div class='text'>
                                     <p>".$info4['nome_curso']."</p>
                                     <a href='?page=play_curso&curso=".$info4['sigla_curso']."'><button  class='btn-card-content'>".$info4['sigla_curso']."</button></a>
@@ -62,12 +61,11 @@
                     <h4 class='caption-card'>Cursos</h4>
                     <hr>
                         <main class='grid'>";
-                            $sqlff = "SELECT * from curso where id_formacao;";      
+                            $sqlff = "SELECT * from curso;";      
                             $resff = mysqli_query($con, $sqlff);
                             while ($infoff = mysqli_fetch_array($resff)) {
                                 echo "<article>
                                 <img src='arquivos/img/ex3.gif' alt='Imagem do curso (".$infoff['sigla_curso'].")'>
-                                <i class='bi bi-star-fill ml-2 icon-card'></i>
                                 <div class='text'>
                                     <p>".$infoff['nome_curso']."</p>
                                     <a href='?page=play_curso&curso=".$infoff['sigla_curso']."'><button  class='btn-card-content'>".$infoff['sigla_curso']."</button></a>
@@ -83,8 +81,7 @@
                 
                 ?>
                       <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-                
+                        <div class="swiper-button-prev"></div>
             </div>
     </div>
 
@@ -101,15 +98,15 @@
 
             for (let r = 0; r < rightButtons.length; r++) {
                 const rightBtn = rightButtons[r];
-                rightBtn.addEventListener("click", function name(params) {
+                rightBtn.addEventListener("click", function() {
                     sc.scrollLeft  += 380;
                 })
             }
 
             for (let l = 0; l < leftButtons.length; l++) {
                 const leftBtn = leftButtons[l];
-                leftBtn.addEventListener("click", function () {
-                    container.scrollLeft -= 380;
+                leftBtn.addEventListener("click", function(){
+                    sc.scrollLeft -= 380;
                 });
             }            
         }
@@ -132,47 +129,3 @@
             index++;
         } */
     </script>
-
-<!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-back-end-tab">
-                    <main class=" d-flex flex-row justify-content-center grid">
-                            <article>
-                                <img src="arquivos/img/ex3.gif" alt="">
-                                <i class="bi bi-star-fill ml-2 icon-card "></i>
-                                <div class="text">
-                                    <p>Hypertext Preprocessor</p>
-                                    <button class="btn-card-content" href="?page=play_curso">Php</button>
-                                </div>
-                            </article>    
-
-                            <article>
-                                <img src="arquivos/img/ex2.gif" alt="">
-                                <i class="bi bi-star-fill ml-2 icon-card "></i>
-                                <div class="text">
-                                    <p>Standard Query Language</p>
-                                    <button class="btn-card-content" id="">Sql</button>
-                                </div>
-                            </article>      
-                    </main>
-                </div>
-
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                    <main class=" d-flex flex-row justify-content-center grid" >
-                            <article>
-                                <img src="arquivos/img/ex3.gif" alt="">
-                                <i class="bi bi-star-fill ml-2 icon-card "></i>
-                                <div class="text">
-                                    <p>Git | Concurrent Version System</p>
-                                    <button class="btn-card-content" href="?page=play_curso"> Git</button>
-                                </div>
-                            </article>    
-
-                            <article>
-                                <img src="arquivos/img/ex2.gif" alt="">
-                                <i class="bi bi-star-fill ml-2 icon-card "></i>
-                                <div class="text">
-                                    <p>Github | Concurrent Version System</p>
-                                    <button class="btn-card-content" id=""> gitHub</button>
-                                </div>
-                            </article>    
-                    </main>
-                </div> -->
