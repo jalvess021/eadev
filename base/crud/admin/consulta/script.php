@@ -35,5 +35,67 @@
                 }) 
             }) 
 
-       
+
+
+
+            
+
+        //ATUALIZANDO EM TEMPO REAL 1s
+    function update_adm(){ //função que será carregada
+
+            $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
+                    cache: false, 
+                    success: function(resultAdm){ 
+                        $('#num-cons-adm').html(resultAdm); 
+                        if (resultAdm < 2) {
+                            $('#label-cons-adm').html("Administrador no sistema");
+                        }else{
+                            $('#label-cons-adm').html("Administradores no sistema");
+                        }
+            }});  
+
+            $.ajax({url: "selects/atv_adm/all_atv.php",
+                cache: false,
+                success: function(resultAll){
+                    $('#num-cons-title').html(resultAll);
+                }
+            });
+
+            $.ajax({url: "selects/atv_adm/add_atv.php",
+                cache: false,
+                success: function(resultAdd){
+                    $('#adm-cons-add').html(resultAdd);
+                }
+            });
+
+            $.ajax({url: "selects/atv_adm/att_atv.php",
+                cache: false,
+                success: function(resultAtt){
+                    $('#adm-cons-att').html(resultAtt);
+                }
+            });
+
+
+            $.ajax({url: "selects/atv_adm/del_atv.php",
+                cache: false,
+                success: function(resultDel){
+                    $('#adm-cons-del').html(resultDel);
+                }
+            });
+            
+
+           /* 
+          $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
+                  cache: false,
+                  success: function(resultAlu){
+                    $('#numeroAluTb').html(resultAlu);
+          }}); */        
+    }
+
+    //executa a função ao carregar
+    $(document).ready(update_adm());
+    //Executa a função a cada 1 seg
+    setInterval(() => { update_adm(); }, 1000);
+
+   
 </script>

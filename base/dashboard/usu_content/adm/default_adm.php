@@ -28,7 +28,8 @@ $rowAdm = mysqli_num_rows($sqlAdm);
 <div class="control-plataform">
     <div class="row c1-row justify-content-center align-items-center">
         <div class="col-xl-7 justify-content-center" id="gl"> 
-          <div id="piechart" style="width: 100%; height: 500px;"></div>
+        <canvas id="myChart"></canvas>
+         <!-- <div id="piechart" style="width: 100%; height: 500px;"></div> -->
         </div>
         <div class="table-responsive col-xl-5 table-control">
           <div class="all-table-body">
@@ -73,10 +74,9 @@ $rowAdm = mysqli_num_rows($sqlAdm);
     
     </div>
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 <script>
 
    // Atualizar os dados a cada 15s recarregando a pág;
@@ -118,27 +118,74 @@ $rowAdm = mysqli_num_rows($sqlAdm);
                   success: function(result){ 
                     $('#numeroUsuTb').html(result); 
                  }});  */
-                 window.location = window.location.href;
+               //  window.location = window.location.href;
     },60000); // vai rodar a função a cada 15000 milésimos (15 segundos)
     
-</script>
+  
+        $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
+                      cache: false, 
+                      success: function(resultAdm){ 
+                      numAdm = parseInt(resultAdm);
+                    }}); 
+           $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
+                          cache: false,
+                          success: function(resultAlu){
+                          // numAlu = parseInt(resultAlu);
+                        //  alert("salsciha")
+                      }});
 
+                var sa = 12; var se = 14;
+    const data = {
+        labels: [
+          'Administradores',
+          'Alunos'
+        ],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [31, 13],
+          backgroundColor: [
+            '#6b6b6b',
+            '#0CB7B7'
+          ],
+          hoverOffset: 4
+        }]
+      };
+          
+          const config = {
+        type: 'pie',
+        data: data,
+      };
+
+      const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+  
+ 
+
+</script>
+<!--
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
 
           google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart);
 
-          let numAlu = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
+     
+
+             numAlu = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
                       cache: false, 
                       success: function(resultAdm){ 
                       numAdm = parseInt(resultAdm);
                     }}); 
-          let numAdm = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
-                        cache: false,
-                        success: function(resultAlu){
-                        numAlu = parseInt(resultAlu);
-                    }}); 
+             numAdm = $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
+                          cache: false,
+                          success: function(resultAlu){
+                          numAlu = parseInt(resultAlu);
+                      }}); 
+       
+
+        
 
           /*  setInterval(() => {
                 $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
@@ -176,6 +223,13 @@ $rowAdm = mysqli_num_rows($sqlAdm);
           var chart = new google.visualization.PieChart(document.getElementById('piechart'));
           chart.draw(data, options);
           }
+
+          
+    //executa a função ao carregar
+    // $(document).ready(pizza());
+    //Executa a função a cada 1 seg
+    setInterval(() => { drawChart(); }, 5000);
+
 </script>
   
 
@@ -246,4 +300,4 @@ $.ajax({
 });
     
     */
-    </script>
+    </script> -->

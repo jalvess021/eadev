@@ -7,7 +7,6 @@
   $id_curso           = $_POST["id_curso"];
   $curso              = $_POST["nome_curso"];
   $descricao         = $_POST["desc_curso"];
-  $link            = $_POST["link_quest_fim"];
   $sigla            = $_POST["sigla_curso"];
    
 
