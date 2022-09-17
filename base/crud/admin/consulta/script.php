@@ -1,27 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 
-   /* var xmlhttp = new XMLHttpRequest();
-   
-   xmlhttp.onreadystatechange = function() {
-       if (this.readyState == 4 && this.status == 200) {
-           myObj = JSON.parse(this.responseText);
-           document.getElementById("name").innerHTML = myObj.name;
-           document.getElementById("college").innerHTML = myObj.college;
-           document.getElementById("gender").innerHTML = myObj.gender;
-           document.getElementById("age").innerHTML = myObj.age;
-       }
-   };
-   xmlhttp.open("GET", "geeks.php", true);
-   xmlhttp.send();
-    
-    var dados = [];
-    $.getJSON('/tcc/selects/select_adm.php', function (result) {
-        $.each(result, function (index, val) {
-            dados.push(val);
-        })
-    })
-    console.log(dados); */
     $("#search-adm").keyup(function(){
 
                 var completeAdm = $("#search-adm").val();
@@ -35,61 +14,23 @@
                 }) 
             }) 
 
-
-
-
-            
-
         //ATUALIZANDO EM TEMPO REAL 1s
     function update_adm(){ //função que será carregada
-
-            $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_adm.php",
-                    cache: false, 
-                    success: function(resultAdm){ 
-                        $('#num-cons-adm').html(resultAdm); 
-                        if (resultAdm < 2) {
+        $.getJSON('base/dashboard/usu_content/adm/painel-control/control_usu.php', function (dados) {
+            $('#num-cons-adm').html(dados.total_usu); 
+                        if (dados.total_usu < 2) {
                             $('#label-cons-adm').html("Administrador no sistema");
                         }else{
                             $('#label-cons-adm').html("Administradores no sistema");
                         }
-            }});  
+        })
 
-            $.ajax({url: "selects/atv_adm/all_atv.php",
-                cache: false,
-                success: function(resultAll){
-                    $('#num-cons-title').html(resultAll);
-                }
-            });
-
-            $.ajax({url: "selects/atv_adm/add_atv.php",
-                cache: false,
-                success: function(resultAdd){
-                    $('#adm-cons-add').html(resultAdd);
-                }
-            });
-
-            $.ajax({url: "selects/atv_adm/att_atv.php",
-                cache: false,
-                success: function(resultAtt){
-                    $('#adm-cons-att').html(resultAtt);
-                }
-            });
-
-
-            $.ajax({url: "selects/atv_adm/del_atv.php",
-                cache: false,
-                success: function(resultDel){
-                    $('#adm-cons-del').html(resultDel);
-                }
-            });
-            
-
-           /* 
-          $.ajax({url: "base/dashboard/usu_content/adm/painel-control/control_alu.php",
-                  cache: false,
-                  success: function(resultAlu){
-                    $('#numeroAluTb').html(resultAlu);
-          }}); */        
+        $.getJSON('selects/atv_adm/atv.php', function (dados) {
+            $('#num-cons-title').html(dados.num_total_atv);
+            $('#adm-cons-add').html(dados.num_add);
+            $('#adm-cons-att').html(dados.num_att);
+            $('#adm-cons-del').html(dados.num_del);
+        })
     }
 
     //executa a função ao carregar
