@@ -29,31 +29,17 @@
 								<li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i>Aluno</a></li>
 							</ul>
                     </li>				           
-                   
-                    <li class="submenu">
-						<a href="#"><i class="bi bi-code"></i> <span> Desafios </span> <span class="menu-arrow"></span></a>
+
+					<li class="submenu">
+                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>
 
 					<li class="submenu">
-                        <a href="#"><i class="bi bi-file-earmark-bar-graph-fill"></i><span> Relatórios </span></a>
-                            <ul>
-								<li>
-                                    <a href="#"><span>Acadêmico</span></a>
-                                </li>
-                                <li class="submenu">
-                                    <a href="#"><span>Desempenho</span></a>
-                                </li>
-                                <li class="submenu">
-                                    <a href="#"><span>Certificado</span></a>
-                                </li>                                
-                            </ul>
-                    </li>
-
-					<li class="submenu">
-                        <a class="pro" href="#"></span><span class="label radius-circle bg-primary float-right">2</span><i class="bi bi-list-check"></i><span> Avaliações </span> </a>
-                            <ul class="list-unstyled">								
-                                <li><a href="#">Atualizar disponibilidade</a></li>
-								<li><a href="#">Atualizar diário</a></li>
+                        <a class="pro" href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span> <span class="label radius-circle bg-primary float-right">3</span></a>
+                            <ul class="list-unstyled">		
+                                <li><a href="#">Financeiro</a></li>		
+                                <li><a href="#">Acadêmico</a></li>			
+                                <li><a href="#">Desempenho</a></li>
                             </ul>
                     </li>
 					

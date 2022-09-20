@@ -113,6 +113,12 @@ if(isset($_GET['content_adm'])) {
                 case 'consulta_adm':
                     include "base/crud/admin/consulta/cons_adm.php";
                     break;
+
+        //Crud Avaliação 
+                
+                case 'lista_av':
+                    include "base/crud/admin/avaliacoes/lista_av.php";
+                    break;
 }       
 }  
 else {
