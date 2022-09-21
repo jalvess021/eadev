@@ -16,9 +16,15 @@
     $sql .= "('0','".$id_video."','".$aula."','".$descricao."','".$start."','".$end."', NOW(), NULL, NULL, '".$modulo."');";
 
     $resultado = mysqli_query($con, $sql)or die(mysqli_error());
+    $res1 = mysqli_query($con, "SELECT * from aula where id_video = '".$id_video."';");
+    $row1 = mysqli_fetch_array($res1);
 
+    
     if($resultado){
 
+        $mix = 'INSERT into aula_alu SELECT 0, a.id_aluno, '.$row1[0].', 1 from aluno AS a ORDER BY a.id_aluno;';
+        $res2 = mysqli_query($con, $mix); 
+        
         $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
         if ($usu_atv) {
             header('Location: \tcc/plataforma.php?content_adm=lista_aula&msg=10');
@@ -28,5 +34,5 @@
             mysqli_close($con);
         }
         
-    }
+    } 
 ?>
