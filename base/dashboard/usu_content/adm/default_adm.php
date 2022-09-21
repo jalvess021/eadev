@@ -1,3 +1,9 @@
+<?php 
+	//Definindo nível de acesso para esta página & fazendo a verificação.
+    $nivel_necessario = 3;
+    include "base/testa_nivel.php"; 
+?>
+
 <h3 class="content-title">Painel</h3>
 <h6 class="info-con">Última atualização [ <span id="time-control"></span> ]</h6>
 <h6 class="info-con-min"> Os registros são atualizados a cada 15 segundos!</h6>
@@ -40,7 +46,7 @@
                     </tr>
                     <tr>
                       <td data-toggle='tooltip' data-placement='top' title='Aluno'>Educacional</td>
-                      <td class='text-center'> <span id='numeroAluTb'><?php echo $rowAlu;?><span></td>
+                      <td class='text-center'> <span id='numeroAluTb'><span></td>
                       <td class='actions btn-group-sm'>
                         <a class='btn btn-info btn-xs' href='?content_adm=consulta_alu' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a> 
                       </td>
