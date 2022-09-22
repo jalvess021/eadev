@@ -29,12 +29,12 @@ $res4 = mysqli_query($con, $sql4) or die(mysqli_error($con));
 $info2 = mysqli_fetch_array($res4);
 
 // Inserindo valores na tabela Matriculado
-$sql5 = "insert into matriculado values (0, NOW(), 1, '". $info2[0] ."'); ";
-$res5 = mysqli_query($con, $sql6) or die(mysqli_error($con));
+$sql5 = "insert into matriculado values (0, NOW(), 1, ". $info2[0] ."); ";
+$res5 = mysqli_query($con, $sql5) or die(mysqli_error($con));
 
 //Inserindo valores na tabela relacional aula_alu
 $sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1 from aula AS a ORDER BY a.id_aula;';
-$res6 = mysqli_query($con, $sql7); 
+$res6 = mysqli_query($con, $sql6); 
 
 
 if($res1 && $res2 && $res3 && $res4 && $res5 && $res6){

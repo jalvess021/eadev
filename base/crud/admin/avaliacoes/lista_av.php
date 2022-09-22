@@ -163,6 +163,10 @@
 	
 </script>
 
+<?php
+	require_once 'modal/modal_add.php';
+?>
+
 
 <!--
 <h6>Informações</h6>	
