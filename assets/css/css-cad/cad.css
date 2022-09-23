@@ -2,25 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-
-.bd-cad {
+.bd-cad{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(20deg , #36a0a0, #11113c);
+    background: linear-gradient( 20deg,#36a0a0, #0e0e38);
     font-family:  'Montserrat', sans-serif !important;
 }
 
 .container{
-    width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .form{
-    width: 640px;
+    width: 660px;
+    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,12 +31,30 @@
     box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.39);
     padding: 3rem 3rem 5.2rem 3rem;
     border-radius: 1.7rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-name: slide;
+    animation-duration: 2.5s;
+}
+
+/*animação*/
+
+@keyframes slide{
+    from{
+        opacity: 0;
+    } 
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .form-header{
     display: flex;
     justify-content: space-between;
-    padding-top: 0.4rem; /* 1.5rem*/
+    padding-top: 1.3rem; /* 1.5rem*/
     padding-bottom: 1rem;
     color: rgb(224, 224, 224);
 }
@@ -51,47 +69,26 @@
     width: 50px;
 }
 
-/*
-.login-button button{
-    border: none;
-    background-color: #0bb0b0;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover{
-    transition: all 0.4s ease-in-out;
-    transform: scale(0.97);
-    background-color: #099898;
-}
-
-.login-button button a{
-    text-decoration: none;
-    font-weight: 500;
-    color: rgb(224, 224, 224);
-}
- */
- 
 .form-header h1::after{
     content: '';
     display: block;
     width: 5rem;
     height: 0.3rem;
-    background-color: #1aaaaa;
+    background-color: #289F9F;
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
 }
+
 .input-group{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between ;
+    justify-content: space-between;
     padding: 1rem 0;
     height: 62%;
 }
 
-.input-box {
+.input-box{
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
@@ -114,6 +111,8 @@
     border-bottom: 2px solid rgb(174, 174, 174);
 }
 
+
+
 .input-box label{
     font-size: 0,75rem;
     font-weight: 600;
@@ -135,11 +134,18 @@
     opacity: 0.75;
 }
 
+.gender-title h6{
+    font-size: 0.75rem;
+    font-weight: 600;
+    
+}
+
 .gender-group{
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
     padding: 0 0.5rem;
+    
 }
 
 .gender-input{
@@ -181,7 +187,7 @@
     color: #fff;
 }
 
-.check label {
+.check{
     text-decoration: none;
     margin-top: 1.5rem;
     color: whitesmoke;
@@ -200,207 +206,318 @@
 
 }
 
-@media(max-width:764px){
+
+
+
+
+
+
+
+@media screen and (max-width:1216px) {
+    
 
     .form{
-       height: 920px;
+        width: 660px;
     }
 
     .form-header{
-        margin-top: 30px;
+        margin-top: 27px;
     }
 
-    .input-box input{
-        margin: 0.6rem 0;
-        padding: 0.8rem 1.2rem;
-        border: 0;
-        border-bottom: 2px solid #ffffff;
-        background-color: transparent;
-        outline: none;
-        font-size: 16px;
-        color: white;
-        transition: all .3s ease-out;
-        width: 420px;
-    }
-
-    .continue-button{
-        margin-top: -25px
-    }
-
-    .check label {
-        text-decoration: none;
-        margin-top: -80px;
-        margin-bottom: 30px;
-        color: whitesmoke;
-        opacity: 0.85;
-        margin-left: 30px;
-    }
-
-    .check input {
-        margin-top: 2.5rem;
-        margin-left: 5px;
-    }
-}
-
-@media(max-width:576px){
-
-    .form{
-       width: 450px;
-    }
-
-    .form-header{
-        margin-top: 30px;
-    }
-
-    .input-box input{
-        margin: 0.6rem 0;
-        padding: 0.8rem 1.2rem;
-        border: 0;
-        border-bottom: 2px solid #ffffff;
-        background-color: transparent;
-        outline: none;
-        font-size: 16px;
-        color: white;
-        transition: all .3s ease-out;
-        width: 380px;
-    }
-}
-
-@media(max-width:484px){
-
-    .form{
-       width: 400px;
-    }
-
-    .input-box input{
-        margin: 0.6rem 0;
-        padding: 0.8rem 1.2rem;
-        border: 0;
-        border-bottom: 2px solid #ffffff;
-        background-color: transparent;
-        outline: none;
-        font-size: 16px;
-        color: white;
-        transition: all .3s ease-out;
-        width: 330px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-height:px){
-
-    .bd-cad{
-        position: relative;
-        height: 70vh;
-    }
-
-    .form{
-       height: 750px;
-       margin-top: 7rem;
-       margin-bottom: -20px;
-    }
-
-    .form-header{
-        margin-top: 310px;
-    }
-
-    .input-box input{
-        margin: 0.6rem 0;
-        padding: 0.8rem 1.2rem;
-        border: 0;
-        border-bottom: 2px solid #ffffff;
-        background-color: transparent;
-        outline: none;
-        font-size: 16px;
-        color: white;
-        transition: all .3s ease-out;
-        width: 410px;
-    }
-
-    .continue-button{
-        margin-top: -25px
-    }
-
-    .check label {
-        text-decoration: none;
-        margin-top: -80px;
-        margin-bottom: 30px;
-        color: whitesmoke;
-        opacity: 0.85;
-        margin-left: 30px;
-    }
-
-    .check input {
-        margin-top: 2.5rem;
-        margin-left: 5px;
-    }
-
-    .group{
-        margin-top: 10px;
-        height: 50%;
-        display: block;
+    .input-group{
+        flex-direction: column;
         overflow-y: scroll;
-        scroll-behavior: smooth;
+        flex-wrap: nowrap;
+        max-height: 15rem;
+        margin-top: 10px;
+        padding-right: 2rem;
+        margin-bottom: 20px;
+        width: 100%;
     }
 
-    .group::-webkit-scrollbar {
-        display: none;
-        }
-
-    .gender-inputs{
-        margin-top: 170px;
+    .input-box{
+        width: 100%;
     }
 
-    .gender-input input{
-        margin-right: 0.38rem;
-@media(max-width:767px){
-
-    .bd-cad{
-        
+    .continue-button button{
+        margin-top: 25px;
     }
+
+
+}
+
+@media screen and (max-width:1133px) {
+
+
     .form{
-        width: 500px;
+        width: 660px;
+    }
+
+    .form-header{
+        margin-top: 27px;
+    }
+
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 15rem;
+        margin-top: 10px;
+        padding-right: 2rem;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .input-box{
+        width: 100%;
+    }
+
+    .continue-button button{
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width:1126px) {
+    
+    .container{
+        width: 54%;
+    }
+
+
+}
+
+@media screen and (max-width:1048px) {
+    
+    .container{
+        width: 55%;
+    }
+
+
+}
+
+@media screen and (max-width:1024px) {
+    
+    .container{
+        width: 59%;
+    }
+
+
+}
+
+@media screen and (max-width:960px) {
+    
+    .container{
+        width: 60%;
+    }
+
+
+}
+
+@media screen and (max-width:944px) {
+    
+    .container{
+        width: 61%;
+    }
+
+
+}
+
+@media screen and (max-width:928px) {
+    
+    .container{
+        width: 63%;
+    }
+
+
+}
+
+@media screen and (max-width:899px) {
+    
+    .container{
+        width: 65%;
+    }
+
+
+}
+
+@media screen and (max-width:872px) {
+    
+    .container{
+        width: 68%;
+    }
+
+
+}
+
+@media screen and (max-width:832px) {
+    
+    .container{
+        width: 70%;
+    }
+
+
+}
+
+@media screen and (max-width:808px) {
+    
+    .container{
+        width: 72%;
+    }
+
+
+}
+
+@media screen and (max-width:787px) {
+    
+    .container{
+        width: 73%;
+    }
+
+
+}
+
+@media screen and (max-width:776px) {
+
+    
+    
+    .container{
+        width: 75%;
+    }
+
+    
+
+
+}
+
+@media screen and (max-width:608px) {
+    
+    
+    .container{
+        width: 90%;
+    }
+
+    
+}
+
+@media screen and (max-width:491px) {
+    
+    
+    .container{
+        width: 100%;
+    }
+
+    
+}
+
+@media screen and (max-width:436px) {
+    
+    
+    .container{
+        width: 100%;
+        height: 80vh;
+    }
+
+
+    .gender-group{
+        flex-direction: column;
+    }
+
+    .gender-input{
+        margin-top: 0.5rem;
+    }
+
+
+}
+
+
+@media screen and (max-width:414px){
+    
+    
+    .container{
+        width: 100%;
+        height: 76vh ;
+    }
+
+
+}
+
+@media screen and (max-width:375px){
+    
+    
+    .container{
+        width: 100%;
+        height: 95vh ;
+    }
+
+
+
+}
+
+@media screen and (max-width:280px){
+
+    .form{
+        background: none;
+    }    
+    
+}
+
+@media screen and (min-height:1368px){
+    
+    
+    .container{
+        width: 60%;
+        height: 80vh ;
+    }
+
+}
+
+@media screen and (min-height:1180px){
+    
+    
+    .container{
+        width: 70%;
+        height: 60vh ;
+    }
+
+    
+
+}
+
+@media screen and (min-height:1024px){
+    
+    
+    .container{
+        width: 80%;
+        height: 60vh ;
+    }
+
+
+}
+
+/*@media screen and (max-width:1211px) {
+    .container{
+        width: 90%;
         height: 85vh;
     }
-}
+
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 10rem;
+        padding-right: 5rem;
+    }
+
+    .gender-inputs{
+        margin-top: 2rem;
+    }
+
+    .gender-group{
+        flex-direction: column;
+    }
+
+    .gender-input{
+        margin-top: 0.5rem;
+    }
+}*/

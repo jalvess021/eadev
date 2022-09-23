@@ -92,11 +92,15 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                                 $total = $end - $start;
                                 
                                 echo "
-                                <a class='d-flex flex-row view-lesson' href='?page=play_video&curso=".$infoCur['sigla_curso']."&aula=".$infoAula['id_aula']."'>
-                                    <i class='bi bi-camera-video cam'></i>
-                                    <p class='name-class'>".$infoAula['tit_aula']."</p>
-                                    <p class='time-class'>00:".gmdate("i", $total).":".gmdate("s", $total)."</p>
-                                    <span class='play'><i class='bi bi-play-circle'></i></span>
+                                <a class='d-flex flex-row justify-content-between view-lesson' href='?page=play_video&curso=".$infoCur['sigla_curso']."&aula=".$infoAula['id_aula']."'>
+                                    <div class='d-flex flex-row'>
+                                        <i class='bi bi-camera-video cam'></i>
+                                        <p class='name-class'>".$infoAula['tit_aula']."</p>
+                                    </div>
+                                    <div class='d-flex flex-row'>
+                                        <p class='time-class'>00:".gmdate("i", $total).":".gmdate("s", $total)."</p>
+                                        <span class='play'><i class='bi bi-play-circle'></i></span>
+                                    </div>
                                 </a>";
                             } 
 

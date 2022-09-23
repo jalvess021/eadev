@@ -97,6 +97,23 @@
     font-weight: 700;
 }
 
+.group-button-1{
+    margin-top: 20px;
+    width: 190px;
+    height: 42px;
+    background-color: #119e9e ;
+    border: 2px solid #119e9e;
+    border-radius: 30px;
+    color: whitesmoke;
+    font-size: 12pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -webkit-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -moz-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    cursor: default !important;
+}
+
 /*div 2*/
 
 .div2{

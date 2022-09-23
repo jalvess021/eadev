@@ -11,6 +11,9 @@
 
 <?php
     require "./base/config.php";
+    //$id_usu = $_SESSION['UsuarioID'];
+
+
     if (isset($_GET['page']) && $_GET['page'] === "play_video") {
         if (isset($_GET['curso'])) {
             $sigla = $_GET['curso'];
@@ -38,7 +41,10 @@
                                         </div>
                                         <h4 class='name-video'>".$infoAula['tit_aula']."</h4>
                                     </div>
-                                    <button class='group-button'>Concluir</button>
+                                    <!--<form action='?page=play_video' method='POST'> 
+                                        <button class='group-button'>Concluir</button>
+                                    </form>-->
+                                    <button class='group-button-1' disabled>Concluída <i class='bi bi-patch-check-fill'></i></button>
                                 </div>
                             </div>
                             <div class='div2'>

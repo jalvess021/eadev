@@ -21,6 +21,7 @@ width: 100vw;
 .all-class{
     width: 58%;
     height: 100vh;
+    background-color: whitesmoke;
 }
 
 .zoom{
@@ -487,7 +488,7 @@ margin-top: 10px;
     background: white;
     margin-top: 30px;
     margin-left: 60px;
-    width: 650px;
+    width: 80%;
     height: 60px;
     background-color: #fff;
     padding: 18px;
@@ -512,12 +513,9 @@ margin-top: 10px;
     margin-top: -1px;
     font-size: 20px;
     color: #949494;
-    align-items: center;
-    
 }
 
 .name-class{
-    align-items: center;
     margin-left: 15px;
     color: #494949;
     font-weight: 500;
@@ -527,7 +525,7 @@ margin-top: 10px;
 .time-class{
     align-items: center;
     margin-top: 4px;
-    margin-left: 180px;
+    /*margin-left: 180px;*/
     color: #949494;
     font-size: 8pt;
     font-weight: 500;
@@ -549,7 +547,7 @@ margin-top: 10px;
     width: 39.7rem;
     size: 10px;
 }
-
+/*
 @media(max-width:1357px) {
     .view-lesson{
         width: 630px;
@@ -704,4 +702,4 @@ margin-top: 10px;
     .line-class{
         width: 29.6rem;
     }
-}
+} */
