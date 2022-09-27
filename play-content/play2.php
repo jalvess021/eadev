@@ -52,27 +52,6 @@
                                     </div>
                                     <div id='area-con'>
                                     </div>
-                                    "; /*
-                                    $resAula = mysqli_query($con, "SELECT * from aula_alu where id_aluno = ".$infoAlu['id_aluno'].";");
-                                    $infoAula2 = mysqli_fetch_array($resAula);
-                                    switch ($infoAula2['status_aula']) {
-                                        case 1:
-                                            echo "
-                                            <form id='form-concluir'>
-                                                <button type='submit' form='form-concluir' class='group-button' id='bt-concluir'>Concluir</button>
-                                            </form> 
-                                                ";
-                                            break;
-                                        
-                                        case 2:
-                                            echo "
-                                            <button class='group-button-1' id='bt-concluido' disabled>Concluída <i class='bi bi-patch-check-fill'></i></button>
-                                            ";
-                                            break;
-                                    } */
-                                    
-                                    
-                                echo "
                                 </div>
                             </div>
                             <div class='div2'>
