@@ -50,7 +50,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         width: 0%;
                     }
                     100%{
-                        width:".$progresso."%;
+                        width:".round($progresso, 1)."%;
                     }
                 }
             </style>
@@ -103,7 +103,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                             <div class='progress-bar-cur'>
                                     <div class='view-class'></div>
                             </div>
-                            <p class='porcent-class'>".$progresso."%</p>
+                            <p class='porcent-class'>".round($progresso, 1)."%</p>
                         </div>
                         <h3 class='content-title-class'>Aulas</h3>
 
