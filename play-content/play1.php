@@ -39,8 +39,11 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
             $numPercentCon = mysqli_num_rows($percentCon);
         
             //Verifica o progresso em porcentagem
-            $progresso = ($numPercentCon * 100) / $numPercentAll;
-        
+            if ($numPercentAll == 0) {
+                $progresso = 0;
+            } else {
+                $progresso = ($numPercentCon * 100) / $numPercentAll;
+            }
             echo "
         
             <style>
