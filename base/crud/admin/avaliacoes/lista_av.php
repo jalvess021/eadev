@@ -104,9 +104,9 @@
 							break;
 					} echo "</td>";
 					echo "<td class='actions btn-group-sm'>";
-					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_aula&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
-					echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_av&edit_aula=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
-					echo "<a href='?content_adm=lista_av&delete_aula=".$info['id_quest']."' class='btn btn-danger btn-xs ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
+					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
+					echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_av&edit_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
+					echo "<a href='?content_adm=lista_av&delete_quest=".$info['id_quest']."' class='btn btn-danger btn-xs ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
 				}
 				echo "</tr></tbody></table>";
 			?>
@@ -165,6 +165,7 @@
 
 <?php
 	require_once 'modal/modal_add.php';
+	require_once 'modal/modal_edit.php';
 ?>
 
 
