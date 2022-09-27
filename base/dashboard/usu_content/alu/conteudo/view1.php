@@ -1,11 +1,14 @@
 <?php
-        $sql1 = "SELECT * FROM formacao order by id_formacao;";
-        $res = mysqli_query($con, $sql1);
 
+    $nivel_necessario = 2;
+    include "base/testa_nivel.php";
+
+    $sql1 = "SELECT * FROM formacao order by id_formacao;";
+    $res = mysqli_query($con, $sql1);
 
 ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 <h3 class="content-title">Conteúdo</h3>
 
     <div class="container">

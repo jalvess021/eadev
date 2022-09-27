@@ -1,3 +1,7 @@
+<?php 
+    $nivel_necessario = 2;
+    include "base/testa_nivel.php";
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +13,6 @@
     <title> Conteúdo | Eadev</title>
 </head>
 <body>
-
 <?php 
 require "./base/config.php";
 if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
@@ -22,6 +25,36 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
         $cur = (int) $infoCur['id_curso'];
 
       if (mysqli_num_rows($sqlCur) > 0) {
+
+            $id_usu = $_SESSION['UsuarioID'];
+            $resAlu = mysqli_query($con, "SELECT * from aluno where id_usu = ".$id_usu.";");
+            $infoAlu = mysqli_fetch_array($resAlu);
+        
+            //Conta todas as aulas que o aluno está inserido
+            $percentAll = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula INNER JOIN modulo m on a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno'].";");
+            $numPercentAll = mysqli_num_rows($percentAll);
+        
+            //Conta todas as aulas que o aluno concluiu
+            $percentCon = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula INNER JOIN modulo m on a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno']." AND aa.status_aula = 2;");
+            $numPercentCon = mysqli_num_rows($percentCon);
+        
+            //Verifica o progresso em porcentagem
+            $progresso = ($numPercentCon * 100) / $numPercentAll;
+        
+            echo "
+        
+            <style>
+                /*Crescimento da barra de progressão*/
+                @keyframes view-class{
+                    0%{
+                        width: 0%;
+                    }
+                    100%{
+                        width:".$progresso."%;
+                    }
+                }
+            </style>
+            ";
 
             //Selecionando as informações dos módulos através do curso
             $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
@@ -70,7 +103,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                             <div class='progress-bar-cur'>
                                     <div class='view-class'></div>
                             </div>
-                            <p class='porcent-class'>75%</p>
+                            <p class='porcent-class'>".$progresso."%</p>
                         </div>
                         <h3 class='content-title-class'>Aulas</h3>
 

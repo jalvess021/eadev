@@ -1,3 +1,10 @@
+<?php 
+    date_default_timezone_set ("America/Sao_Paulo");
+    
+    $nivel_necessario = 2;
+    include "base/testa_nivel.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,6 +16,7 @@
 <body>
         <div class="all-plataform">
             <?php
+                include "base/config.php";
                 include "base/ch_plataforma.php";
                 ?>
         </div>

@@ -1,13 +1,7 @@
 <?php 
     if(isset($_GET['page'] )){
         switch($_GET['page']){
-
-            // Dashboard //
-            
-            /*case 'dashboard':
-                include "dashboard.php";           
-                break;*/
-                
+    
             case 'play_curso':
                 include "play-content/play1.php";           
                 break;

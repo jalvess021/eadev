@@ -1,3 +1,8 @@
+<?php 
+    $nivel_necessario = 2;
+    include "base/testa_nivel.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,9 +15,13 @@
 <body>
 
 <?php
-    require "./base/config.php";
-    //$id_usu = $_SESSION['UsuarioID'];
+    include "./base/crud/atv_usu/atv.php";
+    $id_usu = $_SESSION['UsuarioID'];
+    $resAlu = mysqli_query($con, "SELECT * from aluno where id_usu = ".$id_usu.";");
+    $infoAlu = mysqli_fetch_array($resAlu);
 
+    $resAula = mysqli_query($con, "SELECT * from aula_alu where id_aluno = ".$infoAlu['id_aluno'].";");
+    $infoAula2 = mysqli_fetch_array($resAula);
 
     if (isset($_GET['page']) && $_GET['page'] === "play_video") {
         if (isset($_GET['curso'])) {
@@ -41,10 +50,29 @@
                                         </div>
                                         <h4 class='name-video'>".$infoAula['tit_aula']."</h4>
                                     </div>
-                                    <!--<form action='?page=play_video' method='POST'> 
-                                        <button class='group-button'>Concluir</button>
-                                    </form>-->
-                                    <button class='group-button-1' disabled>Concluída <i class='bi bi-patch-check-fill'></i></button>
+                                    <div id='area-con'>
+                                    </div>
+                                    "; /*
+                                    $resAula = mysqli_query($con, "SELECT * from aula_alu where id_aluno = ".$infoAlu['id_aluno'].";");
+                                    $infoAula2 = mysqli_fetch_array($resAula);
+                                    switch ($infoAula2['status_aula']) {
+                                        case 1:
+                                            echo "
+                                            <form id='form-concluir'>
+                                                <button type='submit' form='form-concluir' class='group-button' id='bt-concluir'>Concluir</button>
+                                            </form> 
+                                                ";
+                                            break;
+                                        
+                                        case 2:
+                                            echo "
+                                            <button class='group-button-1' id='bt-concluido' disabled>Concluída <i class='bi bi-patch-check-fill'></i></button>
+                                            ";
+                                            break;
+                                    } */
+                                    
+                                    
+                                echo "
                                 </div>
                             </div>
                             <div class='div2'>
@@ -86,158 +114,38 @@
         }
         
     }
+
+    $aulaAlu = mysqli_query($con, "SELECT * from aula_alu where id_aluno = ".$infoAlu['id_aluno']." and id_aula= ".$_GET['aula'].";");
+    $infoAulaAlu = mysqli_fetch_array($aulaAlu);
+
 ?>
-
-<!--
-<div class="d-flex flex-row background">
-
-        
-            <div class="div1">
-                <iframe src="https://www.youtube-nocookie.com/embed/DjOSM72cYac?&theme=dark&autohide=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&start=180" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-                <div class="d-flex flex-row group-down">
-            
-                    <div class="col">
-                        <div class="d-flex flex-row group-cur">
-                            <p class="sg-cur">Html</p>
-                            <i class="bi bi-chevron-right"></i>
-                            <p class="int-cur">HiperText Markup Language</p>
-                        </div>
-                        <h4 class="name-video">Formatos de vídeo para o seu site</h4>
-                    </div>
-                    <button class="group-button">Concluir</button>
-                </div>
-            </div>
-        
-
-        <div class="div2">
-
-            <h4 class="title-view">HiperText Markup Language</h4>
-
-            <p class="subtitle-view">Com Gustavo Guanabara</p>
-
-            <p class="text-view">TML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.</p>
-            
-            <hr class="line-view">
-
-            <div class="all-cur-view">
-                <h4 class="subtitle-view2">Módulo 1</h4>
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <h4 class="subtitle-view2">Módulo 2</h4>
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <h4 class="subtitle-view2">Módulo 3</h4>
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-
-                <div class=" d-flex flex-row cur-view">
-                    <i class="bi bi-camera-video cam-view"></i>
-                    <p class="name-cur-view">Formatos de vídeo para o seu site</p>
-                    <a href="?page=play_video" class="play-view"><i class="bi bi-play-circle "></i></a>
-                </div>
-            </div>
-
-        </div>
-
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 <script> 
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        setInterval(() => {
+            if (<?php echo $infoAulaAlu['status_aula'];?> === 1 && $("#form-concluir").html() == null) {
+                $('#area-con').html("<form id='form-concluir'><button type='submit' form='form-concluir' class='group-button' id='bt-concluir'>Concluir</button></form>");
+                $('#form-concluir').submit((e) => {
+                    e.preventDefault();
+                    location.reload();
+                $.ajax({
+                        url: '/tcc/play-content/aula_alu/control.php',
+                        method: 'POST',
+                        data: { 
+                                usuario: <?php echo $id_usu;?>,
+                                aluno: <?php echo $infoAlu['id_aluno'];?>,
+                                aula: <?php echo $_GET['aula'];?>
+                        },
+                        dataType: 'json'
+                    })
+        }); 
+            } else if (<?php echo $infoAulaAlu['status_aula'];?> === 2 && $("#bt-concluido").html() == null){
+                $('#area-con').html("<button class='group-button-1' id='bt-concluido' disabled>Concluída <i class='bi bi-patch-check-fill'></i></button>");
+            }
+        }, 0); 
 </script> 
 </html>

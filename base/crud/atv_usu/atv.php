@@ -9,7 +9,7 @@ function atvAdm($adm, $atv, $id_usu){
 
 function atvAlu($alu, $atv, $id_alu){
 	
-	$log_atv  = "insert into atv_alu values ";
+	$log_atv  = "insert into atv_aluno values ";
 	$log_atv .= "('0', '$alu', '$atv', now(), '$id_alu');";
 	
     return $log_atv;

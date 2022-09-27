@@ -417,6 +417,8 @@ margin-top: 10px;
     animation: view-class 1.6s ease-in-out forwards;
 }
 
+/*
+feito em php
 @keyframes view-class{
 
     0%{
@@ -431,6 +433,7 @@ margin-top: 10px;
         width: 75%;
     }
 }
+*/
 
 .porcent-class{
     margin-top: -5px;
@@ -547,159 +550,3 @@ margin-top: 10px;
     width: 39.7rem;
     size: 10px;
 }
-/*
-@media(max-width:1357px) {
-    .view-lesson{
-        width: 630px;
-        padding: 5px;
-        align-items: center;
-    }
-    .cam{
-        align-items: center;
-    }
-
-    .name-class{
-        align-items: center;
-        margin-top: 12px;
-    }
-
-    .time-class{
-        align-items: center;
-        margin-top: 15px;
-    }
-
-    .play{
-        align-items: center;
-        margin-top: 4px;
-    
-    }
-    .line-class{
-        width: 38.9rem;
-    }
-}
-
-@media(max-width:1321px) {
-    .view-lesson{
-        width: 600px;
-        height: 70px;
-        padding: 10px;
-        align-items: center;
-    }
-    .cam{
-        align-items: center;
-    }
-
-    .name-class{
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .time-class{
-        align-items: center;
-        margin-top: 22px;
-    }
-
-    .play{
-        align-items: center;
-        margin-top: 4px;
-    
-    }
-    .line-class{
-        width: 37.1rem;
-    }
-}
-
-
-
-@media(max-width:1260px) {
-    .view-lesson{
-        width: 530px;
-        padding: 10px;
-        align-items: center;
-    }
-    .cam{
-        align-items: center;
-    }
-
-    .name-class{
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .time-class{
-        align-items: center;
-        margin-top: 22px;
-    }
-
-    .play{
-        align-items: center;
-        margin-top: 4px;
-    
-    }
-    .line-class{
-        width: 32.6rem;
-    }
-}
-
-@media(max-width:1138px) {
-    .view-lesson{
-        width: 500px;
-        padding: 10px;
-        align-items: center;
-    }
-    .cam{
-        align-items: center;
-    }
-
-    .name-class{
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .time-class{
-        align-items: center;
-        margin-top: 22px;
-    }
-
-    .play{
-        align-items: center;
-        margin-top: 4px;
-    
-    }
-
-    .line-class{
-        width: 30.7rem;
-    }
-}
-
-@media(max-width:1109px) {
-    .view-lesson{
-        width: 480px;
-        padding: 10px;
-        align-items: center;
-    }
-    .cam{
-        align-items: center;
-    }
-
-    .name-class{
-        align-items: center;
-        margin-top: 20px;
-        
-    }
-
-    .time-class{
-        align-items: center;
-        margin-top: 22px;
-    }
-
-    .play{
-        align-items: center;
-        margin-top: 4px;
-    
-    }
-
-    .line-class{
-        width: 29.6rem;
-    }
-} */
