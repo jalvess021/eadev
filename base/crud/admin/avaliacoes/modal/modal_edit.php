@@ -26,7 +26,7 @@ if (isset($_GET['edit_quest'])) {
                     <div class='row justify-content-around'>
                         <div class='form-group col-2'>
                             <label for='recipient-name' class='col-form-label'>Id:</label> 
-                            <input type='text' class='form-control form-control-sm read' value='". $row['id_quest'] ."' readonly>
+                            <input type='text' class='form-control form-control-sm read' name='id_quest' value='". $row['id_quest'] ."' readonly>
                         </div>
                         <div class='form-group col-2'>
                                         <label for='recipient-name' class='col-form-label'>Formação:</label>
@@ -53,18 +53,41 @@ if (isset($_GET['edit_quest'])) {
                         </div>
                         <div class='form-group col-3'>
                             <label for='recipient-name' class='col-form-label'>Dificuldade da questão:</label>
-                            <select class='form-control custom-select custom-select-sm form-add' name='dificuldade' id='selectModulo'> 
-                                            <option value='all' title='todas' selected disabled>Escolha a dificuldade</option> 
-                                            <option value='1' title='Fácil'>Fácil</option> 
-                                            <option value='2' title='Média'>Média</option> 
-                                            <option value='3' title='Difícil'>Difícil</option> 
+                            <select class='form-control custom-select custom-select-sm form-add' name='dificuldade' id='selectModulo'>";
+                                            switch ($row['grau_dificuldade']) {
+                                                case 1:
+                                                    echo "<option value='1' title='Fácil' selected>Fácil</option> ";
+                                                    echo "<option value='2' title='Média'>Média</option> ";
+                                                    echo "<option value='3' title='Difícil'>Difícil</option> ";
+                                                    break;
+                                                
+                                                case 2:
+                                                    echo "<option value='1' title='Fácil'>Fácil</option> ";
+                                                    echo "<option value='2' title='Média' selected>Média</option> ";
+                                                    echo "<option value='3' title='Difícil'>Difícil</option> ";
+                                                    break;
+
+                                                case 3:
+                                                    echo "<option value='1' title='Fácil'>Fácil</option> ";
+                                                    echo "<option value='2' title='Média'>Média</option> ";
+                                                    echo "<option value='3' title='Difícil' selected>Difícil</option> ";
+                                                    break;
+
+                                                default:
+                                                    echo "<option value='all' title='todas' selected disabled>Escolha a dificuldade</option>";
+                                                    echo "<option value='1' title='Fácil'>Fácil</option> ";
+                                                    echo "<option value='2' title='Média'>Média</option> ";
+                                                    echo "<option value='3' title='Difícil'>Difícil</option> ";
+                                                    break;
+                                            }   
+                        echo "
                             </select>
                         </div>
                     </div>
                     <div class='row'>
                             <div class='form-group col-12'>
                             <label for='recipient-name' class='col-form-label'>Enunciado:</label>  
-                            <textarea class='form-control form-control-sm form-add' id='form-add5' name='enunciado' placeholder='Digite aqui...' rows='2' required></textarea>
+                            <textarea class='form-control form-control-sm form-add' id='form-add5' name='enunciado' placeholder='Digite aqui...' rows='2' required>".$row['enunciado_quest']."</textarea>
                             <span class='info-min'>Min. 50 caractéres</span>
                             </div>
                     </div>
@@ -73,7 +96,7 @@ if (isset($_GET['edit_quest'])) {
                         <div class='form-group col-12'>
                             <label for='recipient-name' class='col-form-label'>Alternativas:</label>
                             <div class='input-group input-group-sm mt-2'>
-                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='correta' placeholder='Informe a alternativa correta...' required autocomplete='off'>
+                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='correta' placeholder='Informe a alternativa correta...' value='".$row['opc_certa']."' required autocomplete='off'>
                                 <div class='input-group-append'>
                                     <button type='button' class='btn btn-success'><i class='bi bi-check-all'></i></button>
                                 </div>
@@ -83,7 +106,7 @@ if (isset($_GET['edit_quest'])) {
                     <div class='row'>
                         <div class='form-group col-12'>
                             <div class='input-group input-group-sm'>
-                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='incorreta1' placeholder='Informe a alternativa incorreta...' required autocomplete='off'>
+                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='incorreta1' placeholder='Informe a alternativa incorreta...' value='".$row['opc_errada1']."' required autocomplete='off'>
                                 <div class='input-group-append'>
                                     <button type='button' class='btn btn-danger'><i class='bi bi-check-all'></i></button>
                                 </div>
@@ -93,7 +116,7 @@ if (isset($_GET['edit_quest'])) {
                     <div class='row'>
                         <div class='form-group col-12'>
                             <div class='input-group input-group-sm'>
-                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='incorreta2' placeholder='Informe a alternativa incorreta...' required autocomplete='off'>
+                                <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='incorreta2' placeholder='Informe a alternativa incorreta...' value='".$row['opc_errada2']."' required autocomplete='off'>
                                 <div class='input-group-append'>
                                     <button type='button' class='btn btn-danger'><i class='bi bi-check-all'></i></button>
                                 </div>
@@ -103,7 +126,7 @@ if (isset($_GET['edit_quest'])) {
                 </div>
                 <div id='actions' class='modal-footer d-flex justify-content-center'>
                         <a href='?content_adm=lista_av' class='btn btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
-                        <button type='submit' class='btn bt-padrao' id='attEditMod'>Atualizar <i class='bi bi-check-all'></i></button>
+                        <button type='submit' class='btn bt-padrao' id='attEditAv'>Atualizar <i class='bi bi-check-all'></i></button>
                 </div>
               </form>
             </div>

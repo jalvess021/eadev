@@ -166,6 +166,7 @@
 <?php
 	require_once 'modal/modal_add.php';
 	require_once 'modal/modal_edit.php';
+	require_once 'modal/modal_delete.php';
 ?>
 
 

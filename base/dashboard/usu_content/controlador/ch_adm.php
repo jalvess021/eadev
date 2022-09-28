@@ -123,6 +123,14 @@ if(isset($_GET['content_adm'])) {
                 case 'insere_av':
                     include "base/crud/admin/avaliacoes/insere_av.php";
                     break;
+
+                case 'atualiza_av':
+                    include "base/crud/admin/avaliacoes/atualiza_av.php";
+                    break;
+                
+                case 'delete_av':
+                    include "base/crud/admin/avaliacoes/excluir_av.php";
+                    break;
 }       
 }  
 else {
