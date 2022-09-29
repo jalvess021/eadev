@@ -97,7 +97,6 @@ width: 100vw;
 
 .number-cur{
     margin-top: 18px;
-    margin-left: 48px;
     color: #bebebe;
     font-weight: 600;
     font-size: 10pt;
@@ -116,22 +115,22 @@ width: 100vw;
     margin-bottom: 8px;
     margin-left: 30px;
     border: 1px solid #0feeee ;
-    width: 28rem;
+    width: 90%;
     size: 10px;
 }
 
 .icon-cur{
     margin-top: 18px;
-    margin-left: 30px;
+    margin-left: px;
     color: #ffffff;
 }
 
 .av-cur{
     margin-top: 18px;
-    margin-left: 215px;
     color: whitesmoke;
     font-weight: 600;
     font-size: 10pt;
+    margin-left: 250px;
 }
 
 
@@ -156,223 +155,7 @@ width: 100vw;
     }
 }
 
-@media(max-width:1199px){
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 27rem;
-        size: 10px;
-    }
-    
-    .icon-cur{
-        margin-top: 18px;
-        margin-left: 30px;
-        color: #ffffff;
-    }
 
-    .av-cur{
-        font-weight: 600;
-        font-size: 9pt;
-    }
-
-    
-}
-
-@media(max-width:1167px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 26.8rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 240px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-        
-    }
-
-    
-}
-
-@media(max-width:1138px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 25.8rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-    }
-
-    .number-cur{
-        font-size: 9pt;
-    }
-
-    .quant-cur{
-        font-size: 9pt;
-    }
-}
-
-@media(max-width:1109px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 25rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-    }
-
-    .number-cur{
-        font-size: 8.5pt;
-    }
-
-    .quant-cur{
-        font-size: 8.5pt;
-    }
-}
-
-@media(max-width:1098px){
-
-    .info-cur{
-        margin-top: 10rem;
-    }
-}
-
-@media(max-width:1089px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 24.8rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-    }
-
-    .number-cur{
-        font-size: 8pt;
-    }
-
-    .quant-cur{
-        font-size: 8pt;
-    }
-}
-
-@media(max-width:1079px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 24.8rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-    }
-
-    .number-cur{
-        font-size: 8pt;
-    }
-
-    .quant-cur{
-        font-size: 8pt;
-    }
-}
-
-@media(max-width:1071px){
-
-    .line{
-        margin-top: 20px;
-        margin-bottom: 8px;
-        margin-left: 30px;
-        border: 1px solid #0feeee ;
-        width: 24.8rem;
-        size: 10px;
-    }
-
-    .icon-cur{
-        margin-left: 30px;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .av-cur{
-        font-weight: 600;
-        font-size: 10pt;
-    }
-
-    .number-cur{
-        font-size: 8pt;
-    }
-
-    .quant-cur{
-        font-size: 8pt;
-    }
-}
-
-@media(max-height:727px){
-    .info-cur{
-        margin-top: 12rem;
-    }
-}
 
 /*div 2*/
 
@@ -401,7 +184,7 @@ margin-top: 10px;
 .progress-bar-cur{
     margin-left: 60px;
     background: #c9c9c9;
-    width: 550px;
+    width: 70%;
     height: 8px;
     border-radius: 15px;
 }
@@ -550,3 +333,253 @@ feito em php
     width: 39.7rem;
     size: 10px;
 }
+
+@media(min-width:1300px){
+
+    .info-cur{
+        margin-top: 13rem !important;
+        
+    }
+
+
+}
+
+@media(max-width:1297px){
+    
+    .info-cur{
+        margin-top: 12rem !important;
+        
+    }
+    
+
+    
+}
+
+@media(max-width:1211px){
+    
+    
+    .icon-cur{
+        margin-top: 18px;
+        color: #ffffff;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 9pt;
+    }
+
+    
+}
+
+@media(max-width:1179px){
+
+    
+
+    .icon-cur{
+        color: #ffffff;
+        width: 240px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+        margin-left: -20px;
+        
+    }
+    
+    .quant-cur{
+        margin-top: 18px;
+        margin-left: 120px;
+        color: #bebebe;
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    
+}
+
+@media(max-width:1179px){
+
+    
+
+    .icon-cur{
+        color: #ffffff;
+        width: 240px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+        margin-left: -20px;
+        
+    }
+    
+    .quant-cur{
+        margin-top: 18px;
+        margin-left: 120px;
+        color: #bebebe;
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    
+}
+
+@media(max-width:1138px){
+
+    .icon-cur{
+        color: #ffffff;
+        width: 190px;
+    }
+
+    .av-cur{
+        font-weight: 600;
+        font-size: 10pt;
+    }
+
+    .number-cur{
+        font-size: 9pt;
+    }
+
+    .quant-cur{
+        font-size: 9pt;
+    }
+}
+
+@media(max-width:1102px){
+
+    .icon-cur{
+        color: #ffffff;
+        width: 180px;
+    }
+}
+
+@media(max-width:1046px){
+
+    .info-cur{
+        margin-top: 9rem !important;
+        
+    }
+}
+
+@media(max-width:969px){
+
+    .info-cur{
+        margin-top: 9rem !important;
+        
+    }
+
+    .description-cur{
+        font-size: 11pt;
+    }
+
+    .line{
+        margin-left: 12px;
+    }
+
+    .quant-cur{
+        margin-left: 60px;
+    }
+}
+
+@media(max-width:811px){
+
+    .info-cur{
+        margin-top: 7rem !important;
+        
+    }
+    
+}
+
+/*altura*/
+
+@media(min-height:1070px){
+
+    .back{
+        width: 180px;
+        height: 60px;
+        font-size: 16pt;
+        border-radius: 40px;
+    }
+
+    .info-cur{
+        margin-top: 25rem !important;
+        width: 140px;
+        height: 60px;
+        font-size: 14pt;
+        border-radius: 40px;
+        
+    }
+
+    .title-cur{
+        font-size: 30pt;
+    }
+
+    .description-cur{
+        font-size: 17pt;
+    }
+
+    .person-cur{
+        font-size: 15pt;
+    }
+
+    .number-cur{
+        font-size: 14pt;
+    }
+
+    .quant-cur{
+        font-size: 14pt;
+    }
+    
+    .av-cur{
+        font-size: 15pt;
+    }
+
+    .icon-cur{
+        font-size: 15pt;
+    }
+
+    .title-class1{
+        font-size: 18pt;
+    }
+
+    .porcent-class{
+        font-size: 12pt;
+    }
+
+    .title-class2{
+        font-size: 18pt ;
+    }
+
+    .cam{
+        font-size: 30px;
+        margin-top: -8px;
+    }
+
+    .name-class{
+        font-size: 16pt;
+    }
+
+    .time-class{
+        font-size: 14pt;
+    }
+    .play{
+        font-size: 40px;
+    }
+
+    .all-aula{
+        margin-top: 30px;
+        height: 70%;
+        display: block;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .all-aula::-webkit-scrollbar {
+        display: none;
+        }
+}
+
+
+
+

@@ -80,7 +80,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         <h2 class='title-cur'>".$infoCur['nome_curso']."</h2>
                         <p class='description-cur'>".$infoCur['desc_curso']."</p>
                         <p class='person-cur'>Preparado por: Eadev</p>
-                        <div class='d-flex flex-row'>
+                        <div class=' group-mod d-flex flex-row justify-content-around '>
                             <p class='number-cur'><i class='bi bi-layers-fill'></i> ".$row1[0]; echo ($row1[0] <= 1) ? " Módulo" : " Módulos"; echo "</p>";
                             echo "
                             <p class='quant-cur'><i class='bi bi-collection-play-fill '></i> ".$row2[0];  echo($row2[0] <= 1) ? ' Aula' : ' Aulas'; echo "</p>
@@ -88,7 +88,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                         </div>
 
                         <hr noshade='noshade' class='line'>
-                        <div class='d-flex flex-row'>
+                        <div class='group-star d-flex flex-row justify-content-around'>
                             <div class='icon-cur'>
                                 <i class='bi bi-star icon-star'></i>
                                 <i class='bi bi-star icon-star'></i>

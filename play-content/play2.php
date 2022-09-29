@@ -72,7 +72,7 @@
                                     $sqlAula1 = mysqli_query($con, "SELECT * from aula where id_mod = ".$infoMod['id_mod'].";");
                                         while ($infoAula1 = mysqli_fetch_array($sqlAula1)) {
                                             echo "
-                                            <div class='d-flex flex-row cur-view'>
+                                            <div class='d-flex flex-row justify-content-between cur-view'>
                                                 <i class='bi bi-camera-video cam-view'></i> ";
                                                  echo (strlen($infoAula1['tit_aula']) <= 31) ? "<p class='name-cur-view'> ".$infoAula1['tit_aula']."</p>" : 
                                                  "<p class='name-cur-view' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='".$infoAula1['tit_aula']."'> ".substr($infoAula1['tit_aula'], 0, 25).'... </p>'; 
