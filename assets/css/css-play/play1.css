@@ -334,6 +334,8 @@ feito em php
     size: 10px;
 }
 
+
+
 @media(min-width:1277px){
 
     
@@ -505,6 +507,72 @@ feito em php
 
 /*altura*/
 
+@media(min-height:1506px){
+
+    .back{
+        margin-bottom: 25rem !important;
+    }
+
+    .info-cur{
+        
+        width: 140px;
+        height: 60px;
+        font-size: 14pt;
+        border-radius: 40px;
+        
+    }
+
+    .title-cur{
+        font-size: 40pt;
+    }
+
+    .description-cur{
+        font-size: 35pt;
+        margin-left: 5%;
+    }
+
+    .person-cur{
+        font-size: 22pt;
+        margin-left: 5%;
+    }
+
+    .group-mod{
+        margin-top: 3rem;
+    }
+
+    .number-cur{
+        font-size: 22pt;
+    }
+
+    .quant-cur{
+        font-size: 22pt;
+    }
+    
+    .av-cur{
+        font-size: 22pt;
+    }
+
+    .icon-cur{
+        font-size: 22pt;
+    }
+
+    .all-aula{
+        margin-top: 30px;
+        height: 80%;
+        display: block;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .all-aula::-webkit-scrollbar {
+        display: none;
+        }
+
+
+}
+
+
+
 @media(min-height:1070px){
 
     .back{
@@ -596,6 +664,32 @@ feito em php
     .all-aula::-webkit-scrollbar {
         display: none;
         }
+}
+
+@media(min-height:1004px){
+
+    
+
+
+    .title-cur{
+        font-size: 30pt;
+    }
+
+    .description-cur{
+        font-size: 18pt;
+        margin-left: 5%;
+    }
+
+    
+}
+
+@media(min-height:900px){
+
+    .back{
+        margin-bottom: 11rem;
+    }
+
+   
 }
 
 

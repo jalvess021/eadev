@@ -399,3 +399,28 @@
     
 }
 
+@media(min-height:900px){
+
+    .div1 iframe{
+        width: 100%;
+        height: 90%;
+    }
+
+    .group-cur{
+        margin-top: 80px;
+    }
+
+    .group-button{
+        margin-top: 80px;
+    }
+
+    .group-button-1{
+        margin-top: 80px;
+    }
+
+
+    
+
+   
+}
+
