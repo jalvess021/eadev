@@ -233,3 +233,169 @@
     color: #097777;
 }
 
+
+@media(min-width:1768px){
+    .div1 iframe{
+        margin-left: 4%;
+        width: 90%;
+        height: 100%;
+    }
+
+    
+}
+
+@media(max-width:1214px){
+    .div1 iframe{
+        width: 100%;
+        height: 95%;
+    }
+
+    .group-cur{
+        margin-top: 40px;
+    }
+
+    .group-button{
+        margin-top: 40px;
+    }
+
+    .group-button-1{
+        margin-top: 40px;
+    }
+}
+
+@media(max-width:1073px){
+    .div1 iframe{
+        margin-top: 30px;
+        width: 100%;
+        height: 80%;
+    }
+
+    .group-cur{
+        margin-top: 100px;
+    }
+
+    .group-button{
+        margin-top: 100px;
+    }
+
+    .group-button-1{
+        margin-top: 100px;
+    }
+}
+
+@media(max-width:968px){
+    .div1 iframe{
+        margin-top: 80px;
+        width: 100%;
+        height: 70%;
+    }
+
+    .group-cur{
+        margin-top: 120px;
+    }
+
+    .group-button{
+        margin-top: 120px;
+    }
+
+    .group-button-1{
+        margin-top: 120px;
+    }
+
+    .all-cur-view{
+        height: 58%;
+    }
+
+    .div2{
+        width: 30%;
+    }
+}
+
+/*altura*/
+
+@media(min-height:1070px){
+
+    .group-cur{
+        margin-top: 60px;
+        margin-left: 4%;
+    }
+
+    .group-button{
+        margin-top: 70px;
+    }
+
+    .group-button-1{
+        margin-top: 70px;
+        margin-right: 50px;
+        width: 300px;
+        height: 60px;
+        font-size: 16pt;
+    }
+
+    .sg-cur{
+        font-size: 16pt;
+    }
+
+    .arrow-right{
+        margin-top: 5px;
+        font-size: 100px;
+    }
+
+    .int-cur{
+        font-size: 16pt;
+    }
+
+    .group-cur i{
+        font-size: 14pt;
+    }
+
+    .name-video{
+        margin-top: 3px;
+        font-size: 22pt;
+        margin-left: 4%;
+    }
+
+    .div2{
+        width: 30%;
+    }
+
+    .title-view{
+        font-size: 20pt;
+    }
+    
+    .subtitle-view{ 
+        font-size: 16pt;
+    }
+    
+    .text-view{
+        font-size: 15pt;
+    }
+
+    .all-cur-view{
+        height: 60%;
+    }
+
+    .cur-view{
+        height: 95px;
+        
+    }
+
+    .cam-view{
+        font-size: 25pt;
+        margin-top: 2px;
+        
+    }
+    
+    .name-cur-view{
+        font-size: 16pt;
+        margin-top: 8px;
+    }
+    
+    .play-view{    
+        font-size: 35pt;
+        
+    }
+
+    
+}
+

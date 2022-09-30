@@ -102,9 +102,9 @@
                 <div class="footer-col">
                     <h4>Plataforma</h4>
                     <ul>
-                        <li><a href="#">Lorem</a></li>
-                        <li><a href="#">Lorem</a></li>
-                        <li><a href="#">Lorem</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Equipe</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

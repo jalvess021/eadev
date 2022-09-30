@@ -334,6 +334,18 @@ feito em php
     size: 10px;
 }
 
+@media(min-width:1277px){
+
+    
+
+
+    .av-cur{ 
+        margin-left: 20px; 
+    }
+
+
+}
+
 @media(min-width:1300px){
 
     .info-cur{
@@ -517,10 +529,12 @@ feito em php
 
     .description-cur{
         font-size: 17pt;
+        margin-left: 5%;
     }
 
     .person-cur{
         font-size: 15pt;
+        margin-left: 5%;
     }
 
     .number-cur{
@@ -549,6 +563,10 @@ feito em php
 
     .title-class2{
         font-size: 18pt ;
+    }
+
+    .view-lesson{
+        height: 70px;
     }
 
     .cam{

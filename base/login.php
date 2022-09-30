@@ -17,6 +17,7 @@
               <input type="password" placeholder="Senha" name="senha" class="mb-5" required>
               <input type="submit">
               <a href="#" class="mt-4">Esqueceu a senha ?</a>
+              <a href="?page=cadastro" class="mt-2">Cadastre-se</a>
              </form>
            </div>
         </div>
