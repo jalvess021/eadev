@@ -52,9 +52,14 @@ $l = mysqli_fetch_array($r);
                        echo           "</select>
                                     </div>
                                 </div>
-                                <div class='custom-file'>
-                                    <input type='file' class='custom-file-input' id='customFile' accept='image/jpeg' name='imagem'>
-                                    <label class='custom-file-label' for='customFile' data-browse='Nenhum arquivo escolhido'>Imagem do curso</label>
+                                <div class='input-group mb-3'>
+                                    <div class='input-group-prepend del-img-cur'>
+                                    </div>
+                                    <div class='custom-file'>
+                                        <input type='file' id='imgCur' class='custom-file-input' id='customFile' accept='image/jpeg' name='imagem'>
+                                        <label class='custom-file-label' id='labelImg' for='customFile' data-browse='Nenhum arquivo escolhido!'>Imagem do curso</label>
+                                    </div>
+                                    
                                 </div>
                                 <div class='row'>
                                     <div class='form-group col-12'>
@@ -77,4 +82,5 @@ $l = mysqli_fetch_array($r);
 
 require_once "scriptAdd.php";
 ?>
+
 

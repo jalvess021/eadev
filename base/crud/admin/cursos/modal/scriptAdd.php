@@ -98,7 +98,19 @@
                                         }else{
                                             btnAdd.setAttribute('disabled', true);
                                         }
-                            });              
+                            });     
+                            $('#imgCur').change(() => {
+                                if ($('#imgCur').val() != '') {
+                                    $('#labelImg').attr('data-browse', 'Arquivo pronto!');
+                                    $('#labelImg').html($('#imgCur').val());
+                                    $('.del-img-cur').html("<span class='input-group-text bg-dark'><i class='bi bi-check-all text-white'></i></span>");
+                                }else{
+                                    $('#labelImg').attr('data-browse', 'Nenhum arquivo escolhido!');
+                                    $('#labelImg').html('Imagem do curso');
+                                    $('.del-img-cur').html('');
+                                }
+                            })
+                              
                 }
-    
+                        
 </script>
