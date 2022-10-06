@@ -33,7 +33,7 @@ $sql5 = "insert into matriculado values (0, NOW(), 1, ". $info2[0] ."); ";
 $res5 = mysqli_query($con, $sql5) or die(mysqli_error($con));
 
 //Inserindo valores na tabela relacional aula_alu
-$sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1 from aula AS a ORDER BY a.id_aula;';
+$sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1, NULL from aula AS a ORDER BY a.id_aula;';
 $res6 = mysqli_query($con, $sql6); 
 
 

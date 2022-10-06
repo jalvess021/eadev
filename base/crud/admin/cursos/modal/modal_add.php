@@ -20,7 +20,7 @@ $l = mysqli_fetch_array($r);
                         <small class='text-center'>
                                     <p> | <strong class='text-muted'>Data de Cadastro -</strong> ".date('d.m.Y')." | </p>
                             </small>
-                        <form action='?content_adm=insere_cur' method='post'>
+                        <form action='?content_adm=insere_cur' method='post' enctype='multipart/form-data'>
                             <div class='modal-form'>
 
                                 <div class='row'>
@@ -53,7 +53,7 @@ $l = mysqli_fetch_array($r);
                                     </div>
                                 </div>
                                 <div class='custom-file'>
-                                    <input type='file' class='custom-file-input' id='customFile' accept='image/gif, image/jpeg'>
+                                    <input type='file' class='custom-file-input' id='customFile' accept='image/jpeg' name='imagem'>
                                     <label class='custom-file-label' for='customFile' data-browse='Nenhum arquivo escolhido'>Imagem do curso</label>
                                 </div>
                                 <div class='row'>

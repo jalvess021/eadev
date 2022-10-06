@@ -19,19 +19,11 @@
                     
                     <li class="submenu">
                         <a href="#"></span><i class="bi bi-code-slash"></i><span> Desafios </span> <span class="menu-arrow"></span> </a>
-                            <ul class="list-unstyled">								
-                                
-                            </ul>
+                            
                     </li>
                     
                     <li class="submenu">
-                        <a href="#"></span><i class="bi bi-list-check"></i><span> Avaliações </span> <span class="menu-arrow"></span> </a>
-                            <ul class="list-unstyled">								
-                                <li><a href="#"><i class="bi bi-front"></i>Front-End</a></li>
-                                <li><a href="#"><i class="bi bi-back"></i>Back-End</a></li>
-                                <li><a href="#"><i class="bi bi-git"></i>Git & GitHub</a></li>
-                                
-                            </ul>
+                        <a href="#"></span><i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>       
 
 					<li class="submenu">

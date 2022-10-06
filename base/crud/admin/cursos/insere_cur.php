@@ -8,8 +8,6 @@
     $sigla              = $_POST['sigla_curso'];
     $descricao         = $_POST["desc_curso"];
     $formacao           = $_POST["formacao"];
-  
-   
 
     $sql1 = "insert into curso values ";
     $sql1 .= "(0, '".$curso."', '".$sigla."', '".$descricao."', NOW(), NULL, '".$formacao."');";
@@ -23,16 +21,26 @@
     $sql3 .="(0, ". $info1[0] .", ". $formacao .");";
     $res3 = mysqli_query($con, $sql3) or die(mysqli_error());
 
-    if($res1 && $res2 && $res3){
-
-        $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
-        if ($usu_atv) {
-            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
-            mysqli_close($con);
-        }else{
-            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
-            mysqli_close($con);
+        //imagem do curso
+        $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
+        if ($extensao == 'jpeg') {
+            $extensao = strtolower(substr($_FILES['imagem']['name'], -5));
         }
-        
+        //criptografa a sigla/id
+        $novoNome = md5($sigla.$info1[0]).$extensao;
+        $diretorio = 'imagens/';
+        $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
+        $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
+
+    if($res1 && $res2 && $res3 && $res4){
+            
+                $usu_atv1 = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));
+                if ($usu_atv1 && $usu_atv2) {
+                    header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
+                    mysqli_close($con);
+                }else{
+                    header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
+                    mysqli_close($con);
+                }
     }
 ?>

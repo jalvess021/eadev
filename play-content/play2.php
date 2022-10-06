@@ -55,7 +55,10 @@
                                 </div>
                             </div>
                             <div class='div2'>
-                                <h4 class='title-view'>".$infoCur['nome_curso']."</h4>
+                                <a href='?page=play_curso&curso=".$infoCur['sigla_curso']."' class='back-cur' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Voltar p/ área do curso'>
+                                    <h4 class='title-view'>
+                                    <i class='bi bi-arrow-bar-left'></i>".$infoCur['nome_curso']."</h4>
+                                </a>
                                 <p class='subtitle-view'> Vídeo aula - ( Via Youtube )</p>
                                 <p class='text-view'>".$infoCur['desc_curso']."</p>
                                 <hr class='line-view'>
