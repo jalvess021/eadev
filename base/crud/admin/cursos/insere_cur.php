@@ -32,15 +32,16 @@
         $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
         $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
 
-    if($res1 && $res2 && $res3 && $res4){
+    if($res1 && $res2 && $res3 && $upload){
             
                 $usu_atv1 = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));
-                if ($usu_atv1 && $usu_atv2) {
+                if ($usu_atv1) {
                     header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
                     mysqli_close($con);
                 }else{
                     header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
                     mysqli_close($con);
                 }
+                
     }
 ?>
