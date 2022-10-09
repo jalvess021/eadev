@@ -9,11 +9,8 @@
       $sql1 = mysqli_query($con, "SELECT * from aluno;");
       $row1 = mysqli_num_rows($sql1);
       
-
       $sql2 = mysqli_query($con, "SELECT * from usuario where nvl_acesso = 3;");
       $row2 = mysqli_num_rows($sql2);
-
-
 
       $usu = array (
          'tempo' => $data,

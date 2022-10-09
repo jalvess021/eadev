@@ -10,7 +10,7 @@
     $sql2 = mysqli_query($con, "SELECT * from atv_adm where atv like '%\update%';");
     $row2 = mysqli_num_rows($sql2);
 
-    $sql3 = mysqli_query($con, "SELECT * from atv_adm where atv like '%\delete from%';");
+    $sql3 = mysqli_query($con, "SELECT * from atv_adm where atv like '%\delete%';");
     $row3 = mysqli_num_rows($sql3);
 
     $atv = array(

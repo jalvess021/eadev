@@ -9,26 +9,14 @@
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand cons-adm" href="?content_adm=consulta_adm"><i class="bi bi-person-lines-fill"></i> Administradores</a>
             <form class="form-inline" id="pesq-adm" action="?content_adm=consulta_adm" method="POST">
-                <input class="form-control mr-sm-2 search-usu" type="search" id="search-adm" placeholder="Nome ou ID" aria-label="Search">
+                <input class="form-control mr-sm-2 search-usu" type="search" id="search-adm" placeholder="Nome ou ID" aria-label="Search" autocomplete='off'>
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>
         </nav>  
 				<hr>
 		</div>
 		<div class="all-table-body cons-body" id='cons-main-adm'>
-			<div class="div-num-adm">
-                <span id="num-cons-adm"></span>
-                <h5 id="label-cons-adm"></h5>
-            </div>
-            <div class="div-info-adm">
-                    <h4 class="info-cons-title"> Total de atividades: <span id="num-cons-title"></span></h4>
-                    <div class="grid-cons">
-                        <a class="h6" href="#"><span id='adm-cons-add'></span> Novos registros</a> 
-                        <a class="h6" href="#"><span id='adm-cons-att'></span> Atualizações de dados</a>
-                        <a class="h6" href="#"><span id='adm-cons-del'></span> Exclusões de Itens</a>
-                        <a class="h6" href="#"><span id='adm-cons-usu'> 0 usuários atualizados</a>
-                    </div>
-            </div>
+			<?php include "main_adm/ch_cons_main.php";?>
 		</div>
 	</div>
 </div>

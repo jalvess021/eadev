@@ -146,4 +146,5 @@ function gfUsu() {
     $(document).ready(gfUsu());
     //Executa a função a cada 1 seg
     setInterval(() => { gfUsu(); }, 15000);
+    
 </script>
