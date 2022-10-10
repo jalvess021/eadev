@@ -147,15 +147,15 @@
             //separando o nome
             var nomeTodo = nomeCompleto.split(" ");
             //primeiro nome
-            var primeiroNome = nomeCompleto.split(" ")[0].replace(/(^\w{1})/g, letra => letra.toUpperCase());
+            var primeiroNome = nomeTodo[0].replace(/(^\w{1})/g, letra => letra.toUpperCase());
             //Ultimo nome
-            var ultimoNome = nomeCompleto.split(" ")[qtdnome-1].replace(/(^\w{1})/g, letra => letra.toUpperCase()); 
+            var ultimoNome = nomeTodo[qtdnome-1].replace(/(^\w{1})/g, letra => letra.toUpperCase()); 
             //Nomes do meio
             var nomesmeio = nomeTodo.slice(1, -1);
             // Junta o nome do meio
             var meio = nomesmeio.join(' ');
             // Abrevia o nome
-            var nomeMeioAbreviado = meio.replace(/([a-z|A-Z])\w+/g, letra => letra.toUpperCase().substr(0, 1)+".");
+            var nomeMeioAbreviado = meio.replace(/([a-z])\w+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
             //Exibe o nome completo (Abreviando os do meio)
             if (nomeTodo.length > 2) {
               var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;
@@ -163,37 +163,13 @@
               var nomeOut = nomeTodo;
             }
             //Transforma os dados em varios arrays nome - id
-           nomeId = nomeOut+" ("+dados[i].id_usu+") ";
+                nomeId = dados[i].nome+" - "+dados[i].id_usu;
+                //nomeId = nomeOut+" - "+dados[i].id_usu;
+
            //Junta todos os arrays em um só
            adms.push(nomeId); 
           }
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
-
-    
-    
-   
-/*
-    $('#consAdd').click(() =>{listaAtv('add');});
-    $('#consAtt').click(()=>{listaAtv('att');});
-    $('#consDel').click(()=>{listaAtv('del');}); 
-     function listaAtv(acao) {
-        window.history.pushState("", "", "?content_adm=consulta_adm&atv="+acao);
-        
-             $.ajax({
-                    url: '/tcc/selects/atv_adm/lista_atv.php',
-                    method: 'POST',
-                    data: { 
-                        acao: acao
-                    }, 
-                    datatype: 'json',
-                    success: function(data) {
-                    $('#cons-main-adm').load('selects/atv_adm/lista_atv?atv='+acao+'.php');
-                    },
-                    error: function (data) {
-                        alert('erro');
-                    }
-                }) 
-    } */ 
 </script>
