@@ -155,7 +155,7 @@
             // Junta o nome do meio
             var meio = nomesmeio.join(' ');
             // Abrevia o nome
-            var nomeMeioAbreviado = meio.replace(/([a-z|A-Z])\w+/g, letra => letra.toUpperCase().substr(0, 1)+".");
+            var nomeMeioAbreviado = meio.replace(/([a-z])\w+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
             //Exibe o nome completo (Abreviando os do meio)
             if (nomeTodo.length > 2) {
               var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;
@@ -163,7 +163,9 @@
               var nomeOut = nomeTodo;
             }
             //Transforma os dados em varios arrays nome - id
-           nomeId = nomeOut+" - "+dados[i].id_usu;
+                nomeId = dados[i].nome+" - "+dados[i].id_usu;
+                //nomeId = nomeOut+" - "+dados[i].id_usu;
+                
            //Junta todos os arrays em um só
            adms.push(nomeId); 
           }
