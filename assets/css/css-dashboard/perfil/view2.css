@@ -1,0 +1,62 @@
+.group-cam{
+    margin-top: 30px;
+}
+
+.perfil-cam{
+    margin-left: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    -webkit-box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37); 
+    box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37);
+}
+
+.perfil-nome{
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.perfil-date{
+    margin-top: 50px;
+}
+
+.perfil-label{
+    color: rgba(0, 0, 0, 0.699);
+    font-weight: 600;
+    font-size: 12pt;
+}
+
+
+.perfil-input::placeholder{
+    color: black;
+    font-weight: 400;
+}
+
+
+.perfil-margin{
+    margin-left: 15px;
+}
+
+.button-password2 button{
+    width: 40%;
+    margin-top: 20px;
+    border: none;
+    background-color: #17a7a7;
+    padding: 0.62rem;
+    margin-left: 15px;
+    border-radius: 500px;
+    cursor: pointer;
+}
+
+.button-password2 button:hover{
+    transition: all 0.2s;
+    background-color: #099898;
+}
+
+.button-password2 button a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+

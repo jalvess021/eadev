@@ -22,6 +22,9 @@
 /*Css local do crud de perfil*/
 @import 'css-dashboard/perfil/view.css';
 
+/*Css local do crud de perfil 2*/
+@import 'css-dashboard/perfil/view2.css';
+
 /*Css local das tabelas*/
 @import 'css-dashboard/tabelas/tabelas.css';
 

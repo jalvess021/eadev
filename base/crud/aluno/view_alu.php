@@ -32,7 +32,7 @@
 	
    <!-- Dados complementares-->
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-									
+  		<?php include "base/crud/aluno/dados/complementares.php";?>			
   </div>
 
 </div>
