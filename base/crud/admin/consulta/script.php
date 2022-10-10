@@ -163,37 +163,11 @@
               var nomeOut = nomeTodo;
             }
             //Transforma os dados em varios arrays nome - id
-           nomeId = nomeOut+" ("+dados[i].id_usu+") ";
+           nomeId = nomeOut+" - "+dados[i].id_usu;
            //Junta todos os arrays em um só
            adms.push(nomeId); 
           }
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
-
-    
-    
-   
-/*
-    $('#consAdd').click(() =>{listaAtv('add');});
-    $('#consAtt').click(()=>{listaAtv('att');});
-    $('#consDel').click(()=>{listaAtv('del');}); 
-     function listaAtv(acao) {
-        window.history.pushState("", "", "?content_adm=consulta_adm&atv="+acao);
-        
-             $.ajax({
-                    url: '/tcc/selects/atv_adm/lista_atv.php',
-                    method: 'POST',
-                    data: { 
-                        acao: acao
-                    }, 
-                    datatype: 'json',
-                    success: function(data) {
-                    $('#cons-main-adm').load('selects/atv_adm/lista_atv?atv='+acao+'.php');
-                    },
-                    error: function (data) {
-                        alert('erro');
-                    }
-                }) 
-    } */ 
 </script>
