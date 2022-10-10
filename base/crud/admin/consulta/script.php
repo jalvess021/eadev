@@ -147,9 +147,9 @@
             //separando o nome
             var nomeTodo = nomeCompleto.split(" ");
             //primeiro nome
-            var primeiroNome = nomeCompleto.split(" ")[0].replace(/(^\w{1})/g, letra => letra.toUpperCase());
+            var primeiroNome = nomeTodo[0].replace(/(^\w{1})/g, letra => letra.toUpperCase());
             //Ultimo nome
-            var ultimoNome = nomeCompleto.split(" ")[qtdnome-1].replace(/(^\w{1})/g, letra => letra.toUpperCase()); 
+            var ultimoNome = nomeTodo[qtdnome-1].replace(/(^\w{1})/g, letra => letra.toUpperCase()); 
             //Nomes do meio
             var nomesmeio = nomeTodo.slice(1, -1);
             // Junta o nome do meio
@@ -165,7 +165,7 @@
             //Transforma os dados em varios arrays nome - id
                 nomeId = dados[i].nome+" - "+dados[i].id_usu;
                 //nomeId = nomeOut+" - "+dados[i].id_usu;
-                
+
            //Junta todos os arrays em um só
            adms.push(nomeId); 
           }
