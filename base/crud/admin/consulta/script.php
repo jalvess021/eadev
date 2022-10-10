@@ -137,16 +137,43 @@
 }
 //Busca todos os ADM'S 
   $.getJSON('base/crud/admin/consulta/search_adm.php',function(dados) {
+    
        adms = [];
           for (let i = 0; i < dados.length; i++) {
+             //Pega o nome (Completo) de cada adm
+             var nomeCompleto = dados[i].nome;
+            //tamanho do nome
+            var qtdnome = nomeCompleto.split(" ").length;
+            //separando o nome
+            var nomeTodo = nomeCompleto.split(" ");
+            //primeiro nome
+            var primeiroNome = nomeCompleto.split(" ")[0].replace(/(^\w{1})/g, letra => letra.toUpperCase());
+            //Ultimo nome
+            var ultimoNome = nomeCompleto.split(" ")[qtdnome-1].replace(/(^\w{1})/g, letra => letra.toUpperCase()); 
+            //Nomes do meio
+            var nomesmeio = nomeTodo.slice(1, -1);
+            // Junta o nome do meio
+            var meio = nomesmeio.join(' ');
+            // Abrevia o nome
+            var nomeMeioAbreviado = meio.replace(/([a-z|A-Z])\w+/g, letra => letra.toUpperCase().substr(0, 1)+".");
+            //Exibe o nome completo (Abreviando os do meio)
+            if (nomeTodo.length > 2) {
+              var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;
+            } else{
+              var nomeOut = nomeTodo;
+            }
             //Transforma os dados em varios arrays nome - id
-           nomeId = dados[i].nome+" - "+dados[i].id_usu;
+           nomeId = nomeOut+" ("+dados[i].id_usu+") ";
            //Junta todos os arrays em um só
-           adms.push(nomeId);
+           adms.push(nomeId); 
           }
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
+
+    
+    
+   
 /*
     $('#consAdd').click(() =>{listaAtv('add');});
     $('#consAtt').click(()=>{listaAtv('att');});
