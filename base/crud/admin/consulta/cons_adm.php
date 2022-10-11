@@ -10,7 +10,7 @@
             <a class="navbar-brand cons-adm" href="?content_adm=consulta_adm"><i class="bi bi-person-lines-fill"></i> Administradores</a>
             <form class="form-inline" id="pesq-adm">
                 <input class="form-control mr-sm-2 search-usu" type="search" id="search-adm" placeholder="Nome { ID }" aria-label="Search" autocomplete='off'>
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit" id='submit-adm' disabled>Pesquisar</button>
             </form>
         </nav>  
 				<hr>

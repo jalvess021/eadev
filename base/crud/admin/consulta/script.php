@@ -172,13 +172,33 @@
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
 
+pesq = document.getElementById("search-adm");
+setInterval(() => {
+    form =  $("#search-adm").val();
+    reg = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
+    verificacao = reg.test(form);
+    if (verificacao) {
+      $("#submit-adm").removeAttr('disabled');
+    }else{
+      $("#submit-adm").attr('disabled', true);
+    }
+}, 0);
+/* pesq.addEventListener('input', function (inp){
+    
+    
+      if (teste) {
+       
+      } else {
+       
+      }
+}) */
 $("#pesq-adm").submit((e)=>{
   e.preventDefault();
   var id = $("#search-adm").val();
   
  oi = 'João Vsd. Psds. Gs. Mendes { 1 }';
   //Regex para pegar só o id
-  /* /\b[A-Z][^A-Z\d]+\s[A-Z][^\d]+\D[\bA-Z][^[A-Z\d\s]+\s\{\s([0-9]+)\s\}/g */
+ 
   console.log(oi.replace(/\b[A-Z][^A-Z\d]+\s[A-Z][^\d]+\D[\bA-Z][^[A-Z\d\s]+\s\{\s([0-9]+)\s\}/g, '$1'))
 })
 
