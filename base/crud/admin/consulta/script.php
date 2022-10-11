@@ -163,13 +163,27 @@
               var nomeOut = nomeTodo;
             }
             //Transforma os dados em varios arrays nome - id
-                nomeId = dados[i].nome+" - "+dados[i].id_usu;
-                //nomeId = nomeOut+" - "+dados[i].id_usu;
-
+                //nomeId = dados[i].nome+" - "+dados[i].id_usu;
+                nomeId = nomeOut+" { "+dados[i].id_usu+" }";
            //Junta todos os arrays em um só
            adms.push(nomeId); 
           }
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
+
+$("#pesq-adm").submit((e)=>{
+  e.preventDefault();
+  var id = $("#search-adm").val();
+  
+ oi = 'João Vsd. Psds. Gs. Mendes { 1 }';
+  //Regex para pegar só o id
+  /* /\b[A-Z][^A-Z\d]+\s[A-Z][^\d]+\D[\bA-Z][^[A-Z\d\s]+\s\{\s([0-9]+)\s\}/g */
+  console.log(oi.replace(/\b[A-Z][^A-Z\d]+\s[A-Z][^\d]+\D[\bA-Z][^[A-Z\d\s]+\s\{\s([0-9]+)\s\}/g, '$1'))
+})
+
+
+
+ 
+
 </script>
