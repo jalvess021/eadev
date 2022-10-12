@@ -6,7 +6,11 @@ if(isset($_GET['info'])) {
 
                 case 'atv':
                     include "base/crud/admin/consulta/main_adm/lista_atv.php";
-                    break;     
+                    break;
+                    
+                case 'adm': 
+                    include "base/crud/admin/consulta/main_adm/info_adm.php";
+                    break;
 }       
 }  
 else {

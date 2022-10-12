@@ -1,3 +1,18 @@
+.lb-cons{
+  font-weight: 600;
+  color: rgb(82, 82, 82);
+}
+.icon-null{
+  color: #1C9999;
+}
+.atv-null{
+  margin-top: 20px !important;
+  padding: 50px;
+}
+.atv-null span{
+  font-weight: 700;
+  font-size: 18pt;
+}
 .search-usu{
     width: 25rem !important;
   }

@@ -1,7 +1,8 @@
 <?php
    include "base/config.php";
-    
-  $ac = $_GET['atv'];
+    if (isset($_GET['info']) && $_GET['info'] === 'atv') {
+      if (isset($_GET['atv']) && ($_GET['atv'] === 'add' || $_GET['atv'] === 'att' || $_GET['atv'] === 'del')) {
+         $ac = $_GET['atv'];
    switch ($ac) {
       case 'add':
          $acao = 'insert';
@@ -22,12 +23,12 @@
             $quantidade = 4;
 				$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
-   $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");
+            $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");
    
 
       echo "<div>
       <div class='d-flex flex-row justify-content-between'>
-        <h5>".$infoAc."</h5>
+        <h5 class='lb-cons'>".$infoAc."</h5>
         <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
       </div>
       <table class='table table-striped' cellspacing='0' cellpading='0'>
@@ -86,6 +87,6 @@
             echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$posterior\"> &raquo;</a></li> ";
             echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
             </div>";
-
-   
+      }
+    }
 ?>

@@ -1,4 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
 <script>
 
     $("#search-adm").keyup(function(){
@@ -201,6 +201,7 @@ setInterval(() => {
       });
     }
 }, 0);
+
 $("#pesq-adm").submit((e)=>{
   e.preventDefault();
   var valInput = $("#search-adm").val();
@@ -218,12 +219,9 @@ $("#pesq-adm").submit((e)=>{
         var num = dados.replace(/[^0-9]/g,'');
         idAdm = parseInt(num);
         //idCripto = btoa(idAdm);
-        window.location.href = "?content_adm=consulta_adm&adm="+idAdm;
+        window.location.href = "?content_adm=consulta_adm&info=adm&user="+idAdm;
       }) 
 })
-
-
-
- 
-
 </script>
+
+
