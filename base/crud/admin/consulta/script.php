@@ -171,35 +171,55 @@
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("search-adm"), adms);          
 }); 
-
-pesq = document.getElementById("search-adm");
+//Realiza a funçao em tempo real 0s
 setInterval(() => {
+    //Valor que está sendo digitado
     form =  $("#search-adm").val();
+    //Regex (Expressão regular)
     reg = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
+    //Verificar se está preenchido corretamente
     verificacao = reg.test(form);
+    //Condicao se a verificacao for verdadeira
     if (verificacao) {
-      $("#submit-adm").removeAttr('disabled');
-    }else{
-      $("#submit-adm").attr('disabled', true);
+      //Busca todos os administradores
+      $.getJSON('base/crud/admin/consulta/search_adm.php', function (data) {
+        //Pega apenas o id do administrador que ele quer buscar
+        id_verify = form.replace(reg, "$7");
+        //Cria um array para armazenar os dados
+        id_existente = [];
+        //Pega todos os id's existentes
+        for (let i = 0; i < data.length; i++) {
+          //Armazena todos os id's em um array
+          id_existente.push(data[i].id_usu);
+        }
+        //Verifica se o que ele busca (Id) existe
+        if (id_existente.includes(id_verify)){
+          $("#submit-adm").removeAttr('disabled');
+        }else{
+          $("#submit-adm").attr('disabled', true);
+        }
+      });
     }
 }, 0);
-/* pesq.addEventListener('input', function (inp){
-    
-    
-      if (teste) {
-       
-      } else {
-       
-      }
-}) */
 $("#pesq-adm").submit((e)=>{
   e.preventDefault();
-  var id = $("#search-adm").val();
-  
- oi = 'João Vsd. Psds. Gs. Mendes { 1 }';
-  //Regex para pegar só o id
- 
-  console.log(oi.replace(/\b[A-Z][^A-Z\d]+\s[A-Z][^\d]+\D[\bA-Z][^[A-Z\d\s]+\s\{\s([0-9]+)\s\}/g, '$1'))
+  var valInput = $("#search-adm").val();
+  //Regex (Expressão regular)
+  reg1 = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
+  //Pega apenas o id do administrador que ele quer buscar
+  idSearch = valInput.replace(reg1, "$7");
+  $.ajax({
+          url: 'base/crud/admin/consulta/search_adm2.php',
+          method: 'POST',
+          data: {searchAdmInput: idSearch},
+          datatype: 'json'
+      }).done(function(result){
+        dados = result;
+        var num = dados.replace(/[^0-9]/g,'');
+        idAdm = parseInt(num);
+        //idCripto = btoa(idAdm);
+        window.location.href = "?content_adm=consulta_adm&adm="+idAdm;
+      }) 
 })
 
 
