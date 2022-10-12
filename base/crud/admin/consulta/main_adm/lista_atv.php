@@ -34,7 +34,7 @@
       <table class='table table-striped' cellspacing='0' cellpading='0'>
       <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades </capiton>
                <thead><tr class='thead'>";
-                  echo "<td>Id:</td>";
+                  echo "<td>Id (Atv):</td>";
                   echo "<td class='d-none d-xl-table-cell '>Atividade:</td>";
                   echo "<td class='d-none d-xl-table-cell'>Nome do ADM:</td>";
                   echo "<td class='d-none d-xl-table-cell text-center'>Data:</td>";
@@ -62,7 +62,7 @@
                         }
                     }*/
                echo "</td>";
-               echo "<td>".$info['nome_adm']."</td>";
+               echo "<td>";  echo (strlen($info['nome_adm']) <= 22) ? $info['nome_adm'] : substr($info['nome_adm'], 0, 22  )."..."; echo " { ".$info['id_adm']." }</td>";
                echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
 					echo "<td class='actions btn-group-sm'>";
 					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_atv']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
@@ -90,3 +90,4 @@
       }
     }
 ?>
+

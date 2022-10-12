@@ -6,7 +6,7 @@
         <h4 class="info-cons-title"> Total de atividades: <span id="num-cons-title"></span></h4>
         <div class="grid-cons">
             <a class="h6" href='?content_adm=consulta_adm&info=atv&atv=add' id='consAdd'><span id='adm-cons-add'></span> Novos registros</a> 
-            <a class="h6" href='?content_adm=consulta_adm&info=atv&atv=att' id='consAtt'><span id='adm-cons-att'></span> Atualizações de dados</a>
-            <a class="h6" href='?content_adm=consulta_adm&info=atv&atv=del' id='consDel'><span id='adm-cons-del'></span> Exclusões de Itens</a>
+            <a class="h6" href='?content_adm=consulta_adm&info=atv&atv=att' id='consAtt'><span id='adm-cons-att'></span> Atualização de dados</a>
+            <a class="h6" href='?content_adm=consulta_adm&info=atv&atv=del' id='consDel'><span id='adm-cons-del'></span> Exclusão de dados</a>
         </div>
 </div>
