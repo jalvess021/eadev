@@ -21,7 +21,7 @@
                                 <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
                             </div>
                             <table class='table table-striped' cellspacing='0' cellpading='0'>
-                            <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades </capiton>
+                            <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades (".$rows1.") </capiton>
                                     <thead><tr class='thead'>";
                                         echo "<td>Id (Atv):</td>";
                                         echo "<td class='d-none d-xl-table-cell'>Atividade:</td>";
@@ -45,17 +45,17 @@
                                                     
                                                 if (preg_match($regModAtt, $info['atv'])) {
                                                     $nomeMod = preg_replace($regModAtt, '$3', $info['atv']);
-                                                    $idMod = preg_replace($regModAtt, '$6', $info['atv']);
+                                                    $idCur = preg_replace($regModAtt, '$6', $info['atv']);
+                                                    $idMod = preg_replace($regModAtt, '$9', $info['atv']);
                                                     
-                                                   /* $query2 = mysqli_query($con, "SELECT nome_curso from curso where id_curso = '".$res1[0]."';");
-                                                    $res2 = mysqli_fetch_array($query2); */
-                                                    echo "<strong>Atualização</strong> do módulo <strong>".$nomeMod." | ".$idMod." |</strong> de <strong>  </strong> ";
+                                                    
+                                                    echo "<strong>Atualização</strong> do <em>módulo</em> <strong>".$nomeMod." | ".$idMod." |</strong>  do curso: <em>{ ".$idCur." }</em>";
                                                 }else{
                                                     echo "nao";
                                                 }
                                          
                                     echo "</td>";
-                                    echo "<td class='admAbrev'></td>";
+                                    echo "<td> <span class='admAbrev'></span> <em>{ ".$info['id_adm']." }</em></td>";
                                     echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
                                             echo "<td class='actions btn-group-sm'>";
                                             echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_atv']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
