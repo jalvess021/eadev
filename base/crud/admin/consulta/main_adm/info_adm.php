@@ -52,7 +52,7 @@
                                                     echo "<strong>Atualização</strong> do <em>módulo</em> <strong>".$nomeMod." | ".$idMod." |</strong>  do curso: <em>{ ".$idCur." }</em>";
                                                 }else{
                                                     echo "nao";
-                                                }
+                                                }   
                                          
                                     echo "</td>";
                                     echo "<td> <span class='admAbrev'></span> <em>{ ".$info['id_adm']." }</em></td>";

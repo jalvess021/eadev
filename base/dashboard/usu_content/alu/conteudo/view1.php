@@ -42,7 +42,7 @@
                             $res4 = mysqli_query($con, $sql4);
                             while ($info4 = mysqli_fetch_array($res4)) {
                                 echo "<article>
-                                <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['sigla_curso'].$info4['id_curso'])."' alt='Imagem do curso (".$info4['sigla_curso'].")'>
+                                <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['sigla_curso'].$info4['id_curso']).".jpg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
                                 <div class='text'>
                                     <p>".$info4['nome_curso']."</p>
                                     <a href='?page=play_curso&curso=".$info4['sigla_curso']."'><button  class='btn-card-content'>".$info4['sigla_curso']."</button></a>
@@ -68,7 +68,7 @@
                             $resff = mysqli_query($con, $sqlff);
                             while ($infoff = mysqli_fetch_array($resff)) {
                                 echo "<article>
-                                <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($infoff['sigla_curso'].$infoff['id_curso'])."' alt='Imagem do curso (".$infoff['sigla_curso'].")'>
+                                <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($infoff['sigla_curso'].$infoff['id_curso']).".jpg' alt='Imagem do curso (".$infoff['sigla_curso'].")'>
                                 <div class='text'>
                                     <p>".$infoff['nome_curso']."</p>
                                     <a href='?page=play_curso&curso=".$infoff['sigla_curso']."'><button  class='btn-card-content'>".$infoff['sigla_curso']."</button></a>

@@ -9,6 +9,11 @@
 	$sql = mysqli_query($con, "select * from usuario where id_usu = '".$id_usu."';");
 	$row = mysqli_fetch_array($sql);
 
+	$sql2 = mysqli_query($con, "select * from dados_complementares where id_usu = '".$id_usu."';");
+	$row2 = mysqli_fetch_array($sql2);
+
+	$sql3 = mysqli_query($con, "select * from localidade where cep = '".$row2['cep']."';");
+	$row3 = mysqli_fetch_array($sql3);
 	//Incluindo as Mensagens
 	include "base/crud/admin/mensagens/msg_adm.php";
 ?>
@@ -33,65 +38,24 @@
 	<div class="col-3"><a class="float-right btn-back btn btn-sm bt-padrao" onclick="goBack()"> <i class="bi bi-arrow-left"></i> Voltar </a></div>
 </div>
 
-<h4 class="content-subtitle ">Informações Pessoais</h4>
-
-<hr class="">
-
-<div class="block">
-	<p class="info-person">Nome Completo:</p>
-	<p class="person"><?php echo $row['nome'];?></p>
-</div>
-<div class="block">
-	<p class="info-person">Usuário:</p>
-	<p class="person"><?php echo $row['usuario'];?></p>
-</div>
-<div class="block">
-	<p class="info-person">E-mail:</p>
-	<p class="person"><?php echo $row['email'];?></p>
-</div>
-<div class="block">
-	<p class="info-person">Telefone:</p>
-	<p class="person"><?php echo $row['telefone'];?></p>
-</div>
-<div class="block">
-	<p class="info-person">Sexo:</p>
-	<p class="person"><?php if($row["sexo"]=='1'){
-							echo "Masculino";
-						}elseif($row["sexo"]=='2'){
-							echo "Feminino";
-						}
-						elseif($row["sexo"]=='3') {
-							echo "Outros";
-						}else {
-							echo "Não Informado";
-						}?></p>
-</div>
-	
-<h3 class="content-subtitle-sub">Alterar sua senha</h3>
-
-<hr>
-<form action="" method="" autocomplete="off">
-	<div class="column-password">
-		<p class="view-password-p">Senha Atual</p>
-		<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
+<nav class="mt-5">
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+		<a class="nav-item nav-link active dados_view" id="nav-pessoais-tab" data-toggle="tab" href="#nav-pessoais" role="tab" aria-controls="nav-pessoais" aria-selected="true">Dados pessoais</a>
+		<a class="nav-item nav-link dados_view" id="nav-complementares-tab" data-toggle="tab" href="#nav-complementares" role="tab" aria-controls="nav-complementares" aria-selected="false">Dados complementares</a>
 	</div>
-	<br>
-	<div class="row pb-5 password-group">
-		<div class="col-6">
-			<p class="view-password-p">Nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
-			<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
-		</div>
-		<div class="col-6">
-			<p class="view-password-p">Confirme a nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
-			<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
-		</div>
-	</div>
-	<div class="button-password pb-5">
-	<button type="submit"><a href="#">Salvar nova senha</a></button>
-	</div>
+</nav>
 
+<div class="tab-content" id="nav-tabContent">
+ 	<!-- Dados pessoais-->
+	<div class="tab-pane fade show active" id="nav-pessoais" role="tabpanel" aria-labelledby="nav-pessoais-tab">
+		<?php include "base/crud/admin/perfil/dados/pessoais.php";?>
+	</div>
+   <!-- Dados complementares-->
+  <div class="tab-pane fade" id="nav-complementares" role="tabpanel" aria-labelledby="nav-complementares-tab">
+  		<?php include "base/crud/admin/perfil/dados/complementares.php";?>			
+  </div>
+</div>
 
-</form>
 				
 				
 			

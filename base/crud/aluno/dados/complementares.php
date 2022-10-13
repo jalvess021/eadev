@@ -1,90 +1,60 @@
-<h4 class="content-subtitle">Informações Complementares</h4>
+<h4 class="content-subtitle ">Informações Complementares</h4>
 <hr class="">
-
-<form>
-
-
-    <div class="form-row group-cam">
-
-        <img class="perfil-cam" src="arquivos/img/agnaldo.jfif" alt="Logo Eadev">
-
-        <div class="form-group col-md-5 perfil-nome ">
-            <label class="perfil-label" for="Nome">Nome completo</label>
-            <input type="text" class="form-control perfil-input"  placeholder="<?php echo $row['nome'];?>" readonly>
-        </div>
-
-        <div class="form-group col-md-3 ml-3 perfil-date ">
-            <label class="perfil-label" for="Nome">Data de nascimento</label>
-            <input type="date" class="form-control perfil-input" required>
-        </div>
-
-
+<div class="row justify-content-between group-cam">
+    <div class="form-group div-inp-com col-md-4">
+    <img class="perfil-cam" src="arquivos/img/agnaldo.jfif" alt="Logo Eadev">
+    </div>
+    <div class="form-group div-inp-com col-md-5 perfil-nome ">
+        <label class="perfil-label" for="Nome">Nome completo</label>
+        <input type="text" class="form-control perfil-input"  value="<?php echo $row['nome'];?>" disabled>
     </div>
 
-    <div class="form-row mt-3 ">
+    <div class="form-group div-inp-com col-md-3 perfil-date ">
+        <label class="perfil-label" for="Nome">Data de nascimento</label>
+        <input type="date" class="form-control perfil-input">
+    </div>
+</div>
 
-        <div class="form-group col-md-6 ml-3">
-            <label class="perfil-label" for="CPF">CPF</label>
-            <input type="text" class="form-control perfil-input"  placeholder="000.000.000-00" required>
-        </div>
+<div class="row mt-3 justify-content-between">
 
-        <div class="form-group col-md-5 ml-3">
-            <label class="perfil-label" for="RG">RG</label>
-            <input type="text" class="form-control perfil-input"  placeholder="00.000.000-00" required>
-        </div>
-
+    <div class="form-group div-inp-com col-md-3">
+        <label class="perfil-label" for="CPF">CPF</label>
+        <input type="text" class="form-control perfil-input" placeholder="000.000.000-00">
     </div>
 
-    
-    <div class="form-row mt-3 ">
-
-
-        <div class="form-group col-md-6 ml-3">
-            <label class="perfil-label" for="CEP">CEP</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite seu CEP" required>
-        </div>
-
-        <div class="form-group col-md-5 ml-3">
-            <label class="perfil-label" for="Estado">Estado</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite seu Estado" required>
-        </div>
-
+    <div class="form-group div-inp-com col-md-3">
+        <label class="perfil-label" for="RG">RG</label>
+        <input type="text" class="form-control perfil-input" placeholder="00.000.000-00">
     </div>
 
-    <div class="form-row mt-3 ">
-
-
-        <div class="form-group col-md-3 ml-3">
-            <label class="perfil-label" for="Cidade">Cidade</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite sua Cidade" required>
-        </div>
-
-        <div class="form-group col-md-3 ">
-            <label class="perfil-label" for="Estado">Rua</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite sua Rua" required>
-        </div>
-
-        <div class="form-group col-md-2 ml-3">
-            <label class="perfil-label" for="Estado">Número</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite o Número" required>
-        </div>
-
-        <div class="form-group col-md-3">
-            <label class="perfil-label" for="Estado">Complemento</label>
-            <input type="text" class="form-control perfil-input"  placeholder="Digite seu Complemento" required>
-        </div>
-
-
-
+    <div class="form-group div-inp-com col-md-2">
+        <label class="perfil-label" for="CEP">CEP</label>
+        <input type="text" class="form-control perfil-input"  placeholder="00000-000">
     </div>
 
-    <div class="button-password2 d-flex justify-content-center">
-			<button type="submit"><a href="#">Salvar dados</a></button>
+    <div class="form-group div-inp-com col-md-2">
+        <label class="perfil-label" for="Estado">UF</label>
+        <input type="text" class="form-control perfil-input" readonly>
     </div>
-         
-</form>
+</div>
 
-<br>
-<br>
-		
+<div class="row mt-3 justify-content-between">
+    <div class="form-group div-inp-com col-md-3">
+        <label class="perfil-label" for="Cidade">Cidade</label>
+        <input type="text" class="form-control perfil-input" readonly>
+    </div>
 
+    <div class="form-group div-inp-com col-md-4">
+        <label class="perfil-label" for="Estado">Bairro</label>
+        <input type="text" class="form-control perfil-input" readonly>
+    </div>
+
+    <div class="form-group div-inp-com col-md-5">
+        <label class="perfil-label" for="Estado">Logradouro</label>
+        <input type="text" class="form-control perfil-input" readonly>
+    </div>
+</div>
+
+<div class="button-password2 d-flex justify-content-center">
+        <button type="submit"><a href="#">Salvar dados</a></button>
+</div>
