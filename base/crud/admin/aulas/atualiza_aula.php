@@ -1,7 +1,9 @@
 <?php
     include "base/crud/atv_usu/atv.php";
-    $usuario = $_SESSION['UsuarioNome'];
     $id_usuario = $_SESSION['UsuarioID'];
+    $queryUsu = mysqli_query($con, "SELECT nome from usuario where id_usu = '".$_SESSION['UsuarioID']."';");
+    $resUsuq = mysqli_fetch_array($queryUsu);
+    $usuario = $resUsuq[0];
 
   $id_aula           = $_POST["id_aula"];
   $aula              = $_POST["tit_aula"];
@@ -15,8 +17,8 @@
    
 
     $sql = "update aula set ";
-    $sql .= "id_video='".$id_video."', tit_aula='".$aula."', desc_aula='".$descricao."', start_aula='".$start."', end_aula='".$end."', id_mod='".$modulo."', dt_alteracao=NOW() , id_mod='".$modulo."'";
-    $sql .= "where id_aula= '".$id_aula."';";
+    $sql .= "id_video='".$id_video."', tit_aula='".$aula."', desc_aula='".$descricao."', start_aula='".$start."', end_aula='".$end."', id_mod='".$modulo."', dt_alteracao=NOW() , id_mod='".$modulo."' ";
+    $sql .= "where id_aula='".$id_aula."';";
 
 
     $resultado = mysqli_query($con, $sql)or die(mysqli_error());

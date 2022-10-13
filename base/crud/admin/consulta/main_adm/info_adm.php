@@ -15,7 +15,7 @@
                 $sql = mysqli_query($con, "SELECT * from atv_adm where id_adm = ".$infoUser['id_usu']." order by id_atv asc limit $inicio, $quantidade;");
                 $rows1 = mysqli_num_rows($sql);
                 if ($rows1 > 0) {
-                    echo "<div>
+                    echo "
                             <div class='d-flex flex-row justify-content-between'>
                                 <h5 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h5>
                                 <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
@@ -23,9 +23,9 @@
                             <table class='table table-striped' cellspacing='0' cellpading='0'>
                             <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades </capiton>
                                     <thead><tr class='thead'>";
-                                        echo "<td>Id:</td>";
-                                        echo "<td class='d-none d-xl-table-cell '>Atividade:</td>";
-                                        echo "<td class='d-none d-xl-table-cell'>Nome do ADM:</td>";
+                                        echo "<td>Id (Atv):</td>";
+                                        echo "<td class='d-none d-xl-table-cell'>Atividade:</td>";
+                                        echo "<td class='d-none d-xl-table-cell'>Nome do ADM { ID }:</td>";
                                         echo "<td class='d-none d-xl-table-cell text-center'>Data:</td>";
                                         echo "<td class='actions'>Ações</td>";
                                     echo "</tr></thead><tbody>";
@@ -37,7 +37,24 @@
 
                                     echo "<tr>";
                                     echo "<td>".$info['id_atv']."</td>";
-                                    echo "<td> ".$info['atv']."</td>";
+                                    echo "<td>"; /*$info['atv']*/
+                                        //Verificação do que vai ser impresso nesta td
+                                            //Atualizaçao
+                                                //Modulo
+                                                 $regModAtt = "/(\bupdate\smodulo).+(\bnome_mod=\'\b(\D+)\b\').+((id_curso=\'([0-9]+))\').+((id_mod='([0-9])+))\'\;/";
+                                                    
+                                                if (preg_match($regModAtt, $info['atv'])) {
+                                                    $nomeMod = preg_replace($regModAtt, '$3', $info['atv']);
+                                                    $idMod = preg_replace($regModAtt, '$6', $info['atv']);
+                                                    
+                                                   /* $query2 = mysqli_query($con, "SELECT nome_curso from curso where id_curso = '".$res1[0]."';");
+                                                    $res2 = mysqli_fetch_array($query2); */
+                                                    echo "<strong>Atualização</strong> do módulo <strong>".$nomeMod." | ".$idMod." |</strong> de <strong>  </strong> ";
+                                                }else{
+                                                    echo "nao";
+                                                }
+                                         
+                                    echo "</td>";
                                     echo "<td class='admAbrev'></td>";
                                     echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
                                             echo "<td class='actions btn-group-sm'>";
@@ -62,10 +79,9 @@
                                     }
                                     echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=adm&user=1&pagina=$posterior\"> &raquo;</a></li> ";
                                     echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_adm&&info=adm&user=1&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
-                            </div>"; 
+                            "; 
                 } else {
                     echo "
-                   <div style='width:100%;'>
                         <div class='row justify-content-between'>
                                     <div class='col-10'>
                                         <h5 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h5>
@@ -77,15 +93,13 @@
                         <div class='row justify-content-center atv-null'>
                             <span><i class='bi bi-exclamation-octagon-fill icon-null'></i> Este administrador não realizou atividades</span>
                         </div>
-                    </div>
                     ";
                 }
         }
     }
-   
 ?>
 <script>
-        var nomeCompleto1 = "<?php  echo $infoUser['nome'];?>";
+        var nomeCompleto1 = "<?php echo $infoUser['nome'];?>";
         //tamanho do nome
         var qtdnome1 = nomeCompleto1.split(" ").length;
         //separando o nome
@@ -104,6 +118,21 @@
         var nomeOut1 = primeiroNome1+" "+nomeMeioAbreviado1+" "+ultimoNome1; 
 
         $(".admAbrev").html(nomeOut1);
+
+       /*
+        function verifyMod() {
+            //Condiçoes para alterar a atividade
+            var regModAtt = /(\bupdate\smodulo).+(\bnome_mod=\'\b(\D+)\b\').+((id_curso=\'([0-9]+))\').+((id_mod='([0-9])+))\'\;/g;
+            reste = regModAtt.test(atvChange);
+            if (reste) {
+                atvChange.html("sd");
+            }
+        }*/
+        
+        
+        
+        
+       // $(".atv").html("atualizou o moduoia");
 
 </script>
 

@@ -1,8 +1,10 @@
 <?php
 
     include "base/crud/atv_usu/atv.php";
-    $usuario = $_SESSION['UsuarioNome'];
     $id_usuario = $_SESSION['UsuarioID'];
+    $queryUsu = mysqli_query($con, "SELECT nome from usuario where id_usu = '".$_SESSION['UsuarioID']."';");
+    $resUsuq = mysqli_fetch_array($queryUsu);
+    $usuario = $resUsuq[0];
 
     $id_quest           = $_POST["id_quest"];
     $dificuldade    = $_POST['dificuldade']; 
@@ -25,7 +27,7 @@
             break;
     }
 
-    $sql = "UPDATE questoes set enunciado_quest = '".$enunciado."', grau_dificuldade = '".$dificuldade."', pont_quest = '".$valor."', opc_certa = '".$c."', opc_errada1 = '".$i1."', opc_errada2 = '".$i2."', id_mod = '".$modulo."' where id_quest = '".$id_quest."';";
+    $sql = "update questoes set enunciado_quest='".$enunciado."', grau_dificuldade='".$dificuldade."', pont_quest='".$valor."', opc_certa='".$c."', opc_errada1='".$i1."', opc_errada2='".$i2."', id_mod='".$modulo."' where id_quest='".$id_quest."';";
     $res = mysqli_query($con, $sql);
 
     if($res){

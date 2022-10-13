@@ -26,7 +26,7 @@
             $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");
    
 
-      echo "<div>
+      echo "
       <div class='d-flex flex-row justify-content-between'>
         <h5 class='lb-cons'>".$infoAc."</h5>
         <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
@@ -36,7 +36,7 @@
                <thead><tr class='thead'>";
                   echo "<td>Id (Atv):</td>";
                   echo "<td class='d-none d-xl-table-cell '>Atividade:</td>";
-                  echo "<td class='d-none d-xl-table-cell'>Nome do ADM:</td>";
+                  echo "<td class='d-none d-xl-table-cell'>Nome do ADM { ID }:</td>";
                   echo "<td class='d-none d-xl-table-cell text-center'>Data:</td>";
                   echo "<td class='actions'>Ações</td>";
                echo "</tr></thead><tbody>";
@@ -86,7 +86,7 @@
             }
             echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$posterior\"> &raquo;</a></li> ";
             echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
-            </div>";
+           ";
       }
     }
 ?>

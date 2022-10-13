@@ -16,7 +16,7 @@
         </nav>  
 				<hr>
 		</div>
-		<div class="all-table-body cons-body" id='cons-main-adm'>
+		<div class="all-table-body" id='cons-main-adm'>
 			<?php include "main_adm/ch_cons_main.php";?>
 		</div>
 	</div>

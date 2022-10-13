@@ -1,7 +1,9 @@
 <?php
     include "base/crud/atv_usu/atv.php";
-    $usuario = $_SESSION['UsuarioNome'];
     $id_usuario = $_SESSION['UsuarioID'];
+    $queryUsu = mysqli_query($con, "SELECT nome from usuario where id_usu = '".$_SESSION['UsuarioID']."';");
+    $resUsuq = mysqli_fetch_array($queryUsu);
+    $usuario = $resUsuq[0];
 
     $id_video           = substr($_POST['id_video'], 17);
     $aula              = $_POST["tit_aula"];
