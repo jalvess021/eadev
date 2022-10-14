@@ -26,8 +26,8 @@
     }
 
 
-    $sql = "INSERT into questoes (id_quest, enunciado_quest, grau_dificuldade, pont_quest, opc_certa, opc_errada1, opc_errada2, id_mod) values ";
-    $sql .= "('0', '".$enunciado."','".$dificuldade."','".$valor."', '".$c."', '$i1', '$i2','".$modulo."');";
+    $sql = "insert into questoes values ";
+    $sql .= "('0', '".$enunciado."','".$dificuldade."','".$valor."', '".$c."', '$i1', '$i2', NOW(), NULL, '".$modulo."');";
     $res = mysqli_query($con, $sql)or die(mysqli_error());
  
     if($res){

@@ -27,7 +27,7 @@
             break;
     }
 
-    $sql = "update questoes set enunciado_quest='".$enunciado."', grau_dificuldade='".$dificuldade."', pont_quest='".$valor."', opc_certa='".$c."', opc_errada1='".$i1."', opc_errada2='".$i2."', id_mod='".$modulo."' where id_quest='".$id_quest."';";
+    $sql = "update questoes set enunciado_quest='".$enunciado."', grau_dificuldade='".$dificuldade."', pont_quest='".$valor."', opc_certa='".$c."', opc_errada1='".$i1."', opc_errada2='".$i2."', dt_alteracao=NOW(), id_mod='".$modulo."' where id_quest='".$id_quest."';";
     $res = mysqli_query($con, $sql);
 
     if($res){

@@ -160,8 +160,9 @@
             if (nomeTodo.length > 2) {
               var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;
             } else{
-              var nomeOut = nomeTodo;
+              var nomeOut = nomeTodo.join(' ');
             }
+            
             //Transforma os dados em varios arrays nome - id
                 //nomeId = dados[i].nome+" - "+dados[i].id_usu;
                 nomeId = nomeOut+" { "+dados[i].id_usu+" }";

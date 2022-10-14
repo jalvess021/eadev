@@ -14,7 +14,6 @@
     $sql1 = "insert into modulo values ";
     $sql1 .= "(0, '".$nome."', '".$descricao."', '".$curso."', NOW(), NULL);";
     $res1 = mysqli_query($con, $sql1)or die(mysqli_error());
-    $sal = "ol menettter";
     if($res1){
         
         $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));

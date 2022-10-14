@@ -17,7 +17,7 @@
    
 
     $sql = "update aula set ";
-    $sql .= "id_video='".$id_video."', tit_aula='".$aula."', desc_aula='".$descricao."', start_aula='".$start."', end_aula='".$end."', id_mod='".$modulo."', dt_alteracao=NOW() , id_mod='".$modulo."' ";
+    $sql .= "id_video='".$id_video."', tit_aula='".$aula."', desc_aula='".$descricao."', start_aula='".$start."', end_aula='".$end."', dt_alteracao=NOW(), id_mod='".$modulo."' ";
     $sql .= "where id_aula='".$id_aula."';";
 
 
