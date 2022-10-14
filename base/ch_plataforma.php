@@ -9,6 +9,10 @@
             case 'play_video':
                 include "play-content/play2.php";           
                 break;
+
+            case 'rel_certificado':
+            include "certificado/cert.php";           
+            break;
         
     }
 } 
