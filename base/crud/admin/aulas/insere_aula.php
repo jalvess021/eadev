@@ -15,7 +15,7 @@
    
 
     $sql = "insert into aula values ";
-    $sql .= "('0','".$id_video."','".$aula."','".$descricao."','".$start."','".$end."', NOW(), NULL, NULL, '".$modulo."');";
+    $sql .= "(0, '".$id_video."', '".$aula."', '".$descricao."', '".$start."', '".$end."', NOW(), NULL, NULL, '".$modulo."');";
 
     $resultado = mysqli_query($con, $sql)or die(mysqli_error());
     $res1 = mysqli_query($con, "SELECT * from aula where id_video = '".$id_video."';");

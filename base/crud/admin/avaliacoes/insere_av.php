@@ -27,7 +27,7 @@
 
 
     $sql = "insert into questoes values ";
-    $sql .= "('0', '".$enunciado."','".$dificuldade."','".$valor."', '".$c."', '$i1', '$i2', NOW(), NULL, '".$modulo."');";
+    $sql .= "(0, '".$enunciado."', '".$dificuldade."', '".$valor."', '".$c."', '$i1', '$i2', NOW(), NULL, '".$modulo."');";
     $res = mysqli_query($con, $sql)or die(mysqli_error());
  
     if($res){
