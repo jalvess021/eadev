@@ -25,14 +25,15 @@
 				$inicio = ($quantidade * $pagina) - $quantidade;
             $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");
    
-
+            $sqlCountAtv = mysqli_query($con, "SELECT * from atv_adm;");
+            $rowsCountAtv = mysqli_num_rows($sqlCountAtv);
       echo "
       <div class='d-flex flex-row justify-content-between'>
         <h5 class='lb-cons'>".$infoAc."</h5>
         <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
       </div>
       <table class='table table-striped' cellspacing='0' cellpading='0'>
-      <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades </capiton>
+      <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades (".$rowsCountAtv.") </capiton>
                <thead><tr class='thead'>";
                   echo "<td>Id (Atv):</td>";
                   echo "<td class='d-none d-xl-table-cell '>Atividade:</td>";
@@ -52,15 +53,7 @@
                echo "<td>".$info['id_atv']."</td>";
                echo "<td>"; 
                     echo $info['atv'];
-                    /*$search = preg_match("/insert/i", $info['atv']);
-                    if ($search) {
-                        $sc = preg_match("/questoes/i", $info['atv']);
-                        if ($sc) {
-                            echo "Inseriu um curso";
-                        } else {
-                            echo "Inseriu";
-                        }
-                    }*/
+                   
                echo "</td>";
                echo "<td>";  echo (strlen($info['nome_adm']) <= 22) ? $info['nome_adm'] : substr($info['nome_adm'], 0, 22  )."..."; echo " { ".$info['id_adm']." }</td>";
                echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";

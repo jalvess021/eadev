@@ -11,7 +11,7 @@
         $info = mysqli_fetch_array($i);
         if ($info) {
 
-            $sql = "DELETE FROM curso where id_curso = '".$id_curso."' AND nome_curso = '".$info['nome_curso']."' AND sigla_curso = '".$info['sigla_curso']."' AND id_formacao = '".$info['id_formacao']."';";
+            $sql = "DELETE FROM curso where id_curso='".$id_curso."' AND nome_curso='".$info['nome_curso']."' AND sigla_curso='".$info['sigla_curso']."' AND id_formacao='".$info['id_formacao']."';";
             $res = mysqli_query($con, $sql);
 
             if ($res){

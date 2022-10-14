@@ -22,7 +22,7 @@
         $info = mysqli_fetch_array($i);
         if ($info) {
 
-            $sql = "DELETE FROM aula where id_aula = '".$id_aula."' AND id_video = '".$info['id_video']."' AND tit_aula = '".$info['tit_aula']."' AND id_mod = '".$info['id_mod']."';";
+            $sql = "DELETE FROM aula where id_aula='".$id_aula."' AND id_video='".$info['id_video']."' AND tit_aula='".$info['tit_aula']."' AND id_mod='".$info['id_mod']."';";
             $res = mysqli_query($con, $sql);
 
             if ($res){

@@ -11,7 +11,7 @@
         $info = mysqli_fetch_array($i);
         if ($info) {
 
-            $sql = "DELETE FROM questoes where id_quest = '".$id_quest."' AND enunciado_quest = '".$info['enunciado_quest']."' AND grau_dificuldade = '".$info['grau_dificuldade']."' AND id_mod = '".$info['id_mod']."';";
+            $sql = "DELETE FROM questoes where id_quest='".$id_quest."' AND enunciado_quest='".$info['enunciado_quest']."' AND grau_dificuldade='".$info['grau_dificuldade']."' AND id_mod='".$info['id_mod']."';";
             $res = mysqli_query($con, $sql);
 
             if ($res){
