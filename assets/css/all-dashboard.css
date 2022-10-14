@@ -40,6 +40,9 @@
 /*Css local do modal de exclusão*/
 @import 'css-dashboard/consulta/cons_adm.css';
 
+/*Css local do modal de exclusão*/
+@import 'css-dashboard/consulta/info_adm.css';
+
 /*Bootstrap 4.2.1 link*/
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css');
 
