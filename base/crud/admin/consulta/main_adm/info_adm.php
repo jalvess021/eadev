@@ -275,20 +275,5 @@
 
         $(".admAbrev").html(nomeOut1);
 
-       /*
-        function verifyMod() {
-            //Condiçoes para alterar a atividade
-            var regModAtt = /(\bupdate\smodulo).+(\bnome_mod=\'\b(\D+)\b\').+((id_curso=\'([0-9]+))\').+((id_mod='([0-9])+))\'\;/g;
-            reste = regModAtt.test(atvChange);
-            if (reste) {
-                atvChange.html("sd");
-            }
-        }*/
-        
-        
-        
-        
-       // $(".atv").html("atualizou o moduoia");
-
 </script>
 

@@ -220,7 +220,7 @@ $("#pesq-adm").submit((e)=>{
         var num = dados.replace(/[^0-9]/g,'');
         idAdm = parseInt(num);
         //idCripto = btoa(idAdm);
-        window.location.href = "?content_adm=consulta_adm&info=adm&user="+idAdm;
+        window.location.href = "?content_adm=consulta_adm&info=view&adm="+idAdm;
       }) 
 })
 </script>

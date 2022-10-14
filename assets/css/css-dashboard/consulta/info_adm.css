@@ -1,19 +1,26 @@
-
 .div-border{
     padding: 15px 0px;
 }
-
-
-
 .row-init{
-    margin-top: 40px;
+    margin-top: 10px;
 }
-
 .row-init .bt-padrao{
     margin-top: -5px;
 }
 
+.row-init2{
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
 
+.row-init3{
+    margin-top: 35px;
+}
+
+.row-init4{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
 .perfil-cam-adm{
     margin-top: -28px;
     width: 80px;
@@ -23,15 +30,12 @@
     box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37);
     margin-left: 30px;
 }
-
-
 .nome-adm{
     color: rgba(0, 0, 0, 0.562);
     font-weight: 600;
     font-size: 13pt;
     border-bottom: 1px solid rgba(0, 0, 0, 0.562);
 }
-
 .perfil-label-cons{
     color: rgba(0, 0, 0, 0.699);
     font-weight: 600;
