@@ -4,6 +4,7 @@
         <span id="num-cons-adm"></span>
         <h5 id="label-cons-adm"></h5>
     </div>
+    <a href="?content_adm=consulta_adm&info=view"><button class='btn btn-lg btn-danger'>Pag em branco</button></a>
     <div class="div-info-adm">
             <h4 class="info-cons-title"> Total de atividades: <span id="num-cons-title"></span></h4>
             <div class="grid-cons">

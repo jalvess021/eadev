@@ -11,6 +11,10 @@ if(isset($_GET['info'])) {
                 case 'adm': 
                     include "base/crud/admin/consulta/main_adm/info_adm.php";
                     break;
+
+                case 'view':
+                    include "base/crud/admin/consulta/main_adm/view_adm.php";
+                    break;
 }       
 }  
 else {

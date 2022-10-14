@@ -15,10 +15,10 @@
    
 
     $sql = "update curso set ";
-    $sql .= "nome_curso='".$curso."', sigla_curso ='".$sigla."', desc_curso='".$descricao."', dt_alteracao=NOW(), id_formacao='".$formacao."' ";
+    $sql .= "nome_curso='".$curso."', sigla_curso='".$sigla."', desc_curso='".$descricao."', dt_alteracao=NOW(), id_formacao='".$formacao."' ";
     $sql .= "where id_curso='".$id_curso."';";
     $res = mysqli_query($con, $sql)or die(mysqli_error());
-
+    
     if($res){
         $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
         if ($usu_atv) {
