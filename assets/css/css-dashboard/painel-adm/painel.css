@@ -3,7 +3,10 @@
     width: 100%;
 }
 
-
+.legend-control{
+  padding-left: 2px;
+    border-left: #0195846c 3px outset;
+}
 
 .tb-control tr:last-child, .tb-control tr:last-child:not(.thead), .tb-control{
   border-bottom-left-radius: 0px !important;

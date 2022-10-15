@@ -3,7 +3,13 @@
     $nivel_necessario = 3;
     include "base/testa_nivel.php"; 
 ?>
-
+<style>
+#chart-usu-control  .highcharts-title {
+    fill: #272727c0 !important;
+    font-weight: 600 !important;
+    font-size: 17pt !important;
+}
+</style>
 <h3 class="content-title">Painel</h3>
 <h6 class="info-con">Última atualização [ <span id="time-control"></span> ]</h6>
 <h6 class="info-con-min"> Os registros são atualizados a cada 15 segundos!</h6>
@@ -14,7 +20,7 @@
 <hr>
 	
 <div class="d-flex flex-row justify-content-between">
-  <h5>Usuários</h5>
+  <h5 class='legend-control'>Usuários</h5>
     <!-- Chama o Formulário para adicionar Cursos -->
     <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right"><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
 </div>
@@ -22,7 +28,7 @@
     <div class="row c1-row justify-content-center align-items-center">
         <div class="col-xl-7 justify-content-center" id="gl"> 
         <figure class="highcharts-figure">
-          <div id="container"></div>
+          <div id="chart-usu-control"></div>
         </figure>
          <!-- <div id="piechart" style="width: 100%; height: 500px;"></div> -->
         </div>
@@ -86,10 +92,22 @@ window.setInterval(function () {
     }
 
 }, 1000);
+
+var size;
+
+var altura = window.screen.height;
+var largura = window.screen.width;
+
+var ay
     
 function gfUsu() {
   $.getJSON('base/dashboard/usu_content/adm/painel-control/control_usu.php', function(dados) {
-        Highcharts.chart('container', {
+    
+    
+    
+    Highcharts.chart('chart-usu-control', {
+      colors: ['#0ea8a8', 'rgba(8, 8, 8, 0.923)'],
+      
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: 0,
@@ -99,11 +117,13 @@ function gfUsu() {
             text: 'Usuários: '+ dados.total_usu,
             align: 'center',
             verticalAlign: 'middle',
-            y: 60
+            y: 70
+            //y: 60
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
+        
         accessibility: {
             point: {
                 valueSuffix: '%'
@@ -113,7 +133,7 @@ function gfUsu() {
             pie: {
                 dataLabels: {
                     enabled: true,
-                    distance: -50,
+                    distance: -70,
                     style: {
                         fontWeight: 'bold',
                         color: 'white'
@@ -122,7 +142,7 @@ function gfUsu() {
                 startAngle: -90,
                 endAngle: 90,
                 center: ['50%', '75%'],
-                size: '110%'
+                size: '150%'
             }
         },
         series: [{
@@ -133,7 +153,10 @@ function gfUsu() {
                 ['Alunos', dados.total_alu],
                 ['Administradores', dados.total_adm]
             ]
-        }]
+        }],
+        credits: {
+          enabled: false
+        }
 });
         $('#time-control').html(dados.tempo);
         $('#numeroAdmTb').html(dados.total_adm);
