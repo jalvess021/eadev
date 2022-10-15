@@ -11,7 +11,7 @@ $senha 			= sha1($_POST["senha"]);
 
 // Inserindo dados do usuário (Futuramente aluno) no banco de dados pela Pág. Cadastro
 $sql1 = "insert into usuario values ";
-$sql1 .= "(0, '$usuario', '$senha', '$nome', '$sexo', '$telefone', '$email', 2, 1);";
+$sql1 .= "(0, '$usuario', '$senha', '$nome', '$sexo', '$telefone', '$email', 2, 1, NOW());";
 $res1 = mysqli_query($con, $sql1) or die(mysqli_error($con));
 
 //Selecionando o mesmo ID cadastrado

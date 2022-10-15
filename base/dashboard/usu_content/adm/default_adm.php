@@ -9,6 +9,11 @@
     font-weight: 600 !important;
     font-size: 17pt !important;
 }
+
+
+#chart-3d-control-usu{
+  height: 350px !important;
+}
 </style>
 <h3 class="content-title">Painel</h3>
 <h6 class="info-con">Última atualização [ <span id="time-control"></span> ]</h6>
@@ -18,50 +23,27 @@
 </div>
 
 <hr>
-	
 <div class="d-flex flex-row justify-content-between">
   <h5 class='legend-control'>Usuários</h5>
     <!-- Chama o Formulário para adicionar Cursos -->
-    <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right"><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
+    <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right" data-toggle='tooltip' data-placement='top' title='Relatório geral de usuários'><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
 </div>
 <div class="control-plataform">
+    <div class="row justify-content-center align-items-center">
+      
+    </div>  
     <div class="row c1-row justify-content-center align-items-center">
-        <div class="col-xl-7 justify-content-center" id="gl"> 
-        <figure class="highcharts-figure">
-          <div id="chart-usu-control"></div>
-        </figure>
-         <!-- <div id="piechart" style="width: 100%; height: 500px;"></div> -->
+        <div class="col-lg-8">
+          <figure class="highcharts-figure">
+              <div id="chart-3d-control-usu"></div>
+            </figure>
         </div>
-        <div class="table-responsive col-xl-5 table-control">
-          <div class="all-table-body">
-               <table class='table table-striped tabela-gr tb-control' cellspacing='0' cellpading='0'>
-                <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Usuários ( <span id='numeroUsuTb'></span> ) </capiton>
-                  <thead>
-                    <tr class='thead tb-hd'>
-                      <td>Nível:</td>
-                      <td class='text-center'>Cadastrados:</td>
-                      <td class='actions'>Consultar</td>
-                    </tr>
-                  </thead>
-                  <tbody id='tbody_cur'>
-                    <tr>
-                      <td data-toggle='tooltip' data-placement='top' title='Adm'>Administrativo</td>
-                      <td class='text-center'><span id='numeroAdmTb'></span></td>
-                      <td class='actions btn-group-sm'>
-                      <a class='btn btn-info btn-xs' href='?content_adm=consulta_adm' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a>
-                    </tr>
-                    <tr>
-                      <td data-toggle='tooltip' data-placement='top' title='Aluno'>Educacional</td>
-                      <td class='text-center'> <span id='numeroAluTb'><span></td>
-                      <td class='actions btn-group-sm'>
-                        <a class='btn btn-info btn-xs' href='?content_adm=consulta_alu' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-person-lines-fill'></i> </a> 
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-          </div>
-	      </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-center col-cons-control">
+          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos</button></a>
+          <a href=""><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores</button></a>
+        </div>
     </div>
+    
     <hr>
     <div class="d-flex flex-row justify-content-between">
       <h5>Certificados</h5>
@@ -70,13 +52,12 @@
     </div>
     <div class="c2-row row">
       <div class="col-12">
-      <div id="curve_chart" style=" height: 500px"></div>
-      </div>
     
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script>
 
 // Atualizar os dados a cada 15s recarregando a pág;
@@ -98,66 +79,20 @@ var size;
 var altura = window.screen.height;
 var largura = window.screen.width;
 
-var ay
+var sz;
+
+if (largura < 631) {
+  sz = 110;
+}else if (largura < 681){
+sz = 130;
+}else{
+  sz  = 150;
+}
     
 function gfUsu() {
   $.getJSON('base/dashboard/usu_content/adm/painel-control/control_usu.php', function(dados) {
     
     
-    
-    Highcharts.chart('chart-usu-control', {
-      colors: ['#0ea8a8', 'rgba(8, 8, 8, 0.923)'],
-      
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false
-        },
-        title: {
-            text: 'Usuários: '+ dados.total_usu,
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 70
-            //y: 60
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: true,
-                    distance: -70,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white'
-                    }
-                },
-                startAngle: -90,
-                endAngle: 90,
-                center: ['50%', '75%'],
-                size: '150%'
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Porcentagem',
-            innerSize: '50%',
-            data: [
-                ['Alunos', dados.total_alu],
-                ['Administradores', dados.total_adm]
-            ]
-        }],
-        credits: {
-          enabled: false
-        }
-});
         $('#time-control').html(dados.tempo);
         $('#numeroAdmTb').html(dados.total_adm);
         $('#numeroAluTb').html(dados.total_alu);
@@ -169,5 +104,57 @@ function gfUsu() {
     $(document).ready(gfUsu());
     //Executa a função a cada 1 seg
     setInterval(() => { gfUsu(); }, 15000);
-    
+
+//ADMINISTRADORES
+Highcharts.chart('chart-3d-control-usu', {
+  colors: ['#0ea8a8', 'rgba(8, 8, 8, 0.923)'],
+  chart: {
+    type: 'column',
+    options3d: {
+      enabled: true,
+      alpha: 10,
+      beta: 0,
+      depth: 100
+    }
+  },
+  title: {
+    text: ''
+  },
+  subtitle: {
+    text: 'Total de usuários: ' +
+      '<strong>2022</strong>'
+  },
+  plotOptions: {
+    column: {
+      depth: 30
+    }
+  },
+  xAxis: {
+    categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+      'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    labels: {
+      skew3d: true,
+      style: {
+        fontSize: '16px'
+      }
+    }
+  },
+  yAxis: {
+    title: {
+      text: '',
+      margin: 20
+    }
+  },
+  series: [{
+    name: 'Alunos',
+    data: [10, 15, 30, 40, 82,
+      180, 209, 300, 336, 650, 809, 1330]
+  },{
+    name: 'Administradores',
+    data: [5, 5, 8, 12, 16,
+      23, 37, 44, 65, 89, 130, 200]
+  }],credits: {
+          enabled: false
+        }
+});  
 </script>
