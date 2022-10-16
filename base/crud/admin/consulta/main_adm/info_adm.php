@@ -269,7 +269,7 @@
         // Junta o nome do meio
         var meio1 = nomesmeio1.join(' ');
         // Abrevia o nome
-        var nomeMeioAbreviado1 = meio1.replace(/([a-z])\w+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
+        var nomeMeioAbreviado1 = meio1.replace(/([a-z])\w[a-záâãéêíóôõ]+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
         //Exibe o nome completo (Abreviando os do meio)
         var nomeOut1 = primeiroNome1+" "+nomeMeioAbreviado1+" "+ultimoNome1; 
 

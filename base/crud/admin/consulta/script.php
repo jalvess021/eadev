@@ -1,18 +1,6 @@
 
 <script>
 
-    $("#search-adm").keyup(function(){
-
-                var completeAdm = $("#search-adm").val();
-                $.ajax({
-                    url: '/tcc/selects/select_adm.php',
-                    method: 'POST',
-                    data: {nome: completeAdm},
-                    dataType: 'json'
-                }).done(function(result){
-                    console.log(result);
-                }) 
-            }) 
 
         //ATUALIZANDO EM TEMPO REAL 1s
     function update_adm(){ //função que será carregada
@@ -155,7 +143,8 @@
             // Junta o nome do meio
             var meio = nomesmeio.join(' ');
             // Abrevia o nome
-            var nomeMeioAbreviado = meio.replace(/([a-z])\w+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
+            var nomeMeioAbreviado = meio.replace(/([a-z])\w[a-záâãéêíóôõ]+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
+            console.log(nomeMeioAbreviado);
             //Exibe o nome completo (Abreviando os do meio)
             if (nomeTodo.length > 2) {
               var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;

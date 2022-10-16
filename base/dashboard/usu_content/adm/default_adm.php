@@ -39,8 +39,8 @@
             </figure>
         </div>
         <div class="col-lg-4 d-flex flex-column justify-content-center col-cons-control">
-          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos</button></a>
-          <a href=""><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores</button></a>
+          <a href=""><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos</button></a>
+          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores</button></a>
         </div>
     </div>
     
@@ -92,11 +92,60 @@ sz = 130;
 function gfUsu() {
   $.getJSON('base/dashboard/usu_content/adm/painel-control/control_usu.php', function(dados) {
     
+    //COntrole de usuários por mes
+        Highcharts.chart('chart-3d-control-usu', {
+          colors: ['#0ea8a8', 'rgba(8, 8, 8, 0.923)'],
+          chart: {
+            type: 'column',
+            options3d: {
+              enabled: true,
+              alpha: 10,
+              beta: 0,
+              depth: 100
+            }
+          },
+          title: {
+            text: 'Total de usuários: <strong>'+dados.total_usu+'</strong>'
+          },
+          subtitle: {
+            text: 'Período vigente: ' +
+              '<strong>'+dados.ano_vigente+'</strong>'
+          },
+          plotOptions: {
+            column: {
+              depth: 30
+            }
+          },
+          xAxis: {
+            categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+              'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            labels: {
+              skew3d: true,
+              style: {
+                fontSize: '16px'
+              }
+            }
+          },
+          yAxis: {
+            title: {
+              text: '',
+              margin: 20
+            }
+          },
+          series: [{
+            name: 'Alunos',
+            data: [dados.mes_usu.jan_alu, dados.mes_usu.fev_alu, dados.mes_usu.mar_alu, dados.mes_usu.abr_alu, dados.mes_usu.mai_alu,
+            dados.mes_usu.jun_alu, dados.mes_usu.jul_alu, dados.mes_usu.ago_alu, dados.mes_usu.set_alu, dados.mes_usu.out_alu, dados.mes_usu.nov_alu, dados.mes_usu.dez_alu]
+          },{
+            name: 'Administradores',
+            data: [dados.mes_usu.jan_adm, dados.mes_usu.fev_adm, dados.mes_usu.mar_adm, dados.mes_usu.abr_adm, dados.mes_usu.mai_adm,
+            dados.mes_usu.jun_adm, dados.mes_usu.jul_adm, dados.mes_usu.ago_adm, dados.mes_usu.set_adm, dados.mes_usu.out_adm, dados.mes_usu.nov_adm, dados.mes_usu.dez_adm]
+          }],credits: {
+                  enabled: false
+                }
+        });  
     
-        $('#time-control').html(dados.tempo);
-        $('#numeroAdmTb').html(dados.total_adm);
-        $('#numeroAluTb').html(dados.total_alu);
-        $('#numeroUsuTb').html(dados.total_usu);       
+        $('#time-control').html(dados.tempo);   
     });
 }
 
@@ -105,56 +154,5 @@ function gfUsu() {
     //Executa a função a cada 1 seg
     setInterval(() => { gfUsu(); }, 15000);
 
-//ADMINISTRADORES
-Highcharts.chart('chart-3d-control-usu', {
-  colors: ['#0ea8a8', 'rgba(8, 8, 8, 0.923)'],
-  chart: {
-    type: 'column',
-    options3d: {
-      enabled: true,
-      alpha: 10,
-      beta: 0,
-      depth: 100
-    }
-  },
-  title: {
-    text: ''
-  },
-  subtitle: {
-    text: 'Total de usuários: ' +
-      '<strong>2022</strong>'
-  },
-  plotOptions: {
-    column: {
-      depth: 30
-    }
-  },
-  xAxis: {
-    categories: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
-      'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-    labels: {
-      skew3d: true,
-      style: {
-        fontSize: '16px'
-      }
-    }
-  },
-  yAxis: {
-    title: {
-      text: '',
-      margin: 20
-    }
-  },
-  series: [{
-    name: 'Alunos',
-    data: [10, 15, 30, 40, 82,
-      180, 209, 300, 336, 650, 809, 1330]
-  },{
-    name: 'Administradores',
-    data: [5, 5, 8, 12, 16,
-      23, 37, 44, 65, 89, 130, 200]
-  }],credits: {
-          enabled: false
-        }
-});  
+  
 </script>
