@@ -1,0 +1,63 @@
+.rel-header{
+    margin-top: 20px;
+}
+
+.rel-logo{
+width: 120px;
+height: 40px;
+}
+
+.rel-title{
+    margin-top: 8px;
+    font-size: 18pt;
+    text-align: center;
+    font-weight: 500;
+}
+
+.group-rel{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.group-rel2{
+    margin-left: 80px;
+}
+
+.group-rel3{
+    margin-left: 130px;
+}
+
+.cpf-rel{
+    margin-left: 10px;
+}
+
+.uf-rel{
+    margin-left: -40px;
+}
+
+.cep-rel{
+    margin-left: -300px;
+}
+
+.perfil-rel{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    -webkit-box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37); 
+    box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37);
+}
+
+.rel-perg{
+    margin-top: 40px;
+    font-size: 13pt;
+    font-weight: 500;
+    color: black;
+}
+
+.rel-resp{
+    margin-top: -17px;
+    margin-left: 7px;
+    font-size: 12pt;
+    font-weight: 400;
+    color: black;
+}

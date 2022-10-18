@@ -9,17 +9,21 @@
     //Instanciar
     $dompdf = new Dompdf();
     
-$dados = "<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <title>Pdf Teste</title>
-</head>
-<body>
+    $dados = "
+        <!DOCTYPE html>
+        <html lang='pt-br'>
+        <head>
+            <meta charset='UTF-8'>
+            <title>Relátorio de </title>
+            
+        </head>
+        <body>
+        
 
 
-</body>
-</html>";
+        </body>
+        </html>";
+
     //Carregar o html;
     $dompdf->loadHtml($dados);
 
