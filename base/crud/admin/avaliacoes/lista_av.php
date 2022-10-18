@@ -46,7 +46,7 @@
 		</div>
 		<div class="all-table-body">
 			<?php
-				$quantidade = 5;
+				$quantidade = 4;
 				$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
 				if (isset($_POST['formacao']) && $_POST['formacao'] != "all") {

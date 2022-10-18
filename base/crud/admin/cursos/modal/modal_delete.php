@@ -10,7 +10,7 @@ if (isset($_GET['delete_cur'])) {
 							$sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$_GET['delete_cur']."' ;");
 							$row2 = mysqli_fetch_array($sql2);
         echo"
-        <div class='modal fade' id='modalDeleteCur' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal fade' id='modalDeleteCur' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true' data-backdrop='static'>
             <div class='modal-dialog modal-lg' role='document'>
                 <div class='modal-content'>
                     <div class='modal-header bg-danger text-white'>

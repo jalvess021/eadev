@@ -8,7 +8,7 @@ if (isset($_GET['edit_cur'])) {
     $row = mysqli_fetch_array($sql);
     if (mysqli_num_rows($sql)>0) {
       echo "
-      <div class='modal fade modal-edit' id='modalEditCur' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+      <div class='modal fade modal-edit' id='modalEditCur' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true' data-backdrop='static'>
         <div class='modal-dialog modal-lg' role='document'>
           <div class='modal-content'>
             <div class='modal-header'>

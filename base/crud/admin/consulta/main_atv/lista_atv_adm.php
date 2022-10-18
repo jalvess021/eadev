@@ -9,7 +9,7 @@
         if ($rows === 1) {
 
                 $infoUser = mysqli_fetch_array($query);
-                $quantidade = 4;
+                $quantidade = 3;
 				$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
                 $sql = mysqli_query($con, "SELECT * from atv_adm where id_adm = ".$infoUser['id_usu']." order by id_atv asc limit $inicio, $quantidade;");

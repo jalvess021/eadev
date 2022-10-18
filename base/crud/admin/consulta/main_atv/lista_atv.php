@@ -20,7 +20,7 @@
          break;
    }
 
-            $quantidade = 4;
+            $quantidade = 3;
 				$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
             $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");

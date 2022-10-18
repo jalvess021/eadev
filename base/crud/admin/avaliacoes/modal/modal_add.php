@@ -4,7 +4,7 @@ if (isset($_GET['add']) && $_GET['add'] === "av") {
 $r = mysqli_query($con, "SHOW TABLE STATUS LIKE 'questoes'");
 $l = mysqli_fetch_array($r);
 
- echo " <div class='modal fade modal-add' id='modalAddAv' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+ echo " <div class='modal fade modal-add' id='modalAddAv' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true' data-backdrop='static'>
             <div class='modal-dialog modal-xl' role='document'>
                 <div class='modal-content'>
                     <div class='modal-header'>
