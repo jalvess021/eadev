@@ -1,4 +1,10 @@
 <?php ?>
+<div class="row">
+    <div class="col-12">
+        <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right" data-toggle='tooltip' data-placement='top' title='Relatório geral de atividades'><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
+    </div>
+</div>
+
 <div class='cons-body'>
     <div class="div-num-adm">
         <span id="num-cons-adm"></span>

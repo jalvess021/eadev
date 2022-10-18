@@ -11,7 +11,7 @@
                 break;
 
             case 'rel_certificado':
-            include "certificado/cert.php";           
+            include "relatorios/cert.php";           
             break;
         
     }
