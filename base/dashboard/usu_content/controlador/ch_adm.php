@@ -114,6 +114,10 @@ if(isset($_GET['content_adm'])) {
                     include "base/crud/admin/consulta/cons_adm.php";
                     break;
 
+                case 'consulta_atv':
+                    include "base/crud/admin/consulta/cons_atv.php";
+                    break;
+
         //Crud Avaliação 
                 
                 case 'lista_av':

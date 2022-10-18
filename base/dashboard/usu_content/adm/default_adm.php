@@ -39,8 +39,8 @@
             </figure>
         </div>
         <div class="col-lg-4 d-flex flex-column justify-content-center col-cons-control">
-          <a href=""><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos</button></a>
-          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores</button></a>
+          <a href=""><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos | <span id='num-control-alu'></span> |</button></a>
+          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores | <span id='num-control-adm'></span> |</button></a>
         </div>
     </div>
     
@@ -108,7 +108,7 @@ function gfUsu() {
             text: 'Total de usuários: <strong>'+dados.total_usu+'</strong>'
           },
           subtitle: {
-            text: 'Período vigente: ' +
+            text: 'N&#176; de <em>novos</em> usuários mensais | Período vigente: ' +
               '<strong>'+dados.ano_vigente+'</strong>'
           },
           plotOptions: {
@@ -145,7 +145,11 @@ function gfUsu() {
                 }
         });  
     
-        $('#time-control').html(dados.tempo);   
+        $('#time-control').html(dados.tempo); 
+        $('#num-control-alu').html(dados.total_alu); 
+        $('#num-control-adm').html(dados.total_adm); 
+        
+          
     });
 }
 

@@ -2,24 +2,7 @@
 <script>
 
 
-        //ATUALIZANDO EM TEMPO REAL 1s
-    function update_adm(){ //função que será carregada
-        $.getJSON('base/dashboard/usu_content/adm/painel-control/control_usu.php', function (dados) {
-            $('#num-cons-adm').html(dados.total_adm); 
-                        if (dados.total_adm < 2) {
-                            $('#label-cons-adm').html("Administrador no sistema");
-                        }else{
-                            $('#label-cons-adm').html("Administradores no sistema");
-                        }
-        })
-
-        $.getJSON('selects/atv_adm/atv.php', function (dados) {
-            $('#num-cons-title').html(dados.num_total_atv);
-            $('#adm-cons-add').html(dados.num_add);
-            $('#adm-cons-att').html(dados.num_att);
-            $('#adm-cons-del').html(dados.num_del);
-        })
-    }
+  
 
     //executa a função ao carregar
     $(document).ready(update_adm());
@@ -209,7 +192,7 @@ $("#pesq-adm").submit((e)=>{
         var num = dados.replace(/[^0-9]/g,'');
         idAdm = parseInt(num);
         //idCripto = btoa(idAdm);
-        window.location.href = "?content_adm=consulta_adm&info=view&adm="+idAdm;
+        window.location.href = "?content_adm=consulta_atv&info=adm&user="+idAdm;
       }) 
 })
 </script>

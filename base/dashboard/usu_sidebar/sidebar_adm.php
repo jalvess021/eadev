@@ -27,6 +27,7 @@
 							<ul class="list-unstyled">
 								<li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i>Aluno</a></li>
                                 <li><a href="?content_adm=consulta_adm"><i class="fa fa-fw fa-user"></i>Administrador</a></li>
+                                <li><a href="?content_adm=consulta_atv"><i class='bi bi-bar-chart-line-fill'></i>Atividades</a></li>
 							</ul>
                     </li>				           
 
