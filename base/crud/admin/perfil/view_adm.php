@@ -28,9 +28,6 @@
 	$id_usu = $_SESSION['UsuarioID'];
 	$sql = mysqli_query($con, "select * from usuario where id_usu = '".$id_usu."';");
 	$row = mysqli_fetch_array($sql);
-    
-	//Incluindo as Mensagens
-	include "base/crud/aluno/msg_alu.php";
 ?>
 
 <div class="hd_view row">
@@ -55,6 +52,20 @@
   		<?php include "base/crud/admin/perfil/dados/complementares.php";?>			
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+
+	$('#uploadUserCam').change(() => {
+		inp = $('#uploadUserCam').val();
+		if (inp != '') {
+			$("#btnSubmitImgUser").removeAttr('disabled');
+            $('#infoFileCam').html("<div id='divInfofile'><span><i class='bi bi-card-image'></i> "+ inp.substr(12, 19)+"</span></div>");
+		}else{
+			$("#btnSubmitImgUser").attr('disabled', true);
+            $('#infoFileCam').html('');
+		}
+	})
+</script>
 
 
 				

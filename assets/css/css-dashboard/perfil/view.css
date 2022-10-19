@@ -5,7 +5,9 @@
     padding-top: 10px;
     margin-left: 10px;
 } */
-
+#idUserAlterSen{
+    display: none;
+}
 .dados_view{
     color: rgb(145, 145, 145);
 }

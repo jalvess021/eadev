@@ -195,6 +195,44 @@ if(isset($_GET['msg'])){
 						</div>';
 				break;
 
+			//Atualização do perfil ADM 
+			case 19: //Mudança da imagem
+				echo '	<div class="alert alert-info alert-dismissible fade show text-center font-weight-bold text-muted" role="alert">
+						Imagem do perfil atualizada com sucesso!
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>';
+				break;
+		
+			case 20: //Mudança da imagem
+				echo '	<div class="alert alert-warning alert-dismissible fade show text-center font-weight-bold text-muted" role="alert">
+						Erro ao atualizar a imagem do perfil!
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>';
+				break;
+
+			case 21: //Mudança da imagem
+				echo '	<div class="alert alert-info alert-dismissible fade show text-center font-weight-bold text-muted" role="alert">
+						Senha atualizada com sucesso!
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>';
+				break;
+
+			case 22: //Mudança da imagem
+				echo '	<div class="alert alert-warning alert-dismissible fade show text-center font-weight-bold text-muted" role="alert">
+						Erro ao atualizar a senha!
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>';
+				break;
+
+			
 		}
 	$msg = 0;
 }
