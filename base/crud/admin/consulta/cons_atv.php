@@ -8,7 +8,7 @@
 	<div class="table-responsive col-md-12 col-md-12 all-table">
 		<div class="all-table-header">
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand cons-adm" href="?content_adm=consulta_adm" title='Início'><i class='bi bi-bar-chart-line-fill'></i> Atividades</a>
+            <a class="navbar-brand cons-adm" href="?content_adm=consulta_adm" title='Início'><i class='bi bi-bar-chart-line-fill'></i> Atividades Administrativas</a>
             <form class="form-inline" id="pesq-adm">
                 <input class="form-control mr-sm-2 search-usu" type="search" id="search-adm" placeholder="Nome { ID }" aria-label="Search" autocomplete='off'>
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit" id='submit-adm' disabled>Pesquisar</button>
@@ -40,5 +40,10 @@
             $('#adm-cons-del').html(dados.num_del);
         })
     }
+
+     //executa a função ao carregar
+     $(document).ready(update_adm());
+    //Executa a função a cada 3 seg
+    setInterval(() => { update_adm(); }, 3000);
 </script>
 <?php require_once "script.php";?>

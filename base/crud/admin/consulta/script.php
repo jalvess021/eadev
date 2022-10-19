@@ -2,14 +2,6 @@
 <script>
 
 
-  
-
-    //executa a função ao carregar
-    $(document).ready(update_adm());
-    //Executa a função a cada 3 seg
-    setInterval(() => { update_adm(); }, 3000);
-
-
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
@@ -175,26 +167,7 @@ setInterval(() => {
     }
 }, 0);
 
-$("#pesq-adm").submit((e)=>{
-  e.preventDefault();
-  var valInput = $("#search-adm").val();
-  //Regex (Expressão regular)
-  reg1 = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
-  //Pega apenas o id do administrador que ele quer buscar
-  idSearch = valInput.replace(reg1, "$7");
-  $.ajax({
-          url: 'base/crud/admin/consulta/search_adm2.php',
-          method: 'POST',
-          data: {searchAdmInput: idSearch},
-          datatype: 'json'
-      }).done(function(result){
-        dados = result;
-        var num = dados.replace(/[^0-9]/g,'');
-        idAdm = parseInt(num);
-        //idCripto = btoa(idAdm);
-        window.location.href = "?content_adm=consulta_atv&info=adm&user="+idAdm;
-      }) 
-})
+
 </script>
 
 

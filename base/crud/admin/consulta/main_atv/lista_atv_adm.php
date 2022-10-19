@@ -17,10 +17,18 @@
                 if ($rows1 > 0) {
                     $sqlCountAtv = mysqli_query($con, "SELECT * from atv_adm where id_adm = ".$infoUser['id_usu'].";");
                     $rowsCountAtv = mysqli_num_rows($sqlCountAtv);
+
+                    $anoAnterior = date('Y', strtotime('-1 year'));
+                    $anoAtual = date('Y');
+                    $anoPosterior = date('Y', strtotime('+1 year'));
                     echo "
-                            <div class='d-flex flex-row justify-content-between'>
-                                <h5 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h5>
-                                <a href='?content_adm=consulta_atv' class=' btn-back btn btn-sm bt-padrao mb-3'> <i class='bi bi bi-x-lg'></i> Fechar </a>
+                            <div class='d-flex flex-row justify-content-between align-items-center mb-3'>
+                                <h6 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h6>
+                                <div class='d-flex flex-row'>
+                                    <a data-toggle='modal' data-target='#relAtvAdm' class='btn btn-sm btn-secondary mr-3 text-white'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
+                                    <a href='?content_adm=consulta_atv' class='btn-back btn btn-sm bt-padrao '> <i class='bi bi bi-x-lg'></i> Fechar </a>
+                                </div>
+                                
                             </div>
                             <table class='table table-striped' cellspacing='0' cellpading='0'>
                             <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades (".$rowsCountAtv.") </capiton>
@@ -226,16 +234,56 @@
                                     $anterior 		= (($pagina-1) <= 0) ? 1 : $pagina - 1;
                                     $posterior 		= (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
                                     echo "<ul class='pagination d-flex justify-content-center mt-4'>";
-                                    echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=consulta_adm&&info=adm&user=1&pagina=1'> Primeira</a></li> ";
-                                    echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=adm&user=1&pagina=$anterior\"> &laquo;</a></li> ";
-                                    echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_adm&info=adm&user=1&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+                                    echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=consulta_atv&&info=adm&user=1&pagina=1'> Primeira</a></li> ";
+                                    echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_atv&info=adm&user=1&pagina=$anterior\"> &laquo;</a></li> ";
+                                    echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_atv&info=adm&user=1&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
                                     for($i = $pagina+1; $i < $pagina+$exibir; $i++){
                                     if($i <= $totalpagina)
-                                    echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_adm&info=adm&user=1&pagina=".$i."'> ".$i." </a></li> ";
+                                    echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_atv&info=adm&user=1&pagina=".$i."'> ".$i." </a></li> ";
                                     }
-                                    echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=adm&user=1&pagina=$posterior\"> &raquo;</a></li> ";
-                                    echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_adm&&info=adm&user=1&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
-                            "; 
+                                    echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_atv&info=adm&user=1&pagina=$posterior\"> &raquo;</a></li> ";
+                                    echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_atv&&info=adm&user=1&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
+                             
+
+                        <!-- Modal -->
+                        <div class='modal fade' id='relAtvAdm' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' data-backdrop='static'>
+                            <div class='modal-dialog modal-dialog-centered' role='document'>
+                                <div class='modal-content'>
+                                <div class='modal-header bg-secondary text-white font-weight-bold'>
+                                    <h5 class='modal-title' id='exampleModalCenterTitle'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório de atividades do ADM { ".$infoUser['id_usu']." } </h5>
+                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                    <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                </div>
+                                <div class='modal-body'>
+                                    <form action='' method='post'>
+                                        <div class='form-group'>
+                                            <label for='exampleFormControlInput1'>Selecione a atividade: </label>
+                                            <select class='custom-select custom-select-sm'>
+                                            <option value='all' selected>Todas</option>
+                                            <option value='add'>Inseção</option>
+                                            <option value='att'>Atualização</option>
+                                            <option value='del'>Exclusão</option>
+                                            </select>
+                                        </div>
+                                        <div class='form-group'>
+                                            <label for='exampleFormControlInput1'>Selecione o período: </label>
+                                            <select class='custom-select custom-select-sm' >
+                                                //Controle de data do relatório (Plaforma contem dados de 2022)
+                                                        <option value='".$anoAnterior."'>".$anoAnterior."</option>
+                                                        <option value='".$anoAtual."' selected>".$anoAtual."</option>
+                                                        <option value='".$anoPosterior."'>".$anoPosterior."</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class='modal-footer'>
+                                    <button type='button' class='btn btn-sm btn-secondary font-weight-bold' data-dismiss='modal'><i class='bi bi-x-circle-fill'></i> Fechar</button>
+                                    <a href='#' class='btn btn-sm btn-success font-weight-bold text-white' disabled><i class='bi bi-check-all'></i> Gerar relatório</a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>";
                 } else {
                     echo "
                         <div class='row justify-content-between'>
@@ -243,7 +291,7 @@
                                         <h5 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h5>
                                     </div>
                                     <div class='col-2'>
-                                    <a href='?content_adm=consulta_adm' class='btn-null btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
+                                    <a href='?content_adm=consulta_atv' class='btn-null btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
                                     </div>
                         </div>
                         <div class='row justify-content-center atv-null'>
@@ -254,6 +302,8 @@
         }
     }
 ?>
+
+
 <script>
         var nomeCompleto1 = "<?php echo $infoUser['nome'];?>";
         //tamanho do nome
@@ -274,6 +324,27 @@
         var nomeOut1 = primeiroNome1+" "+nomeMeioAbreviado1+" "+ultimoNome1; 
 
         $(".admAbrev").html(nomeOut1);
+
+        $("#pesq-adm").submit((e)=>{
+        e.preventDefault();
+        var valInput = $("#search-adm").val();
+        //Regex (Expressão regular)
+        reg1 = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
+        //Pega apenas o id do administrador que ele quer buscar
+        idSearch = valInput.replace(reg1, "$7");
+        $.ajax({
+                url: 'base/crud/admin/consulta/search_adm2.php',
+                method: 'POST',
+                data: {searchAdmInput: idSearch},
+                datatype: 'json'
+            }).done(function(result){
+                dados = result;
+                var num = dados.replace(/[^0-9]/g,'');
+                idAdm = parseInt(num);
+                //idCripto = btoa(idAdm);
+                window.location.href = "?content_adm=consulta_atv&info=adm&user="+idAdm;
+            }) 
+        })
 
 </script>
 

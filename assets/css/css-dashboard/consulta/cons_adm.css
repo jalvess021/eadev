@@ -4,13 +4,16 @@
 .lb-cons{
   font-weight: 600;
   color: rgb(82, 82, 82);
+  padding: 0px 0px 0px 10px;
+  border-left: #1C9999 3px outset;
+  margin-top: 5px;
 }
 .icon-null{
   color: #1C9999;
 }
 .atv-null{
   margin-top: 20px !important;
-  padding: 100px 0px;
+  padding: 90px 0px 130px 0px;
 }
 .atv-null span{
   font-weight: 700;

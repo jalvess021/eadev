@@ -19,11 +19,11 @@
                         <div class='col-2'>
                             <img class='perfil-cam-adm' src='\\tcc\assets\images\users\\".md5($resComp['id_usu']).".jpg' alt='Foto do usuário'>
                         </div>
-                        <div class='col-7'>
-                            <p class=' text-center nome-adm'>".$resAdm['nome']." { ".$resComp['id_usu']." }</p>
+                        <div class='col-7 mt-2'>
+                            <p class='ml-4 text-center nome-adm'>".$resAdm['nome']." { ".$resComp['id_usu']." }</p>
                         </div>
-                        <div class='col-2'>
-                            <a href='?content_adm=consulta_adm&info=adm&user=".$id_adm."'><button class='btn bt-padrao'><i class='bi bi-file-earmark-bar-graph-fill'></i> Atividades</button></a>
+                        <div class='col-3'>
+                            <button data-toggle='modal' data-target='#relAtv' class='btn btn-lg btn-secondary mt-1 text-white font-weight-bold pull-right'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</button>
                         </div>
                 </div>
                 <div class='row justify-content-between row-init2'>

@@ -1,10 +1,4 @@
-<?php ?>
-<div class="row">
-    <div class="col-12">
-        <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right" data-toggle='tooltip' data-placement='top' title='Relatório geral de atividades'><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
-    </div>
-</div>
-
+<?php include "base/config.php";?>
 <div class='cons-body'>
     <div class="div-num-adm">
         <span id="num-cons-adm"></span>
@@ -19,35 +13,25 @@
             </div>
     </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Relatório GERAL</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Selecione o período: </label>
-            <select class="custom-select" size="2">
-                <option selected disabled>Ano</option>
-                <option>2022</option>
-            </select>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-sm btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+<script>
+    $("#pesq-adm").submit((e)=>{
+    e.preventDefault();
+    var valInput = $("#search-adm").val();
+    //Regex (Expressão regular)
+    reg1 = /^[A-Z]([^A-Z\d\s]+)((\s[A-Z]([^A-Z\d\s])+)|(\s[A-Z]([^A-Z\d\s])+)+)\s{1}\{\s([0-9]+)\s\}$/g;
+    //Pega apenas o id do administrador que ele quer buscar
+    idSearch = valInput.replace(reg1, "$7");
+    $.ajax({
+            url: 'base/crud/admin/consulta/search_adm2.php',
+            method: 'POST',
+            data: {searchAdmInput: idSearch},
+            datatype: 'json'
+        }).done(function(result){
+            dados = result;
+            var num = dados.replace(/[^0-9]/g,'');
+            idAdm = parseInt(num);
+            //idCripto = btoa(idAdm);
+            window.location.href = "?content_adm=consulta_atv&info=adm&user="+idAdm;
+        }) 
+    })
+</script>
