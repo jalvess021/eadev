@@ -66,7 +66,7 @@
 							</td>";
 							echo "<td class='text-center'>".date('H:i:s | d-m-Y', strtotime($info['dt_cadastro']))." </td>";
 							echo "<td class='actions btn-group-sm'>";
-							echo "<a class='btn btn-info btn-xs' href='?content_adm=consulta_adm&info=view&adm=".$info['id_usu']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
+							echo "<a class='btn btn-info btn-xs' href='?content_adm=consulta_alu&info=view&alu=".$info['id_usu']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
 						}
 						echo "</tr></tbody></table>";
 				?>

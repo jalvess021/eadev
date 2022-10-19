@@ -93,7 +93,7 @@
 				echo "<td class='actions'>Ações</td>";
 				echo "</tr></thead><tbody>";
 				while($info = mysqli_fetch_array($data)){
-
+					
 						// Duração da aula
 						$start = $info['start_aula'];
 						$end = $info['end_aula'];

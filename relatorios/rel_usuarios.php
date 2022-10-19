@@ -19,32 +19,28 @@
         <link rel='stylesheet' href='http://localhost/tcc/assets/css/all-rel/info_admin.css'>
     </head>
     <body>
-    <header class=''>
+    <header class='container-fluid'>
       <div class='d-flex flex-row justify-content-center'>
         <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
       </div>
       <hr style='margin-top: 4px;'>
     </header>
-    <main class='pt-4'>
+    <main class='container-fluid pt-4'>
       <div class='d-flex justify-content center'>
-      <h1 class='title-rel'>Ficha Técnica</h1>
       <h1 class='title-rel'>Ficha Técnica</h1>
       </div>
       <table>
         <thead>
-          <tr style='padding: 10px; background-color: rgba(19, 19, 19, 0.712);'>
-              
-                <td class='tdth'><img class='person-admin' src='http://localhost/tcc/arquivos/img/agnaldo.jfif' alt=''></td>
-                <td class='tdth'>
-                    <p class='perg-rel'>Nome Completo:</p>
-                    <p class='resp-rel'>Mateus de Azevedo Correa de Mello</p>
-                </td>
-                <td class='tdth'>
-                    <p class='perg-rel'>Nível:</p>
-                    <p class='resp-rel2'>Administrador</p>
-                </td>
-             
-            
+          <tr class='container'>
+            <th colspan='3' style='padding: 10px; background-color: rgba(19, 19, 19, 0.712);''>
+              <div class='d-flex flex-row justify-content-around'>
+                <img class='person-admin' src='http://localhost/tcc/arquivos/img/agnaldo.jfif' alt=''>
+                <p class='perg-rel'>Nome Completo:</p>
+                <p class='resp-rel'>Mateus de Azevedo Correa de Mello</p>
+                <p class='perg-rel'>Nível:</p>
+                <p class='resp-rel2'>Administrador</p>
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -104,15 +100,15 @@
         </tbody>
       </table>
     </main>
-    <footer class='' style='width: 100%;position: absolute; bottom: 0; left: 0;''>
+    <footer class='container-fluid' style='width: 100%;position: absolute; bottom: 0; left: 0;''>
       <hr style='margin-bottom: 4px;''>
       <div class='d-flex flex-row justify-content-between'>
-        <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
+        <img class='footer-icon' src='http://localhost/tcc/arquivosarquivos/img/icone/icone1.png' alt=''>
         <p class='footer-rel'>Data de Emissão: 19/10/2022</p>
       </div>
     </footer>
     </body>
-    </html>  ";
+    </html>   ";
 
     //Carregar o html;
     $dompdf->loadHtml($dados);
