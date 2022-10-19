@@ -32,25 +32,25 @@
 </div>
 	
 <h3 class="content-subtitle-sub">Alterar sua senha</h3>
-
 <hr>
-<form action="" method="" autocomplete="off">
+<form action="\tcc/base/crud/admin/perfil/dados/alter.php" method="post" autocomplete="off">
 	<div class="column-password">
 		<p class="view-password-p">Senha Atual</p>
-		<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
+		<input type="password" class="view-password" id="passwordCurrent" autocomplete="off" required>
 	</div>
 	<br>
 	<div class="row pb-5 password-group">
 		<div class="col-6">
 			<p class="view-password-p">Nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
-			<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
+			<input type="text" value='<?php echo $id_usu;?>' name='id_s' id='idUserAlterSen'>
+			<input type="password" class="view-password" id="passwordAlter1" name="senha" autocomplete="off" required disabled>
 		</div>
 		<div class="col-6">
 			<p class="view-password-p">Confirme a nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
-			<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
+			<input type="password" class="view-password" id="passwordAlter2" autocomplete="off" required disabled>
 		</div>
 	</div>
-	<div class="button-password pb-5">
-	<button type="submit"><a href="#">Salvar nova senha</a></button>
+	<div class="button-password2 pb-5">
+	<input type="submit" id='btnSubmitImgUserSen' disabled value='Alterar Senha'>
 	</div>
 </form>

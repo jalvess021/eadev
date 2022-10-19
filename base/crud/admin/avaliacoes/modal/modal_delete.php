@@ -34,7 +34,7 @@ if (isset($_GET['delete_quest'])) {
                         </div>
                 </div>
                 <div class='modal-footer bg-light d-flex justify-content-center'>
-                    <a href='?content_adm=lista_aula' class='btn btn-sm btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
+                    <a href='?content_adm=lista_av' class='btn btn-sm btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
                     <a href='?content_adm=delete_av&id_quest=".$_GET['delete_quest']."'><button class='btn btn-sm btn-danger text-white' id='modalConfirm' disabled>Confirmar <i class='bi bi-trash-fill'></i></button></a>
                     </div>
                 </div>
