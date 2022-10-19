@@ -1,10 +1,16 @@
 <h4 class="content-subtitle ">Informações Complementares</h4>
 <hr class="">
 <div class="row justify-content-between group-cam">
-    <div class="form-group col-md-4">
-        <img class="perfil-cam" <?php echo "src='\\tcc/assets/images/users/".md5($row['id_usu']).".jpg'";?> alt="Logo Eadev">
+    <div class="col-md-2 mt-md-4">
+    <label for="uploadUserCam" class='labelUserCamp'>
+        <img class="perfil-cam" <?php echo "src='\\tcc/assets/images/users/".md5($row['id_usu']).".jpeg'";?>>
+        </label> 
+        <form id="alterImgUser" method='POST'>
+            <input id="uploadUserCam" type="file" accept="image/jpeg" name="foto">
+        </form>
+        <span id='infoFileCam'></span>
     </div>
-    <div class="form-group col-md-5 perfil-nome ">
+    <div class="form-group col-md-5 perfil-nome">
         <label class="perfil-label" for="Nome">Nome completo</label>
         <input type="text" class="form-control perfil-input"  value="<?php echo $row['nome'];?>" disabled>
     </div>
@@ -56,7 +62,26 @@
 </div>
 
 <div class="button-password2 d-flex justify-content-center">
-        <button type="submit"><a href="#">Salvar dados</a></button>
+        <input type="submit" form='alterImgUser' id='btnSubmitImgUser' value='Salvar dados' disabled>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+	$('#uploadUserCam').change(() => {
+        
+        
+		inp = $('#uploadUserCam').val();
+		if (inp != '') {
+			$("#btnSubmitImgUser").removeAttr('disabled');
+            $('#infoFileCam').html("<div id='divInfofile'><span><i class='bi bi-card-image'></i> "+ inp.substr(12, 19)+"</span></div>");
+		}else{
+			$("#btnSubmitImgUser").attr('disabled', true);
+            $('#infoFileCam').html('');
+		}
+	})
 
+    
+
+  
+    
+</script>
 

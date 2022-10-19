@@ -1,6 +1,5 @@
-
-    <div class='d-flex flex-row justify-content-between mb-3'>
-        <h6 class='lb-cons'>Lista de administradores</h6>
+<div class='d-flex flex-row justify-content-between mb-3'>
+        <h6 class='lb-cons'>Lista de alunos</h6>
         <div class='d-flex flex-row'>
             <a data-toggle='modal' data-target='#relAtv' class='btn btn-sm btn-secondary mr-3 text-white'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
             <a href='?content_adm=consulta_atv' class=' btn-back btn btn-sm bt-padrao '> <i class='bi bi bi-x-lg'></i> Fechar </a>
@@ -11,10 +10,10 @@
 						$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 						$inicio = ($quantidade * $pagina) - $quantidade;
 
-                        $data = mysqli_query($con, "select * from usuario where nvl_acesso = 3 order by id_usu asc limit ".$inicio.", ".$quantidade.";") or die(mysqli_error("ERRO: ".$con));
+                        $data = mysqli_query($con, "select * from usuario where nvl_acesso = 2 order by id_usu asc limit ".$inicio.", ".$quantidade.";") or die(mysqli_error("ERRO: ".$con));
 						$rowData = mysqli_num_rows($data);
 						echo "<table class='table table-striped tabela-gr' cellspacing='0' cellpading='0'>";
-                        echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Todos os administradores (".$rowData.") </capiton>";
+                        echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Todos os alunos (".$rowData.") </capiton>";
 						echo "<thead><tr class='thead'>";
 						echo "<td>Id:</td>";
 						echo "<td>Usuário:</td>";

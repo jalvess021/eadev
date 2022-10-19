@@ -113,7 +113,13 @@
 					echo "<td class='d-none d-xl-table-cell'>".substr($info['tit_aula'], 0, 14)."...</td>";
 					echo "<td>".$YtbPath.$idPath." </td>";
 					echo "<td class='d-none d-lg-table-cell text-center'>".gmdate("i", $total)."<span class='hour'>min</span>".gmdate("s", $total)."<span class='hour'>s</span></td>";
-					echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
+					echo "<td class='d-none d-xl-table-cell text-center'>";
+						if ($date != null) {
+							echo date('H:i | d-m-Y  ', $date); 
+						}else {
+							echo "Sem atualização!";
+						}
+					echo "</td>";
 					echo "<td class='actions btn-group-sm'>";
 					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_aula&id_aula=".$info['id_aula']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
 					echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_aula&edit_aula=".$info['id_aula']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";

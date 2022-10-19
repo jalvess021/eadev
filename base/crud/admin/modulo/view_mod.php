@@ -37,13 +37,18 @@
 							<div class="col justify-content-end">
 								<h6 class="text-dark font-weight-bold">Criado em:</h6> <small><?php
 	
-									echo " ".date('d/m/Y', $date_cr)." às ".date('H:i', $date_cr)." ";
+									echo " ".date('d/m/Y', $date_cr)." às ".date('H:i:s', $date_cr)." ";
 								?></small>
 							</div>
 							<div class="col justify-content-end">
 								<h6 class="text-dark font-weight-bold">Última atualização:</h6> <small><?php
 	
-									echo " ".date('d/m/Y', $date_alt)." às ".date('H:i', $date_alt)." ";
+										if ($s2 != null) {
+											echo " ".date('d/m/Y', $date_alt)." às ".date('H:i:s', $date_alt)." ";
+										}else {
+											echo "Não houve atualização!";
+										}
+									
 								?></small>
 							</div>
 						</div>

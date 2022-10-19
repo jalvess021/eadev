@@ -1,15 +1,57 @@
+#uploadUserCam{
+    display: none;
+}
+#divInfofile{
+    margin-left: 35px;
+    padding-left: 5px;
+    align-items: center;
+    padding: 5px;
+    border-left: #099898 3px outset;
+    white-space: nowrap;
+}
+#divInfofile button{
+    height: 20px;
+}
+
+#divInfofile button:hover{
+    cursor: pointer;
+}
+#infoFileCam{
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+.labelUserCamp:hover{
+    cursor: pointer;
+}
+
+.labelUserCamp:hover .perfil-cam{
+    filter: brightness(20%);
+    transition: ease-in 0.1s;
+}
+
+.labelUserCamp:hover::after{
+    content: "Alterar imagem";
+    color: white;
+    font-weight: 600;
+    font-size: 12pt;
+  width: 130px;
+  height: 30px;
+  position: absolute;
+  z-index: 999;
+  top: 40%;
+  left: 33%;
+}
+
 .div-inp-com input:focus{
     box-shadow: none !important;
     border: 1px solid #ced4da !important;
 }
-.group-cam{
-    margin-top: 30px;
-}
 
 .perfil-cam{
     margin-left: 43px;
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     border-radius: 100px;
     -webkit-box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37); 
     box-shadow: 9px 9px 18px -11px rgba(0,0,0,0.37);
@@ -26,7 +68,19 @@
 .perfil-label{
     color: rgba(0, 0, 0, 0.699);
     font-weight: 600;
-    font-size: 12pt;
+    font-size: 11pt;
+}
+
+.perfil-label::after{
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: #76c1c1;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 0px;
 }
 
 
@@ -40,7 +94,7 @@
     margin-left: 15px;
 }
 
-.button-password2 button{
+.button-password2 input:not(:disabled){
     width: 40%;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -50,16 +104,28 @@
     margin-left: 15px;
     border-radius: 500px;
     cursor: pointer;
-}
-
-.button-password2 button:hover{
-    transition: all 0.2s;
-    background-color: #099898;
-}
-
-.button-password2 button a{
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
+}
+
+.button-password2 input:not(:disabled):hover{
+    transition: all 0.2s;
+    background-color: #099898;
+}
+
+.button-password2 input:disabled{
+    width: 40%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border: none;
+    background-color: #357e7e;
+    padding: 0.62rem;
+    margin-left: 15px;
+    border-radius: 500px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(182, 182, 182);
 }

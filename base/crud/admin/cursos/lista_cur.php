@@ -83,7 +83,14 @@
 							echo "<td class='text-center'>".$row2[0]."</td>";
 							$s = $info['dt_alteracao'];
 							$date = strtotime($s);
-							echo "<td class='d-none d-lg-table-cell text-center'>".date('H:i | d-m-Y  ', $date). " </td>";
+							echo "<td class='d-none d-lg-table-cell text-center'>"; 
+								if ($date != null) {
+									echo date('H:i | d-m-Y  ', $date);
+								}else {
+									echo "Sem atualização!";
+								}
+								
+							echo"</td>";
 							echo "<td class='actions btn-group-sm'>";
 							echo "<a class='btn btn-info btn-xs' href='?content_adm=view_cur&id_curso=".$info['id_curso']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
 							echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_cur&edit_cur=".$info['id_curso']."'  data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";

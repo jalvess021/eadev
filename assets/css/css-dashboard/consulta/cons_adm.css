@@ -92,12 +92,12 @@
   }
 
 /*Css do auto-complete*/
-#pesq-adm .autocomplete {
+.pesq-usu-cons .autocomplete {
   position: relative;
   display: inline-block;
 }
 
-#pesq-adm .autocomplete-items {
+.pesq-usu-cons .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
   border-bottom: none;
@@ -107,24 +107,28 @@
   top: 100%;
   left: 0;
   right: 0;
+  max-height: 90px !important;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  max-width: 300px !important;
+  background-color: #fff;
 }
 
-#pesq-adm .autocomplete-items div {
+
+.pesq-usu-cons .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
   background-color: #fff; 
   border-bottom: 1px solid #d4d4d4; 
   max-height: 80px;
   width: 280px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
 }
 
-#pesq-adm .autocomplete-items div:hover {
+.pesq-usu-cons .autocomplete-items div:hover {
   background-color: #e9e9e9; 
 }
 
-#pesq-adm .autocomplete-active {
+.pesq-usu-cons .autocomplete-active {
   background-color: dodgerblue !important; 
   color: #ffffff; 
 }

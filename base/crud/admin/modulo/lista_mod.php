@@ -97,7 +97,14 @@
                             echo "<td>".$info['nome_mod']."</td>";
                             echo "<td class='text-center'>".$row2[0]."</td>";
                             echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date1). " </td>";
-                            echo "<td class='d-none d-lg-table-cell text-center'>".date('H:i | d-m-Y  ', $date). " </td>";
+                            echo "<td class='d-none d-lg-table-cell text-center'>";
+                            
+                            if ($date != null) {
+                                echo date('H:i | d-m-Y  ', $date);
+                            }else {
+                                echo "Sem atualizações!";
+                            }
+                            echo "</td>";
                             echo "<td class='actions btn-group-sm'>" ;
                             echo "<a class='btn btn-info btn-xs' href='?content_adm=view_mod&id_mod=".$info['id_mod']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
                             echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_mod&edit_mod=".$info['id_mod']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";

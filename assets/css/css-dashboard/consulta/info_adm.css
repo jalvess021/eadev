@@ -10,11 +10,10 @@
 
 .row-init2{
     margin-top: 35px;
-    margin-bottom: 20px;
 }
 
 .row-init3{
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .row-init4{
@@ -53,4 +52,10 @@
     position: relative;
     border-radius: 10px;
     margin-left: 0px;
+}
+
+.info_view_user{
+    color: rgba(0, 0, 0, 0.699) !important;
+    font-size: 11pt !important;
+    font-weight: 600 !important;
 }
