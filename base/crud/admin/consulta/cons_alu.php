@@ -17,7 +17,7 @@
 				<hr>
 		</div>
 		<div class="all-table-body" id='cons-main-adm'>
-			<?php include "main_alu/ch_cons_main.php";?>
+			<?php include "main_alu/ch_cons_main.php";?>  
 		</div>
 	</div>
 </div>

@@ -1,9 +1,6 @@
 <div class='d-flex flex-row justify-content-between mb-3'>
         <h6 class='lb-cons'>Lista de alunos</h6>
-        <div class='d-flex flex-row'>
-            <a data-toggle='modal' data-target='#relAtv' class='btn btn-sm btn-secondary mr-3 text-white'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
-            <a href='?content_adm=consulta_atv' class=' btn-back btn btn-sm bt-padrao '> <i class='bi bi bi-x-lg'></i> Fechar </a>
-         </div>
+		<a class='btn btn-sm btn-secondary text-white' data-toggle='tooltip' data-placement='left' title='Gerar Relatório Geral de Alunos'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
       </div>
 				<?php
 						$quantidade = 3;
