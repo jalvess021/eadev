@@ -5,10 +5,22 @@
     height: 25px;
 }
 
-main{
-    margin-top: 4rem;
+.tb-ftecnica tr:nth-child(2n):not(.thead){
+    background-color: #DDDDDD;
 }
 
+.tb-ftecnica td:nth-child(1){
+    width: 25%;
+}
+
+.tb-ftecnica td:nth-child(3){
+width: 30%;
+}
+
+main{
+    margin-top: 202px;
+    margin-bottom: 148px;
+}
 .footer-rel{ 
     margin-top: -27px;
     margin-left: 75%;
@@ -17,7 +29,7 @@ main{
 }
 
 .footer-icon{
-    margin-top: -12px;
+    margin-top: -5px;
     width: 40px;
     height: 25px;
 }
@@ -38,6 +50,10 @@ table{
     width: 700px;
 }
 
+.tr-rel{
+    background-color: #cecece91;
+}
+
 td{
     border: none;
     padding: 5px;
@@ -47,36 +63,47 @@ td{
     width: 80px;
     height: 80px;
     border-radius: 100px;
-    margin-left: 60px;
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 3px outset white;
 }
 
 .perg-rel{
     margin-top: 15px;
     font-size: 12pt;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.774);
+    font-weight: bold;
+    color: rgb(240, 240, 240);
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
 .resp-rel{
     margin-top: -15px;
-    margin-left: 10px;
+    color: rgba(248, 248, 248, 0.808);
     font-size: 11pt;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.774);
+    font-weight: 700;
+    font-family: sans-serif;
 }
 
 .perg-rel2{
     padding-left: 5px;
-    font-size: 12pt;
-    font-weight: 600;
+    font-size: 11pt;
+    font-weight: 700;
     color: rgba(0, 0, 0, 0.774);
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
 .resp-rel2{
     padding-left: 10px;
     font-size: 11pt;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.918);
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.61);
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+.resp-rel3{
+    padding: 5px 0px 3px 5px;
 }

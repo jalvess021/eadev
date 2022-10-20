@@ -19,52 +19,66 @@
         <link rel='stylesheet' href='http://localhost/tcc/assets/css/all-rel/info_admin.css'>
     </head>
     <body>
-    <header class='container-fluid'>
+    <header >
           <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
         <hr style='margin-top: -10px;'>
       </header>
-      <main class='container-fluid'>
+      <main>
           <h1 class='title-rel'>Ficha Técnica</h1>
-        <table>
+        <table class='tb-ftecnica'>
+              <thead style='background-color: #343a40;'>
+                <tr class='thead'>
+                  <th style='border-right:none;'>
+                    <img class='person-admin' src='http://localhost/tcc/arquivos/img/agnaldo.jfif' alt=''>
+                  </th>
+                  <th >
+                    <p class='perg-rel'>Nome:</p>
+                    <p class='resp-rel'>Mateus de Azevedo Correa de Mello</p>
+                  </th>
+                  <th>
+                    <p class='perg-rel'>Nível:</p>
+                    <p class='resp-rel'>Administrador</p>
+                  </th>
+                </tr>
+              </thead>
           <tbody>
             <tr>
-              <td>
-                <img class='person-admin' src='http://localhost/tcc/arquivos/img/agnaldo.jfif' alt=''>
-              </td>
-              <td >
-                <p class='perg-rel'>Nome:</p>
-                <p class='resp-rel'>Mateus de Azevedo Correa de Mello</p>
-              </td>
-              <td>
-                <p class='perg-rel'>Nível:</p>
-                <p class='resp-rel'>Administrador</p>
-              </td>
+              <td class='perg-rel2' style='border: 1px solid black;'>Id:</td>
+              <td class='perg-rel2' style='border: 1px solid black ;'>Data de Cadastro:</td>
+              <td class='perg-rel2' style='border: 1px solid black ;'>Status:</td>
+            </tr>
+            <tr class='tr-rel'>
+              <td class='resp-rel2' style='border: 1px solid black;'>3</td>
+              <td class='resp-rel2' style='border: 1px solid black ;'> 12:03:33 | 03-05-2021</td>
+              <td class='resp-rel2' style='border: 1px solid black ;'>Ativo</td>
             </tr>
             <tr>
               <td class='perg-rel2' style='border: 1px solid black;'>Usuário:</td>
               <td class='perg-rel2' style='border: 1px solid black ;'>Sexo:</td>
-              <td class='perg-rel2' style='border: 1px solid black ;'>Telefone:</td>
+              <td class='perg-rel2' style='border: 1px solid black ;'>Data de Nascimento:</td>
             </tr>
-            <tr>
+            <tr class='tr-rel'>
               <td class='resp-rel2' style='border: 1px solid black;'>Teuzin</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>Masculino</td>
-              <td class='resp-rel2' style='border: 1px solid black ;'>(21) 98696-5234</td>
+              <td class='resp-rel2' style='border: 1px solid black ;'>26/02/2004</td>
             </tr>
             <tr>
-              <td colspan='2' class='perg-rel2' style='border: 1px solid black;'>E-mail:</td>
+              <td class='perg-rel2' style='border: 1px solid black;'>Telefone</td>
+              <td class='perg-rel2' style='border: 1px solid black;'>E-mail:</td>
               <td class='perg-rel2' style='border: 1px solid black;'>CPF:</td>
             </tr>
-            <tr>
-              <td colspan='2' class='resp-rel2' style='border: 1px solid black;'>mateuzinho.mello@gmail.com</td>
-              <td class='resp-rel2' style='border: 1px solid black ;'>111.111.111-11</td>
+            <tr class='tr-rel'>
+              <td class='resp-rel2' style='border: 1px solid black ;'>(21) 98696-5234</td>
+              <td class='resp-rel2' style='border: 1px solid black;'>mariaeduarda38841@gmail.com</td>
+              <td class='resp-rel2' style='border: 1px solid black;'>xxx.xxx.xxx-xx</td>
             </tr>
             <tr>
-              <td class='perg-rel2' style='border: 1px solid black;'>RG:</td>
+              <td class='perg-rel2' style='border: 1px solid black ;'>RG:</td>
               <td class='perg-rel2' style='border: 1px solid black ;'>CEP:</td>
               <td class='perg-rel2' style='border: 1px solid black ;'>UF:</td>
             </tr>
-            <tr>
-              <td class='resp-rel2' style='border: 1px solid black;'>11.111.111-1</td>
+            <tr class='tr-rel'>
+              <td class='resp-rel2' style='border: 1px solid black;'>xx.xxx.xxx-x</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>21610-330</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>RJ</td>
             </tr>
@@ -73,34 +87,34 @@
               <td class='perg-rel2' style='border: 1px solid black ;'>Bairro:</td>
               <td class='perg-rel2' style='border: 1px solid black ;''>Rua:</td>
             </tr>
-            <tr>
+            <tr class='tr-rel'>
               <td class='resp-rel2' style='border: 1px solid black;'>Rio de Janeiro</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>Marechal Hermes</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>Rua Xavier Curado</td>
             </tr>
-            <tr>
-              <td class='perg-rel2' style='border: 1px solid black;' colspan='3'>Atividades do Administrador:</td>
+              <tr>
+                <td class='perg-rel2' style='border: 1px solid black;' colspan='3'>Atividades do Administrador:</td>
+              </tr>
+              <tr class='tr-rel'>
+                <td  class='perg-rel2' style='border: 1px solid black;'>Inserção:</td>
+                <td class='perg-rel2' style='border: 1px solid black;'>Edição:</td>
+                <td class='perg-rel2' style='border: 1px solid black;'>Exclusão:</td>
               </tr>
               <tr>
-                <td class='perg-rel2' style='border-right: 1px solid black;'>Inserção</td>
-                <td class='perg-rel2' style='border-right: 1px solid black;'>Edição</td>
-                <td class='perg-rel2' style='border-right: 1px solid black;'>Exclusão</td>
-              </tr>
-              <tr>
-                <td style='border-right: 1px solid black;' height='300' class='resp-rel3'>&nbsp;</td>
-                <td style='border-right: 1px solid black;' class='resp-rel3'>&nbsp;</td>
-                <td style='border-right: 1px solid black;' class='resp-rel3'>&nbsp;</td>
+                <td style='border-right: 1px solid black;' class='resp-rel3'>333 atividades</td>
+                <td style='border-right: 1px solid black;' class='resp-rel3'>32 atividades</td>
+                <td style='border-right: 1px solid black;' class='resp-rel3'>902 atividades</td>
               </tr>
           </tbody>
         </table>
       </main>
-      <footer class='container-fluid'>
-        <hr style='margin-top:50px;'>
+      <footer>
+        <hr style='margin-top:80px;'>
           <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
           <p class='footer-rel'>Data de Emissão: 19/10/2022</p>
       </footer>
     </body>
-    </html> ";
+    </html>";
 
     //Carregar o html;
     $dompdf->loadHtml($dados);
