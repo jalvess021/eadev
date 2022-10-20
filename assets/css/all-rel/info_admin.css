@@ -1,26 +1,31 @@
 .icon-rel{
-    margin-top: 5px;
+    margin-top: -20px;
+    margin-left:42%;
     width: 80px;
     height: 25px;
 }
 
+main{
+    margin-top: 4rem;
+}
+
 .footer-rel{ 
-    margin-bottom: 2px;
-    margin-left: 50px;
-    font-size: 10pt;
+    margin-top: -27px;
+    margin-left: 75%;
+    font-size: 11pt;
     font-weight: 400;
 }
 
 .footer-icon{
-    margin-bottom: 4px;
-    width: 30px;
-    height: 20px;
+    margin-top: -12px;
+    width: 40px;
+    height: 25px;
 }
 
 .title-rel{
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-left:38%;
+    margin-top: -20px;
+    margin-bottom: 30px;
     font-size: 20pt;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.548);
@@ -28,60 +33,49 @@
 }
 
 table{
-    width: 700px;
+    border: 1px solid black;
     margin: auto;
-}
-th{
-    border:1px solid #b3adad;
-}
-td {
-    border:1px solid #b3adad;
-    text-align:left;
-    padding: 2px;
-    background: #ffffff;
-    color: #313030;
+    width: 700px;
 }
 
-
+td{
+    border: none;
+    padding: 5px;
+}
 
 .person-admin{
     width: 80px;
     height: 80px;
     border-radius: 100px;
+    margin-left: 60px;
 }
+
 .perg-rel{
     margin-top: 15px;
-    font-size: 12pt;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-
-}
-
-.resp-rel{
-    margin-top: 40px;
-    margin-left: -200px;
-    font-size: 11pt;
-    font-weight: 400;
-    color: rgba(223, 223, 223, 0.774);
-}
-
-.resp-rel2{
-    margin-top: 40px;
-    margin-left: -110px;
-    font-size: 11pt;
-    font-weight: 400;
-    color: rgba(223, 223, 223, 0.774);
-}
-
-.perg-rel2{
-    margin-top: 5px;
     font-size: 12pt;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.774);
 
 }
 
-.resp-rel3{
+.resp-rel{
+    margin-top: -15px;
+    margin-left: 10px;
+    font-size: 11pt;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.774);
+}
+
+.perg-rel2{
+    padding-left: 5px;
+    font-size: 12pt;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.774);
+
+}
+
+.resp-rel2{
+    padding-left: 10px;
     font-size: 11pt;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.918);
