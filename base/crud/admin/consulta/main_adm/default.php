@@ -47,16 +47,12 @@
                                 case 1:
                                     $status = 'Ativo';
                                     break;
-                            
-                                case 2:
-                                    $status = 'Pendente';
-                                    break;
 
-                                case 3:
+                                case 2:
                                     $status = 'Bloqueado';
                                     break;
 
-                                case 4:
+                                case 3:
                                     $status = 'Desativado';
                                     break;
                             } echo $status."

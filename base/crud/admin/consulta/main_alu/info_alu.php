@@ -96,14 +96,13 @@
                                                 break;
                             
                                             case 2:
-                                                $status = 'Pendente';
-                                                break;
-                                            case 3:
                                                 $status = 'Bloqueado';
                                                 break;
-                                            case 4:
+
+                                            case 3:
                                                 $status = 'Desativado';
                                                 break;
+
                                         } echo $status."</h6>
                                 </div>
                                 <div class='form-group form-group-sm col-auto'>
@@ -155,12 +154,10 @@
                                                 break;
                             
                                             case 2:
-                                                $status = 'Pendente';
-                                                break;
-                                            case 3:
                                                 $status = 'Bloqueado';
                                                 break;
-                                            case 4:
+
+                                            case 3:
                                                 $status = 'Desativado';
                                                 break;
                                         } echo $status."</h6>
