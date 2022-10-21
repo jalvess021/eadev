@@ -1,15 +1,16 @@
 <?php
-    require '../base/config.php';
     //Carrega o composer
     require '../vendor/autoload.php';
 
     // Referenciar o namespace dompdf
     use Dompdf\Dompdf;
-
-    //Instanciar
-    $dompdf = new Dompdf(['enable_remote' => true]);
+    use Dompdf\Options;
     
-    $dados = "
+    $options = new Options();
+    $options->set('isRemoteEnabled', TRUE);
+    $dompdf = new Dompdf($options);
+    
+    $start = "
     <!DOCTYPE html>
     <html lang='pt-br'>
     <head>
@@ -18,12 +19,17 @@
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
         <link rel='stylesheet' href='http://localhost/tcc/assets/css/all-rel/info_admin.css'>
     </head>
-    <body>
-    <header >
-          <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
-        <hr style='margin-top: -10px;'>
-      </header>
-      <main>
+    <body>";
+
+    $head ="<div id='header'>
+              <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
+              <hr style='margin-top: 4px;'>
+            </div>";
+
+    
+
+      $body ="<main>
+      <?php
           <h1 class='title-rel'>Ficha Técnica</h1>
         <table class='tb-ftecnica'>
               <thead style='background-color: #343a40;'>
@@ -107,17 +113,24 @@
               </tr>
           </tbody>
         </table>
-      </main>
-      <footer>
-        <hr style='margin-top:80px;'>
-          <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
-          <p class='footer-rel'>Data de Emissão: 19/10/2022</p>
-      </footer>
-    </body>
+      </main>";
+
+      $footer ="<div id='footer'>
+                  <hr style='margin-bottom:5px'>
+                  <p class='text-center emi-rel'>Data de emissão: 20/10/2022 | 17:34:00</p>
+                  <p class='page'>Página </p>
+                  <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
+                </div>";
+
+    $end ="</body>
     </html>";
 
+    //concatenando as variáveis
+    $html=$start.$head.$body.$footer.$end;
+
+
     //Carregar o html;
-    $dompdf->loadHtml($dados);
+    $dompdf->loadHtml($html);
 
     //Formato do pdf
     $dompdf->setPaper('A4', 'portrait');
@@ -125,6 +138,6 @@
     //Renderizar pdf
     $dompdf->render();
     //Gerar pdf
-    $dompdf->stream("relatorio_".date('dmyHis'));
+    $dompdf->stream("relatorio_".date('dmyHis'), ["Attachment" => 0]);
 
 ?>

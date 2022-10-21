@@ -1,9 +1,53 @@
-.icon-rel{
-    margin-top: -20px;
-    margin-left:42%;
-    width: 80px;
-    height: 25px;
+
+@page{
+    margin: 70px 50px;
 }
+
+#header{
+    position: fixed;
+    top: -65px;
+    left: 0;
+    right: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.icon-rel{
+    width: 65px;
+    height: 20px;
+    margin-left: -20px;
+}
+
+
+#footer{
+    position: fixed;
+    bottom: -90px;
+    left:0;
+    width: 100%;
+    text-align: start;
+}
+
+#footer .page:after{ 
+    content: counter(page); 
+}
+
+.footer-icon{
+    margin-top: -35px;
+    width: 26px;
+    height: 16px;
+}
+
+.emi-rel{
+    margin-bottom: -40px;
+}
+
+.page{   
+    margin-left: 90%;
+}
+
+
 
 .tb-ftecnica tr:nth-child(2n):not(.thead){
     background-color: #DDDDDD;
@@ -21,18 +65,7 @@ main{
     margin-top: 202px;
     margin-bottom: 148px;
 }
-.footer-rel{ 
-    margin-top: -27px;
-    margin-left: 75%;
-    font-size: 11pt;
-    font-weight: 400;
-}
 
-.footer-icon{
-    margin-top: -5px;
-    width: 40px;
-    height: 25px;
-}
 
 .title-rel{
     margin-left:38%;
