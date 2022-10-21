@@ -138,7 +138,7 @@
             </tr>
             <tr class='tr-rel'>
               <td class='resp-rel2' style='border: 1px solid black;'>".$resAdm['id_usu']."</td>
-              <td class='resp-rel2' style='border: 1px solid black ;'>".date('H:i:s', strtotime($resAdm['dt_cadastro']))."</td>
+              <td class='resp-rel2' style='border: 1px solid black ;'>".date('H:i:s | d/m/Y  ', strtotime($resAdm['dt_cadastro']))."</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>".$status."</td>
             </tr>
             <tr>
@@ -227,6 +227,6 @@
     //Renderizar pdf
     $dompdf->render();
     //Gerar pdf
-    $dompdf->stream("relatorio_".date('dmyHis'), ["Attachment" => 0]);
+    $dompdf->stream("ficha_tec_user".$id."-".date('dmyHis'), ["Attachment" => 0]);
 
 ?>
