@@ -28,9 +28,7 @@
                 </div>
                 <div class='col-3 mt-3'>
                     <div class='d-flex flex-row justify-content-end'>
-                        
-                            <a href='".$_SERVER['DOCUMENT_ROOT']."/tcc/relatorios/ficha_adm.php?user=".$id_adm."' class='btn btn-sm btn-secondary mr-4 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</a>
-                        
+                            <a href='/tcc/relatorios/ficha_adm.php?user=".$id_adm."' target='_blank' class='btn btn-sm btn-secondary mr-4 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</a>
                         <div>
                             <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
                         </div>
