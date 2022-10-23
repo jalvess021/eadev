@@ -70,3 +70,24 @@
   color: #be0606;
   font-size: 0.68rem;
 }
+
+
+#relGerUsu select{
+  font-weight: 600;
+}
+
+#relGerUsu select:focus{
+  transform: scale(1.035);
+}
+#relGerUsu option:first-child{
+  font-weight: 700;
+}
+#relGerUsu option{
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: capitalize !important;
+}
+
+#relGerUsu select option{
+  background-color: whitesmoke;
+}

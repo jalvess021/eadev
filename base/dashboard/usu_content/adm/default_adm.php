@@ -102,26 +102,24 @@
                 <form action='' method='post'>
                     <div class='form-group'>
                         <label for='exampleFormControlInput1'>Selecione o tipo do usuário: </label>
-                        <select class='custom-select custom-select-sm'>
-                        <option value='all' selected>Todos</option>
+                        <select class='custom-select custom-select-sm' id='filterUserDefault'>
+                        <option disabled selected>Filtrar por usuário</option>
+                        <option value='all'>Todos</option>
                         <option value='alu'>Alunos</option>
                         <option value='adm'>Administradores</option>
                         </select>
                     </div>
                     <div class='form-group'>
                         <label for='exampleFormControlInput1'>Selecione o período: </label>
-                        <select class='custom-select custom-select-sm'>
-                            //Controle de data do relatório (Plaforma contem dados de 2022)
-                                      ".$optAnteriorAnterior."
-                                      ".$optAnterior."
-                                      ".$optAtual."
+                        <select class='custom-select custom-select-sm' id='filterUserDefaultPer'>
+                        <option selected disabled>Filtrar por período (Ano)</option>
                         </select>
                     </div>
                 </form>
             </div>
             <div class='modal-footer'>
                 <button type='button' class='btn btn-sm btn-secondary font-weight-bold' data-dismiss='modal'><i class='bi bi-x-circle-fill'></i> Fechar</button>
-                <a href='#' class='btn btn-sm btn-success font-weight-bold text-white' disabled><i class='bi bi-check-all'></i> Gerar relatório</a>
+                <a id='linkRelUsuPainel' href=''><button class='btn btn-sm btn-success font-weight-bold text-white' id='btnRelUsuPainel' disabled><i class='bi bi-check-all'></i> Gerar relatório</button></a>
             </div>
             </div>
         </div>
@@ -229,6 +227,23 @@ function gfUsu() {
     $(document).ready(gfUsu());
     //Executa a função a cada 1 seg
     setInterval(() => { gfUsu(); }, 15000);
+
+    setInterval(() => {
+        if ($("#filterUserDefaultPer").val() == null) {
+          $("#btnRelUsuPainel").attr('disabled', true);
+        }else{
+          $("#btnRelUsuPainel").removeAttr('disabled');
+          $("#linkRelUsuPainel").attr('href', '/tcc/relatorios/usuarios.php?user='+$('#filterUserDefault').val()+'&periodo='+$('#filterUserDefaultPer').val());
+        }
+    }, 0);
+
+    $(document).ready(function(){
+        $('#filterUserDefault').change(function(){
+           $('#filterUserDefaultPer').load('/tcc/selects/select_periodo_user.php?filter_user='+$('#filterUserDefault').val());
+        });
+    });
+
+  
 
   
 </script>

@@ -1,0 +1,175 @@
+@page{
+    margin: 70px 50px;
+}
+
+#header{
+    position: fixed;
+    top: -65px;
+    left: 0;
+    right: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.div-hd{
+    width: 100%;
+    position: relative;
+}
+.icon-rel{
+    position: absolute;
+    width: 65px;
+    height: 20px;
+}
+
+.emi-rel{
+    position: absolute;
+    left: 210px;
+    font-size: 11pt;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.767);
+    font-family: Arial, Helvetica, sans-serif;
+
+} .emi-rel span{
+    font-size: 11pt;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.842);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#footer{
+    position: fixed;
+    bottom: -90px;
+    left:0;
+    width: 100%;
+}
+
+#div-ft{
+    margin-bottom: 50px;
+}
+
+#div-ft #copy{
+    position: absolute;
+    left: 300px;
+    font-size: 10pt;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.623);
+}
+
+#header .page:after{ 
+    content: counter(page); 
+}
+
+.footer-icon{
+    position: absolute;
+    width: 26px;
+    height: 16px;
+    display: inline-block;
+}
+
+#copy{
+    color: black;
+    font-size: 12pt;
+}
+
+
+
+.page{   
+    margin-left: 90%;
+    font-weight: bold;
+}
+
+
+
+.tb-ftecnica tr:nth-child(2n):not(.thead){
+    background-color: #DDDDDD;
+}
+
+.tb-ftecnica td:nth-child(1){
+    width: 25%;
+}
+
+.tb-ftecnica td:nth-child(3){
+width: 30%;
+}
+
+main{
+    margin-top: 120px;
+    margin-bottom: 148px;
+}
+
+
+.title-rel{
+    margin-left:28%;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    font-size: 40pt;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.822);
+}
+
+.person-admin{
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 3px outset white;
+}
+
+.perg-rel{
+    margin-top: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: rgb(240, 240, 240);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.resp-rel{
+    margin-top: -15px;
+    color: rgba(248, 248, 248, 0.808);
+    font-size: 11pt;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.perg-rel2{
+    padding-left: 5px;
+    font-size: 11pt;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.774);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.resp-rel2{
+    padding-left: 10px;
+    font-size: 11pt;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.61);
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+.resp-rel3{
+    padding: 5px 0px 3px 5px;
+}
+
+.caption-rel{
+    margin-top: 60px;
+    padding: 6px 10px;
+}
+
+.caption-rel h4{
+    font-size: 15pt;
+    color: rgba(0, 0, 0, 0.918);
+    font-weight: 700;
+}
+
+.caption-rel p{
+    font-size: 12pt;
+}
