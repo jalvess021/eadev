@@ -2,6 +2,39 @@
 	//Definindo nível de acesso para esta página & fazendo a verificação.
     $nivel_necessario = 3;
     include "base/testa_nivel.php"; 
+    include "base/config.php";
+
+    $anoAnteriorAnterior = date('Y', strtotime('-2 year'));
+    $anoAnterior = date('Y', strtotime('-1 year'));
+    $anoAtual = date('Y');
+   
+
+    $queryAntAnt = mysqli_query($con, "SELECT * from usuario where dt_cadastro between '".$anoAnteriorAnterior."-01-01 00:00:00' and '".$anoAnteriorAnterior."-12-31 23:59:59'");
+    $rowAntAnt = mysqli_num_rows($queryAntAnt);
+
+    $queryAnt = mysqli_query($con, "SELECT * from usuario where dt_cadastro between '".$anoAnterior."-01-01 00:00:00' and '".$anoAnterior."-12-31 23:59:59'");
+    $rowAnt = mysqli_num_rows($queryAnt);
+
+    $queryAtu = mysqli_query($con, "SELECT * from usuario where dt_cadastro between '".$anoAtual."-01-01 00:00:00' and '".$anoAtual."-12-31 23:59:59'");
+    $rowAtu = mysqli_num_rows($queryAtu);
+    
+    if ($rowAntAnt > 0) {
+      $optAnteriorAnterior = "<option value='".$anoAnteriorAnterior."'>".$anoAnteriorAnterior."</option>";
+    }else {
+      $optAnteriorAnterior = "<option value='".$anoAnteriorAnterior."' disabled>". $anoAnteriorAnterior." - Sem registros!</option>";
+    }
+
+    if ($rowAnt > 0) {
+      $optAnterior = "<option value='".$anoAnterior."'>".$anoAnterior."</option>";
+    }else {
+      $optAnterior = "<option value='".$anoAnterior."' disabled>". $anoAnterior." - Sem registros!</option>";
+    }
+
+    if ($rowAtu > 0) {
+      $optAtual = "<option value='".$anoAtual."' selected>".$anoAtual."</option>";
+    }else {
+      $optAtual = "<option value='".$anoAtual."' selected disabled>".$anoAtual." - Sem registros!</option>";
+    }
 ?>
 <style>
 #chart-usu-control  .highcharts-title {
@@ -26,7 +59,7 @@
 <div class="d-flex flex-row justify-content-between">
   <h5 class='legend-control'>Usuários</h5>
     <!-- Chama o Formulário para adicionar Cursos -->
-    <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right" data-toggle='tooltip' data-placement='top' title='Relatório geral de usuários'><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
+    <a class="btn btn-sm bt-padrao float-right" data-toggle='modal' data-target='#relGerUsu'><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
 </div>
 <div class="control-plataform">
     <div class="row justify-content-center align-items-center">
@@ -43,18 +76,57 @@
           <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores | <span id='num-control-adm'></span> |</button></a>
         </div>
     </div>
-    
+    <!--
     <hr>
     <div class="d-flex flex-row justify-content-between">
       <h5>Certificados</h5>
-        <!-- Chama o Formulário para adicionar Cursos -->
         <a href="?content_adm=lista_aula&add=aula" class="btn btn-sm bt-padrao float-right"><i class="bi bi-file-earmark-bar-graph-fill"></i> Relatório</a>
     </div>
     <div class="c2-row row">
       <div class="col-12">
     
-    </div>
+    </div>-->
 </div>
+<?php
+    echo "<!-- Modal -->
+    <div class='modal fade' id='relGerUsu' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' data-backdrop='static'>
+        <div class='modal-dialog modal-dialog-centered' role='document'>
+            <div class='modal-content'>
+            <div class='modal-header bg-secondary text-white font-weight-bold'>
+                <h5 class='modal-title' id='exampleModalCenterTitle'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório de controle de usuários </h5>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>
+            <div class='modal-body'>
+                <form action='' method='post'>
+                    <div class='form-group'>
+                        <label for='exampleFormControlInput1'>Selecione o tipo do usuário: </label>
+                        <select class='custom-select custom-select-sm'>
+                        <option value='all' selected>Todos</option>
+                        <option value='alu'>Alunos</option>
+                        <option value='adm'>Administradores</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for='exampleFormControlInput1'>Selecione o período: </label>
+                        <select class='custom-select custom-select-sm'>
+                            //Controle de data do relatório (Plaforma contem dados de 2022)
+                                      ".$optAnteriorAnterior."
+                                      ".$optAnterior."
+                                      ".$optAtual."
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-sm btn-secondary font-weight-bold' data-dismiss='modal'><i class='bi bi-x-circle-fill'></i> Fechar</button>
+                <a href='#' class='btn btn-sm btn-success font-weight-bold text-white' disabled><i class='bi bi-check-all'></i> Gerar relatório</a>
+            </div>
+            </div>
+        </div>
+    </div>";
+?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
