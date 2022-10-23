@@ -119,7 +119,7 @@
             </div>
             <div class='modal-footer'>
                 <button type='button' class='btn btn-sm btn-secondary font-weight-bold' data-dismiss='modal'><i class='bi bi-x-circle-fill'></i> Fechar</button>
-                <a id='linkRelUsuPainel' href=''><button class='btn btn-sm btn-success font-weight-bold text-white' id='btnRelUsuPainel' disabled><i class='bi bi-check-all'></i> Gerar relatório</button></a>
+                <a id='linkRelUsuPainel' href='' target='_blank'><button class='btn btn-sm btn-success font-weight-bold text-white' id='btnRelUsuPainel' disabled><i class='bi bi-check-all'></i> Gerar relatório</button></a>
             </div>
             </div>
         </div>
@@ -233,7 +233,7 @@ function gfUsu() {
           $("#btnRelUsuPainel").attr('disabled', true);
         }else{
           $("#btnRelUsuPainel").removeAttr('disabled');
-          $("#linkRelUsuPainel").attr('href', '/tcc/relatorios/usuarios.php?user='+$('#filterUserDefault').val()+'&periodo='+$('#filterUserDefaultPer').val());
+          $("#linkRelUsuPainel").attr('href', '/tcc/relatorios/graficos/usu.php?user='+$('#filterUserDefault').val()+'&periodo='+$('#filterUserDefaultPer').val());
         }
     }, 0);
 

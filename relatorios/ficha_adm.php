@@ -1,4 +1,7 @@
 <?php
+
+    $nivel_necessario = 3;
+    include "../base/testa_nivel.php";
     //Carrega o composer
     require '../vendor/autoload.php';
 
