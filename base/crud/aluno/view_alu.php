@@ -8,7 +8,12 @@
 	$id_usu = $_SESSION['UsuarioID'];
 	$sql = mysqli_query($con, "select * from usuario where id_usu = '".$id_usu."';");
 	$row = mysqli_fetch_array($sql);
-    
+
+	$queryAlu = mysqli_query($con, "SELECT * from aluno where id_usu = ".$row['id_usu']."");
+	$rowAlu = mysqli_fetch_array($queryAlu);
+
+	$queryMat = mysqli_query($con, "SELECT * from matriculado where id_aluno = ".$rowAlu['id_aluno']."");
+    $rowMat = mysqli_fetch_array($queryMat);
 	//Incluindo as Mensagens
 	include "base/crud/aluno/msg_alu.php";
 ?>

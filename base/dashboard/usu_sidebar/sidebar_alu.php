@@ -18,11 +18,6 @@
                     </li>
                     
                     <li class="submenu">
-                        <a href="#"></span><i class="bi bi-code-slash"></i><span> Desafios </span> <span class="menu-arrow"></span> </a>
-                            
-                    </li>
-                    
-                    <li class="submenu">
                         <a href="#"></span><i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>       
 
