@@ -33,12 +33,12 @@
                         </div>
                         <div class='col-3 mt-3'>
                             <div class='d-flex flex-row justify-content-end'>
-                                <a class='btn btn-sm btn-secondary mr-4 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</a>
-                                <div>
-                                    <a href='?content_adm=consulta_alu' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
-                                </div>
-                            </div>
+                                <a href='/tcc/relatorios/ficha_alu.php?' target='_blank' class='btn btn-sm btn-secondary mr-4 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</a>
+                            <div>
+                            <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
                         </div>
+                    </div>
+                </div>
                 </div>
                 <div class='container'>
                     <div class='row justify-content-between row-init2'>

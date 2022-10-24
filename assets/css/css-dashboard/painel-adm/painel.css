@@ -72,6 +72,14 @@
 }
 
 
+#relGerUsu .modal-content{
+  border-radius: 5px;
+}
+
+#relGerUsu .modal-rel{
+  background-color: #0d9999;
+}
+
 #relGerUsu select{
   font-weight: 600;
 }
@@ -90,4 +98,8 @@
 
 #relGerUsu select option{
   background-color: whitesmoke;
+}
+
+#relGerUsu .button-rel{
+  background-color: #0d9999;
 }

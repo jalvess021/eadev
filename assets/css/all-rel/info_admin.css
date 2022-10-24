@@ -117,8 +117,12 @@ table{
     width: 700px;
 }
 
+.tb-ftecnica thead{
+    background-color: rgb(4, 93, 109);
+}
+
 .tr-rel{
-    background-color: #cecece91;
+    background-color: rgb(189, 245, 255);
 }
 
 td{
@@ -147,7 +151,7 @@ td{
 
 .resp-rel{
     margin-top: -15px;
-    color: rgba(248, 248, 248, 0.808);
+    color: rgba(248, 248, 248, 0.87);
     font-size: 11pt;
     font-weight: 700;
     font-family: sans-serif;

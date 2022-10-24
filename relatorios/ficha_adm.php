@@ -118,7 +118,7 @@
       $body ="<main>
         <h1 class='title-rel'>Ficha Técnica</h1>
         <table class='tb-ftecnica'>
-              <thead style='background-color: #343a40;'>
+              <thead>
                 <tr class='thead'>
                   <th style='border-right:none;'>
                     <img class='person-admin' src='".$img."' alt=''>
