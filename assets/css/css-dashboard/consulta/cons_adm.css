@@ -30,8 +30,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 40px;
   }
+  
   
   .div-num-adm{
     width: 50%;
@@ -42,15 +45,26 @@
   }
   
   .div-num-adm span{
-    color: rgb(247, 181, 58);
+    color: #0d9999;
     font-size: 9.5rem;
     font-weight: 600;
-    text-shadow: rgba(0, 0, 0, 0.726) 2px 2px 7px;
+    text-shadow: #077777 2px 2px 7px;
   }
+
+  .div-num-adm span:hover{
+    cursor: pointer;
+    color: #097a7a;
+    font-size: 9.5rem;
+    font-weight: 600;
+    text-shadow: #077777 2px 2px 7px;
+    transition: 0.6s;
+    transform: scale(1.05);
+}
   
   .div-num-adm h5 {
     font-weight: 700;
-    color: rgb(58, 58, 58);
+    color: rgb(39, 39, 39);
+    
   }
   
   .div-info-adm{
@@ -60,6 +74,20 @@
     justify-content: center;
     align-items: center;
   }
+
+  .info-cons-title, #num-cons-title{
+    font-weight: 400;
+    font-size: 16pt;
+  }
+
+  #num-cons-title{
+    color: #0f8181;
+    text-shadow: #0ad4d4 1px 1px 2px;
+    font-size: 17pt;
+    margin-left: 5px;
+    font-weight: 500;
+    
+  }
   
   .div-info-adm .grid-cons{
     display: grid;
@@ -68,17 +96,18 @@
   }
   
   .div-info-adm .grid-cons .h6{
-    padding: 3px 0px 3px 10px;
-      border-left: #c000006c 3px outset;
-      color: rgb(145, 145, 145);
-      font-weight: 700;
+    padding: 4px 0px 3px 10px;
+    color: rgb(87, 86, 86);
+    font-weight: 600;
+    margin-left:  10px;
+    border-left: 2px solid #0d9999 ;
   }
   
   .div-info-adm .grid-cons .h6:hover{
-    transform: scale(1.08);
     border-left: none;
-    color: #b1000073;
-    transition: ease-out 0.13s;
+    transform: scale(1.08);
+    color: #0b8383;
+    transition: ease-out 0.6s;
   }
   
   .info-cons-title {

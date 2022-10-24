@@ -72,7 +72,7 @@
             </figure>
         </div>
         <div class="col-lg-4 d-flex flex-column justify-content-center col-cons-control">
-          <a href=""><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos | <span id='num-control-alu'></span> |</button></a>
+          <a href="?content_adm=consulta_alu"><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos | <span id='num-control-alu'></span> |</button></a>
           <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores | <span id='num-control-adm'></span> |</button></a>
         </div>
     </div>
@@ -92,7 +92,7 @@
     <div class='modal fade' id='relGerUsu' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' data-backdrop='static'>
         <div class='modal-dialog modal-dialog-centered' role='document'>
             <div class='modal-content'>
-            <div class='modal-header bg-secondary text-white font-weight-bold'>
+            <div class='modal-header modal-rel  text-white font-weight-bold'>
                 <h5 class='modal-title' id='exampleModalCenterTitle'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório de controle de usuários </h5>
                 <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
@@ -119,7 +119,7 @@
             </div>
             <div class='modal-footer'>
                 <button type='button' class='btn btn-sm btn-secondary font-weight-bold' data-dismiss='modal'><i class='bi bi-x-circle-fill'></i> Fechar</button>
-                <a id='linkRelUsuPainel' href='' target='_blank'><button class='btn btn-sm btn-success font-weight-bold text-white' id='btnRelUsuPainel' disabled><i class='bi bi-check-all'></i> Gerar relatório</button></a>
+                <a id='linkRelUsuPainel' href='' target='_blank'><button class='btn btn-sm btn-info font-weight-bold text-white button-rel' id='btnRelUsuPainel' disabled><i class='bi bi-check-all'></i> Gerar relatório</button></a>
             </div>
             </div>
         </div>

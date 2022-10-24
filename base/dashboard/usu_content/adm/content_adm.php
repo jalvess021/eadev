@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-xl-12">
 				<div class="breadcrumb-holder">
-					<h1 class="main-title float-left">Olá, <span class="c-destaque-10 font-weight-bold"><?php echo $_SESSION['Usuario']?></span> !</h1>
+					<h1 class="main-title float-left">Olá, <span style="color:#0d9999;" class="font-weight-bold"><?php echo $_SESSION['Usuario']?></span> !</h1>
 					<ol class="breadcrumb float-right">
 						<li class="breadcrumb-item active">Painel Administrativo</li>
 					</ol>
