@@ -1,6 +1,11 @@
 <h4 class="content-subtitle">Informações Pessoais</h4>
 		<hr class="">
 
+
+		<div class="block">
+			<p class="info-person">Matrícula:</p>
+			<p class="person"><?php echo $rowMat['matricula'];?></p>
+		</div>
 		<div class="block">
 			<p class="info-person">Nome Completo:</p>
 			<p class="person"><?php echo $row['nome'];?></p>
