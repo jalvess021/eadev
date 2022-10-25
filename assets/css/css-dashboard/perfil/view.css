@@ -125,6 +125,15 @@
     }
 }
 
+@media(min-width:1024px){
+    .info-person{
+        font-size: 16px;
+    }
+    .person{
+        font-size: 15px;
+    }
+}
+
 
 
 

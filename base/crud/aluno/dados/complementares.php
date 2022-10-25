@@ -15,7 +15,7 @@
         <input type="text" class="form-control perfil-input"  value="<?php echo $row['nome'];?>" disabled required>
     </div>
 
-    <div class="form-group col-md-3 perfil-date ">
+    <div class="form-group col-md-3 col-lg-4 perfil-date ">
         <label class="perfil-label" for="Nome">Data de nascimento</label>
         <input type="date" class="form-control perfil-input" name='dt_nasc' required>
     </div>

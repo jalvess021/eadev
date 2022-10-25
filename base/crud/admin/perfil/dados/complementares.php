@@ -16,7 +16,7 @@
         <input type="text" class="form-control perfil-input"  value="<?php echo $row['nome'];?>" disabled>
     </div>
 
-    <div class="form-group col-md-3 perfil-date ">
+    <div class="form-group col-md-3 col-lg-4 perfil-date ">
         <label class="perfil-label" for="Nome">Data de nascimento</label>
         <input type="text" class="form-control perfil-input" value="<?php echo date('d/m/Y',  strtotime($row2['dt_nasc']));?>" disabled>
     </div>

@@ -132,3 +132,10 @@
     font-weight: 700;
     color: rgb(182, 182, 182);
 }
+
+@media(min-width:1024px){
+    .perfil-cam{
+        margin-left: -10px;
+    }
+}
+

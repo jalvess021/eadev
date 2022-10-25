@@ -45,8 +45,8 @@
 			<br>
 			<div class="row pb-5 password-group">
 				<div class="col-6">
-					<p class="view-password-p">Nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
-					<input type="text" class="view-password" id="password" name="password" autocomplete="off" required>
+					<p class="view-password-p ">Nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
+					<input type="text" class="view-password " id="password" name="password" autocomplete="off" required>
 				</div>
 				<div class="col-6">
 					<p class="view-password-p">Confirme a nova senha <span class="desc-pass">(Minímo de 8 caractéres)</span></p>
