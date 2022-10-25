@@ -170,8 +170,8 @@
               <td class='perg-rel2' style='border: 1px solid black ;'>UF:</td>
             </tr>
             <tr class='tr-rel'>
-              <td class='resp-rel2' style='border: 1px solid black;'>".$resLoc['cidade']."</td>
-              <td class='resp-rel2' style='border: 1px solid black ;'>".$resLoc['bairro']."</td>
+              <td class='resp-rel2' style='border: 1px solid black;'>".$resComp['rg']."</td>
+              <td class='resp-rel2' style='border: 1px solid black ;'>".$resComp['cep']."</td>
               <td class='resp-rel2' style='border: 1px solid black ;'>".$resLoc['uf']."</td>
             </tr>
             <tr>
