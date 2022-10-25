@@ -111,6 +111,7 @@
   }
 
   .swiper-slide:hover::after{
+
     content: "Ir para o curso ▶";
     color: white;
     font-weight: bold;
@@ -208,4 +209,11 @@
     height: 80%;
     object-fit: cover;
     border-radius:5px;
+  }
+
+  @media(min-height:768px){
+    .swiper-slide:hover::after{
+      top: 42%;
+      left: 31%;
+    }
   }

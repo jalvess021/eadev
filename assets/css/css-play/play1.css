@@ -358,6 +358,21 @@ feito em php
 
 }
 
+@media(min-height:750px){
+
+
+    .back{
+        margin-bottom: 2rem;
+    }
+    .info-cur{
+        margin-bottom: 1rem !important;
+        
+    }
+    .all-aula{
+        height: 65%;
+    }
+}
+
 @media(max-width:1300px){
     
     .info-cur{
