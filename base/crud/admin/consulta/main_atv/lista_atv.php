@@ -32,7 +32,7 @@
             $sqlCountAtv = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%';");
             $rowsCountAtv = mysqli_num_rows($sqlCountAtv);
       echo "
-      <div class='d-flex flex-row justify-content-between mb-3'>
+      <div class='d-flex flex-row justify-content-between mb-3 div-lb-cons'>
         <h6 class='lb-cons'><i class='bi bi-tools'></i> ".$infoAc."</h6>
         <div class='d-flex flex-row'>
             <a href='/tcc/relatorios/rel_atv.php?' target='_blank' class='btn btn-sm btn-secondary mr-3 text-white' data-toggle='tooltip' data-placement='left' title='Gerar Relatório Geral de ".$infoAc."'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
@@ -233,7 +233,7 @@
                echo "<td class='d-none d-xl-table-cell'>";  echo (strlen($info['nome_adm']) <= 22) ? $info['nome_adm'] : substr($info['nome_adm'], 0, 22  )."..."; echo " { ".$info['id_adm']." }</td>";
                echo "<td class='text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
 					echo "<td class='actions btn-group-sm'>";
-					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_atv']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
+					echo "<a class='btn btn-info btn-xs' href='?content_adm=consulta_atv&info=adm&user=".$info['id_adm']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a></td>";
             } 
 				echo "</tr></tbody></table>";
   

@@ -10,8 +10,12 @@
 
                         $data = mysqli_query($con, "select * from usuario where nvl_acesso = 3 order by id_usu asc limit ".$inicio.", ".$quantidade.";") or die(mysqli_error("ERRO: ".$con));
 						$rowData = mysqli_num_rows($data);
+
+						$data1 = mysqli_query($con, "select * from usuario where nvl_acesso = 3;") or die(mysqli_error("ERRO: ".$con));
+						$rowData1 = mysqli_num_rows($data1);
+
 						echo "<table class='table table-striped tabela-gr' cellspacing='0' cellpading='0'>";
-                        echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Todos os administradores (".$rowData.") </capiton>";
+                        echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Todos os administradores (".$rowData1.") </capiton>";
 						echo "<thead><tr class='thead'>";
 						echo "<td>Id:</td>";
 						echo "<td>Usuário:</td>";
