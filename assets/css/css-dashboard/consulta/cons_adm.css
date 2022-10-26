@@ -161,3 +161,10 @@
   background-color: dodgerblue !important; 
   color: #ffffff; 
 }
+
+@media(max-width: 1200px) {
+  .cons-adm{
+    font-weight: 500;
+    color: var(--dark) !important;
+  }
+}
