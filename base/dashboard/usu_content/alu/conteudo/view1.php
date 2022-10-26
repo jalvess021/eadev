@@ -5,7 +5,7 @@
 
       $sql1 = "SELECT * FROM formacao order by id_formacao;";
       $res1 = mysqli_query($con, $sql1);
-      $sql2 = "SELECT * from curso order by id_curso;";      
+      $sql2 = "SELECT * from curso order by id_formacao;";      
       $res2 = mysqli_query($con, $sql2);
 
       $sql3 = "SELECT * FROM formacao order by id_formacao;";
