@@ -173,5 +173,9 @@
   }
   .search-usu{
     width: 18rem !important;
+@media(max-width: 1200px) {
+  .cons-adm{
+    font-weight: 500;
+    color: var(--dark) !important;
   }
 }

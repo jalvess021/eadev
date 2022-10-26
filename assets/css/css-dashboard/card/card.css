@@ -51,14 +51,14 @@
     padding: 0;
   }
 
-  .swiper {
+.tab-content  .swiper {
     width: 100%;
     height: 100%;
     padding: 0px 0px 30px 0px !important;
   }
 
     
-  .swiper-slide {
+.tab-content  .swiper-slide {
     text-align: center;
     font-size: 18px;
     /* Center slide text vertically */
@@ -77,12 +77,12 @@
     flex-direction: column;
   }
 
-  .swiper-slide h4{
+.tab-content  .swiper-slide h4{
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  .swiper-slide .num-aula{
+.tab-content  .swiper-slide .num-aula{
     position: absolute;
     top: 15px;
     left: 20px;
@@ -93,7 +93,7 @@
     margin-top: -3px;
   }
 
-  .swiper-slide p{
+.tab-content .swiper-slide p{
     font-weight: bold;
     text-align: justify;
     margin-top: 15px;
@@ -102,15 +102,15 @@
     text-align: center;
   }
 
-  .swiper-pagination{
+.tab-content .swiper-pagination{
     bottom: 2px !important;
   }
 
-  .swiper-slide:hover a{
+.tab-content .swiper-slide:hover a{
     filter: brightness(10%);
   }
 
-  .swiper-slide:hover::after{
+.tab-content .swiper-slide:hover::after{
 
     content: "Ir para o curso ▶";
     color: white;
@@ -124,7 +124,7 @@
     left: 39%;
 }
 
-  .swiper-slide a{
+.tab-content .swiper-slide a{
     position: relative;
     height: 320px;
     border: 5px #275e5e outset;
@@ -135,7 +135,7 @@
     background: linear-gradient( 20deg,#cfcfcf, #f3f5f5);
   }
 
-  .swiper-slide a .bar-cur1{
+.tab-content  .swiper-slide a .bar-cur1{
     position: absolute;
     background-color: rgb(168, 168, 168);
     top:15px;
@@ -144,7 +144,7 @@
     border-radius: 50px;
 }
 
-.swiper-slide a .bar-cur2{
+.tab-content .swiper-slide a .bar-cur2{
     position: absolute;
     background-color: rgba(228, 228, 228, 0.418);
     top:18px;
@@ -153,7 +153,7 @@
     border-radius: 50px;
 }
 
-.swiper-slide a .ball-cur1{
+.tab-content .swiper-slide a .ball-cur1{
     position: absolute;
     background-color: rgb(163, 158, 158);
     top: 285px;
@@ -162,7 +162,7 @@
     border-radius: 500px;
 }
 
-.swiper-slide a .ball-cur2{
+.tab-content .swiper-slide a .ball-cur2{
     position: absolute;
     background-color: rgba(204, 204, 204, 0.411);
     top: 289px;
@@ -171,7 +171,7 @@
     border-radius: 500px;
 }
 
-.swiper-slide a .opt-box1{
+.tab-content .swiper-slide a .opt-box1{
     position: absolute;
     background-color:  rgb(167, 34, 34);
     top: 12px;
@@ -182,7 +182,7 @@
 }
 
 
-.swiper-slide a .opt-box2{
+.tab-content .swiper-slide a .opt-box2{
     position: absolute;
     background-color: rgb(221, 148, 12);
     top: 12px;
@@ -192,7 +192,7 @@
     border-radius: 500px;
 }
 
-.swiper-slide a .opt-box3{
+.tab-content .swiper-slide a .opt-box3{
     position: absolute;
     background-color: rgb(26, 226, 0);
     top: 12px;
@@ -202,7 +202,7 @@
     border-radius: 500px;
 }
 
-  .swiper-slide img {
+.tab-content .swiper-slide img {
     margin-top: 6px;
     display: block;
     width: 98%;
@@ -212,7 +212,7 @@
   }
 
   @media(min-height:768px){
-    .swiper-slide:hover::after{
+    .tab-content .swiper-slide:hover::after{
       top: 42%;
       left: 31%;
     }

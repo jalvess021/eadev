@@ -72,8 +72,8 @@
             </figure>
         </div>
         <div class="col-lg-4 d-flex flex-column justify-content-center col-cons-control">
-          <a href="?content_adm=consulta_alu"><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> Alunos | <span id='num-control-alu'></span> |</button></a>
-          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><i class="fa fa-fw fa-user" aria-hidden="true"></i> Administradores | <span id='num-control-adm'></span> |</button></a>
+          <a href="?content_adm=consulta_alu"><button type="button" class="btn btn-secondary btn-lg btn-block bt-control-cons-alu" data-toggle='tooltip' data-placement='top' title='Consultar'><span id='num-control-alu'></span> Alunos <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i> </button></a>
+          <a href="?content_adm=consulta_adm"><button type="button" class="btn btn-primary btn-lg btn-block bt-control-cons-adm" data-toggle='tooltip' data-placement='top' title='Consultar'><span id='num-control-adm'></span> Administradores <i class="fa fa-fw fa-user" aria-hidden="true"></i></button></a>
         </div>
     </div>
     <!--
