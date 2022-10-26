@@ -120,7 +120,6 @@
 
 .button-password2 input:disabled{
     width: 40%;
-    margin-top: 40px;
     margin-bottom: 50px;
     border: none;
     background-color: #357e7e;
@@ -133,7 +132,7 @@
     color: rgb(182, 182, 182);
 }
 
-@media(min-height:768px){
+@media(max-width:1024px){
     .perfil-cam{
         margin-left: -10px;
     }
