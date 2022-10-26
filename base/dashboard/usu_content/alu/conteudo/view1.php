@@ -41,7 +41,7 @@
               echo "
               <div class='swiper-slide'>
               <h4>".$info2['sigla_curso']."</h4>
-                <a href='?page=play_curso&curso=".$info2['sigla_curso']."'>
+                <a href='?page=play_curso&curso=".$info2['sigla_curso']."' class='img-link-cur'>
                   <span class='num-aula'>".$infoAula1[0]." aulas </span>
                   <div class='bar-cur1'></div>
                   <div class='bar-cur2'></div>
@@ -84,7 +84,7 @@
               echo "
               <div class='swiper-slide'>
                 <h4>".$info4['sigla_curso']."</h4>
-                <a href='?page=play_curso&curso=".$info4['sigla_curso']."'>
+                <a href='?page=play_curso&curso=".$info4['sigla_curso']."' class='img-link-cur'>
                   <span class='num-aula'>".$infoAula2[0]." aulas </span>
                   <div class='bar-cur1'></div>
                   <div class='bar-cur2'></div>

@@ -201,17 +201,19 @@
     width: 12px;
     border-radius: 500px;
 }
-
+.img-link-cur{
+  padding: 0px 5px;
+}
 .tab-content .swiper-slide img {
     margin-top: 6px;
     display: block;
-    width: 98%;
+    width: 100%;
     height: 80%;
     object-fit: cover;
     border-radius:5px;
   }
 
-  @media(min-height:768px){
+  @media(max-width:1300px){
     .tab-content .swiper-slide:hover::after{
       top: 42%;
       left: 31%;

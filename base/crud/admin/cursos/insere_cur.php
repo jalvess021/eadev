@@ -29,7 +29,7 @@
             $extensao = strtolower(substr($_FILES['imagem']['name'], -5));
         } */
         //criptografa a sigla/id
-        $novoNome = md5($info1[0])."jpeg";
+        $novoNome = md5($info1[0]).".jpeg";
         $diretorio = 'imagens/';
         $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
         $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
