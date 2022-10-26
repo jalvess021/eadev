@@ -25,7 +25,7 @@
                             <div class='d-flex flex-row justify-content-between align-items-center mb-3'>
                                 <h6 class='lb-cons'>".$infoUser['nome']." { ".$infoUser['id_usu']." }</h6>
                                 <div class='d-flex flex-row'>
-                                    <a class='btn btn-sm btn-secondary mr-3 text-white' data-toggle='tooltip' data-placement='left' title='Gerar Relatório Geral de Atividades do Adm { ".$user." }'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
+                                    <a href='/tcc/relatorios/rel_atv_adm.php?' target='_blank' class='btn btn-sm btn-secondary mr-3 text-white' data-toggle='tooltip' data-placement='left' title='Gerar Relatório Geral de Atividades do Adm { ".$user." }'><i class='bi bi-file-earmark-bar-graph-fill'></i> Relatório</a>
                                     <a href='?content_adm=consulta_atv' class='btn-back btn btn-sm bt-padrao '> <i class='bi bi bi-x-lg'></i> Fechar </a>
                                 </div>
                                 
@@ -33,10 +33,10 @@
                             <table class='table table-striped' cellspacing='0' cellpading='0'>
                             <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades (".$rowsCountAtv.") </capiton>
                                     <thead><tr class='thead'>";
-                                        echo "<td>Id (Atv):</td>";
-                                        echo "<td class='d-none d-xl-table-cell'>Atividade:</td>";
+                                        echo "<td>Id <span class='d-none d-lg-inline'>(Atv)</span>:</td>";
+                                        echo "<td class=''>Atividade:</td>";
                                         echo "<td class='d-none d-xl-table-cell'>Nome do ADM { ID }:</td>";
-                                        echo "<td class='d-none d-xl-table-cell text-center'>Data:</td>";
+                                        echo "<td class=' text-center'>Data:</td>";
                                         echo "<td class='actions'>Ações</td>";
                                     echo "</tr></thead><tbody>";
                                         
@@ -219,8 +219,8 @@
                                                 }   
                                          
                                     echo "</td>";
-                                    echo "<td> <span class='admAbrev'></span> <em>{ ".$info['id_adm']." }</em></td>";
-                                    echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
+                                    echo "<td class='d-none d-xl-table-cell'> <span class='admAbrev'></span> <em>{ ".$info['id_adm']." }</em></td>";
+                                    echo "<td class='text-center'>".date('H:i | d-m-Y  ', $date)."</td>";
                                             echo "<td class='actions btn-group-sm'>";
                                             echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_atv']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
                                     } 

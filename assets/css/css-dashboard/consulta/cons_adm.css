@@ -42,6 +42,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
   
   .div-num-adm span{
@@ -59,12 +60,13 @@
     text-shadow: #077777 2px 2px 7px;
     transition: 0.6s;
     transform: scale(1.05);
+    
 }
   
   .div-num-adm h5 {
     font-weight: 700;
     color: rgb(39, 39, 39);
-    
+    text-align: center;
   }
   
   .div-info-adm{
@@ -128,7 +130,7 @@
 
 .pesq-usu-cons .autocomplete-items {
   position: absolute;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #cecece;
   border-bottom: none;
   border-top: none;
   z-index: 99;
@@ -160,4 +162,16 @@
 .pesq-usu-cons .autocomplete-active {
   background-color: dodgerblue !important; 
   color: #ffffff; 
+}
+
+@media(min-height:768px){
+
+  .div-num-adm h5 {
+    font-weight: 700;
+    color: rgb(39, 39, 39);
+    margin-left: 20px;
+  }
+  .search-usu{
+    width: 18rem !important;
+  }
 }

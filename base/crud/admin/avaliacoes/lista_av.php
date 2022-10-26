@@ -84,15 +84,15 @@
 				}
 				echo "<thead><tr class='thead'>";
 				echo "<td>Id:</td>";
-				echo "<td class='d-none d-xl-table-cell text-center'>Enunciado:</td>";
-				echo "<td class='d-none d-xl-table-cell text-center'>Nível:</td>";
+				echo "<td class=' text-center'>Enunciado:</td>";
+				echo "<td class='text-center'>Nível:</td>";
 				echo "<td class='actions'>Ações</td>";
 				echo "</tr></thead><tbody>";
 				while($info = mysqli_fetch_array($data)){
 					echo "<tr>";
 					echo "<td>".$info['id_quest']."</td>";
-					echo (strlen($info['enunciado_quest']) <= 74) ? "<td class='d-none d-xl-table-cell text-center'>".$info['enunciado_quest']."</td>" : "<td class='d-none d-xl-table-cell text-center'>".substr($info['enunciado_quest'], 0, 72)."...</td>";
-					echo "<td class='d-none d-xl-table-cell text-center'>"; switch ($info['grau_dificuldade']) {
+					echo (strlen($info['enunciado_quest']) <= 74) ? "<td class=' text-center'>".$info['enunciado_quest']."</td>" : "<td class='text-center'>".substr($info['enunciado_quest'], 0, 72)."...</td>";
+					echo "<td class='text-center'>"; switch ($info['grau_dificuldade']) {
 						case 1:
 							echo "Fácil";					
 							break;
@@ -103,10 +103,10 @@
 							echo "Difícil";
 							break;
 					} echo "</td>";
-					echo "<td class='actions btn-group-sm'>";
-					echo "<a class='btn btn-info btn-xs' href='?content_adm=view_av&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
-					echo "<a class='btn btn-secondary btn-xs ml-2' href='?content_adm=lista_av&edit_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
-					echo "<a href='?content_adm=lista_av&delete_quest=".$info['id_quest']."' class='btn btn-danger btn-xs ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
+					echo "<td class='actions btn-group'>";
+					echo "<a class='btn btn-info btn-sm mt-sm-1' href='?content_adm=view_av&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
+					echo "<a class='btn btn-secondary btn-sm mt-sm-1 ml-2' href='?content_adm=lista_av&edit_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
+					echo "<a href='?content_adm=lista_av&delete_quest=".$info['id_quest']."' class='btn btn-danger btn-sm mt-sm-1 ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
 				}
 				echo "</tr></tbody></table>";
 			?>

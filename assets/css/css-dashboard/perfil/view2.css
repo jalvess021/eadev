@@ -133,9 +133,13 @@
     color: rgb(182, 182, 182);
 }
 
-@media(min-width:1024px){
+@media(min-height:768px){
     .perfil-cam{
         margin-left: -10px;
+    }
+    .labelUserCamp:hover::after{
+        top: 60px;
+        left: 10px;
     }
 }
 

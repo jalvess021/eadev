@@ -29,6 +29,7 @@
                         if (dados.total_adm < 2) {
                             $('#label-cons-adm').html("Administrador no sistema");
                         }else{
+                            $('#label-cons-adm').html("Administradores no Sistema");
                             $('#label-cons-adm').html("Administradores no sistema");
                         }
         })

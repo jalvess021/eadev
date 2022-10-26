@@ -28,37 +28,37 @@
                             }
                         echo"' alt='Foto do usuário'>
                         </div>
-                        <div class='col-7 mt-2'>
+                        <div class=' col-8 col-xl-7 mt-2'>
                             <p class='ml-4 text-center nome-adm'>".$resAlu['nome']." { ".$resAlu['id_usu']." }</p>
                         </div>
-                        <div class='col-3 mt-3'>
+                        <div class=' col-2 col-xl-3 mt-3'>
                             <div class='d-flex flex-row justify-content-end'>
-                                <a href='/tcc/relatorios/ficha_alu.php?' target='_blank' class='btn btn-sm btn-secondary mr-4 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> Ficha Técnica</a>
+                                <a href='/tcc/relatorios/ficha_alu.php?' target='_blank' class='btn btn-sm btn-secondary mr-xl-4 mr-2 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i><span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
                             <div>
-                            <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> Fechar </a>
+                            <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i><span class='d-none d-xl-inline'> Fechar</span> </a>
                         </div>
                     </div>
                 </div>
                 </div>
                 <div class='container'>
                     <div class='row justify-content-between row-init2'>
-                        <div class='form-group form-group-sm col-auto'>
+                        <div class='form-group form-group-sm col-3 col-xl-auto '>
                             <label class='perfil-label-cons'>Matrícula:</label>
                             <h6 class='info_view_user'>".$resMat['matricula']."</h6>
                         </div>
-                        <div class='form-group form-group-sm col-auto'>
+                        <div class='form-group form-group-sm col-3 col-xl-auto '>
                             <label class='perfil-label-cons'>Usuário:</label>
                             <h6 class='info_view_user'>".$resAlu['usuario']." </h6>
                         </div>
-                        <div class='form-group form-group-sm col-auto'>
+                        <div class='form-group form-group-sm col-5 col-xl-auto '>
                             <label class='perfil-label-cons' for='RG'>E-mail:</label>
                             <h6 class='info_view_user'> ".$resAlu['email']." </h6>
                         </div>
-                        <div class='form-group form-group-sm col-auto'>
+                        <div class='form-group form-group-sm col-auto '>
                             <label class='perfil-label-cons' for='CEP'>Telefone:</label>
                             <h6 class='info_view_user'>".$resAlu['telefone']."</h6>
                         </div>
-                        <div class='form-group form-group-sm col-auto'>
+                        <div class='form-group form-group-sm col-auto '>
                             <label class='perfil-label-cons' for='Estado'>Sexo:</label>
                             <h6 class='info_view_user'>";
                                 switch ($resAlu['sexo']) {
@@ -87,7 +87,7 @@
                     
                         echo "
                         <div class='row justify-content-between row-init3'>
-                                <div class='form-group form-group-sm col-auto'>
+                                <div class='form-group form-group-sm '>
                                     <label class='perfil-label-cons' for='Estado'>status:</label>
                                     <h6 class='info_view_user'>";
                                         switch ($resAlu['status']) {
@@ -109,18 +109,18 @@
                                     <label class='perfil-label-cons' for='CPF'>CPF</label>
                                     <h6 class='info_view_user'>".$resComp['cpf']."</h6>
                                 </div>
-                                <div class='form-group form-group-sm col-auto'>
+                                <div class='form-group form-group-sm col-auto '>
                                     <label class='perfil-label-cons' for='RG'>RG</label>
                                     <h6 class='info_view_user'>".$resComp['rg']."</h6>
                                 </div>
-                                <div class='form-group form-group-sm col-auto'>
+                                <div class='form-group form-group-sm col-auto  '>
                                     <label class='perfil-label-cons' for='Estado'>Data de Nascimento</label>
                                     <h6 class='info_view_user'>".date('d / m / Y', strtotime($resComp['dt_nasc']))."</h6>
                                 </div>
                                 
                             </div>
                             <div class='row justify-content-between row-init4'>
-                                <div class='form-group form-group-sm col-auto'>
+                                <div class='form-group form-group-sm col-auto '>
                                     <label class='perfil-label-cons' for='CEP'>CEP</label>
                                     <h6 class='info_view_user'>".$resComp['cep']."</h6>
                                 </div>

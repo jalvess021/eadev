@@ -38,7 +38,7 @@
 					<li class="submenu">
                         <a class="pro" href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span> <span class="label radius-circle bg-primary float-right">3</span></a>
                             <ul class="list-unstyled">		
-                                <li><a href="?page=rel_certificado">Financeiro</a></li>		
+                                <li><a href="#">Financeiro</a></li>		
                                 <li><a href="#">Acadêmico</a></li>			
                                 <li><a href="#">Desempenho</a></li>
                             </ul>
