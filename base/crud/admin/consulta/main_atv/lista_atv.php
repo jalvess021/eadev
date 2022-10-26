@@ -245,15 +245,15 @@
             $anterior 		= (($pagina-1) <= 0) ? 1 : $pagina - 1;
             $posterior 		= (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
             echo "<ul class='pagination d-flex justify-content-center mt-4'>";
-            echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=1'> Primeira</a></li> ";
-            echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$anterior\"> &laquo;</a></li> ";
-            echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+            echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=1'> Primeira</a></li> ";
+            echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=$anterior\"> &laquo;</a></li> ";
+            echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
             for($i = $pagina+1; $i < $pagina+$exibir; $i++){
                if($i <= $totalpagina)
-               echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=".$i."'> ".$i." </a></li> ";
+               echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=".$i."'> ".$i." </a></li> ";
             }
-            echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$posterior\"> &raquo;</a></li> ";
-            echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_adm&info=atv&atv=".$ac."&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
+            echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=$posterior\"> &raquo;</a></li> ";
+            echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=consulta_atv&info=atv&atv=".$ac."&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>
            
             <!-- Modal -->
             <div class='modal fade' id='relAtv' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' data-backdrop='static'>

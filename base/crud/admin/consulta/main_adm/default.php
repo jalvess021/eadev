@@ -76,15 +76,15 @@
 						$anterior 		= (($pagina-1) <= 0) ? 1 : $pagina - 1;
 						$posterior 		= (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
 						echo "<ul class='pagination d-flex justify-content-center mt-4'>";
-						echo "<li class='page-item'><a class='page-link bt-padrao' href='?content_adm=consulta_adm&info=view&pagina=1'> Primeira</a></li> ";
-						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=view&pagina=$anterior\"> &laquo;</a></li> ";
-						echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_adm&info=view&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+						echo "<li class='page-item'><a class='page-link bt-padrao' href='?content_adm=consulta_adm&pagina=1'> Primeira</a></li> ";
+						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&pagina=$anterior\"> &laquo;</a></li> ";
+						echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_adm&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
 						for($i = $pagina+1; $i < $pagina+$exibir; $i++){
 							if($i <= $totalpagina)
-							echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_adm&info=view&pagina=".$i."'> ".$i." </a></li> ";
+							echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_adm&pagina=".$i."'> ".$i." </a></li> ";
 						}
-						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=view&pagina=$posterior\"> &raquo;</a></li> ";
-						echo "<li class='page-item'><a class='page-link bt-padrao' href=\"?content_adm=consulta_adm&info=view&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&pagina=$posterior\"> &raquo;</a></li> ";
+						echo "<li class='page-item'><a class='page-link bt-padrao' href=\"?content_adm=consulta_adm&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 ?>
 
 <script>

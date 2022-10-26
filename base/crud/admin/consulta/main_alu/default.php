@@ -66,7 +66,7 @@
 
 				<?php
 						
-						$sqlTotal = "select id_usu from usuario where nvl_acesso = 3;";
+						$sqlTotal = "select id_usu from usuario where nvl_acesso = 2;";
 				
 						$qrTotal  		= mysqli_query($con, $sqlTotal) or die (mysqli_error());
 						$numTotal 		= mysqli_num_rows($qrTotal);
@@ -75,15 +75,15 @@
 						$anterior 		= (($pagina-1) <= 0) ? 1 : $pagina - 1;
 						$posterior 		= (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
 						echo "<ul class='pagination d-flex justify-content-center mt-4'>";
-						echo "<li class='page-item'><a class='page-link bt-padrao' href='?content_adm=consulta_adm&info=view&pagina=1'> Primeira</a></li> ";
-						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=view&pagina=$anterior\"> &laquo;</a></li> ";
-						echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_adm&info=view&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+						echo "<li class='page-item'><a class='page-link bt-padrao' href='?content_adm=consulta_alu&pagina=1'> Primeira</a></li> ";
+						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_alu&pagina=$anterior\"> &laquo;</a></li> ";
+						echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=consulta_alu&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
 						for($i = $pagina+1; $i < $pagina+$exibir; $i++){
 							if($i <= $totalpagina)
-							echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_adm&info=view&pagina=".$i."'> ".$i." </a></li> ";
+							echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=consulta_alu&pagina=".$i."'> ".$i." </a></li> ";
 						}
-						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_adm&info=view&pagina=$posterior\"> &raquo;</a></li> ";
-						echo "<li class='page-item'><a class='page-link bt-padrao' href=\"?content_adm=consulta_adm&info=view&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+						echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=consulta_alu&pagina=$posterior\"> &raquo;</a></li> ";
+						echo "<li class='page-item'><a class='page-link bt-padrao' href=\"?content_adm=consulta_alu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 ?>
 
 <script>
@@ -105,7 +105,7 @@
                 var num = dados.replace(/[^0-9]/g,'');
                 idAdm = parseInt(num);
                 //idCripto = btoa(idAdm);
-                window.location.href = "?content_adm=consulta_adm&info=view&adm="+idAdm;
+                window.location.href = "?content_adm=consulta_alu&info=view&adm="+idAdm;
             }) 
         })
 </script>
