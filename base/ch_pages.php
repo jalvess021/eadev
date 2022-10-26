@@ -45,7 +45,8 @@
 
     //Se não houver valor no page, ele inclui a tela inicial.
     else {
-        include "inicial.php";
+        //include "inicial.php";
+        include "base/login.php";
 }
 
 ?>
