@@ -92,6 +92,10 @@
     font-size: 7pt;
 }
 
+#btnSubmitImgUserSen{
+    margin-top: -20px;
+}
+
 .button-password button{
     width: 40%;
     margin-top: -5px;

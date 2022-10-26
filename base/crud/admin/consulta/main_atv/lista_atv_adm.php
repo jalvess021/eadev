@@ -33,7 +33,7 @@
                             <table class='table table-striped' cellspacing='0' cellpading='0'>
                             <caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> Total de atividades (".$rowsCountAtv.") </capiton>
                                     <thead><tr class='thead'>";
-                                        echo "<td>Id <span class='d-none d-lg-inline'>(Atv)</span>:</td>";
+                                        echo "<td>Id <span class='d-none d-lg-inline'>(Atv)</span></td>";
                                         echo "<td class=''>Atividade:</td>";
                                         echo "<td class='d-none d-xl-table-cell'>Nome do ADM { ID }:</td>";
                                         echo "<td class=' text-center'>Data:</td>";
