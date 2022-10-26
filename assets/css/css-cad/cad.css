@@ -3,8 +3,8 @@
 
 
 .bd-cad{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,81 +207,14 @@
 }
 
 
-
-
-
-
-
-
-@media screen and (max-width:1216px) {
-    
-
-    .form{
-        width: 660px;
-    }
-
-    .form-header{
-        margin-top: 27px;
-    }
-
-    .input-group{
-        flex-direction: column;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-        max-height: 15rem;
-        margin-top: 10px;
-        padding-right: 2rem;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .input-box{
-        width: 100%;
-    }
-
-    .continue-button button{
-        margin-top: 25px;
-    }
-
-
-}
-
-@media screen and (max-width:1133px) {
-
-
-    .form{
-        width: 660px;
-    }
-
-    .form-header{
-        margin-top: 27px;
-    }
-
-    .input-group{
-        flex-direction: column;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-        max-height: 15rem;
-        margin-top: 10px;
-        padding-right: 2rem;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .input-box{
-        width: 100%;
-    }
-
-    .continue-button button{
-        margin-top: 20px;
-    }
-
-}
-
-@media screen and (max-width:1126px) {
+@media screen and (max-width:1300px) {
     
     .container{
         width: 54%;
+    }
+
+    .form{
+    height: 590px;    
     }
 
 
