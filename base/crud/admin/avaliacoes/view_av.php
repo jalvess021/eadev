@@ -36,9 +36,9 @@
                                     <div class='col justify-content-end'>
                                         <h6 class='text-dark font-weight-bold'>Última atualização:</h6> <small>";
                                             if ($date_alt != null) {
-                                                echo " ".date('d/m/Y', $date_alt)." às ".date('H:i:s', 	$date_alt)." ";
+                                                echo " ".date('d/m/Y', $date_alt)." às ".date('H:i:s', $date_alt)." ";
                                             }else {
-                                                echo "Não houve atualização!";
+                                                echo "Não houve alteração!";
                                             }
                                             echo "
                                         </small>

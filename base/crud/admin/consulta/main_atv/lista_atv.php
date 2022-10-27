@@ -162,7 +162,7 @@
                                                     $descModAdd = preg_replace($regModAdd, '$2', $info['atv']);
                                                     $id_cur_add = preg_replace($regModAdd, '$3', $info['atv']);
                                                     $idModAdd = preg_replace($regModAdd, '$4', $info['atv']);
-                                                    echo "<strong>Inserção</strong> do <em>módulo</em> <strong>".$nomeMod."</strong>  no curso: <em>{ ".$id_cur_add." }</em>";
+                                                    echo "<strong>Inserção</strong> do <em>módulo</em> <strong>".$nomeModAdd."</strong>  no curso: <em>{ ".$id_cur_add." }</em>";
                                                 }elseif (preg_match($regAulaAdd, $info['atv'])) {
                                                     $id_vAdd = preg_replace($regAulaAdd, '$1', $info['atv']);
                                                     $titAdd = preg_replace($regAulaAdd, '$2', $info['atv']);
