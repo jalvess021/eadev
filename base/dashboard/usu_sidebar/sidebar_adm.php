@@ -32,12 +32,7 @@
                     </li>	
 					
 					<li class="submenu">
-                        <a href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span><span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">		
-                                <li><a href="#">Financeiro</a></li>		
-                                <li><a href="#">Acadêmico</a></li>			
-                                <li><a href="#">Desempenho</a></li>
-                            </ul>
+                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>
                     
                     <li class="submenu">
@@ -47,8 +42,16 @@
                                 <li><a href="#">Listagem de pagamentos</a></li>
                             </ul>
                     </li>
+                    
+
                     <li class="submenu">
-                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
+                        <a href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span><span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">	
+                                <li><a href="#"><i class="bi bi-person-lines-fill"></i>Usuários </a></li>	
+                                <li><a href="#"> <i class="bi bi-tools"></i>Atividades</a></li>	
+                                <li><a href="#"> <i class="bi bi-currency-exchange"></i>Financeiro</a></li>	
+                                <li><a href="#" data-toggle='tooltip' data-placement='right' title='Desempenho Acadêmico'> <i class="bi bi-graph-up"></i> D. Acadêmico</a></li>
+                            </ul>
                     </li>
 					
             </ul>
