@@ -29,19 +29,26 @@
                                 <li><a href="?content_adm=consulta_adm"><i class="fa fa-fw fa-user"></i>Administrador</a></li>
                                 <li><a href="?content_adm=consulta_atv"><i class='bi bi-bar-chart-line-fill'></i>Atividades</a></li>
 							</ul>
-                    </li>				           
-
+                    </li>	
+					
 					<li class="submenu">
-                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
-                    </li>
-
-					<li class="submenu">
-                        <a class="pro" href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span> <span class="label radius-circle bg-primary float-right">3</span></a>
+                        <a href="#"></span><i class="bi bi-clipboard2-check-fill"></i><span> Relatórios </span><span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">		
                                 <li><a href="#">Financeiro</a></li>		
                                 <li><a href="#">Acadêmico</a></li>			
                                 <li><a href="#">Desempenho</a></li>
                             </ul>
+                    </li>
+                    
+                    <li class="submenu">
+                        <a class="pro" href="#"></span><i class="bi bi-arrow-left-right"></i><span>Transações</span><span class="label radius-circle bg-primary float-right"> Financeiro</span></a>
+                            <ul class="list-unstyled">	
+                                <li><a href="#">Identificador de pagamentos</a></li>		
+                                <li><a href="#">Listagem de pagamentos</a></li>
+                            </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>
 					
             </ul>

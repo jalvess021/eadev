@@ -14,6 +14,7 @@ class ComposerStaticInitb7ad6f249da9da0c68f4adbf41a000be
         ),
         'M' => 
         array (
+            'Mpdf\\QrCode\\' => 12,
             'Masterminds\\' => 12,
         ),
         'F' => 
@@ -34,6 +35,10 @@ class ComposerStaticInitb7ad6f249da9da0c68f4adbf41a000be
         'Sabberworm\\CSS\\' => 
         array (
             0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
+        ),
+        'Mpdf\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/qrcode/src',
         ),
         'Masterminds\\' => 
         array (
