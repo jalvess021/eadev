@@ -24,6 +24,10 @@ if(isset($_GET['content_alu'])) {
                 case 'curso':
                     include "view_cur_alu/view_curso.php";
                     break; 
+
+                case 'avaliacoes':
+                    include "base/dashboard/usu_content/alu/avaliacao/default.php";
+                    break; 
 }       
 }  
 else {

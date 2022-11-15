@@ -18,11 +18,11 @@
                     </li>
                     
                     <li class="submenu">
-                        <a href="#"></span><i class="bi bi-list-check"></i><span> Avaliações </span></a>
+                        <a href="?content_alu=avaliacoes"></span><i class="bi bi-list-check"></i><span> Avaliações </span></a>
                     </li>       
 
 					<li class="submenu">
-                        <a class="pro" href="#"></span><span class="label radius-circle bg-primary float-right">Premium</span><i class="bi bi-star-fill"></i><span> Certificado </span> </a>
+                        <a class="pro" href="#"></span><span class="label radius-circle bg-primary float-right">Premium</span><i class="bi bi-award-fill"></i><span> Certificado </span> </a>
                             <ul class="list-unstyled">			
                                 <li><a target="_blank" href="#"><i class="bi bi-card-checklist"></i>Emissão</a></li>			
                                 <li><a target="_blank" href="#"><i class="bi bi-upc"></i>Validação</a></li>
