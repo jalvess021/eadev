@@ -36,8 +36,10 @@ $res5 = mysqli_query($con, $sql5) or die(mysqli_error($con));
 $sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1, NULL from aula AS a ORDER BY a.id_aula;';
 $res6 = mysqli_query($con, $sql6); 
 
+$sql7 = 'INSERT into avaliacoes SELECT 0, '.$info2[0].', c.id_curso, 1 from curso AS c ORDER BY c.id_curso asc;';
+$res7 = mysqli_query($con, $sql7); 
 
-if($res1 && $res2 && $res3 && $res4 && $res5 && $res6){
+if($res1 && $res2 && $res3 && $res4 && $res5 && $res6 && $res7){
 	header('Location: \tcc/index.php?page=login');
 	mysqli_close($con);
 }else{

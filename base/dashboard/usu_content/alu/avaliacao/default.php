@@ -4,16 +4,16 @@
     <div class="all-div-quest">
         <ul class="info-quest">
                 <li>
-                    <h3>Concluído <i class="bi bi-patch-check-fill text-success"></i></h3>
-                    <p>O questionário receberá o status de concluído para o aluno que atingiu a nota necessária no curso referente.</p>
+                    <h3>Disponível <i class="bi bi-patch-check-fill text-success"></i></h3>
+                    <p>Quando o aluno estiver apto a realizar o questionário do curso desejado, o status de disponível será exibido.</p>
                 </li>
                 <li>
-                    <h3>Disponível <i class="bi bi-patch-exclamation-fill text-secondary"></i></h3>
-                    <p>Quando o aluno estiver apto a realizar o questionário do curso desejado, o status de disponível será exibido. </p>
+                    <h3>Bloqueado <i class="bi bi-patch-exclamation-fill text-secondary"></i></h3>
+                    <p> Ao exceder o número de tentativas, o questionário receberá o status de bloqueado.</p>
                 </li>
                 <li>
                     <h3>Indisponível <i class="bi bi-patch-minus-fill text-danger"></i></h3>
-                    <p>Ao exceder o número de tentativas ou não concluir todas as aulas do curso referente, o questionário receberá o status de indiponível. </p>
+                    <p> Para realizar o questionário, o aluno terá que concluir todas as aulas do curso desejado. </p>
                 </li>
         </ul>
         <div class="all-quest-1">
@@ -32,8 +32,8 @@
                         <div class="div-quest-right col-9 align-self-center">
                             <span>Título:</span>
                             <a data-toggle="modal" data-target="#exampleModalCenter">Questionário avaliativo de HTML <i class="bi bi-patch-check-fill text-success"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 0/2 | Parabéns, você concluiu este questionário.</span>
-                            <span id='status-quest'>#1 - Concluído </span>
+                            <span id='try-quest'>Tentativas restantes: 1/2 | Teste seus conhecimentos.</span>
+                            <span id='status-quest'>#1 - Disponível </span>
                         </div>
                     </div>
                 </div>
@@ -46,22 +46,8 @@
                         <div class="div-quest-right col-9 align-self-center ">
                             <span>Título:</span>
                             <a>Questionário avaliativo de Js <i class="bi bi-patch-exclamation-fill text-secondary"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 1/2 | Teste seus conhecimentos. </span>
-                            <span id='status-quest'>#2 - Disponível</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class='hr-div-quest'>
-                <div class="div-quest">
-                    <div class="div-quest-row row">
-                        <div class="div-quest-left col-3 align-self-center">
-                        <a href="" class="link-icon-av"><i class="bi bi-file-earmark-lock-fill  bg-danger"></i></a>
-                        </div>
-                        <div class="div-quest-right col-9 align-self-center">
-                            <span>Título:</span>
-                            <a>Questionário avaliativo de Css <i class="bi bi-patch-minus-fill text-danger"></i></a>
                             <span id='try-quest'>Tentativas restantes: 0/2 | Próxima tentativa em 23/12/2022 às 23:49:28. </span>
-                            <span id='status-quest'>#3 - Indisponível</span>
+                            <span id='status-quest'>#2 - Bloqueado</span>
                         </div>
                     </div>
                 </div>
@@ -74,7 +60,7 @@
                         <div class="div-quest-right col-9 align-self-center">
                             <span>Título:</span>
                             <a>Questionário avaliativo de Php <i class="bi bi-patch-minus-fill text-danger"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 0/2 | Conclua as aulas do curso referente para liberar este questionário. </span>
+                            <span id='try-quest'>Tentativas restantes: 0/2 | Conclua as aulas do curso para liberar este questionário. </span>
                             <span id='status-quest'>#4 - Indisponível</span>
                         </div>
                     </div>

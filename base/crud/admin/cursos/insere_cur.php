@@ -34,7 +34,10 @@
         $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
         $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
 
-    if($res1 && $res2 && $res3 && $upload){
+        $sql4 = 'insert into avaliacoes SELECT 0, a.id_aluno, '.$info1['id_curso'].', 1 from aluno AS a ORDER BY a.id_aluno asc;';
+        $res4 = mysqli_query($con, $sql4); 
+
+    if($res1 && $res2 && $res3 && $upload && $sql4){
             
                 $usu_atv1 = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));
                 if ($usu_atv1) {
