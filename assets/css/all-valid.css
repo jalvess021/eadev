@@ -1,0 +1,11 @@
+/* Css p/ definir classes, cores etc personalizados*/
+@import 'config.css';
+
+/*Css Padrão da Pág. de validação do certificado*/
+@import 'css-valid/valid-cert.css';
+
+/*Bootstrap 5.2.0 link*/
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css');
+
+/* Css p/ definir classes, cores etc personalizados*/
+@import 'reset.css';
