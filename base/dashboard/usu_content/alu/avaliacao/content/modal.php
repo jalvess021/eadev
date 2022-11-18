@@ -23,7 +23,7 @@
 
                                                     $footerModal = "
                                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
-                                                        <button type='button' class='btn btn-dark'>Assistir <i class='bi bi-youtube'></i></button>
+                                                        <a href='?page=play_curso&curso=".$infoModal2['sigla_curso']."'><button type='button' class='btn btn-dark'>Assistir <i class='bi bi-youtube'></i></button></a>
                                                     ";
                                                     break;
     
@@ -32,7 +32,7 @@
 
                                                     $footerModal = "
                                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
-                                                        <button type='button' class='btn btn-dark'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
+                                                        <button type='button' id='btnPagAvaliacao' data-avCur='".$infoModal2['id_curso']."' data-dismiss='modal' class='btn btn-dark'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
                                                     ";
                                                     break;
     
