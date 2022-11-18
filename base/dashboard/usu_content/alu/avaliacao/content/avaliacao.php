@@ -69,7 +69,12 @@
 <script>
 
     let questions = [];
-    $.getJSON('/tcc/selects/questionario/query_quest.php', function (dados) {
+    $.ajax({
+            url: '/tcc/selects/questionario/query_quest.php',
+            method: 'POST',
+            data: {curso: <?php echo $_GET['curso'];?>},
+            dataType: 'json'
+        }).done(function(dados){
             for (let i = 0; i < dados.length; i++) {
                 const forDados = dados[i];
 
@@ -89,8 +94,7 @@
                         valueQuestion: forDados.pont_quest 
                     });
             }
-        })
-        
+        }) 
 
         //selecting all required elements
     const start_btn = document.querySelector(".start_btn button");
