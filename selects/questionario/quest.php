@@ -21,7 +21,7 @@
                             $issetQuest = mysqli_query($con, "SELECT q.* from questoes as q inner join modulo as m on q.id_mod = m.id_mod inner join curso as c on m.id_curso = c.id_curso and c.id_curso = ".$info1['id_curso'].";");
 
                             //O indicado é maior ou igual a 18, porém está sendo utilizado maior que para testes
-                            if (mysqli_num_rows($issetQuest) >= 0 ) {
+                            if (mysqli_num_rows($issetQuest) > 0 ) {
 
                                 $sql2 = mysqli_query($con, "SELECT * FROM curso where id_curso = ".$info1['id_curso'].";");
                                 $info2 = mysqli_fetch_array($sql2);
