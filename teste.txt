@@ -51,3 +51,9 @@ CREATE PROCEDURE update_status_tent()
 				
 	END $$
 	DELIMITER ;
+
+
+
+
+    SHOW VARIABLES LIKE 'event%';
+    SET GLOBAL event_scheduler = 	ON;
