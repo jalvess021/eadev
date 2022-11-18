@@ -111,7 +111,7 @@
                 <svg class="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                     <circle class="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
                 </svg>
-                <h4 class="text-progress">Questionário</h4>
+                <h4 class="text-progress">Questionários</h4>
             </div>  
 
             <div class="d-flex flex-column">
@@ -127,7 +127,7 @@
                 <svg class="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                     <circle class="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
                 </svg>
-                <h4 class="text-progress">Certificado</h4>
+                <h4 class="text-progress">Certificados</h4>
             </div>  
         </div>    
     </div>

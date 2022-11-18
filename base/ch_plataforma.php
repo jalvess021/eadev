@@ -13,11 +13,6 @@
             case 'rel_certificado':
             include "relatorios/cert.php";           
             break;
-
-            case 'valid_certificado':
-                include "validacao-cert.php";           
-                break;
-        
     }
 } 
 

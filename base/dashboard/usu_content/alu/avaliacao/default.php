@@ -11,7 +11,7 @@
 <h3 class='content-title ct-av'>Avaliações</h3>
 <div class='all-av-form'>
     <!-- conteúdo padrão-->
-    <?php include "content/avaliacao.php"?>
+    <?php include "content/area_avaliativa.php"?>
 </div>
 
 <!-- Fragmento da área de modais -->

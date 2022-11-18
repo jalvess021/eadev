@@ -24,8 +24,8 @@
 					<li class="submenu">
                         <a class="pro" href="#"></span><span class="label radius-circle bg-primary float-right">Premium</span><i class="bi bi-award-fill"></i><span> Certificado </span> </a>
                             <ul class="list-unstyled">			
-                                <li><a target="_blank" href="#"><i class="bi bi-card-checklist"></i>Emissão</a></li>			
-                                <li><a target="_blank" href="?page=valid_certificado"><i class="bi bi-upc"></i>Validação</a></li>
+                                <li><a href="#"><i class="bi bi-card-checklist"></i>Emissão</a></li>			
+                                <li><a target="_blank" href="\tcc/?page=validacao_certificado"><i class="bi bi-upc"></i>Validação</a></li>
                             </ul>
                     </li>
 					
