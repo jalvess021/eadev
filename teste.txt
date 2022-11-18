@@ -1,0 +1,53 @@
+DELIMITER $$
+CREATE PROCEDURE update_status_tent()
+	BEGIN 
+			DECLARE vIdAlu INT;
+				-- Declaração do cursor. Nesse ponto você especifica a qual consulta o cursor irá manipular
+				DECLARE reg_alu CURSOR FOR SELECT id_aluno from aluno;
+				-- Abertura do cursor. Aqui a consulta é feita e o Cursor mantem as informações
+				OPEN reg_alu;
+				
+					-- Recupera a linha do cursor 
+					FETCH reg_alu
+					-- Define o valor das variáveis com os valores da linha que ele está percorrendo. 
+					-- É importante que as variáveis estejam na mesma ordem que as colunas na consulta
+					INTO vIdAlu
+					
+					-- Loop. O Fetch_Status retorna os valores 0 [Ok], -1[Falha] e -2 [Registro perdido]
+					WHILE (@@FETCH_STATUS <> -1)
+					BEGIN
+					  /* Tratamentos para geração do Código de barras
+					  ** Insert into em outra tabela
+					  **
+					  */
+					  UPDATE avaliacoes SET num_tent_restantes = 33 WHERE id_aluno = vIdAlu; 
+					  
+					  
+					  DECLARE 	@vNumTotAulas INT,
+					  				@vNumAulasConq INT
+					  				
+					  				SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula 
+									  INNER JOIN modulo m on a.id_mod = m.id_mod 
+									  INNER JOIN curso c ON m.id_curso = c.id_curso 
+									  AND c.sigla_curso = '".$_GET['curso']."' 
+									  WHERE aa.id_aluno = ".$infoAlu['id_aluno'].";
+					  				
+					  @vNumTotAulas = SELECT COUNT(id_aula_alu) from aula_alu WHERE id_aluno = @vIdAlu AND id_aula = @vIdAula;
+					  @vNumAulasConq = SELECT COUNT(id_aula_alu) from aula_alu WHERE id_aluno = @vIdAlu AND id_aula = @vIdAula AND status_aula = 2;
+					  
+					  IF @vNumTotAulas = @vNumAulasConq THEN 
+					  		
+					
+					  -- Passa para o proximo registro, caso seja o ultimo registro da consulta, o @@Fetch_status passa a ser -1
+					  FETCH reg_alu 
+					  -- Insere os valores das linhas nas variáveis
+					  INTO vIdAlu
+					END
+					-- Fecha o cursor
+					CLOSE reg_alu
+					
+				-- Remove a referência do cursor. 
+				DEALLOCATE reg_alu
+				
+	END $$
+	DELIMITER ;
