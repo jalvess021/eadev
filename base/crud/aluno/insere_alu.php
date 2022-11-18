@@ -15,7 +15,7 @@ $sql1 .= "(0, '$usuario', '$senha', '$nome', '$sexo', '$telefone', '$email', 2, 
 $res1 = mysqli_query($con, $sql1) or die(mysqli_error($con));
 
 //Selecionando o mesmo ID cadastrado
-$sql2 = "select id_usu from usuario where usuario='". $usuario ."'; ";
+$sql2 = "select * from usuario where usuario='". $usuario ."'; ";
 $res2 = mysqli_query($con, $sql2) or die(mysqli_error($con));
 $info1 = mysqli_fetch_array($res2);
 
@@ -36,7 +36,8 @@ $res5 = mysqli_query($con, $sql5) or die(mysqli_error($con));
 $sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1, NULL from aula AS a ORDER BY a.id_aula;';
 $res6 = mysqli_query($con, $sql6); 
 
-$sql7 = 'INSERT into avaliacoes SELECT 0, '.$info2[0].', c.id_curso, 1 from curso AS c ORDER BY c.id_curso asc;';
+$sql7 = "insert into avaliacoes SELECT 0, ".$info2[0].", ".$info1['nome'].", 1, NULL, NULL, 3, c.id_curso  
+FROM curso AS c ORDER BY id_curso asc;";
 $res7 = mysqli_query($con, $sql7); 
 
 if($res1 && $res2 && $res3 && $res4 && $res5 && $res6 && $res7){

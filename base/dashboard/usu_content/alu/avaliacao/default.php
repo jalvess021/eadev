@@ -1,93 +1,27 @@
+<?php
+     $nivel_necessario = 2;
+    include "base/testa_nivel.php"; 
+
+    $id_usu = $_SESSION['UsuarioID'];
+    $sql_alu = mysqli_query($con, "SELECT id_aluno from aluno where id_usu = ".$id_usu.";");
+    $res_alu = mysqli_fetch_array($sql_alu);
+    $id_alu = $res_alu[0];
+?>
+
 <h3 class='content-title ct-av'>Avaliações</h3>
 <div class='all-av-form'>
-    <h5 class='label-av-form-1'> <i class="bi bi-book-half"></i> Área avaliativa</h5>
-    <div class="all-div-quest">
-        <ul class="info-quest">
-                <li>
-                    <h3>Disponível <i class="bi bi-patch-check-fill text-success"></i></h3>
-                    <p>Quando o aluno estiver apto a realizar o questionário do curso desejado, o status de disponível será exibido.</p>
-                </li>
-                <li>
-                    <h3>Bloqueado <i class="bi bi-patch-exclamation-fill text-secondary"></i></h3>
-                    <p> Ao exceder o número de tentativas, o questionário receberá o status de bloqueado.</p>
-                </li>
-                <li>
-                    <h3>Indisponível <i class="bi bi-patch-minus-fill text-danger"></i></h3>
-                    <p> Para realizar o questionário, o aluno terá que concluir todas as aulas do curso desejado. </p>
-                </li>
-        </ul>
-        <div class="all-quest-1">
-        <select name="" id="tp-form-av">
-            <option value="" selected>Todos os questionários</option>
-            <option value="">questionários de Front-End</option>
-            <option value="">questionários de Back-End</option>
-            <option value="">questionários de Conver</option>
-        </select>
-            <div class="all-quest-2">
-                <div class="div-quest">
-                    <div class="div-quest-row row">
-                        <div class="div-quest-left col-3 align-self-center">
-                            <a data-toggle="modal" data-target="#exampleModalCenter" class="link-icon-av"><i class="bi bi-file-earmark-check-fill bg-success"></i></a>
-                        </div>
-                        <div class="div-quest-right col-9 align-self-center">
-                            <span>Título:</span>
-                            <a data-toggle="modal" data-target="#exampleModalCenter">Questionário avaliativo de HTML <i class="bi bi-patch-check-fill text-success"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 1/2 | Teste seus conhecimentos.</span>
-                            <span id='status-quest'>#1 - Disponível </span>
-                        </div>
-                    </div>
-                </div>
-                <hr class='hr-div-quest'>
-                <div class="div-quest">
-                    <div class="div-quest-row row">
-                        <div class="div-quest-left col-3 align-self-center">
-                        <a href="" class="link-icon-av"><i class="bi bi-file-earmark-text-fill bg-secondary"></i></a>
-                        </div>
-                        <div class="div-quest-right col-9 align-self-center ">
-                            <span>Título:</span>
-                            <a>Questionário avaliativo de Js <i class="bi bi-patch-exclamation-fill text-secondary"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 0/2 | Próxima tentativa em 23/12/2022 às 23:49:28. </span>
-                            <span id='status-quest'>#2 - Bloqueado</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class='hr-div-quest'>
-                <div class="div-quest">
-                    <div class="div-quest-row row">
-                        <div class="div-quest-left col-3 align-self-center">
-                        <a href="" class="link-icon-av"><i class="bi bi-file-earmark-lock-fill  bg-danger"></i></a>
-                        </div>
-                        <div class="div-quest-right col-9 align-self-center">
-                            <span>Título:</span>
-                            <a>Questionário avaliativo de Php <i class="bi bi-patch-minus-fill text-danger"></i></a>
-                            <span id='try-quest'>Tentativas restantes: 0/2 | Conclua as aulas do curso para liberar este questionário. </span>
-                            <span id='status-quest'>#4 - Indisponível</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class='hr-div-quest'>
-            </div>
-        </div>
-    </div>
+    <!-- conteúdo padrão-->
+    <?php include "content/avaliacao.php"?>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-success">
-        <h5 class="modal-title text-white text-center font-weight-bold" id="exampleModalCenterTitle">Questionário de HTML</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Este questionário já foi realizado e conluído!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Obter certificado <i class='bi bi-award-fill'></i></button>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Fragmento da área de modais -->
+<?php include "content/modal.php"?>
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+    $("#tp-form-av").change(() => {
+        $(".all-quest-2").load('/tcc/selects/questionario/quest.php?filter_quest='+$("#tp-form-av").val()+'&alu=<?php echo $id_alu;?>');
+    })
+</script>
