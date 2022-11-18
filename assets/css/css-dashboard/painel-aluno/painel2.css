@@ -1,6 +1,6 @@
 .default-alu-container{
 height: 100%;
-width: 100%;
+width: 60%;
 }
 
 .default-alu-body .progress{
@@ -104,30 +104,97 @@ width: 100%;
 }
 
 
-.default-alu-info2{
-    margin-top: 25px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 450px !important;
+.circular-progress{
+    position: relative;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
 }
 
-
-.default-alu-info2 li h3{
-    font-size: 18pt;
-    font-weight: 700;
-    color: rgb(49, 49, 49);    
+.outer{
+    margin: auto;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
-.default-alu-info2 li p{
+
+.inner{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                 inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(238, 5, 5, 0.05) !important;
+                
+}
+
+#number{
     font-weight: 600;
-    color: rgb(114, 114, 114);   
-    font-size: 10pt; 
+    color: #555;
+}
+
+#number2{
+    font-weight: 600;
+    color: #555;
+}
+
+.text-progress{
+    font-size: 10pt;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.circle1{
+    fill: none;
+    stroke: #11d3d3;
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 2s linear forwards;
+}
+
+.svg1{
+    position: absolute;
+}
+
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 165;
+    }
+}
+
+.circle2{
+    fill: none;
+    stroke: #11d3d3;
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim2 3s linear forwards;
+}
+
+.svg2{
+    position: absolute;
+}
+
+@keyframes anim2{
+    100%{
+        stroke-dashoffset: 306;
+    }
 }
 
 
-
-
-.alert_view{
+/*.alert_view{
     margin-top: 15%;
     margin-left: 10%;
     display: flex;
@@ -144,7 +211,7 @@ width: 450px !important;
     color: rgba(0, 0, 0, 0.747);
     font-size: 12pt;
     font-weight: 500;
-}
+}*/
 
 @media(max-width:1409px){
 
