@@ -52,7 +52,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <h3 class="content-title">Painel</h3>
-    <div class="d-flex flex-row align-items-center justify-content-around">
+    <div class=" d-flex flex-row align-items-center justify-content-around ">
         <div class="default-alu-container">
             <div class="default-alu-body">
                 <div class="default-alu-info1">
@@ -97,38 +97,23 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-row pt-5">
-            <div class="d-flex flex-column mb-2 mr-4">
-                <div class="circular-progress">
-                    <div class="outer">
-                        <div class="inner">
-                            <div id="number">
-                                65%
-                            </div>
+        <div class=" group-progress d-flex flex-row ">
+                <div class=" group-progress1 d-flex flex-column justify-content-center ">
+                    <div class="circular-progress"> 
+                        <div class="value-container">
+                            0%
                         </div>
                     </div>
+                    <h4 class="text-progress ">Questionários</h4>
                 </div>
-                <svg class="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                    <circle class="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
-                </svg>
-                <h4 class="text-progress">Questionários</h4>
-            </div>  
-
-            <div class="d-flex flex-column">
-                <div class="circular-progress">
-                    <div class="outer">
-                        <div class="inner">
-                            <div id="number2">
-                                75%
-                            </div>
+                <div class=" group-progress2 d-flex flex-column">
+                    <div class="circular-progress2"> 
+                        <div class="value-container2">
+                            0%
                         </div>
                     </div>
+                    <h4 class="text-progress ">Certificado</h4>
                 </div>
-                <svg class="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                    <circle class="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
-                </svg>
-                <h4 class="text-progress">Certificados</h4>
-            </div>  
         </div>    
     </div>
 <!-- Swiper JS -->
@@ -149,29 +134,43 @@
   });
 </script>
 <script>
-    let number = document.getElementById("number");
-    let counter = 0;
-    setInterval(() => {
-        if (counter == 65) {
-            clearInterval();
-        }else{
-            counter += 1;
-            number.innerHTML = counter + "%";
-        }
-        
-    }, 30);
+    let progressBar = document.querySelector(".circular-progress");
+        let valueContainer = document.querySelector(".value-container");
 
-    let number2 = document.getElementById("number2");
-    let counter2 = 0;
-    setInterval(() => {
-        if (counter2 == 35) {
-            clearInterval();
-        }else{
-            counter2 += 1;
-            number2.innerHTML = counter2 + "%";
-        }
-        
-    }, 30);
+        let progressValue = 0;
+        let progressEndValue = 60;
+
+
+        let progress = setInterval(() => {
+          progressValue++;
+          valueContainer.textContent = `${progressValue}%`;
+          progressBar.style.background = `conic-gradient(
+            #10a3a3 ${progressValue * 3.6}deg,
+            rgb(247, 247, 247) ${progressValue * 3.6}deg
+          )`;
+          if (progressValue == progressEndValue) {
+            clearInterval(progress);
+          }
+        },30);
+
+        let progressBar2 = document.querySelector(".circular-progress2");
+        let valueContainer2 = document.querySelector(".value-container2");
+
+        let progressValue2 = 0;
+        let progressEndValue2 = 25;
+
+
+        let progress2 = setInterval(() => {
+          progressValue2++;
+          valueContainer2.textContent = `${progressValue2}%`;
+          progressBar2.style.background = `conic-gradient(
+            #10a3a3 ${progressValue2 * 3.6}deg,
+            rgb(247, 247, 247) ${progressValue2 * 3.6}deg
+          )`;
+          if (progressValue2 == progressEndValue2) {
+            clearInterval(progress2);
+          }
+        },30);
 </script>
 
 <!--

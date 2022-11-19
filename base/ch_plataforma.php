@@ -13,6 +13,7 @@
             case 'rel_certificado':
             include "relatorios/cert.php";           
             break;
+
     }
 } 
 

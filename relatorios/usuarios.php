@@ -1,5 +1,7 @@
-<?php
 
+<?php
+  
+ 
     $nivel_necessario = 3;
     include "../base/testa_nivel.php";
     //Carrega o composer
@@ -24,7 +26,7 @@
             $user = "administradores";
             break;
     }
-
+    
     use Dompdf\Dompdf;
     use Dompdf\Options;
     
@@ -42,6 +44,9 @@
     if(isset($_POST["hidden_html"]) && $_POST["hidden_html"] != '')
     {
     $start = "
+
+
+    
     <!DOCTYPE html>
     <html lang='pt-br'>
     <head>

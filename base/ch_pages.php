@@ -41,9 +41,9 @@
                 include "base/crud/aluno/insere_alu.php";
                 break;
 
-            case 'validacao_certificado':
-                include "validacao_cert.php";
-                break;
+                case 'validacao_certificado':
+                    include "validacao_cert.php";
+                    break;
     }
 } 
 
