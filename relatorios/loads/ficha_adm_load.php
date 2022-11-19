@@ -1,4 +1,6 @@
-
+<?php
+ $url = "/tcc/relatorios/ficha_adm.php?user=".$_GET['user'];
+?>
 <html>
   <head>
     <title>Gerando PDF | Eadev</title>
@@ -14,7 +16,7 @@
     </div>
 
     <script>
-        window.location = "/tcc/relatorios/ficha_adm.php?";
+        window.location = "<?php echo $url;?>";
     </script>
   </body>
 </html>

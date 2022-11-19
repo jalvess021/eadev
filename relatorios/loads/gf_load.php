@@ -1,3 +1,7 @@
+<?php
+  $url = $_POST['url'];
+  $gf = $_POST['hidden_html'];
+?>
 <html>
   <head>
     <title>Gerando PDF | Eadev</title>
@@ -9,11 +13,18 @@
   <body class="body-load">
     <div class="center-ring">
         <div class="ring"> </div>
-          <span class="load-text">Processando...</span>
+          <span class="load-text">Processando...</span>]
+          <form method='post' action="<?php echo $url;?>" id='formUrl'>
+            <input type="hidden" name="hidden_html" id="hidden_html" value='<?php echo $gf;?>'> 
+          </form>
     </div>
-
-    <script>
-        window.location = "/tcc/relatorios/ficha_alu.php?";
-    </script>
   </body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $('#formUrl').ready(function(){
+        $('#formUrl').submit();
+    });
+       
+</script>
 </html>

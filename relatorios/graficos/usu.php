@@ -117,10 +117,82 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
     </head>  
+    <style>
+body {
+      height:100vh !important;
+      margin:0;
+}
+.hd-gf-cert{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+}
+h3{
+      margin-top: 20px;
+      font-weight: 700;     
+}
+#create_pdf{
+    border-radius: 40px;
+    font-size: 12pt;
+    background-color: transparent !important;
+    padding: 6px 15px;
+    color: white ;
+    text-transform: uppercase;
+    border:whitesmoke  4px outset;
+    font-weight: bold !important;
+}
+#create_pdf:hover{
+      background-color: white !important;
+      color: #23979b;
+      transition: 0.15s ease-in;
+}
+.panel{
+      border-radius: 20px !important;
+      border: 9px outset #4ea4a7;
+}
+.bg {
+  /*animation:slide 3.5s ease-in-out infinite alternate;*/
+  background-image: linear-gradient(-25deg, #047979 50%, #ffffff 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+#div-hidden{
+      
+}
+    </style>
     <body>  
-        <br /><br /> 
+    <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
         <div class="container" id="testing">  
-        <h3 align="center">Relatório de usuários mensais</h3>  
+        <div class="hd-gf-cert">
+            
+              <h3 align="center">Relatório de usuários mensais</h3>
+        </div>  
             <div class="panel panel-default">
               <div class="panel-body" align="center">
               <h5 class="panel-title"> Número de <?php echo $user;?> na plataforma </h5>
@@ -128,16 +200,15 @@
                   </div>
             </div>
         </div>
-  <br />
-  <div align="center">
-   <form method="post" id="make_pdf" action='<?php echo "../usuarios.php?user=".$_GET['user']."&periodo=".$_GET['periodo'];?>'>
-    <input type="hidden" name="hidden_html" id="hidden_html"/>
-    <button type="button" name="create_pdf" id="create_pdf" class="btn btn-danger btn-xs">Gerar relatório</button>
-   </form>
-  </div>
-  <br />
-  <br />
-  <br />
+
+      <div align="center" id='div-hidden'>
+      <form method="post" id="make_pdf" action='/tcc/relatorios/loads/gf_load.php'>
+      <input type="hidden" name="hidden_html" id="hidden_html"/>
+      <input type="hidden" name="url" value="<?php echo "/tcc/relatorios/usuarios.php?user=".$_GET['user']."&periodo=".$_GET['periodo'];?>">
+      
+      <button type="button" name="create_pdf" id="create_pdf">Gerar relatório</button>
+      </form>
+      </div>
     </body>  
 </html>
 

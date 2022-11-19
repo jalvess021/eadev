@@ -7,7 +7,6 @@
             $verifyAdm = mysqli_query($con, "SELECT * FROM usuario where nvl_acesso = 3 AND id_usu = ".$id_adm.";");
             $rowAdm = mysqli_num_rows($verifyAdm);
             if ($rowAdm === 1) {
-
                 $resAdm = mysqli_fetch_array($verifyAdm);
                 $queryComp = mysqli_query($con, "SELECT * FROM dados_complementares where id_usu = ".$id_adm.";");
             echo "
@@ -28,7 +27,8 @@
                 </div>
                 <div class='col-2 col-xl-3 mt-3'>
                     <div class='d-flex flex-row justify-content-end'>
-                            <a href='/tcc/relatorios/ficha_adm.php?user=".$id_adm."' target='_blank' class='btn btn-sm btn-secondary  mr-xl-4 mr-2 text-white font-weight-bold ' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> <span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
+                    
+                            <a href='/tcc/relatorios/loads/ficha_adm_load.php?user=".$id_adm."' target='_blank' class='btn btn-sm btn-secondary  mr-xl-4 mr-2 text-white font-weight-bold ' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> <span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
                         <div>
                             <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> <span class='d-none d-xl-inline'> Fechar</span> </a>
                         </div>

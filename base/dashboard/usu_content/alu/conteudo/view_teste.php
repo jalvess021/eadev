@@ -1,22 +1,23 @@
+<!-- Usar flex-wrap nos cards caso a resolucao mude -->
 <div id="topo"></div>
-<ul class="nav nav-pills nav-menu justify-content-center mt-3">
-  <li class="nav-item ">
-    <a class="nav-link item-form" href="">Formações</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link item-cur" href="#front">Front-End</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link item-cur" href="#back">Back-End</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link item-cur" href="#conver">Conver</a>
-  </li>
-</ul>
-<div class="group-cards">
-        <h4 class='caption-card'>Front-End</h4>
+    <ul class="nav justify-content-center mt-3">
+        <li class="nav-item ">
+            <a class="nav-link item-form" href="">Formações</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link item-cur" href="#front">Front-End</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link item-cur" href="#back">Back-End</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link item-cur" href="#conver">Conver</a>
+        </li>
+    </ul>
+    <div class="group-cards">
+        <div id='front'>
+            <h4 class='caption-card'>Front-End</h4>
             <hr>
-        <div class="">
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
                     <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
@@ -68,9 +69,10 @@
                 </div>
             </div>
         </div>    
-        <h4 class='caption-card'>Back-End</h4>
+        
+        <div id="back">
+            <h4 class='caption-card'>Back-End</h4>
             <hr>
-        <div class="">
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
                     <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
@@ -123,9 +125,10 @@
             </div>
         </div>
 
-        <h4 class='caption-card'>Conver</h4>
+        
+        <div id='conver'>
+            <h4 class='caption-card'>Conver</h4>
             <hr>
-        <div class="">
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
                     <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">

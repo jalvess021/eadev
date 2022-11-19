@@ -134,43 +134,49 @@
   });
 </script>
 <script>
-    let progressBar = document.querySelector(".circular-progress");
+    
+    //Questionario
+        let progressBar = document.querySelector(".circular-progress");
         let valueContainer = document.querySelector(".value-container");
 
         let progressValue = 0;
         let progressEndValue = 60;
 
-
-        let progress = setInterval(() => {
-          progressValue++;
-          valueContainer.textContent = `${progressValue}%`;
-          progressBar.style.background = `conic-gradient(
-            #10a3a3 ${progressValue * 3.6}deg,
-            rgb(247, 247, 247) ${progressValue * 3.6}deg
-          )`;
-          if (progressValue == progressEndValue) {
-            clearInterval(progress);
-          }
-        },30);
-
+            if (progressEndValue >= 2) {
+                let progress = setInterval(() => {
+                        
+                        progressValue++;
+                        valueContainer.textContent = `${progressValue}%`;
+                        progressBar.style.background = `conic-gradient(
+                        #10a3a3 ${progressValue * 3.6}deg,
+                        rgb(247, 247, 247) ${progressValue * 3.6}deg
+                        )`;
+                        if (progressValue == progressEndValue) {
+                        clearInterval(progress);
+                        }
+                    },30);
+            }
+        
+    //Certificado
         let progressBar2 = document.querySelector(".circular-progress2");
         let valueContainer2 = document.querySelector(".value-container2");
 
         let progressValue2 = 0;
         let progressEndValue2 = 25;
 
-
-        let progress2 = setInterval(() => {
-          progressValue2++;
-          valueContainer2.textContent = `${progressValue2}%`;
-          progressBar2.style.background = `conic-gradient(
-            #10a3a3 ${progressValue2 * 3.6}deg,
-            rgb(247, 247, 247) ${progressValue2 * 3.6}deg
-          )`;
-          if (progressValue2 == progressEndValue2) {
-            clearInterval(progress2);
-          }
-        },30);
+            if (progressEndValue2 >= 2) {
+                    let progress2 = setInterval(() => {
+                    progressValue2++;
+                    valueContainer2.textContent = `${progressValue2}%`;
+                    progressBar2.style.background = `conic-gradient(
+                        #10a3a3 ${progressValue2 * 3.6}deg,
+                        rgb(247, 247, 247) ${progressValue2 * 3.6}deg
+                    )`;
+                    if (progressValue2 == progressEndValue2) {
+                        clearInterval(progress2);
+                    }
+                    },30);
+            }
 </script>
 
 <!--
