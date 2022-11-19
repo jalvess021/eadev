@@ -36,25 +36,27 @@
             <div class='swiper-wrapper'>
             <?php
             while ($info2 = mysqli_fetch_array($res2)) {
-              $queryAula1 = mysqli_query($con, "SELECT COUNT(a.id_aula) FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info2['id_curso'].";");
-              $infoAula1 = mysqli_fetch_array($queryAula1);
-              echo "
-              <div class='swiper-slide'>
-              <h4>".$info2['sigla_curso']."</h4>
-                <a href='?page=play_curso&curso=".$info2['sigla_curso']."' class='img-link-cur'>
-                  <span class='num-aula'>".$infoAula1[0]." aulas </span>
-                  <div class='bar-cur1'></div>
-                  <div class='bar-cur2'></div>
-                  <div class='opt-box1'></div>
-                  <div class='opt-box2'></div>
-                  <div class='opt-box3'></div>
-                  <div class='ball-cur1'></div>
-                  <div class='ball-cur2'></div>
-                  <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info2['id_curso']).".jpeg' alt='Curso ".$info2['sigla_curso'].")'>
-                </a>
-                <p>".$info2['nome_curso']."</p>
-              </div>
-              ";
+              $queryAula1 = mysqli_query($con, "SELECT * FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info2['id_curso'].";");
+              $infoAula1 = mysqli_num_rows($queryAula1);
+              if ($infoAula1 > 0) {
+                echo "
+                <div class='swiper-slide'>
+                <h4>".$info2['sigla_curso']."</h4>
+                  <a href='?page=play_curso&curso=".$info2['sigla_curso']."' class='img-link-cur'>
+                    <span class='num-aula'>".$infoAula1." aulas </span>
+                    <div class='bar-cur1'></div>
+                    <div class='bar-cur2'></div>
+                    <div class='opt-box1'></div>
+                    <div class='opt-box2'></div>
+                    <div class='opt-box3'></div>
+                    <div class='ball-cur1'></div>
+                    <div class='ball-cur2'></div>
+                    <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info2['id_curso']).".jpeg' alt='Curso ".$info2['sigla_curso'].")'>
+                  </a>
+                  <p>".$info2['nome_curso']."</p>
+                </div>
+                ";
+              }
             }
             ?>
             </div>
@@ -79,25 +81,27 @@
               $sql4 = "SELECT * from curso where id_formacao = ".$info3['id_formacao'].";"; 
               $res4 = mysqli_query($con, $sql4);
               while ($info4 = mysqli_fetch_array($res4)) {
-                $queryAula2 = mysqli_query($con, "SELECT COUNT(a.id_aula) FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info4['id_curso'].";");
-                $infoAula2 = mysqli_fetch_array($queryAula2);
-              echo "
-              <div class='swiper-slide'>
-                <h4>".$info4['sigla_curso']."</h4>
-                <a href='?page=play_curso&curso=".$info4['sigla_curso']."' class='img-link-cur'>
-                  <span class='num-aula'>".$infoAula2[0]." aulas </span>
-                  <div class='bar-cur1'></div>
-                  <div class='bar-cur2'></div>
-                  <div class='opt-box1'></div>
-                  <div class='opt-box2'></div>
-                  <div class='opt-box3'></div>
-                  <div class='ball-cur1'></div>
-                  <div class='ball-cur2'></div>
-                  <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
-                </a>
-                <p>".$info4['nome_curso']."</p>
-              </div>
-              ";
+                $queryAula2 = mysqli_query($con, "SELECT * FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info4['id_curso'].";");
+                $infoAula2 = mysqli_num_rows($queryAula2);
+                if ($infoAula2 > 0) {
+                  echo "
+                  <div class='swiper-slide'>
+                    <h4>".$info4['sigla_curso']."</h4>
+                    <a href='?page=play_curso&curso=".$info4['sigla_curso']."' class='img-link-cur'>
+                      <span class='num-aula'>".$infoAula2." aulas </span>
+                      <div class='bar-cur1'></div>
+                      <div class='bar-cur2'></div>
+                      <div class='opt-box1'></div>
+                      <div class='opt-box2'></div>
+                      <div class='opt-box3'></div>
+                      <div class='ball-cur1'></div>
+                      <div class='ball-cur2'></div>
+                      <img src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
+                    </a>
+                    <p>".$info4['nome_curso']."</p>
+                  </div>
+                  ";
+                }
               }
               
       echo"
@@ -127,7 +131,7 @@
     spaceBetween: 30,
     autoplay: {
     delay: 4000,
-  }, loop: true,
+  }, 
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
