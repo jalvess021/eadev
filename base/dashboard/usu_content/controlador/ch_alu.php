@@ -18,7 +18,7 @@ if(isset($_GET['content_alu'])) {
                     break; 
 
                 case 'conteudo':
-                    include "base/dashboard/usu_content/alu/conteudo/view_teste.php";
+                    include "base/dashboard/usu_content/alu/conteudo/view_teste1.php";
                     break; 
 
                 case 'curso':

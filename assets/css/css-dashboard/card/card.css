@@ -1,14 +1,18 @@
 
-
 .row-form{
- margin-top: 30px;
+  margin-top: 10px;
+  height: 50px;
+  align-items: center;
 }
 
 .form-cur{
-    margin-top: -5px;
-    background-color: #0bb0b0;
+    padding: 10px;
+    background-color: #11acac !important;
     color: #fff !important;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 13pt;
+    border-radius: 5px !important;
+    margin-right: 15px;
 }
 
 .form-cur:hover{
@@ -16,21 +20,24 @@
 }
 
 .name-cur{
-    color: #727070;
+    color: rgba(0, 0, 0, 0.877);
     padding: 8px;
-    font-size: 12.5pt;
-    font-weight: 600;
+    font-size: 13pt;
+    font-weight: 400;
+    transition: 0.2s ease-in-out;
 }
 
 .name-cur:hover{
-    transition: all 0.4s;
+    font-weight: 500 !important;   
     font-size: 14pt;
-    color: #099898;
+    color: #0b9292 !important;
 }
 .name-cur:focus{
-    color: #099898;
-    font-size: 15pt;
-    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    color: #0b9292dc !important;
+    font-size: 14pt;
+    font-weight: 500;
+    border-bottom: 2px solid #099898;
 }
 .caption-card{
     margin-top: 40px;
@@ -51,171 +58,336 @@
     padding: 0;
   }
 
-.tab-content  .swiper {
+  .group-cards{
+    padding: 20px;
+}
+
+.card-cur2{
+    width: 290px !important;
+    border-radius: 20px !important;
+    background-color: #f7f7f7 !important;
+}
+
+.card-img2{
     width: 100%;
-    height: 100%;
-    padding: 0px 0px 30px 0px !important;
-  }
+    height: 180px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
 
-    
-.tab-content  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.card-body2{
+    height: 150px !important;
+    padding-left: 15px;
+}
 
-.tab-content  .swiper-slide h4{
+.title-card{
+    font-size: 9pt;
+    color: rgba(0, 0, 0, 0.616);
     font-weight: 700;
     text-transform: uppercase;
-  }
+    margin-top: 15px;
+    
+}
+
+.text-card{
+    font-size: 10.5pt;
+    color: rgba(0, 0, 0, 0.884);
+    font-weight: 400;
+    
+}
+
+.cam-card{
+    font-size: 10.5pt;
+    color: rgba(0, 0, 0, 0.712);
+    margin-right: 5px;
+}
+
+.num-card{
+    font-size: 10.5pt;
+    color: rgba(0, 0, 0, 0.596);
+    font-weight: 500;
+}
+
+.students-card{
+    font-size: 10.5pt;
+    color: rgba(0, 0, 0, 0.596);
+    font-weight: 500;
+}
+
+.icon-mod-card{
+    font-size: 10pt;
+    color: rgba(0, 0, 0, 0.712);
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+
+.card-btn{
+    width: 80px;
+    height: 35px;
+    font-size: 10pt !important;
+    margin-left: 10px;
+    margin-top: -7px;
+    border-radius: 5px !important;
+    background: linear-gradient(45deg, rgba(5, 163, 155, 0.986), rgba(5, 119, 113, 0.986));
+    border: none !important;
+}
+
+.card-btn:hover{
+    background: linear-gradient(45deg, rgba(5, 124, 118, 0.986), rgba(5, 114, 109, 0.986));
+}
+
+#btnTop{
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+    font-size: 22pt;
+    color: #086d6d;
+    opacity: 0.7;
+}
+
+.card-cur3{
+  width: 290px !important;
+  border-radius: 20px !important;
+  background-color: #f7f7f7 !important;
+}
+
+.card-img3{
+  width: 100%;
+  height: 180px !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.card-body3{
+  height: 150px !important;
+  padding-left: 15px;
+}
+
+.title-card2{
+  font-size: 9pt;
+  color: rgba(0, 0, 0, 0.616);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+  
+}
+
+.text-card2{
+  font-size: 10.5pt;
+  color: rgba(0, 0, 0, 0.884);
+  font-weight: 400;
+  
+}
+
+.cam-card2{
+  font-size: 10.5pt;
+  color: rgba(0, 0, 0, 0.712);
+  margin-right: 5px;
+}
+
+.num-card2{
+  font-size: 10.5pt;
+  color: rgba(0, 0, 0, 0.596);
+  font-weight: 500;
+}
+
+.students-card2{
+  font-size: 10.5pt;
+  color: rgba(0, 0, 0, 0.596);
+  font-weight: 500;
+}
+
+.icon-mod-card2{
+  font-size: 10pt;
+  color: rgba(0, 0, 0, 0.712);
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+
+.card-btn2{
+  width: 80px;
+  height: 35px;
+  font-size: 10pt !important;
+  margin-left: 10px;
+  margin-top: -7px;
+  border-radius: 5px !important;
+  background: linear-gradient(45deg, rgba(5, 163, 155, 0.986), rgba(5, 119, 113, 0.986));
+  border: none !important;
+}
+
+.card-btn2:hover{
+  background: linear-gradient(45deg, rgba(5, 124, 118, 0.986), rgba(5, 114, 109, 0.986));
+}
+
+//*
+
+.tab-content  .swiper {
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 30px 0px !important;
+}
+
+  
+.tab-content  .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  /*display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+//*
+.tab-content  .swiper-slide h4{
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
 .tab-content  .swiper-slide .num-aula{
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    font-weight: bold;
-    font-size: 9pt;
-    color: #3f3f3f;
-    margin-bottom: 10px;
-    margin-top: -3px;
-  }
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-weight: bold;
+  font-size: 9pt;
+  color: #3f3f3f;
+  margin-bottom: 10px;
+  margin-top: -3px;
+}
 
 .tab-content .swiper-slide p{
-    font-weight: bold;
-    text-align: justify;
-    margin-top: 15px;
-    font-size: 12pt;
-    color: #727070;
-    text-align: center;
-  }
+  font-weight: bold;
+  text-align: justify;
+  margin-top: 15px;
+  font-size: 12pt;
+  color: #727070;
+  text-align: center;
+}
 
 .tab-content .swiper-pagination{
-    bottom: 2px !important;
-  }
+  bottom: 2px !important;
+}
 
 .tab-content .swiper-slide:hover a{
-    filter: brightness(10%);
-  }
+  filter: brightness(10%);
+}
 
 .tab-content .swiper-slide:hover::after{
 
-    content: "Ir para o curso ▶";
-    color: white;
-    font-weight: bold;
-    font-size: 12pt;
-    width: 130px;
-    height: 30px;
-    position: absolute;
-    z-index: 999;
-    top: 45%;
-    left: 39%;
+  content: "Ir para o curso ▶";
+  color: white;
+  font-weight: bold;
+  font-size: 12pt;
+  width: 130px;
+  height: 30px;
+  position: absolute;
+  z-index: 999;
+  top: 45%;
+  left: 39%;
 }
 
 .tab-content .swiper-slide a{
-    position: relative;
-    height: 320px;
-    border: 5px #275e5e outset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    background: linear-gradient( 20deg,#cfcfcf, #f3f5f5);
-  }
+  position: relative;
+  height: 320px;
+  border: 5px #275e5e outset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: linear-gradient( 20deg,#cfcfcf, #f3f5f5);
+}
 
 .tab-content  .swiper-slide a .bar-cur1{
-    position: absolute;
-    background-color: rgb(168, 168, 168);
-    top:15px;
-    height: 9px;
-    width: 20%;
-    border-radius: 50px;
+  position: absolute;
+  background-color: rgb(168, 168, 168);
+  top:15px;
+  height: 9px;
+  width: 20%;
+  border-radius: 50px;
 }
 
 .tab-content .swiper-slide a .bar-cur2{
-    position: absolute;
-    background-color: rgba(228, 228, 228, 0.418);
-    top:18px;
-    height: 3px;
-    width: 15%;
-    border-radius: 50px;
+  position: absolute;
+  background-color: rgba(228, 228, 228, 0.418);
+  top:18px;
+  height: 3px;
+  width: 15%;
+  border-radius: 50px;
 }
 
 .tab-content .swiper-slide a .ball-cur1{
-    position: absolute;
-    background-color: rgb(163, 158, 158);
-    top: 285px;
-    height: 22px;
-    width: 22px;
-    border-radius: 500px;
+  position: absolute;
+  background-color: rgb(163, 158, 158);
+  top: 285px;
+  height: 22px;
+  width: 22px;
+  border-radius: 500px;
 }
 
 .tab-content .swiper-slide a .ball-cur2{
-    position: absolute;
-    background-color: rgba(204, 204, 204, 0.411);
-    top: 289px;
-    height: 14px;
-    width: 14px;
-    border-radius: 500px;
+  position: absolute;
+  background-color: rgba(204, 204, 204, 0.411);
+  top: 289px;
+  height: 14px;
+  width: 14px;
+  border-radius: 500px;
 }
 
 .tab-content .swiper-slide a .opt-box1{
-    position: absolute;
-    background-color:  rgb(167, 34, 34);
-    top: 12px;
-    right: 67px;
-    height: 12px;
-    width: 12px;
-    border-radius: 500px;
+  position: absolute;
+  background-color:  rgb(167, 34, 34);
+  top: 12px;
+  right: 67px;
+  height: 12px;
+  width: 12px;
+  border-radius: 500px;
 }
 
 
 .tab-content .swiper-slide a .opt-box2{
-    position: absolute;
-    background-color: rgb(221, 148, 12);
-    top: 12px;
-    right: 43px;
-    height: 12px;
-    width: 12px;
-    border-radius: 500px;
+  position: absolute;
+  background-color: rgb(221, 148, 12);
+  top: 12px;
+  right: 43px;
+  height: 12px;
+  width: 12px;
+  border-radius: 500px;
 }
 
 .tab-content .swiper-slide a .opt-box3{
-    position: absolute;
-    background-color: rgb(26, 226, 0);
-    top: 12px;
-    right: 20px;
-    height: 12px;
-    width: 12px;
-    border-radius: 500px;
+  position: absolute;
+  background-color: rgb(26, 226, 0);
+  top: 12px;
+  right: 20px;
+  height: 12px;
+  width: 12px;
+  border-radius: 500px;
 }
 .img-link-cur{
-  padding: 0px 5px;
+padding: 0px 5px;
 }
 .tab-content .swiper-slide img {
-    margin-top: 6px;
-    display: block;
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-    border-radius:5px;
-  }
+  margin-top: 6px;
+  display: block;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius:5px;
+}
 
-  @media(max-width:1300px){
-    .tab-content .swiper-slide:hover::after{
-      top: 42%;
-      left: 31%;
-    }
+@media(max-width:1300px){
+  .tab-content .swiper-slide:hover::after{
+    top: 42%;
+    left: 31%;
   }
+}
