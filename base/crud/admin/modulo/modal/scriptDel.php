@@ -13,7 +13,7 @@
 		let check = document.getElementById("checkDel");
 
 		texto.classList.add("is-invalid");
-			if(textoVal != null && textoVal === "<?php echo $infoDel['nome_mod'];?>"){
+			if(textoVal != null && textoVal === "<?php echo $tipoMod;?>"){
 				texto.classList.remove("is-invalid");
 				texto.classList.add("is-valid");
 				texto.setAttribute('disabled', true);

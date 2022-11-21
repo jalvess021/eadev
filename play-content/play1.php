@@ -118,7 +118,22 @@ if (isset($_GET['page']) && $_GET['page'] === 'play_curso') {
                        $resIsset = mysqli_fetch_array($sqlIsset);
                        
                                 if ($resIsset[0] > 0) {
-                                    echo "<h4 class='title-class2'>".$infoMod['nome_mod']."</h4>";
+
+                                    switch ($infoMod['tipo_mod']) {
+                                        case 1:
+                                            $tipoMod = "Básico";
+                                            break;
+                                        
+                                        case 2:
+                                            $tipoMod = "Intermediário";
+                                            break;
+                                
+                                        case 3:
+                                            $tipoMod = "Avançado";
+                                            break;
+                                    }
+
+                                    echo "<h4 class='title-class2'>".$tipoMod."</h4>";
             
                                     //Selecionando as informações da aula através do módulo
                                     $sqlAula = mysqli_query($con, "SELECT * FROM aula where id_mod = '".$infoMod['id_mod']."';");

@@ -24,15 +24,19 @@ if (isset($_GET['edit_mod'])) {
               <form action='?content_adm=atualiza_mod' method='post'>
                   <div class='modal-form'>
       
-                      <div class='row'>
+                      <div class='row justify-content-around'>
                           <div class='form-group col-2'>
                               <label for='recipient-name' class='col-form-label'>Id:</label>
                               <input type='text' class='form-control form-control-sm read' value='". $row['id_mod'] ."' name='id_mod' readonly>
                           </div>
-                          <div class='form-group col-4'>
-                              <label for='recipient-name' class='col-form-label'>Nome:</label>
-                              <input type='text' class='form-control form-control-sm form-edit' id='form-edit1' value='".$row['nome_mod']."' name='nome_mod'  required autocomplete='off'>
-                              <span class='info-min'>Mínimo 6 caractéres</span>
+                          <div class='form-group col-3'>
+                              <label for='recipient-name' class='col-form-label'>Tipo:</label>
+                              <select class='form-control custom-select custom-select-sm form-edit' name='tipo_mod' id='form-edit1' required> 
+                                <option disabled selected value='0'>SELECIONE</option>
+                                <option value='1'>Básico</option>
+                                <option value='2'>Intermediário</option>
+                                <option value='3'>Avançado</option>
+                              </select>
                           </div>
                           <div class='form-group col-3'>
                             <label for='recipient-name' class='col-form-label'>Formação:</label>

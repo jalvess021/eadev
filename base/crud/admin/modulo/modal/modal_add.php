@@ -20,16 +20,20 @@ $l = mysqli_fetch_array($r);
                         <form action='?content_adm=insere_mod' method='post'>
                             <div class='modal-form'>
 
-                                <div class='row'>
+                                <div class='row justify-content-around'>
                                     <div class='form-group col-2'>
                                         <label for='recipient-name' class='col-form-label'>Id:</label> 
                                         <input type='text' class='form-control form-control-sm read' placeholder='".$l['Auto_increment']."' disabled>
                                         <span class='info-min'>Automático </span>
                                     </div>
-                                    <div class='form-group col-4'>
-                                        <label for='recipient-name' class='col-form-label'>Nome:</label>
-                                        <input type='text' class='form-control form-control-sm form-add' id='form-add1' name='nome_mod' required autocomplete='off' placeholder='Digite aqui...'>
-                                        <span class='info-min'>Min. 6 caractéres</span>
+                                    <div class='form-group col-3'>
+                                    <label for='recipient-name' class='col-form-label'>Nome:</label> 
+                                        <select class='form-control custom-select custom-select-sm form-add' name='tipo_mod' id='form-add1' required> 
+                                            <option disabled selected value='0'>SELECIONE</option>
+                                            <option value='1'>Básico</option>
+                                            <option value='2'>Intermediário</option>
+                                            <option value='3'>Avançado</option>
+                                        </select>
                                     </div>
                                     <div class='form-group col-3'>
                                         <label for='recipient-name' class='col-form-label'>Formação:</label>

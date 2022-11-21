@@ -5,14 +5,14 @@
     $resUsuq = mysqli_fetch_array($queryUsu);
     $usuario = $resUsuq[0];
 
-    $nome          = $_POST["nome_mod"];
+    $tipo          = $_POST["tipo_mod"];
     $curso              = $_POST["curso"];
     $descricao         = $_POST["desc_mod"];
   
    
 
     $sql1 = "insert into modulo values ";
-    $sql1 .= "(0, '".$nome."', '".$descricao."', '".$curso."', NOW(), NULL);";
+    $sql1 .= "(0, '".$tipo."', '".$descricao."', '".$curso."', NOW(), NULL);";
     $res1 = mysqli_query($con, $sql1)or die(mysqli_error());
     if($res1){
         

@@ -12,7 +12,21 @@
 
         if ($info) {
 
-            $sql = "DELETE FROM modulo where id_mod='".$id_mod."' AND nome_mod='".$info['nome_mod']."' AND id_curso='".$info['id_curso']."';";
+            switch ($info['tipo_mod']) {
+                case 1:
+                    $tipoMod = "Básico";
+                    break;
+                
+                case 2:
+                    $tipoMod = "Intermediário";
+                    break;
+        
+                case 3:
+                    $tipoMod = "Avançado";
+                    break;
+            }
+
+            $sql = "DELETE FROM modulo where id_mod='".$id_mod."' AND tipo_mod='".$info['tipo_mod']."' AND id_curso='".$info['id_curso']."';";
             $res = mysqli_query($con, $sql);
             if ($res){
                 $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));

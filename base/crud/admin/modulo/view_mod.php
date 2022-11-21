@@ -23,6 +23,20 @@
 	//Data de alteração
 	$s2 = $row['dt_alteracao'];
 	$date_alt = strtotime($s2);
+
+	switch ($row['tipo_mod']) {
+		case 1:
+			$tipoMod = "Básico";
+			break;
+		
+		case 2:
+			$tipoMod = "Intermediário";
+			break;
+
+		case 3:
+			$tipoMod = "Avançado";
+			break;
+	}
 ?>
 
 <h3 class="content-title">Módulos</h3>
@@ -59,7 +73,7 @@
 									<h6 class="text-dark font-weight-bold reg-title reg-title1">Id :</h6> <span class="data-reg"><?php echo $row['id_mod'];?></span>
 							</div>
 							<div class="col">
-									<h6 class="text-dark font-weight-bold reg-title reg-title2">Nome :</h6> <span class="data-reg"><?php echo $row['nome_mod'];?></span>
+									<h6 class="text-dark font-weight-bold reg-title reg-title2">Tipo :</h6> <span class="data-reg"><?php echo $tipoMod;?></span>
 							</div>
 							<div class="col">
 									<h6 class="text-dark font-weight-bold reg-title reg-title4">Derivado de :</h6> <span class="data-reg"><?php echo"<i class='bi bi-diagram-2-fill'></i> ".$row3[0]." | <i class='bi bi-person-video3'></i> ".$row3[1].""; ?></span>

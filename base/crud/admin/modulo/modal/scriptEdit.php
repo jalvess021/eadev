@@ -12,7 +12,7 @@
                 let formEdit = document.querySelectorAll('.form-edit');
 				let btnAtt = document.getElementById('attEditMod');
                 for(let i = 0; i < formEdit.length; i++){
-                    formEdit[0].classList.add("is-valid");
+                    formEdit[0].classList.add("is-invalid");
                     formEdit[1].classList.add("is-invalid");
                     formEdit[2].classList.add("is-invalid");
                     formEdit[3].classList.add("is-invalid");
@@ -49,6 +49,17 @@
                                         formEdit[0].classList.remove("is-invalid"); 
                                         formEdit[0].classList.add("is-valid");
                                     }
+                            });
+
+                            //verifica o selectTipo
+                            $("#form-edit1").change(function verifySelectTipo(){
+                                if ($(this).find(':selected').data("valor") != 0) {
+                                    formEdit[0].classList.remove("is-invalid");
+                                    formEdit[0].classList.add("is-valid");
+                                }else{
+                                    formEdit[0].classList.remove("is-valid");
+                                    formEdit[0].classList.add("is-invalid");
+                                }
                             });
 
                              //verifica o terceiro input

@@ -12,6 +12,7 @@
                 let formAdd = document.querySelectorAll('.form-add');
 				let btnAdd = document.getElementById('addMod');
                 for(let i = 0; i < formAdd.length; i++){
+                    formAdd[0].classList.add("is-invalid");
                     formAdd[1].classList.add("is-invalid");
                     formAdd[2].classList.add("is-invalid");
                     btnAdd.setAttribute('disabled', true);
@@ -35,19 +36,17 @@
                                 this.value = this.value.replace(/(^\w{1})/g, letra => letra.toUpperCase());
                         });
 
-                            //Verifica o primeiro input
-                            let countInput1 = document.getElementById("form-add1");
-                            countInput1.addEventListener('keyup', function verifyFm1(){
-                                    if (countInput1.value.length < 6) {
-                                            if (formAdd[0].classList.contains("is-valid")) {
-                                                formAdd[0].classList.remove("is-valid");
-                                            }
-                                            formAdd[0].classList.add("is-invalid");
-                                    }else{
-                                        formAdd[0].classList.remove("is-invalid"); 
-                                        formAdd[0].classList.add("is-valid");
-                                    }
+                            //verifica o selectTipo
+                            $("#form-add1").change(function verifySelectTipo(){
+                                if ($(this).find(':selected').data("valor") != 0) {
+                                    formAdd[0].classList.remove("is-invalid");
+                                    formAdd[0].classList.add("is-valid");
+                                }else{
+                                    formAdd[0].classList.remove("is-valid");
+                                    formAdd[0].classList.add("is-invalid");
+                                }
                             });
+                            
 
                              //verifica o terceiro input
                             let countInput3 = document.getElementById("form-add3");

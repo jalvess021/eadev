@@ -16,7 +16,21 @@ if (isset($_GET['filter_form'])) {
                                     if (mysqli_num_rows($datam)>0) {
                                         echo "<option value='' title='Selecione' disabled selected>SELECIONE</option>";
                                         while($infom = mysqli_fetch_array($datam)) {
-                                            echo "<option value='".$infom['id_mod']."'> " .$infom['nome_mod'] ." </option>";
+                                            switch ($infom['tipo_mod']) {
+                                                case 1:
+                                                    $tipoMod = "Básico";
+                                                    break;
+                                                
+                                                case 2:
+                                                    $tipoMod = "Intermediário";
+                                                    break;
+                                        
+                                                case 3:
+                                                    $tipoMod = "Avançado";
+                                                    break;
+                                            }
+                                            
+                                            echo "<option value='".$infom['id_mod']."'> " .$tipoMod." </option>";
                                         } 
                                     }else {
                                         echo "<option value='' disabled selected>Sem Registros!</option>";

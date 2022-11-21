@@ -27,7 +27,7 @@
             $quantidade = 3;
 				$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
-            $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by id_atv asc limit $inicio, $quantidade;");
+            $sql = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%' order by dt_atv desc limit $inicio, $quantidade;");
    
             $sqlCountAtv = mysqli_query($con, "SELECT * from atv_adm where atv like '%\\".$acao."%';");
             $rowsCountAtv = mysqli_num_rows($sqlCountAtv);
@@ -65,7 +65,7 @@
                                                 //Curso
                                                 $regCurAtt = "/^update\scurso\sset\snome_curso=\'(.+)\'\,\ssigla_curso=\'(.+)\',\sdesc_curso=\'(.+)\'\,\sdt_alteracao=NOW\(\)\,\sid_formacao=\'([0-9])+\'\swhere\sid_curso=\'([0-9]+)\'\;$/m";
                                                 //Modulo
-                                                 $regModAtt = "/^update\smodulo\sset\snome_mod=\'(.+)\'\,\sdesc_mod=\'(.+)\'\,\sid_curso='([0-9]+)\'\,\sdt_alteracao=NOW\(\)\swhere\sid_mod=\'([0-9]+)\'\;/m";
+                                                 $regModAtt = "/^update\smodulo\sset\stipo_mod=\'(.+)\'\,\sdesc_mod=\'(.+)\'\,\sid_curso='([0-9]+)\'\,\sdt_alteracao=NOW\(\)\swhere\sid_mod=\'([0-9]+)\'\;/m";
                                                 //Aula
                                                 $regAulaAtt = "/^update\saula\sset\sid_video='(.+)',\stit_aula='(.+)',\sdesc_aula='(.+)',\sstart_aula='([0-9]+)',\send_aula='([0-9]+)\'\,\sdt_alteracao=NOW\(\)\,\sid_mod=\'([0-9]+)\'\swhere\sid_aula=\'([0-9]+)\'\;$/m";
                                                 //Avaliação
@@ -83,7 +83,7 @@
                                                 //Curso
                                                 $regCurDel = "/^DELETE\sFROM\scurso\swhere\sid_curso='([0-9]+)'\sAND\snome_curso='(.+)'\sAND\ssigla_curso='(.+)'\sAND\sid_formacao='([0-9]+)';$/m";
                                                 //Módulo
-                                                $regModDel = "/^DELETE\sFROM\smodulo\swhere\sid_mod='([0-9]+)'\sAND\snome_mod='(.+)'\sAND\sid_curso='([0-9]+)';$/m";
+                                                $regModDel = "/^DELETE\sFROM\smodulo\swhere\sid_mod='([0-9]+)'\sAND\stipo_mod='(.+)'\sAND\sid_curso='([0-9]+)';$/m";
                                                 //Aula
                                                 $regAulaDel = "/^DELETE\sFROM\saula\swhere\sid_aula='([0-9]+)'\sAND\sid_video='(.+)'\sAND\stit_aula='(.+)'\sAND\sid_mod='([0-9]+)';$/m";
                                                 //Avaliação
@@ -91,10 +91,23 @@
 
                                                 if (preg_match($regModAtt, $info['atv'])) {
                                                     $nomeMod = preg_replace($regModAtt, '$1', $info['atv']);
+                                                    switch ($nomeMod) {
+                                                        case 1:
+                                                            $tipoMod = "Básico";
+                                                            break;
+                                                        
+                                                        case 2:
+                                                            $tipoMod = "Intermediário";
+                                                            break;
+                                                
+                                                        case 3:
+                                                            $tipoMod = "Avançado";
+                                                            break;
+                                                    }
                                                     $descMod = preg_replace($regModAtt, '$2', $info['atv']);
                                                     $id_cur_att = preg_replace($regModAtt, '$3', $info['atv']);
                                                     $idMod = preg_replace($regModAtt, '$4', $info['atv']);
-                                                    echo "<strong>Atualização</strong> do <em>módulo</em> <strong>".$nomeMod." | ".$idMod." |</strong>  do curso: <em>{ ".$id_cur_att." }</em>";
+                                                    echo "<strong>Atualização</strong> do <em>módulo</em> <strong>".$tipoMod." | ".$idMod." |</strong>  do curso: <em>{ ".$id_cur_att." }</em>";
                                                 }elseif(preg_match($regCurAtt, $info['atv'])) {
                                                     $nomeCur = preg_replace($regCurAtt, '$1', $info['atv']);
                                                     $siglaCur = preg_replace($regCurAtt, '$2', $info['atv']);
@@ -159,10 +172,23 @@
                                                     echo "<strong>Inserção</strong> do <em>curso</em> <strong>".$siglaCurAdd."</strong>  na formação: <em>{ ".$formacaoCurAdd." }</em>";
                                                 }elseif (preg_match($regModAdd, $info['atv'])) {
                                                     $nomeModAdd = preg_replace($regModAdd, '$1', $info['atv']);
+                                                    switch ($nomeModAdd) {
+                                                        case 1:
+                                                            $tipoMod = "Básico";
+                                                            break;
+                                                        
+                                                        case 2:
+                                                            $tipoMod = "Intermediário";
+                                                            break;
+                                                
+                                                        case 3:
+                                                            $tipoMod = "Avançado";
+                                                            break;
+                                                    }
                                                     $descModAdd = preg_replace($regModAdd, '$2', $info['atv']);
                                                     $id_cur_add = preg_replace($regModAdd, '$3', $info['atv']);
                                                     $idModAdd = preg_replace($regModAdd, '$4', $info['atv']);
-                                                    echo "<strong>Inserção</strong> do <em>módulo</em> <strong>".$nomeModAdd."</strong>  no curso: <em>{ ".$id_cur_add." }</em>";
+                                                    echo "<strong>Inserção</strong> do <em>módulo</em> <strong>".$tipoMod."</strong>  no curso: <em>{ ".$id_cur_add." }</em>";
                                                 }elseif (preg_match($regAulaAdd, $info['atv'])) {
                                                     $id_vAdd = preg_replace($regAulaAdd, '$1', $info['atv']);
                                                     $titAdd = preg_replace($regAulaAdd, '$2', $info['atv']);
@@ -206,8 +232,21 @@
                                                 }elseif (preg_match($regModDel, $info['atv'])) {
                                                     $idModDel = preg_replace($regModDel, '$1', $info['atv']);
                                                     $nomeModDel = preg_replace($regModDel, '$2', $info['atv']);
+                                                    switch ($nomeModDel) {
+                                                        case 1:
+                                                            $tipoMod = "Básico";
+                                                            break;
+                                                        
+                                                        case 2:
+                                                            $tipoMod = "Intermediário";
+                                                            break;
+                                                
+                                                        case 3:
+                                                            $tipoMod = "Avançado";
+                                                            break;
+                                                    }
                                                     $id_cur_del = preg_replace($regModDel, '$3', $info['atv']);
-                                                    echo "<strong>Exclusão</strong> do <em>módulo</em> <strong>".$nomeModDel." | ".$idModDel." |</strong>  do curso: <em>{ ".$id_cur_del." }</em>";
+                                                    echo "<strong>Exclusão</strong> do <em>módulo</em> <strong>".$tipoMod." | ".$idModDel." |</strong>  do curso: <em>{ ".$id_cur_del." }</em>";
                                                 }elseif (preg_match($regAulaDel, $info['atv'])) {
                                                     $id_aulaDel = preg_replace($regAulaDel, '$1', $info['atv']);
                                                     $id_vDel = preg_replace($regAulaDel, '$2', $info['atv']);

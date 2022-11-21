@@ -52,12 +52,12 @@
                     
                         if(isset($_POST['formacao']) && $_POST['formacao'] != "all") {
                             if (isset($_POST['curso']) && $_POST['curso'] != "all") {
-                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." ORDER BY id_mod ASC LIMIT $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." ORDER BY id_curso, tipo_mod ASC LIMIT $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
                             }else {
-                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao']." order by id_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao']." ORDER BY id_curso, tipo_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
                             }
                         }else {
-                            $data = mysqli_query($con, "SELECT * from modulo order by id_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+                            $data = mysqli_query($con, "SELECT * from modulo ORDER BY id_curso, tipo_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
                         }
                         echo "<table class='table table-striped tabela-gr' cellspacing='0' cellpading='0'>";
                         if (isset($_POST['formacao']) && $_POST['formacao'] != "all") {
@@ -75,13 +75,30 @@
                         }
                         echo "<thead><tr class='thead'>";
                         echo "<td>Id:</td>";
-                        echo "<td>Nome:</td>";
+                        echo "<td>Tipo | Curso:</td>";
                         echo "<td class='text-center'>N&ordm; Aulas: </td>";
                         echo "<td class='d-none d-xl-table-cell text-center'>Criado em:</td>";
                         echo "<td class='d-none d-lg-table-cell text-center'>Atualizado em:</td>";
                         echo "<td class='actions'>Ações</td>";
                         echo "</tr></thead><tbody id='tbody_cur'>";
                         while($info = mysqli_fetch_array($data)){
+
+                            $sqlCur = mysqli_query($con, "Select * from curso where id_curso = ".$info['id_curso'].";");
+                            $rowCur = mysqli_fetch_array($sqlCur);
+
+                            switch ($info['tipo_mod']) {
+                                case 1:
+                                    $tipoMod = "Básico";
+                                    break;
+                                
+                                case 2:
+                                    $tipoMod = "Intermediário";
+                                    break;
+                        
+                                case 3:
+                                    $tipoMod = "Avançado";
+                                    break;
+                            }
             
                             $sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula where id_mod = ".$info['id_mod'].";");
                             $row2 = mysqli_fetch_array($sql2);
@@ -94,7 +111,7 @@
                     
                             echo "<tr>";
                             echo "<td>".$info['id_mod']."</td>";
-                            echo "<td>".$info['nome_mod']."</td>";
+                            echo "<td>".$tipoMod." | <strong class='text-uppercase'>".$rowCur['sigla_curso']."</strong></td>";
                             echo "<td class='text-center'>".$row2[0]."</td>";
                             echo "<td class='d-none d-xl-table-cell text-center'>".date('H:i | d-m-Y  ', $date1). " </td>";
                             echo "<td class='d-none d-lg-table-cell text-center'>";
