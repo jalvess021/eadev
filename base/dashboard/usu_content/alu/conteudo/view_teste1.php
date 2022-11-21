@@ -1,5 +1,5 @@
 
-    <?php
+<?php
 
 $nivel_necessario = 2;
 include "base/testa_nivel.php";
@@ -35,9 +35,9 @@ echo "<li class='nav-item'>
             <hr>
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/html.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">HyperText Markup Language | HTML</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -51,9 +51,9 @@ echo "<li class='nav-item'>
                     </div>
                 </div>
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/css.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Cascading Style Sheets | CSS</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -67,9 +67,9 @@ echo "<li class='nav-item'>
                     </div>
                 </div>
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/js.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Javascript | JS</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -90,9 +90,9 @@ echo "<li class='nav-item'>
             <hr>
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/php.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Hypertext Preprocessor | PHP</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -106,25 +106,9 @@ echo "<li class='nav-item'>
                     </div>
                 </div>
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/sql.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Structured Query Language | SQL</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -146,9 +130,9 @@ echo "<li class='nav-item'>
             <hr>
             <div class="d-flex flex-row justify-content-around ">
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/github.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Concurrent Version System | GitHub</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -162,25 +146,9 @@ echo "<li class='nav-item'>
                     </div>
                 </div>
                 <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/MATEUS.png" alt="Card image cap">
+                    <img class="card-img-top card-img2" src="assets/images/git.png" alt="Card image cap">
                     <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img3" src="assets/images/MATEUS.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets</h5>
+                        <h5 class="card-title title-card">Concurrent Version System | Git</h5>
                         <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
                         <div class="d-flex flex-row pt-3">
                             <div class="d-flex flex-row ">
@@ -203,9 +171,9 @@ echo "<li class='nav-item'>
     while ($info3 = mysqli_fetch_array($res3)) {
   echo "
   <div class='tab-pane fade' id='".$info3['nome_formacao']."' role='tabpanel' aria-labelledby='pills-front-end-tab'>
-    <h4 class='caption-card'>".$info3['nome_formacao']."</h4>
-    <hr>
         <div class='group-cards'>  
+        <h4 class='caption-card'>".$info3['nome_formacao']."</h4>
+        <hr>
             <div class='d-flex flex-row justify-content-around'>";
               $sql4 = "SELECT * from curso where id_formacao = ".$info3['id_formacao'].";"; 
               $res4 = mysqli_query($con, $sql4);
