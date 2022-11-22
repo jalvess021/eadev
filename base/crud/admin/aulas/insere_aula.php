@@ -24,7 +24,7 @@
     
     if($resultado){
 
-        $mix = 'insert into aula_alu SELECT 0, a.id_aluno, '.$row1[0].', 1 from aluno AS a ORDER BY a.id_aluno;';
+        $mix = 'insert into aula_alu SELECT 0, a.id_aluno, '.$row1[0].', 1, NULL from aluno AS a ORDER BY a.id_aluno;';
         $res2 = mysqli_query($con, $mix); 
         
         $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));

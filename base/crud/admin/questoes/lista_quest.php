@@ -52,15 +52,15 @@
 				if (isset($_POST['formacao']) && $_POST['formacao'] != "all") {
 					if (isset($_POST['curso']) && $_POST['curso'] != "all") {
 						if (isset($_POST['modulo']) && $_POST['modulo'] != "all") {
-							$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod AND m.id_mod = ".$_POST['modulo']." INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_quest asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+							$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod AND m.id_mod = ".$_POST['modulo']." INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_mod, grau_dificuldade asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
 						}else {
-							$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_quest asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+							$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_mod, grau_dificuldade asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
 						}
 					}else {
-						$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_quest asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+						$data = mysqli_query($con, "SELECT * FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." order by id_mod, grau_dificuldade asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
 					}
 				}else {
-					$data = mysqli_query($con, "SELECT * from questoes order by id_quest asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+					$data = mysqli_query($con, "SELECT * from questoes order by id_mod, grau_dificuldade asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
 				}
 				echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
 				if (isset($_POST['formacao']) && $_POST['formacao'] != "all") {
@@ -98,13 +98,37 @@
 				echo "<thead><tr class='thead'>";
 				echo "<td>Id:</td>";
 				echo "<td class=' text-center'>Enunciado:</td>";
+				echo "<td class='text-center d-none d-xl-table-cell'>Módulo | Curso :</td>";
 				echo "<td class='text-center'>Nível:</td>";
 				echo "<td class='actions'>Ações</td>";
 				echo "</tr></thead><tbody>";
 				while($info = mysqli_fetch_array($data)){
+
+					$infoCur = mysqli_query($con, "SELECT c.* FROM curso as c inner join modulo as m on c.id_curso = m.id_curso inner join questoes as q on m.id_mod = q.id_mod and q.id_mod = ".$info['id_mod'].";");
+					$rowCur =  mysqli_fetch_array($infoCur);
+
+					$sqlMod = mysqli_query($con, "SELECT m.* FROM modulo as m inner join curso as c on c.id_curso = m.id_curso inner join questoes as q on m.id_mod = q.id_mod and q.id_mod = ".$info['id_mod'].";");
+					$infoMod1 = mysqli_fetch_array($sqlMod);
+
+					switch ($infoMod1['tipo_mod']) {
+								case 1:
+									$tipoMod1 = "Básico";
+									break;
+								
+								case 2:
+									$tipoMod1 = "Intermediário";
+									break;
+						
+								case 3:
+									$tipoMod1 = "Avançado";
+									break;
+							}
+
 					echo "<tr>";
 					echo "<td>".$info['id_quest']."</td>";
-					echo (strlen($info['enunciado_quest']) <= 74) ? "<td class=' text-center'>".$info['enunciado_quest']."</td>" : "<td class='text-center'>".substr($info['enunciado_quest'], 0, 72)."...</td>";
+					echo (strlen($info['enunciado_quest']) <= 44) ? "<td class=' text-center'>".$info['enunciado_quest']."</td>" : "<td class='text-center'>".substr($info['enunciado_quest'], 0, 41)."...</td>";
+					
+					echo "<td class=' text-center d-none d-xl-table-cell'><strong>".$tipoMod1."</strong> | <em>".$rowCur['sigla_curso']."</em></td>";
 					echo "<td class='text-center'>"; switch ($info['grau_dificuldade']) {
 						case 1:
 							echo "Fácil";					

@@ -10,6 +10,7 @@
     $c              = $_POST['correta'];
     $i1             = $_POST['incorreta1'];
     $i2             = $_POST['incorreta2'];
+    $curso            = $_POST['curso'];
     $modulo          = $_POST["modulo"];
     
     // Pontuando a questão por dificuldade
