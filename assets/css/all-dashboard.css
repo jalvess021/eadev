@@ -19,8 +19,11 @@
 /*Css local do card*/
 @import 'css-dashboard/card/card.css';
 
-/*Css local do card*/
+/*Css local de emissão*/
 @import 'css-dashboard/emissao/emissao.css';
+
+/*Css local do pagamento*/
+@import 'css-dashboard/pagamento/pagamento.css';
 
 /*Css local do crud de perfil*/
 @import 'css-dashboard/perfil/view.css';

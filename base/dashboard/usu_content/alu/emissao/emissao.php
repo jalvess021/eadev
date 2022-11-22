@@ -65,7 +65,7 @@
                     <div class="content-cert-pen">
                         <p class="subtitle-cert1-pen">Certificado do curso <b style="font-size: 9.5pt;">HYPERTEXT PREPROCESSOR | PHP</b> pendente.</p>
                         <p class="subtitle-cert2-pen"><i>Para realizar pagamento clique no botão abaixo</i></p>
-                        <button class="btn-cert-pen">Realizar Pagamento</button>
+                        <a href="?content_alu=pagamento_certificado"><button class="btn-cert-pen">Realizar Pagamento</button></a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     <div class="content-cert-pen">
                         <p class="subtitle-cert1-pen">Certificado do curso <b style="font-size: 9.5pt;">STRUCTURED QUERY LANGUAGE | SQL</b> pendente.</p>
                         <p class="subtitle-cert2-pen"><i>Para realizar pagamento clique no botão abaixo</i></p>
-                        <button class="btn-cert-pen">Realizar Pagamento</button>
+                        <a href="?content_alu=pagamento_certificado"><button class="btn-cert-pen">Realizar Pagamento</button></a>
                     </div>
                 </div>
             </div>
