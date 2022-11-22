@@ -1,9 +1,9 @@
-/*Pagos*/
-.group-cert-pgt{
-    margin-top: -40px;
+/*Pagos e pendentes*/
+.group-cert:not(:nth-child(1)){
+    margin-top: -135px;
 }
 
-.container-cert-pgt{
+.container-cert{
     position: relative;
     display: grid;
     grid-gap: 50px;
@@ -14,48 +14,48 @@
     padding: 10px;
 }
 
-.container-cert-pgt .card-cert-pgt{
+.container-cert .card-cert{
     position: relative;
 }
-.container-cert-pgt .card-cert-pgt .face{
+.container-cert .card-cert .face{
     width: 300px;
     height: 200px;
     transition: 0.6s;
 }
 
-.container-cert-pgt .card-cert-pgt h3{
+.container-cert .card-cert h3{
     font-size: 11pt;
     color: rgba(0, 0, 0, 0.76);
     font-weight: 700;
     text-transform: uppercase;
-    text-align: start;
-    margin-left: 15px;
+    text-align: center;
     margin-bottom: 20px;
-    border-left: #0bb0b0 2px outset;
-    padding-left: 5px;
+    border-bottom: #0bb0b0 2px solid;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-.container-cert-pgt .card-cert-pgt .face.face1{
+.container-cert .card-cert .face.face1{
     position: relative;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
-.container-cert-pgt .card-cert-pgt .face.face1 .content-cert-pgt{
+.container-cert .card-cert .face.face1 .content-cert{
     filter: brightness(90%);
     transition: 0.5s;
     cursor: pointer;
 }
 
-.container-cert-pgt .card-cert-pgt:hover .face.face1 .content-cert-pgt{
+.container-cert .card-cert:hover .face.face1 .content-cert{
     filter: brightness(100%);
 }
 
-.container-cert-pgt .card-cert-pgt .face.face1 img{
+.container-cert .card-cert .face.face1 img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -67,7 +67,7 @@
     border-radius: 0px;
 }
 
-.container-cert-pgt .card-cert-pgt .face.face2{
+.container-cert .card-cert .face.face2{
     height: 180px;
     position: relative;
     background: #fff;
@@ -79,143 +79,17 @@
     transform: translateY(-200px);
 }
 
-.container-cert-pgt .card-cert-pgt:hover .face.face2{
+.container-cert .card-cert:hover .face.face2{
     transform: translateY(0);
     box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
     -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
     -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-.container-cert-pgt .card-cert-pgt .face.face2 .subtitle-cert1-pgt{
-    margin-top: 10px;
-    font-size: 10.5pt;
-    color: rgba(0, 0, 0, 0.884);
-    font-weight: 400;
-    text-align: center;
-}
-
-.container-cert-pgt .card-cert-pgt .face.face2 .subtitle-cert2-pgt{
-    margin-top: -5px;
-    font-size: 9pt;
-    color: rgba(0, 0, 0, 0.884);
-    font-weight: 400;
-    text-align: center;
-}
-
-.container-cert-pgt .card-cert-pgt .face.face2 .content-cert-pgt .btn-cert-pgt{
-    margin-top: -5px;
-    background-color: transparent;
-    margin-left: 30px;
-    width: 200px;
-    height: 40px;
-    border: 1px solid rgba(5, 131, 125, 0.986);
-    border-radius: 5px;
-    color: rgba(0, 0, 0, 0.897);
-    font-size: 12pt;
-    font-weight: 500;
-    text-transform: capitalize;
-    cursor: pointer;
-    transition: 0.6s ease-in-out;
-}
-
-.container-cert-pgt .card-cert-pgt .face.face2 .content-cert-pgt .btn-cert-pgt:hover{
-    background-color: rgba(5, 131, 125, 0.986);
-    color: #fff;
-}
-
-/*Pendente*/
-.group-cert-pen{
-    margin-top: -45px;
-}
-
-.container-cert-pen{
-    position: relative;
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
-    justify-content: start;
-    justify-items: start;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-.container-cert-pen .card-cert-pen{
-    position: relative;
-}
-.container-cert-pen .card-cert-pen .face{
-    width: 300px;
-    height: 200px;
-    transition: 0.6s;
-}
-
-.container-cert-pen .card-cert-pen h3{
-    font-size: 11pt;
-    color: rgba(0, 0, 0, 0.76);
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: start;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    border-left: #0bb0b0 2px outset;
-    padding-left: 5px;
-}
-
-.container-cert-pen .card-cert-pen .face.face1{
-    position: relative;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     z-index: 1;
 }
 
-.container-cert-pen .card-cert-pen .face.face1 .content-cert-pen{
-    filter: brightness(90%);
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.container-cert-pen .card-cert-pen:hover .face.face1 .content-cert-pen{
-    filter: brightness(100%);
-}
-
-.container-cert-pen .card-cert-pen .face.face1 img{
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    border: 2px solid black;
-    transition: 0.5s;
-}
-
-.container-cert-pen .card-cert-pen .face.face1 img:hover{
-    border-radius: 0px;
-}
-
-.container-cert-pen .card-cert-pen .face.face2{
-    height: 180px;
-    position: relative;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transform: translateY(-200px);
-}
-
-.container-cert-pen .card-cert-pen:hover .face.face2{
-    transform: translateY(0);
-    box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
-    -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
-    -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.50);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.container-cert-pen .card-cert-pen .face.face2 .subtitle-cert1-pen{
+.container-cert .card-cert .face.face2 .subtitle-cert1{
     margin-top: 10px;
     font-size: 10.5pt;
     color: rgba(0, 0, 0, 0.884);
@@ -223,7 +97,7 @@
     text-align: center;
 }
 
-.container-cert-pen .card-cert-pen .face.face2 .subtitle-cert2-pen{
+.container-cert .card-cert .face.face2 .subtitle-cert2{
     margin-top: -5px;
     font-size: 9pt;
     color: rgba(0, 0, 0, 0.884);
@@ -231,7 +105,7 @@
     text-align: center;
 }
 
-.container-cert-pen .card-cert-pen .face.face2 .content-cert-pen .btn-cert-pen{
+.container-cert .card-cert .face.face2 .content-cert .btn-cert{
     margin-top: -5px;
     background-color: transparent;
     margin-left: 30px;
@@ -247,10 +121,12 @@
     transition: 0.6s ease-in-out;
 }
 
-.container-cert-pen .card-cert-pen .face.face2 .content-cert-pen .btn-cert-pen:hover{
+.container-cert .card-cert .face.face2 .content-cert .btn-cert:hover{
     background-color: rgba(5, 131, 125, 0.986);
     color: #fff;
 }
+
+
 
 /*Bloqueados*/
 
@@ -274,11 +150,11 @@
     color: rgba(0, 0, 0, 0.76);
     font-weight: 700;
     text-transform: uppercase;
-    text-align: start;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    border-left: #0bb0b0 2px outset;
-    padding-left: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: #0bb0b0 2px solid;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .container-cert-bloq .card-cert-bloq .content-cert-bloq{

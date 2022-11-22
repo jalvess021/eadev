@@ -151,7 +151,7 @@ h3{
       border: 9px outset #4ea4a7;
 }
 .bg {
-  /*animation:slide 3.5s ease-in-out infinite alternate;*/
+  animation:slide 3.5s ease-in-out infinite alternate;
   background-image: linear-gradient(-25deg, #047979 50%, #ffffff 50%);
   bottom:0;
   left:-50%;
