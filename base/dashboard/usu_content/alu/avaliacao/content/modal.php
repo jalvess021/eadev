@@ -32,7 +32,7 @@
 
                                                     $footerModal = "
                                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
-                                                        <button type='button' id='btnPagAvaliacao' data-avCur='".$infoModal2['id_curso']."' data-dismiss='modal' class='btn btn-dark'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
+                                                        <button type='button' data-avCur='".$infoModal2['id_curso']."' data-dismiss='modal' class='btn btn-dark btnPagAvaliacao'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
                                                     ";
                                                     break;
     

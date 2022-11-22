@@ -121,23 +121,23 @@ if(isset($_GET['content_adm'])) {
         //Crud Avaliação 
                 
                 case 'lista_quest':
-                    include "base/crud/admin/avaliacoes/lista_quest.php";
+                    include "base/crud/admin/questoes/lista_quest.php";
                     break;
                 
                 case 'insere_quest':
-                    include "base/crud/admin/avaliacoes/insere_quest.php";
+                    include "base/crud/admin/questoes/insere_quest.php";
                     break;
 
                 case 'atualiza_quest':
-                    include "base/crud/admin/avaliacoes/atualiza_quest.php";
+                    include "base/crud/admin/questoes/atualiza_quest.php";
                     break;
                 
                 case 'delete_quest':
-                    include "base/crud/admin/avaliacoes/excluir_quest.php";
+                    include "base/crud/admin/questoes/excluir_quest.php";
                     break;
 
                 case 'view_quest':
-                    include "base/crud/admin/avaliacoes/view_quest.php";
+                    include "base/crud/admin/questoes/view_quest.php";
                     break;
 }       
 }  

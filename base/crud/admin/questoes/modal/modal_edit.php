@@ -62,7 +62,7 @@ if (isset($_GET['edit_quest'])) {
                                                     break;
                                                 
                                                 case 2:
-                                                    echo "<option value='1' title='Fácil'>Fácil</option> ";
+                                                    echo "<option value='1' title='Fácil'>Fácil</option> "; 
                                                     echo "<option value='2' title='Média' selected>Média</option> ";
                                                     echo "<option value='3' title='Difícil'>Difícil</option> ";
                                                     break;
