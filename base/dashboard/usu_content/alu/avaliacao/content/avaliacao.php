@@ -8,12 +8,13 @@
                 <div class="info_box">
                     <div class="info-title"><span>Condições e regras do questionário avaliativo.</span></div>
                         <div class="info-list">
-                            <div class="info">1. Você terá o tempo máximo de <span> 1500 segundos</span> (2min30s) por questão.</div>
+                            <div class="info">1. Você terá o tempo máximo de <span> 150 segundos</span> (2min30s) por questão.</div>
                             <div class="info">2. A resposta da opção só pode ser marcada uma única vez. </div>
                             <div class="info">3. Você não poderá selecionar outra opção após o término do prazo.</div>
                             <div class="info">4. Você não poderá sair do questionário enquanto ele estiver em andamento.</div>
                             <div class="info">5. Ao clicar em prosseguir, gastará uma tentativa restante das que possui.</div>
-                            <div class="info">6. Sua média será calculada de acordo com as respostas corretas.</div>
+                            <div class="info">6. O questionário possui 18 questões, totalizando <span> 45min</span> de avaliação.</div>
+                            <div class="info">7. Sua média será calculada de acordo com as respostas corretas, relativo ao grau de dificuldade.</div>
                         </div>
                     <div class="buttons">
                         <button class="quit">Cancelar</button>
@@ -26,7 +27,7 @@
                         <div class="title">Quetionário - Github</div>
                         <div class="timer">
                             <div class="time_left_txt">Tempo restante (segundos)</div>
-                            <div class="timer_sec">1500</div>
+                            <div class="timer_sec">150</div>
                         </div>
                         <div class="time_line"></div>
                     </header>
@@ -125,10 +126,10 @@
         quiz_box.classList.add("activeQuiz"); //show quiz box
         showQuetions(0); //calling showQestions function
         queCounter(1); //passing 1 parameter to queCounter
-        startTimer(1500); //calling startTimer function
+        startTimer(150); //calling startTimer function
         startTimerLine(0); //calling startTimerLine function
     }
-    let timeValue =  1500;
+    let timeValue =  150;
     let que_count = 0;
     let que_numb = 1;
     let userScore = 0;
@@ -271,7 +272,7 @@
         }
     }
     function startTimerLine(time){
-        counterLine = setInterval(timer, 1000);
+        counterLine = setInterval(timer, 273);
         function timer(){
             time += 1; //upgrading time value with 1
             time_line.style.width = time + "px"; //increasing width of time_line with px by time value

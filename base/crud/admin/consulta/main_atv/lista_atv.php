@@ -76,7 +76,7 @@
                                                 //Modulo
                                                 $regModAdd = "/^insert\sinto\smodulo\svalues\s\(0,\s'(.+)',\s'(.+)',\s'([0-9]+)',\sNOW\(\),\sNULL\);$/m";
                                                 //Aula
-                                                $regAulaAdd = "/^insert\sinto\saula\svalues\s\(0,\s'(.+)',\s'(.+)',\s'(.+)',\s'([0-9]+)',\s'([0-9]+)',\sNOW\(\),\sNULL,\sNULL,\s'([0-9]+)'\);$/m";
+                                                $regAulaAdd = "/^insert\sinto\saula\svalues\s\(0,\s'(.+)',\s'(.+)',\s'([0-9]+)',\s'([0-9]+)',\sNOW\(\),\sNULL,\s'([0-9]+)'\);$/m";
                                                 //Avaliação
                                                 $regAvAdd = "/^insert\sinto\squestoes\svalues\s\(0,\s'(.+)',\s'([0-3])',\s'(.+)',\s'(.+)',\s'(.+)',\s'(.+)',\sNOW\(\),\sNULL,\s'([0-9]+)'\);$/m";
                                             //Exclusão
@@ -195,7 +195,7 @@
                                                     $descAdd = preg_replace($regAulaAdd, '$3', $info['atv']);
                                                     $startAdd = preg_replace($regAulaAdd, '$4', $info['atv']);
                                                     $endAdd = preg_replace($regAulaAdd, '$5', $info['atv']);
-                                                    $id_modAdd = preg_replace($regAulaAdd, '$6', $info['atv']);
+                                                    $id_modAdd = preg_replace($regAulaAdd, '$5', $info['atv']);
                                                     echo "<strong>Inserção</strong> da <em>aula</em> <strong>"; 
                                                     echo (strlen($titAdd) <= 18) ? $titAdd : substr($titAdd, 0, 18)."...";
                                                     echo "</strong>  no módulo: <em>{ ".$id_modAdd." }</em>";

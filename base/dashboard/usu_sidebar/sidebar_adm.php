@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="submenu">
-						<a><i class="bi bi-clipboard2-check-fill"></i> <span> Gerenciar </span> <span class="menu-arrow"></span></a>
+						<a href='#'><i class="bi bi-clipboard2-check-fill"></i> <span> Gerenciar </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <!--<li><a href="#"><i class="bi bi-diagram-2-fill"></i> Formações</a></li>-->
                                 <li><a href="?content_adm=lista_cur"><i class="bi bi-person-video3"></i>Cursos</a></li>
