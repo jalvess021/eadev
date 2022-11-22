@@ -72,9 +72,22 @@
 						$filCur = mysqli_query($con, "SELECT sigla_curso FROM curso WHERE id_curso = ". $_POST['curso'] .";");
 						$dataCur = mysqli_fetch_array($filCur);
 						if (isset($_POST['modulo']) && $_POST['modulo'] != "all") {
-							$filMod = mysqli_query($con, "SELECT nome_mod FROM modulo WHERE id_mod = ". $_POST['modulo'] .";");
+							$filMod = mysqli_query($con, "SELECT * FROM modulo WHERE id_mod = ". $_POST['modulo'] .";");
 							$dataMod = mysqli_fetch_array($filMod);
-							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." | ".$dataMod[0]." </capiton>";
+							switch ($dataMod['tipo_mod']) {
+								case 1:
+									$tipoMod = "Básico";
+									break;
+								
+								case 2:
+									$tipoMod = "Intermediário";
+									break;
+						
+								case 3:
+									$tipoMod = "Avançado";
+									break;
+							}
+							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." | ".$tipoMod." </capiton>";
 						}else {
 							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." </capiton>";
 						}

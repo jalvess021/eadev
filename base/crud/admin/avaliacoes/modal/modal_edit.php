@@ -21,7 +21,7 @@ if (isset($_GET['edit_quest'])) {
             <small class='text-center'>
                           <p> | <strong class='text-muted'>Data da edição -</strong> ". date('d.m.Y') ." |</p>
                       </small>
-              <form action='?content_adm=atualiza_av' method='post'>
+              <form action='?content_adm=atualiza_quest' method='post'>
                 <div class='modal-form'>
                     <div class='row justify-content-around'>
                         <div class='form-group col-2'>
@@ -125,7 +125,7 @@ if (isset($_GET['edit_quest'])) {
                     </div>
                 </div>
                 <div id='actions' class='modal-footer d-flex justify-content-center'>
-                        <a href='?content_adm=lista_av' class='btn btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
+                        <a href='?content_adm=lista_quest' class='btn btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
                         <button type='submit' class='btn bt-padrao' id='attEditAv'>Atualizar <i class='bi bi-check-all'></i></button>
                 </div>
               </form>

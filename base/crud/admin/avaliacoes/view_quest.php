@@ -5,7 +5,7 @@
 
     if (mysqli_num_rows($sql) == 1) {
 
-        $sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.nome_mod FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE q.id_quest = ".$id_quest.";");
+        $sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.tipo_mod FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE q.id_quest = ".$id_quest.";");
         $row1 = mysqli_fetch_array($sql1);
         
         //Data de criação
@@ -17,6 +17,19 @@
         $date_alt = strtotime($s2);
         
 
+        switch ($row1[2]) {
+            case 1:
+                $tipoMod = "Básico";
+                break;
+            
+            case 2:
+                $tipoMod = "Intermediário";
+                break;
+    
+            case 3:
+                $tipoMod = "Avançado";
+                break;
+        }
         echo "
         
         <h3 class='content-title'>Aulas</h3>
@@ -69,7 +82,7 @@
                                             echo "</span>
                                     </div>
                                     <div class='col-auto'>
-                                            <h6 class='text-dark font-weight-bold reg-title reg-title4'>Derivado de :</h6> <span class='data-reg'> <i class='bi bi-diagram-2-fill'></i> ".$row1[0]." | <i class='bi bi-person-video3'></i> ".$row1[1]." | <i class='bi bi-layers-fill'></i> ".$row1[2]."</span>
+                                            <h6 class='text-dark font-weight-bold reg-title reg-title4'>Derivado de :</h6> <span class='data-reg'> <i class='bi bi-diagram-2-fill'></i> ".$row1[0]." | <i class='bi bi-person-video3'></i> ".$row1[1]." | <i class='bi bi-layers-fill'></i> ".$tipoMod."</span>
                                     </div>
                                 </div>
                                 <!-- 4ª LINHA -->
@@ -96,8 +109,8 @@
                             </div>
                             <div class='actions'>
                                 <div class='d-flex flex-row justify-content-center'>
-                                        <a href='?content_adm=lista_av' class='btn btn-sm btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-arrow-left'></i> Voltar</a>
-                                        <a href='?content_adm=lista_av&edit_quest=".$id_quest."' class='btn btn-sm b-destaque-4 text-white ml-1 font-weight-bold'>Editar <i class='bi bi-pencil-fill'></i></a>
+                                        <a href='?content_adm=lista_quest' class='btn btn-sm btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-arrow-left'></i> Voltar</a>
+                                        <a href='?content_adm=lista_quest&edit_quest=".$id_quest."' class='btn btn-sm b-destaque-4 text-white ml-1 font-weight-bold'>Editar <i class='bi bi-pencil-fill'></i></a>
                                 </div>
                             </div>
                 </div>

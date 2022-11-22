@@ -3,7 +3,7 @@
 	$sql = mysqli_query($con, "select * from aula where id_aula = '".$id_aula."';");
 	$row = mysqli_fetch_array($sql);
 
-	$sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.nome_mod FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE a.id_aula = ".$id_aula.";");
+	$sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.tipo_mod FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE a.id_aula = ".$id_aula.";");
 	$row1 = mysqli_fetch_array($sql1);
 	
 	//Data de criação
@@ -19,6 +19,20 @@
 	$start = $row['start_aula'];
 	$end = $row['end_aula'];
 	$total = $end - $start;
+
+	switch ($row1[2]) {
+		case 1:
+			$tipoMod = "Básico";
+			break;
+		
+		case 2:
+			$tipoMod = "Intermediário";
+			break;
+
+		case 3:
+			$tipoMod = "Avançado";
+			break;
+	}
 
 ?>
 <h3 class="content-title">Aulas</h3>
@@ -64,7 +78,7 @@
 						<div class="row mt-5">
 							
 							<div class="col">
-									<h6 class="text-dark font-weight-bold reg-title reg-title4">Derivado de :</h6> <span class="data-reg"><?php echo"<i class='bi bi-diagram-2-fill'></i> ".$row1[0]." | <i class='bi bi-person-video3'></i> ".$row1[1]." | <i class='bi bi-layers-fill'></i> ".$row1[2].""; ?></span>
+									<h6 class="text-dark font-weight-bold reg-title reg-title4">Derivado de :</h6> <span class="data-reg"><?php echo"<i class='bi bi-diagram-2-fill'></i> ".$row1[0]." | <i class='bi bi-person-video3'></i> ".$row1[1]." | <i class='bi bi-layers-fill'></i> ".$tipoMod; ?></span>
 							</div>
 							<div class="col">
 									<h6 class="text-dark font-weight-bold reg-title reg-title4">Tempo total :</h6> <span class="data-reg"><?php echo "".gmdate("i", $total)."<span class='hour'>min</span>".gmdate("s", $total)."<span class='hour'>s</span>";?></span>

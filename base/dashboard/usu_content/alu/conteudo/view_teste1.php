@@ -6,8 +6,9 @@ include "base/testa_nivel.php";
 
 $sql1 = "SELECT * FROM formacao order by id_formacao;";
 $res1 = mysqli_query($con, $sql1);
-$sql2 = "SELECT * from curso order by id_formacao;";      
-$res2 = mysqli_query($con, $sql2);
+
+$sqlForm1 = mysqli_query($con, "SELECT * FROM formacao order by id_formacao;");
+$sqlForm2 = mysqli_query($con, "SELECT * FROM formacao order by id_formacao;");
 
 $sql3 = "SELECT * FROM formacao order by id_formacao;";
 $res3 = mysqli_query($con, $sql3);
@@ -30,139 +31,52 @@ echo "<li class='nav-item'>
   <!--ATIVO-->
   <div class='tab-pane fade show active' id='All-form-row' role='tabpanel' aria-labelledby='pills-front-end-tab'>
     <div class="group-cards">
-        <div id='front'>
-            <h4 class='caption-card'>Front-End</h4>
+<?php
+while ($resForm1 = mysqli_fetch_array($sqlForm1)) {
+        $sql2 = "SELECT * from curso where id_formacao = ".$resForm1['id_formacao']." order by id_curso;";      
+        $res2 = mysqli_query($con, $sql2);
+        echo "
+        <div id='".$resForm1['id_formacao']."'>
+            <h4 class='caption-card'>".$resForm1['nome_formacao']."</h4>
             <hr>
-            <div class="d-flex flex-row justify-content-around ">
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/html.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">HyperText Markup Language | HTML</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/css.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Cascading Style Sheets | CSS</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/js.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Javascript | JS</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-        </div>    
-        
-        <div id="back">
-            <h4 class='caption-card'>Back-End</h4>
-            <hr>
-            <div class="d-flex flex-row justify-content-around ">
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/php.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Hypertext Preprocessor | PHP</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/sql.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Structured Query Language | SQL</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class='row-card'>";
+            while ($info2 = mysqli_fetch_array($res2)) {
 
-        
-        <div id='conver'>
-            <h4 class='caption-card'>Conver</h4>
-            <hr>
-            <div class="d-flex flex-row justify-content-around ">
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/github.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Concurrent Version System | GitHub</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
+                $queryAula1 = mysqli_query($con, "SELECT * FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info2['id_curso'].";");
+                $infoAula1 = mysqli_num_rows($queryAula1);
+
+                if ($infoAula1 > 0) {
+
+                $queryMod1 = mysqli_query($con, "SELECT m.* FROM modulo as m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info2['id_curso'].";");
+                $infoMod1 = mysqli_num_rows($queryMod1);
+
+                echo "
+                <div class='card card-cur'>
+                    <img class='card-img-top card-img' src='\\tcc/base/crud/admin/cursos/imagens/".md5($info2['id_curso']).".jpeg' alt='Curso ".$info2['sigla_curso'].")'>
+                    <div class='card-cur-body'>
+                        <h5 class='title-card'>".$info2['nome_curso']." | ".$info2['sigla_curso']."</h5>
+                        <p class='text-card'>";
+                        echo (strlen($info2['desc_curso']) <= 50) ? $info2['desc_curso'] : substr($info2['desc_curso'], 0, 47)."...";
+                    echo "</p>
+                        <div class='d-flex flex-row pt-3'>
+                            <div class='d-flex flex-row'>
+                                <p class='num-card'><i class='bi bi-layers-fill cam-card'></i>".$infoMod1." Módulos</p>
+                                <p class='students-card'><i class='bi bi-camera-video-fill icon-mod-card'></i>".$infoAula1." aulas</p>
                             </div>
                             <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
+                                <a href='?page=play_curso&curso=".$info2['sigla_curso']."'><button type='button' class='btn card-btn'>Acessar</button></a>
                             </div>
                         </div>  
                     </div>
                 </div>
-                <div class="card card-cur2">
-                    <img class="card-img-top card-img2" src="assets/images/git.png" alt="Card image cap">
-                    <div class="card-body2">
-                        <h5 class="card-title title-card">Concurrent Version System | Git</h5>
-                        <p class="card-text text-card">Estilizações, animações e venha descobrir mais...</p>
-                        <div class="d-flex flex-row pt-3">
-                            <div class="d-flex flex-row ">
-                                <p class="num-card"><i class="bi bi-camera-video-fill cam-card"></i>21 aulas</p>
-                                <p class="students-card"><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
-                            </div>
-                            <div>
-                                <a href=""><button type="button" class="btn btn-primary card-btn">Acessar</button></a>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
+                ";
+                }
+            }
+        echo "
             </div>
-        </div>
+        </div>";
+    }
+?>          
     </div>
   </div>
 
@@ -174,26 +88,33 @@ echo "<li class='nav-item'>
         <div class='group-cards'>  
         <h4 class='caption-card'>".$info3['nome_formacao']."</h4>
         <hr>
-            <div class='d-flex flex-row justify-content-around'>";
+            <div class='row-card'>";
               $sql4 = "SELECT * from curso where id_formacao = ".$info3['id_formacao'].";"; 
               $res4 = mysqli_query($con, $sql4);
               while ($info4 = mysqli_fetch_array($res4)) {
                 $queryAula2 = mysqli_query($con, "SELECT * FROM aula a INNER JOIN modulo m ON a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info4['id_curso'].";");
                 $infoAula2 = mysqli_num_rows($queryAula2);
                 if ($infoAula2 > 0) {
+
+                    $queryMod2 = mysqli_query($con, "SELECT m.* FROM modulo as m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = ".$info4['id_curso'].";");
+                    $infoMod2 = mysqli_num_rows($queryMod2);
+
                   echo "
-                  <div class='card card-cur3'>
-                    <img class='card-img-top card-img2' src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
-                    <div class='card-body3'>
-                        <h5 class='card-title title-card2'>Cascading Style Sheets</h5>
-                        <p class='card-text text-card2'>Estilizações, animações e venha descobrir mais...</p>
+                  <div class='card card-cur'>
+                    <img class='card-img-top card-img' src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
+                    <div class='card-cur-body'>
+                        <h5 class='title-card'>".$info4['nome_curso']." | ".$info4['sigla_curso']."</h5>
+                        <p class='text-card'>";
+                        echo (strlen($info4['desc_curso']) <= 50) ? $info4['desc_curso'] : substr($info4['desc_curso'], 0, 47)."...";
+                        echo "
+                            </p>
                         <div class='d-flex flex-row pt-3'>
                             <div class='d-flex flex-row '>
-                                <p class='num-card2'><i class='bi bi-camera-video-fill cam-card'></i>".$infoAula2." aulas</p>
-                                <p class='students-card2'><i class='bi bi-layers-fill icon-mod-card'></i>3 Módulos</p>
+                                <p class='num-card'><i class='bi bi-camera-video-fill cam-card'></i>".$infoMod2." Módulos</p>
+                                <p class='students-card'><i class='bi bi-layers-fill icon-mod-card'></i>".$infoAula2." aulas</p>
                             </div>
                             <div>
-                                <a href=''><button type='button' class='btn btn-primary card-btn2'>Acessar</button></a>
+                                <a href=''><button type='button' class='btn btn-primary card-btn'>Acessar</button></a>
                             </div>
                         </div>  
                     </div>

@@ -17,7 +17,7 @@ $l = mysqli_fetch_array($r);
                         <small class='text-center'>
                                     <p> | <strong class='text-muted'>Data de Cadastro -</strong> ".date('d.m.Y')." | </p>
                             </small>
-                        <form action='?content_adm=insere_av' method='post'>
+                        <form action='?content_adm=insere_quest' method='post'>
                             <div class='modal-form'>
                                 <div class='row justify-content-around'>
                                         <div class='form-group col-2'>
@@ -99,7 +99,7 @@ $l = mysqli_fetch_array($r);
                                 </div>
                             </div>
                             <div id='actions' class='modal-footer d-flex justify-content-center'>
-                                    <a href='?content_adm=lista_av' class='btn btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
+                                    <a href='?content_adm=lista_quest' class='btn btn-secondary text-white mr-1 font-weight-bold'><i class='bi bi-x-circle-fill'></i> Cancelar</a>
                                     <button type='submit' class='btn add-submit' id='addAv'>Cadastrar <i class='bi bi-check-circle-fill'></i></button>
                             </div>
                         </form>

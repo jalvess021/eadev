@@ -32,7 +32,7 @@
                     </li>	
 					
 					<li class="submenu">
-                        <a href="?content_adm=lista_av"> <i class="bi bi-list-check"></i><span> Avaliações </span></a>
+                        <a href="?content_adm=lista_quest"> <i class="bi bi-list-check"></i><span> Questões </span></a>
                     </li>
                     
                     <li class="submenu">

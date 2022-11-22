@@ -68,8 +68,21 @@
                                 //Selecionando as informações dos módulos através do curso
                                 $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
                                 while ($infoMod = mysqli_fetch_array($sqlMod)) {
+                                    switch ($infoMod['tipo_mod']) {
+                                        case 1:
+                                            $tipoMod = "Básico";
+                                            break;
+                                        
+                                        case 2:
+                                            $tipoMod = "Intermediário";
+                                            break;
+                                
+                                        case 3:
+                                            $tipoMod = "Avançado";
+                                            break;
+                                    }
                                     echo "
-                                    <h4 class='subtitle-view2'>".$infoMod['nome_mod']."</h4> ";
+                                    <h4 class='subtitle-view2'>".$tipoMod."</h4> ";
 
                                      //Selecionando as informações das aulas através do módulo
                                     $sqlAula1 = mysqli_query($con, "SELECT * from aula where id_mod = ".$infoMod['id_mod'].";");

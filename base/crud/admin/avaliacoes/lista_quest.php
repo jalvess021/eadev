@@ -8,14 +8,14 @@
 ?>
 
 <div class="d-flex flex-row justify-content-between">
-    <h3 class="content-title">Avaliações</h3>	
+    <h3 class="content-title">Questões</h3>	
     <!-- Chama o Formulário para adicionar Cursos -->
-    <a href="?content_adm=lista_av&add=av" class="btn bt-padrao btn-lg float-right">Nova Avaliação</a>
+    <a href="?content_adm=lista_quest&add=av" class="btn bt-padrao btn-lg float-right">Nova Avaliação</a>
 </div>
 <div class="d-flex flex-row justify-content-between mt-4">
 	<div class="table-responsive col-md-12 col-md-12 all-table">
 		<div class="all-table-header">
-			<form action="?content_adm=lista_av" method="post" class="row justify-content-between row-filter" id="form-filter-aula">
+			<form action="?content_adm=lista_quest" method="post" class="row justify-content-between row-filter" id="form-filter-aula">
 						<div class="col-md-2">
 							<select class="custom-select custom-select-sm filter-input-table" id="filterFormacao-Aula" name="formacao">
 								<option value="all" title="Todas">Filtrar Formação</option>
@@ -70,9 +70,22 @@
 						$filCur = mysqli_query($con, "SELECT sigla_curso FROM curso WHERE id_curso = ". $_POST['curso'] .";");
 						$dataCur = mysqli_fetch_array($filCur);
 						if (isset($_POST['modulo']) && $_POST['modulo'] != "all") {
-							$filMod = mysqli_query($con, "SELECT nome_mod FROM modulo WHERE id_mod = ". $_POST['modulo'] .";");
+							$filMod = mysqli_query($con, "SELECT * FROM modulo WHERE id_mod = ". $_POST['modulo'] .";");
 							$dataMod = mysqli_fetch_array($filMod);
-							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." | ".$dataMod[0]." </capiton>";
+							switch ($dataMod['tipo_mod']) {
+								case 1:
+									$tipoMod = "Básico";
+									break;
+								
+								case 2:
+									$tipoMod = "Intermediário";
+									break;
+						
+								case 3:
+									$tipoMod = "Avançado";
+									break;
+							}
+							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." | ".$tipoMod." </capiton>";
 						}else {
 							echo "<caption class='small filter-label'> <i class='bi bi-funnel-fill'></i> ".$dataForm[0]." | ".$dataCur[0]." </capiton>";
 						}
@@ -104,9 +117,9 @@
 							break;
 					} echo "</td>";
 					echo "<td class='actions btn-group'>";
-					echo "<a class='btn btn-info btn-sm mt-sm-1' href='?content_adm=view_av&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
-					echo "<a class='btn btn-secondary btn-sm mt-sm-1 ml-2' href='?content_adm=lista_av&edit_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
-					echo "<a href='?content_adm=lista_av&delete_quest=".$info['id_quest']."' class='btn btn-danger btn-sm mt-sm-1 ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
+					echo "<a class='btn btn-info btn-sm mt-sm-1' href='?content_adm=view_quest&id_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>";
+					echo "<a class='btn btn-secondary btn-sm mt-sm-1 ml-2' href='?content_adm=lista_quest&edit_quest=".$info['id_quest']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>";
+					echo "<a href='?content_adm=lista_quest&delete_quest=".$info['id_quest']."' class='btn btn-danger btn-sm mt-sm-1 ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i> </a></td>";
 				}
 				echo "</tr></tbody></table>";
 			?>
@@ -131,15 +144,15 @@
 					$anterior 		= (($pagina-1) <= 0) ? 1 : $pagina - 1;
 					$posterior 		= (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
 					echo "<ul class='pagination d-flex justify-content-center mt-4'>";
-					echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=lista_av&pagina=1'> Primeira</a></li> ";
-					echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=lista_av&pagina=$anterior\"> &laquo;</a></li> ";
-					echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=lista_av&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+					echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href='?content_adm=lista_quest&pagina=1'> Primeira</a></li> ";
+					echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=lista_quest&pagina=$anterior\"> &laquo;</a></li> ";
+					echo "<li class='page-item'><a class='page-link c-destaque-10' href='?content_adm=lista_quest&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
 					for($i = $pagina+1; $i < $pagina+$exibir; $i++){
 						if($i <= $totalpagina)
-						echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=lista_av&pagina=".$i."'> ".$i." </a></li> ";
+						echo "<li class='page-item'><a class='page-link text-dark' href='?content_adm=lista_quest&pagina=".$i."'> ".$i." </a></li> ";
 					}
-					echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=lista_av&pagina=$posterior\"> &raquo;</a></li> ";
-					echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=lista_av&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+					echo "<li class='page-item'><a class='page-link text-dark' href=\"?content_adm=lista_quest&pagina=$posterior\"> &raquo;</a></li> ";
+					echo "<li class='page-item'><a class='page-link text-white b-destaque-4 font-weight-bold' href=\"?content_adm=lista_quest&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 				?>
 		</div>
 	</div>
