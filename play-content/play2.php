@@ -57,7 +57,7 @@
                             <div class='div2'>
                                 <a href='?page=play_curso&curso=".$infoCur['sigla_curso']."' class='back-cur' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Voltar p/ área do curso'>
                                     <h4 class='title-view'>
-                                    <i class='bi bi-arrow-bar-left'></i>".$infoCur['nome_curso']."</h4>
+                                    <i class='bi bi-reply-all-fill'></i> ".$infoCur['nome_curso']."</h4>
                                 </a>
                                 <p class='subtitle-view'> Vídeo aula - ( Via Youtube )</p>
                                 <p class='text-view'>".$infoCur['desc_curso']."</p>
@@ -68,8 +68,26 @@
                                 //Selecionando as informações dos módulos através do curso
                                 $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
                                 while ($infoMod = mysqli_fetch_array($sqlMod)) {
-                                    echo "
-                                    <h4 class='subtitle-view2'>".$infoMod['nome_mod']."</h4> ";
+
+                                    $sqlIsset = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a inner join modulo m ON a.id_mod = m.id_mod AND m.id_mod = ".$infoMod['id_mod'].";");
+                                    $resIsset = mysqli_fetch_array($sqlIsset);
+
+                                    if ($resIsset[0] > 0) {
+                                        switch ($infoMod['tipo_mod']) {
+                                            case 1:
+                                                $tipoMod = "Básico";
+                                                break;
+                                            
+                                            case 2:
+                                                $tipoMod = "Intermediário";
+                                                break;
+                                    
+                                            case 3:
+                                                $tipoMod = "Avançado";
+                                                break;
+                                        }
+                                        echo "
+                                    <h4 class='subtitle-view2'>".$tipoMod."</h4> ";
 
                                      //Selecionando as informações das aulas através do módulo
                                     $sqlAula1 = mysqli_query($con, "SELECT * from aula where id_mod = ".$infoMod['id_mod'].";");
@@ -83,6 +101,7 @@
                                                 <a href='?page=play_video&curso=".$infoCur['sigla_curso']."&aula=".$infoAula1['id_aula']."' class='play-view'><i class='bi bi-play-circle'></i></a>
                                             </div>";
                                         }
+                                    }
                                 }
                         echo"
                                 </div>

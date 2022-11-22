@@ -47,8 +47,13 @@
     $("#tp-form-av").change(() => {
         $(".all-quest-2").load('/tcc/selects/questionario/quest.php?filter_quest='+$("#tp-form-av").val()+'&alu=<?php echo $id_alu;?>');
     })
-    $("#btnPagAvaliacao").click((e) =>{
-        $('.all-av-form').load('/tcc/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+$("#btnPagAvaliacao").attr('data-avCur'));
-    })
     
+    var avBtn = document.querySelectorAll(".btnPagAvaliacao");
+    for (let i = 0; i < avBtn.length; i++) {
+        const btn = avBtn[i];
+        btn.addEventListener('click', ()=> {
+            curso = btn.getAttribute('data-avCur');
+            $('.all-av-form').load('/tcc/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+curso);
+        })
+    }
 </script>
