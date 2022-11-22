@@ -20,10 +20,7 @@
 @import 'css-dashboard/card/card.css';
 
 /*Css local do card*/
-@import 'css-dashboard/card/card2.css';
-
-/*Css local do card*/
-@import 'css-dashboard/card/card3.css';
+@import 'css-dashboard/emissao/emissao.css';
 
 /*Css local do crud de perfil*/
 @import 'css-dashboard/perfil/view.css';

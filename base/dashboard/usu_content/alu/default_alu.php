@@ -52,7 +52,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <h3 class="content-title">Painel</h3>
-    <div class="d-flex flex-row align-items-center justify-content-around group-alu ">
+    <div class="group-alu ">
         <div class="default-alu-container">
             <div class="default-alu-body">
                 <div class="default-alu-info1">

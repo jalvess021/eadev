@@ -14,6 +14,10 @@
             include "relatorios/cert.php";           
             break;
 
+            case 'validacao_certificado':
+                include "validacao_cert.php";
+                break;
+
     }
 } 
 

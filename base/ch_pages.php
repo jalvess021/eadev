@@ -20,7 +20,8 @@
             //Validação 
             case 'validacao':
                 include "validacao.php";  
-                break;  
+                break; 
+                  
 
             //Config (Conexao Com o Banco de Dados)
             case 'config':
@@ -41,9 +42,8 @@
                 include "base/crud/aluno/insere_alu.php";
                 break;
 
-                case 'validacao_certificado':
-                    include "validacao_cert.php";
-                    break;
+                
+
     }
 } 
 

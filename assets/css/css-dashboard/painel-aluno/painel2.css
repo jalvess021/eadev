@@ -1,3 +1,9 @@
+.group-alu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .default-alu-container{
 height: 100%;
@@ -237,8 +243,19 @@ width: 60%;
         height: auto;
         box-shadow: none;
     }
+}
 
+@media(max-width:1140px){
+    .group-alu{
+        flex-direction: column;
+    }
+    .default-alu-container{
+        width: 100%;
+        }
+}
 
-
-
+@media(max-width:820px){
+    .div-alu-col{
+        flex-direction: column;
+    }
 }

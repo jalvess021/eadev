@@ -28,6 +28,10 @@ if(isset($_GET['content_alu'])) {
                 case 'avaliacoes':
                     include "base/dashboard/usu_content/alu/avaliacao/default.php";
                     break; 
+
+                case 'emissao_certificado':
+                    include "base/dashboard/usu_content/alu/emissao/emissao.php";
+                    break;
 }       
 }  
 else {
