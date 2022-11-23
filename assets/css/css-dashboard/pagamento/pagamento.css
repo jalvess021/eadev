@@ -11,13 +11,13 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     padding: 5px;
 }
 
 .personal-data-pgt{
     background-color: white;
-    width: 400px;
-    height: 180px;
+    width: 85%;
     padding: 25px;
     border-radius: 10px;
     box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
@@ -54,8 +54,7 @@
 
 .personal-data-end{
     background-color: white;
-    width: 480px;
-    height: 160px;
+    width: 95%;
     padding: 25px;
     border-radius: 10px;
     box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
@@ -77,6 +76,9 @@
 
 .group-end{
     margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
 .circle-loc-end{
@@ -97,7 +99,7 @@
     font-size: 10pt;
     font-weight: 500;
     color: rgba(17, 17, 17, 0.904);
-    margin-bottom: 20px;
+    
 }
 
 /* Finalizar compra */
@@ -110,6 +112,10 @@
     box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
     -webkit-box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
     -moz-box-shadow: -2px 22px 41px -8px rgba(0,0,0,0.32);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .title-personal-cert{
@@ -117,20 +123,20 @@
     font-weight: 500;
     color: rgba(17, 17, 17, 0.904);
     margin-bottom: 20px;
+    border-left: 2px solid #289F9F;
+    padding-left: 5px;
 }
 
-.title-personal-cert::after{
-    content: '';
-    display: block;
-    width: 4rem;
-    height: 0.25rem;
-    background-color: #289F9F;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
+.group-pricing-total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .group-img{
+    
     width: 50%;
     margin-left: 20px;
     
@@ -143,9 +149,17 @@
 
 .group-pricing{
     width: 50%;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-total-sub{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
 }
 
 .subtotal-cert{
@@ -177,7 +191,7 @@
     font-size: 12pt;
     font-weight: 600;
     color: rgba(37, 37, 37, 0.904);
-    text-align: center;
+    margin-left: 10px;
 }
 
 .btn-pgt{
@@ -186,6 +200,7 @@
     border: 1px solid rgba(5, 131, 125, 0.986);
     padding: 10px;
     border-radius: 5px;
+    margin-top: 30px;
     color: rgba(0, 0, 0, 0.897);
     font-size: 12pt;
     font-weight: 600;
@@ -261,6 +276,12 @@
     color: rgba(37, 37, 37, 0.904);
     margin-left: 5px;
     margin-top: 8px;
+}
+
+.group-qrcode-instruction{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
 }
 
 .group-qrcode{
@@ -352,6 +373,177 @@
 .btn-pix-pgt:hover{
     background-color: rgba(5, 131, 125, 0.986);
     color: #fff;
+}
+
+@media (max-width: 1308px){
+    /*dados e endereco*/
+    .group-data-end{
+        margin-right: 10px;
+    }
+    .personal-data-pgt{
+        width: 100%;
+    }
+
+    .group-end{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .resp-end{
+        font-size: 10pt;
+        font-weight: 500;
+        color: rgba(17, 17, 17, 0.904);
+        margin-bottom: 0px;
+    }
+
+    /*Finalizar compra*/
+
+    .group-pricing-total{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .group-img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .group-img img{
+        width: 60%;
+        border: 2px solid black;
+        margin-bottom: 5px;
+    }
+
+    .group-pricing{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .btn-pgt{
+        margin-top: -10px;
+    }
+}
+
+
+@media (max-width: 960px){
+    .all-pgt{
+        flex-direction: column;
+        align-items: center;
+    }
+    .group-data-end{
+        width: 100%;
+        align-items: center;
+    }
+    .personal-data-pgt{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .personal-data-end{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .group-rec-cert{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 552px){
+    .personal-data-pgt{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .personal-data-end{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .group-rec-cert{
+        width: 100%;
+    }
+}
+
+@media (max-width: 476px){
+
+
+    /*modal*/
+
+    .group-qrcode-instruction{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+    }
+    /*qrcode*/
+
+    .group-qrcode{
+        width: 80%;
+    }
+    
+    .qrcode-pix{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /*Instrução*/
+    
+    .instruction-pgt{
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .title-instruction{
+        font-size: 14pt;
+        font-weight: 600;
+        color: rgba(7, 7, 7, 0.938);
+        margin-bottom: 10px;
+    }
+    
+    .description-instruction{
+        font-size: 10pt;
+        font-weight: 500;
+        color: rgba(27, 27, 27, 0.938);
+        text-align: justify;
+    }
+    
+    .description-instruction2{
+        font-size: 10.5pt;
+        font-weight: 500;
+        color: rgba(27, 27, 27, 0.938);
+        text-align: justify;
+        margin-left: 5px;
+    }
+    
+    .btn-pix-pgt{
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid rgba(5, 131, 125, 0.986);
+        padding: 10px;
+        border-radius: 5px;
+        color: rgba(0, 0, 0, 0.897);
+        font-size: 12pt;
+        font-weight: 600;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .btn-pix-pgt:hover{
+        background-color: rgba(5, 131, 125, 0.986);
+        color: #fff;
+    }
 }
 
 

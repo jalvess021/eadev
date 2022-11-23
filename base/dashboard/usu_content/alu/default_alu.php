@@ -53,13 +53,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 <h3 class="content-title">Painel</h3>
     <div class="group-alu ">
-        <div class="default-alu-container">
-            <div class="default-alu-body">
+        <div class="default-alu-container ">
+            <div class="default-alu-body ">
                 <div class="default-alu-info1">
                     <div class="div-alu-col">
                         <img src="/tcc/assets/images/users/default.png" alt="">
                         <div class="div-alu-subcol">
-                            <h1>Meu perfil</h1>
+                            <h2>Meu perfil</h2>
                             <p>5 aulas concluídas nos últimos 7 dias</p>
                             <a href='?content_alu=perfil' class='bt-perfil-alu'>Visualizar perfil</a>
                         </div>
@@ -67,12 +67,12 @@
                     <div>
                         <hr>
                         <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                            <div class="swiper-wrapper ">
+                                <div class="swiper-slide ">
                                     <div>
                                         <h6>Progresso em Front-End:</h6>
                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-striped" id='barprogress1' role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class='span-progress'>25%</span></div>
+                                            <div class="progress-bar progress-bar-alu progress-bar-striped" id='barprogress1' role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class='span-progress'>25%</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class=" group-progress d-flex flex-row ">
+        <div class=" group-progress ">
                 <div class=" group-progress1 d-flex flex-column justify-content-center ">
                     <div class="circular-progress"> 
                         <div class="value-container">
