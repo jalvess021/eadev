@@ -34,7 +34,7 @@
         $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
         $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
 
-        $sql4 = "insert into avaliacoes SELECT 0, a.id_aluno, u.nome, 1, NULL, NULL, 3, ".$info1['id_curso']."  
+        $sql4 = "insert into avaliacoes SELECT 0, a.id_aluno, u.nome, 1, NULL, NULL, 3, ".$info1['id_curso'].", NULL  
         FROM aluno AS a INNER JOIN usuario AS u ON a.id_usu = u.id_usu ORDER BY id_aluno asc;";
         $res4 = mysqli_query($con, $sql4); 
 

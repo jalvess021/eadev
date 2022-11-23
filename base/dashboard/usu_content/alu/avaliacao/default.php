@@ -1,4 +1,5 @@
 <?php
+//ATENCAO 99999999999999999999999999999999999999999
      $nivel_necessario = 2;
     include "base/testa_nivel.php"; 
 
@@ -23,12 +24,15 @@
         $AvVerify = mysqli_fetch_array($queryAvVerify);
 
         if ($numPercentAll === 0 || $numPercentAll != $numPercentCon && $AvVerify['status_av'] == 1) {
-            $statusIndisponivel = mysqli_query($con, "UPDATE avaliacoes set status_tent = 1, num_tent_restantes = 0 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso'].";");
+            $statusIndisponivel = mysqli_query($con, "UPDATE avaliacoes set status_tent = 1, num_tent_restantes = 0 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_tent = NULL and status_av = 1;");
         }elseif ($numPercentAll != 0 && $numPercentAll == $numPercentCon && $AvVerify['status_av'] == 1) {
-            $statusConcluido = mysqli_query($con, "UPDATE avaliacoes set status_av = 1, num_tent_restantes = 2, status_tent = 2 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso'].";");
+            $statusConcluido = mysqli_query($con, "UPDATE avaliacoes set num_tent_restantes = 2, status_tent = 2 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_tent = NULL and status_av = 1;");
         }
     }
-    
+
+    $attTent1 = mysqli_query($con, "UPDATE avaliacoes AS a SET a.num_tent_restantes = 2, a.status_tent = 2 WHERE a.num_tent_restantes = 0 AND a.status_tent = 3 AND a.status_av = 1 AND a.dt_ultima_tent <= CURRENT_DATE()-15 and id_aluno = $id_usu;");
+
+    include "base/crud/aluno/msg_alu.php";
 ?>
 
 <h3 class='content-title ct-av'>Avaliações</h3>
@@ -53,7 +57,7 @@
         const btn = avBtn[i];
         btn.addEventListener('click', ()=> {
             curso = btn.getAttribute('data-avCur');
-            $('.all-av-form').load('/tcc/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+curso);
+            $('.all-av-form').load('/tcc/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+curso+'&alu=<?php echo $id_alu;?>');
         })
     }
 </script>

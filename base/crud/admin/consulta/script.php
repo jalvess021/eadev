@@ -119,7 +119,7 @@
             var meio = nomesmeio.join(' ');
             // Abrevia o nome
             var nomeMeioAbreviado = meio.replace(/([a-z])\w[a-záâãéêíóôõ]+/gi, letra => letra.toUpperCase().substr(0, 1)+".");
-            console.log(nomeMeioAbreviado);
+
             //Exibe o nome completo (Abreviando os do meio)
             if (nomeTodo.length > 2) {
               var nomeOut = primeiroNome+" "+nomeMeioAbreviado+" "+ultimoNome;

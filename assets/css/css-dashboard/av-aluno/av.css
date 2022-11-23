@@ -566,3 +566,39 @@ text-decoration: none;
     color: #fff;
     background: #007bff;
 }
+
+#closeCert{
+    color: #007bff;
+    background: #fff;
+}
+
+#closeCert:hover{
+    color: #fff;
+    background: #007bff;
+}
+
+
+.info-cert-av{
+    display: block !important;
+    font-weight: 500 !important;
+    font-size: 12pt !important;
+    margin: 10px 1rem !important;
+}
+
+.info-cert-av span{
+    display: inline !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.info-cert-av span:nth-child(1){
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 10pt !important;
+}
+
+.info-cert-av span:not(:nth-child(1)){
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+
+}

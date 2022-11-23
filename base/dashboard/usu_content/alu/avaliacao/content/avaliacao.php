@@ -1,3 +1,13 @@
+<?php
+    date_default_timezone_set ("America/Sao_Paulo");
+        
+    $nivel_necessario = 2;
+    include "../../../../../testa_nivel.php";
+    include "../../../../../config.php";
+
+    $queryCur = mysqli_query($con, "SELECT c.* FROM curso as c where c.id_curso = ".$_GET['curso'].";");
+    $infoCur = mysqli_fetch_array($queryCur);
+?>
 <h5 class='label-av-form-1'> <i class="bi bi-pencil-square"></i> Questionário avaliativo</h5>
 <div class="all-exam1">
 <button id="btn-back-av"> <i class="bi bi-reply-fill"></i> Voltar </button>
@@ -57,8 +67,8 @@
                         <!-- Here I've inserted Score Result from JavaScript -->
                     </div>
                     <div class="buttons">
-                        <button class="btn btn-primary" disabled>Obter o certificado <i class="bi bi-award-fill"></i></button>
-                        <button class="quit">Fechar</button>
+                        <button class="btn btn-primary" id='reach-cert' data-cur='<?php echo $_GET['curso'];?>' data-alu='<?php echo $_GET['alu'];?>' disabled>Obter o certificado <i class="bi bi-award-fill"></i></button>
+                        <button class="quit" id='closeCert'>Fechar</button>
                     </div>
                 </div>
             </div>
@@ -110,6 +120,11 @@
     const timeCount = document.querySelector(".timer .timer_sec");
     const backAv = document.querySelector(".back-av");
     const btnBackAv = document.querySelector("#btn-back-av");
+    const reach_btn = document.querySelector("#reach-cert");
+    const curso = reach_btn.getAttribute('data-cur');
+    const alu = reach_btn.getAttribute('data-alu');
+
+    
     // if startQuiz button clicked
     start_btn.onclick = ()=>{
         info_box.classList.add("activeInfo"); //show info box
@@ -124,6 +139,14 @@
     continue_btn.onclick = ()=>{
         info_box.classList.remove("activeInfo"); //hide info box
         quiz_box.classList.add("activeQuiz"); //show quiz box
+        $.ajax({
+            url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
+            method: 'POST',
+            data: {curso: curso, aluno: alu},
+            dataType: 'json'
+        }).done(function(dados){
+            console.log("Você acaba de utilizar uma de suas tentativas, agora restam: "+ dados.tent_restantes +" tentativas.")
+        }) 
         showQuetions(0); //calling showQestions function
         queCounter(1); //passing 1 parameter to queCounter
         startTimer(150); //calling startTimer function
@@ -140,7 +163,7 @@
     const quit_quiz = result_box.querySelector(".buttons .quit");
 
     // if quitQuiz button clicked
-    quit_quiz.onclick = ()=>{
+    quit_quiz.onclick = function sairQuiz (){
         window.location.reload(); //reload the current window
     }
     btnBackAv.onclick = ()=>{
@@ -189,9 +212,17 @@
     let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
     //if user clicked on option
     function optionSelected(answer){
+        /*Regex para encontrar os simbolos*/
+        const regJacare1 = /(<)+/gm;
+        const regJacare2 = /(>)+/gm;
+        
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         let userAns = answer.textContent; //getting user selected option
+      
+        userAns = userAns.replace(regJacare1, '&lt;'); //substitui o simbolo
+        userAns = userAns.replace(regJacare2, '&gt;'); //substitui o simbolo
+
         let correcAns = questions[que_count].answer; //getting correct answer from array
         const allOptions = option_list.children.length; //getting all option items
         
@@ -228,11 +259,23 @@
 
         let media = userScore.toFixed(1); //Define a casa decimal arredondando para (x.x)
         media = media * 10; //Altera a formatacao da media
+        if (media >= 100) {
+            media = 100; 
+        }
         
         if (media >= 70){ // if user scored more than 3
             //creating a new span tag and passing the user score number and total question number
-            let scoreTag = '<span>Parabéns! Sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
+            let scoreTag = '<p class="info-cert-av">Parabéns, você desbloqueou o certificado do curso <span><?php echo $infoCur['sigla_curso'];?></span>! Sua nota foi <span>'+media+'</span> de <span>100</span> pontos.</p>';
             scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+
+            reach_btn.removeAttribute("disabled");
+
+            sairCert = document.querySelector("#closeCert");
+            sairCert.removeAttribute("class");
+            sairCert.onclick = () => {
+                window.location = "/tcc/base/dashboard/usu_content/alu/avaliacao/content/alter_cert/close.php?curso="+ curso +"&aluno="+ alu;
+            }
+           
         }
         else if(media > 40){ // if user scored more than 1
             let scoreTag = '<span>Quase lá! Sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
@@ -243,6 +286,9 @@
             scoreText.innerHTML = scoreTag;
         }
     }
+     
+    
+
     function startTimer(time){
         counter = setInterval(timer, 1000);
         function timer(){
