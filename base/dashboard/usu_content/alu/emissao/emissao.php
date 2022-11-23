@@ -5,7 +5,7 @@
         include "base/crud/aluno/msg_alu.php";
 ?>
 
-<div class="group-cert group-cert-init">
+<div class="group-cert">
         <h4 class='caption-card'>Pagos</h4>
         <div class="container-cert ">
             <div class="card-cert">
@@ -99,6 +99,46 @@
     <div class="group-cert-bloq">
         <h4 class='caption-card'>Bloqueados</h4>
         <div class="container-cert-bloq">
+            <div class="card-cert-bloq">
+                <h3> Certificado de GitHub</h3>
+                <div class="face face1">
+                    <div class="content-cert-bloq">
+                        <img src="arquivos/img/cert.png" alt="">
+                        <i class="bi bi-lock-fill"></i>
+                        <h6>Bloqueado</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card-cert-bloq">
+                <h3> Certificado de GitHub</h3>
+                <div class="face face1">
+                    <div class="content-cert-bloq">
+                        <img src="arquivos/img/cert.png" alt="">
+                        <i class="bi bi-lock-fill"></i>
+                        <h6>Bloqueado</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card-cert-bloq">
+                <h3> Certificado de GitHub</h3>
+                <div class="face face1">
+                    <div class="content-cert-bloq">
+                        <img src="arquivos/img/cert.png" alt="">
+                        <i class="bi bi-lock-fill"></i>
+                        <h6>Bloqueado</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card-cert-bloq">
+                <h3> Certificado de GitHub</h3>
+                <div class="face face1">
+                    <div class="content-cert-bloq">
+                        <img src="arquivos/img/cert.png" alt="">
+                        <i class="bi bi-lock-fill"></i>
+                        <h6>Bloqueado</h6>
+                    </div>
+                </div>
+            </div>
             <div class="card-cert-bloq">
                 <h3> Certificado de GitHub</h3>
                 <div class="face face1">
