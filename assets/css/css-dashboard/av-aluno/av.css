@@ -414,6 +414,9 @@ text-decoration: none;
     align-items: center;
     justify-content: space-between;
 }
+.all-exam2 section .option_list .option span{
+    width: 100%;
+}
 .all-exam2 section .option_list .option:last-child{
     margin-bottom: 0px;
 }
@@ -437,7 +440,7 @@ text-decoration: none;
 }
 .all-exam2 section .option_list .option .icon{
     height: 26px;
-    width: 26px;
+    width: 26px !important;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;

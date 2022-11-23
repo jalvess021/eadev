@@ -1,4 +1,11 @@
-    <div class="group-cert">
+<?php
+        $nivel_necessario = 2;
+        include "base/testa_nivel.php";
+        include "base/config.php";
+        include "base/crud/aluno/msg_alu.php";
+?>
+
+<div class="group-cert group-cert-init">
         <h4 class='caption-card'>Pagos</h4>
         <div class="container-cert ">
             <div class="card-cert">

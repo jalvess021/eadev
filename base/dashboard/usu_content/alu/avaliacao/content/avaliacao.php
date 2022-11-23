@@ -123,7 +123,8 @@
     const reach_btn = document.querySelector("#reach-cert");
     const curso = reach_btn.getAttribute('data-cur');
     const alu = reach_btn.getAttribute('data-alu');
-
+    
+    var idTent;
     
     // if startQuiz button clicked
     start_btn.onclick = ()=>{
@@ -145,6 +146,7 @@
             data: {curso: curso, aluno: alu},
             dataType: 'json'
         }).done(function(dados){
+            idTent = dados.tentativa;
             console.log("Você acaba de utilizar uma de suas tentativas, agora restam: "+ dados.tent_restantes +" tentativas.")
         }) 
         showQuetions(0); //calling showQestions function
@@ -227,22 +229,22 @@
         const allOptions = option_list.children.length; //getting all option items
         
         if(userAns == correcAns){ //if user selected option is equal to array's correct answer
-            console.log(questions[que_count].valueQuestion);
+            //console.log(questions[que_count].valueQuestion);
             userScore += parseFloat(questions[que_count].valueQuestion); //upgrading score value with 1
 
             answer.classList.add("correct"); //adding green color to correct selected option
             answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-            console.log("Correct Answer");
-            console.log("Your correct answers = " + userScore);
+            //console.log("Correct Answer");
+            //console.log("Your correct answers = " + userScore);
         }else{
             answer.classList.add("incorrect"); //adding red color to correct selected option
             answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
-            console.log("Wrong Answer");
+            //console.log("Wrong Answer");
             for(i=0; i < allOptions; i++){
                 if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
                     option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
                     option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                    console.log("Auto selected correct answer.");
+                    //console.log("Auto selected correct answer.");
                 }
             }
         }
@@ -259,32 +261,60 @@
 
         let media = userScore.toFixed(1); //Define a casa decimal arredondando para (x.x)
         media = media * 10; //Altera a formatacao da media
-        if (media >= 100) {
-            media = 100; 
-        }
         
-        if (media >= 70){ // if user scored more than 3
-            //creating a new span tag and passing the user score number and total question number
-            let scoreTag = '<p class="info-cert-av">Parabéns, você desbloqueou o certificado do curso <span><?php echo $infoCur['sigla_curso'];?></span>! Sua nota foi <span>'+media+'</span> de <span>100</span> pontos.</p>';
-            scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-
-            reach_btn.removeAttribute("disabled");
-
-            sairCert = document.querySelector("#closeCert");
-            sairCert.removeAttribute("class");
-            sairCert.onclick = () => {
-                window.location = "/tcc/base/dashboard/usu_content/alu/avaliacao/content/alter_cert/close.php?curso="+ curso +"&aluno="+ alu;
+            if (media >= 100) {
+                media = 100; 
+            }else{
+                media = media;
             }
-           
-        }
-        else if(media > 40){ // if user scored more than 1
-            let scoreTag = '<span>Quase lá! Sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
-            scoreText.innerHTML = scoreTag;
-        }
-        else{ // if user scored less than 1
-            let scoreTag = '<span>Ops, sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
-            scoreText.innerHTML = scoreTag;
-        }
+        
+            if (media >= 70){ // if user scored more than 3
+                //creating a new span tag and passing the user score number and total question number
+                let scoreTag = '<p class="info-cert-av">Parabéns, você desbloqueou o certificado do curso <span><?php echo $infoCur['sigla_curso'];?></span>! Sua nota foi <span>'+media+'</span> de <span>100</span> pontos.</p>';
+                scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+
+                reach_btn.removeAttribute("disabled");
+
+                sairCert = document.querySelector("#closeCert");
+                sairCert.removeAttribute("class");
+
+                var certCur; //id do curso que obteve o certificado
+                //Ajax para desbloquear o certificado e deixar a avaliacao como concluida
+                $.ajax({
+                    url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/alter_cert/cert.php',
+                    method: 'POST',
+                    data: {curso: curso, aluno: alu},
+                    dataType: 'json'
+                }).done(function(dados){
+                    console.log("Certificado desbloqueado!");
+                    certCur = dados.idCurso;
+                }) 
+                sairCert.onclick = () => {
+                    window.location = "/tcc/plataforma.php?content_alu=avaliacoes&msgs=3";
+                }
+                reach_btn.onclick = () => {
+                    window.location = "/tcc/plataforma.php?content_alu=emissao_certificado&msgs=4&data="+certCur;
+                }
+            
+            }
+            else if(media >= 50){ // if user scored more than 1
+                let scoreTag = '<span>Quase lá! Sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
+                scoreText.innerHTML = scoreTag;
+            }
+            else{ // if user scored less than 1
+                let scoreTag = '<span>Ops, sua nota foi <p>'+media+'</p> de <p>100</p> pontos.</span>';
+                scoreText.innerHTML = scoreTag;
+            }
+
+        //Envia a media para a pag que faz a interação com o Banco de dados
+        $.ajax({
+            url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
+            method: 'POST',
+            data: {tentativa: idTent, media: media},
+            dataType: 'json'
+        }).done(function(){
+            console.log("Sua nota ("+ media +") foi computada!");
+        }) 
     }
      
     
@@ -307,7 +337,7 @@
                     if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
                         option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
                         option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                        console.log("Time Off: Auto selected correct answer.");
+                        //console.log("Time Off: Auto selected correct answer.");
                     }
                 }
                 for(i=0; i < allOptions; i++){

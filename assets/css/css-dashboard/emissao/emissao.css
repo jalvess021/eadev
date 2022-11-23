@@ -1,6 +1,10 @@
 /*Pagos e pendentes*/
-.group-cert:not(:nth-child(1)){
+.group-cert:not(.group-cert-init){
     margin-top: -135px;
+}
+
+.group-cert .caption-card{
+    margin-top: 0px;
 }
 
 .container-cert{
@@ -131,7 +135,7 @@
 /*Bloqueados*/
 
 .group-cert-bloq{
-    margin-top: -45px;
+    margin-top: -135px;
 }
 
 .container-cert-bloq{
