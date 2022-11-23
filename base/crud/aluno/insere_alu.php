@@ -36,7 +36,7 @@ $res5 = mysqli_query($con, $sql5) or die(mysqli_error($con));
 $sql6 = 'INSERT into aula_alu SELECT 0, '.$info2[0].', a.id_aula, 1, NULL from aula AS a ORDER BY a.id_aula;';
 $res6 = mysqli_query($con, $sql6); 
 
-$sql7 = "insert into avaliacoes SELECT 0, ".$info2[0].", ".$info1['nome'].", 1, NULL, NULL, 3, c.id_curso, NULL  
+$sql7 = "insert into avaliacoes SELECT 0, ".$info2[0].", ".$info1['nome'].", 1, 0, NULL, 1, c.id_curso  
 FROM curso AS c ORDER BY id_curso asc;";
 $res7 = mysqli_query($con, $sql7); 
 

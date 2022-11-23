@@ -24,9 +24,9 @@
         $AvVerify = mysqli_fetch_array($queryAvVerify);
 
         if ($numPercentAll === 0 || $numPercentAll != $numPercentCon && $AvVerify['status_av'] == 1) {
-            $statusIndisponivel = mysqli_query($con, "UPDATE avaliacoes set status_tent = 1, num_tent_restantes = 0 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_tent = NULL and status_av = 1;");
+            $statusIndisponivel = mysqli_query($con, "UPDATE avaliacoes set status_tent = 1, num_tent_restantes = 0 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_av = 1;");
         }elseif ($numPercentAll != 0 && $numPercentAll == $numPercentCon && $AvVerify['status_av'] == 1) {
-            $statusConcluido = mysqli_query($con, "UPDATE avaliacoes set num_tent_restantes = 2, status_tent = 2 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_tent = NULL and status_av = 1;");
+            $statusConcluido = mysqli_query($con, "UPDATE avaliacoes set num_tent_restantes = 2, status_tent = 2 where id_aluno = ".$id_alu." and id_curso = ".$infoCurAula['id_curso']." and status_tent <> 3 and status_av = 1 and num_tent_restantes = 0;");
         }
     }
 
