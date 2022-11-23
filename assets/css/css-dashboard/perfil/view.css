@@ -138,6 +138,44 @@
     }
 }
 
+@media(max-width:422px){
+    .block{
+        flex-direction: column;
+    }
+
+    .info-person{
+        text-align: left;
+        margin-left: 15px;
+        color: black;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    .person{
+        margin-right: 15px;
+        color: rgba(0, 0, 0, 0.812);
+        font-weight: 500;
+        font-size: 13px;
+        margin-left: 15px;
+    }
+
+    .view-password{
+        width: 250px;
+        height: 45px;
+        border-radius: 50px;
+        margin-left: 0px;
+        padding: 10px;
+        padding-left: 15px;
+        border: 1px solid rgb(150, 148, 148);
+        outline: none;
+    }
+
+    .button-password button{
+    width: 60%;
+    margin-left: 15px;
+}
+}
+
 
 
 
