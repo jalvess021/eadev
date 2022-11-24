@@ -1,0 +1,271 @@
+/*div inteira*/
+
+.all-play-aula{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+/*div do video*/
+
+.video-play-aula{
+    padding: 10px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.iframe-play-aula{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.iframe-play-aula iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/*Descrição da aula*/
+
+.infos-play-aula{
+    width: 100%;
+    height: 30%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.description-play-aula{
+    width: 50%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-play-aula1{
+    display: flex;
+    flex-direction: row;
+}
+
+.link-description-play-aula{
+    color: #14aaaa;
+    font-size: 10pt;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.link-description-play-aula:hover{
+    color: #14aaaa;
+    transform: scale(1.06);
+    font-weight: 700;
+}
+
+.icon-description-play-aula{
+    margin-top: 3px;
+    margin-left: 20px;
+    color: rgb(34, 34, 34);
+    font-size: 10px;
+}
+
+.int-description-play-aula{
+    margin-left: 15px;
+    color: #727070;
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.name-description-play-aula{
+    margin-top: -10px;
+    color: rgb(27, 27, 27);
+    font-size: 12.8pt;
+    font-weight: 600;   
+}
+
+.buttons-play-aula{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.button-conc{
+    width: 190px;
+    height: 42px;
+    border: 2px solid #119e9e;
+    border-radius: 30px;
+    color: #119e9e;
+    font-size: 12pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -webkit-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -moz-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+}
+
+.button-conc:hover{
+    background-color: #119e9e ;
+    transition: all 0.4s ease-in-out ;
+    transform: scale(1.1);
+    background-color: #119e9e ;
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.button-conc1{
+    width: 190px;
+    height: 42px;
+    background-color: #119e9e ;
+    border: 2px solid #119e9e;
+    border-radius: 30px;
+    color: whitesmoke;
+    font-size: 12pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -webkit-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    -moz-box-shadow: -3px 4px 36px -4px rgba(0,0,0,0.43);
+    cursor: default !important;
+}
+
+/*div que mostra todos os cursos*/
+
+.all-cursos{
+    width: 35%;
+    
+}
+
+/*descrição do curso*/
+
+.description-view-cur{
+    width: 100%;
+    height: 25%;
+    background-color: rgb(247, 247, 247);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-back-cur{
+    color:#0d9494;
+    font-size: 12pt;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+.description-back-cur:hover{
+    transform: scale(1.02);
+    color: #0d8888;
+}
+
+.description-subtitle-view{
+    margin-top: 15px;
+    margin-left: 5px;
+    color:rgb(63, 63, 63);
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.description-text-view{
+    margin-top: -10px;
+    margin-left: 5px;
+    color:#a0a0a0;
+    font-size: 8pt;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.description-line-view{
+    margin-top: 0px;
+    color: #bdbdbd;
+    width: 100%;
+}
+
+.all-cur-aulas{
+    margin-bottom: 30px;
+    height: 75%;
+    display: block;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: rgb(247, 247, 247);
+}
+
+.all-cur-aulas::-webkit-scrollbar {
+    display: none;
+    }
+
+.subtitle-view2{
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 30px;
+    color: #95a1a1;
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+.subtitle-view2:first-child{
+    margin-top: 0;
+}
+
+.cur-view-aula{
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 95%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: -1px 2px 10px rgba(0, 0, 0, 0.212);
+    text-decoration: none;
+    
+}
+
+.cur-view-aula:hover{
+    transform: scale(1.03);
+    transition: 0.25s ease-in-out;
+}
+
+.cur-view::-webkit-scrollbar {
+    display: none;
+    }
+
+.cur-view:first-child{
+    margin-top: 40px;
+}
+
+.cur-view:last-child{
+    margin-bottom: 20px;
+}
+
+.cam-view{
+    margin-top: 2px;
+    font-size: 20px;
+    color: #949494;
+}
+
+.name-cur-view{
+    margin-left: 10px;
+    margin-top: 15px;
+    color: rgb(31, 31, 31);
+    font-weight: 600;
+    font-size: 9.5pt;
+}
+
+.play-cur-view{
+    margin-top: 2px;
+    font-size: 25px;
+    margin-left: 20px;
+    color: #0DB3B3;
+}
+

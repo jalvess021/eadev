@@ -1,14 +1,14 @@
 /* Css p/ definir classes, cores etc personalizados*/
 @import 'config.css';
 
-/*Css Padrão da Pág. Play1*/
-@import 'css-play/play1.css';
-
 /*Css Padrão da Pág. Play2*/
 @import 'css-play/play2.css';
 
-/*Css Padrão da Pág. Play2*/
+/*Css Padrão da Pág. Play do curso*/
 @import 'css-play/play_cur.css';
+
+/*Css Padrão da Pág. Play da aula*/
+@import 'css-play/play_aula.css';
 
 /*Bootstrap 5.2.0 link*/
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css');

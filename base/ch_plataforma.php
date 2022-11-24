@@ -7,7 +7,7 @@
                 break;
 
             case 'play_video':
-                include "play-content/play2.php";           
+                include "play-content/play_aula.php";           
                 break;
                 
 
