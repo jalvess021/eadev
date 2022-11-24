@@ -1,7 +1,7 @@
 <h5 class='label-av-form-1'> <i class='bi bi-book-half'></i> Área avaliativa</h5>
     <div class='all-div-quest'>
-    <div class='all-quest-1'>
-        <div class="top-div-quest">
+    <div class='all-quest-1 '>
+        <div class="top-div-quest ">
             <select id='tp-form-av'>
                 <option value='all' selected>Todos os questionários</option>
                 <?php
@@ -11,22 +11,9 @@
                 }
                 ?>
             </select>
-            <ul class='info-quest'>
-                    <li>
-                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário concluída'>Concluído <i class='bi bi-patch-check-fill text-success'></i></h3>
-                    </li>
-                    <li>
-                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário disponível'>Disponível <i class='bi bi-patch-plus-fill text-primary'></i></h3>
-                    </li>
-                    <li>
-                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário bloqueado'>Bloqueada <i class='bi bi-patch-exclamation-fill text-secondary'></i></h3>
-                    </li>
-                    <li>
-                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário indisponível'>Indisponível <i class='bi bi-patch-minus-fill text-danger'></i></h3>
-                    </li>
-            </ul>
+            
         </div>
-            <div class='all-quest-2'>
+            <div class='all-quest-2 '>
                 <?php
                     $sql1 = mysqli_query($con, "SELECT * FROM avaliacoes where id_aluno = ".$id_alu.";");
                     while ($info1 = mysqli_fetch_array($sql1)) {
@@ -127,4 +114,18 @@
                 ?>
             </div>
         </div>
+        <ul class='info-quest'>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário concluída'>Concluído <i class='bi bi-patch-check-fill text-success'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário disponível'>Disponível <i class='bi bi-patch-plus-fill text-primary'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário bloqueado'>Bloqueada <i class='bi bi-patch-exclamation-fill text-secondary'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário indisponível'>Indisponível <i class='bi bi-patch-minus-fill text-danger'></i></h3>
+                    </li>
+            </ul>
     </div>

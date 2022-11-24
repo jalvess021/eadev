@@ -244,8 +244,13 @@ width: 60%;
 
 @media(max-width:1140px){
 
+    .group-alu{
+        align-items: flex-start;
+    }
+
     .group-progress{
         flex-direction: column;
+        margin-top: 0px;
     }
 
     .default-alu-container{

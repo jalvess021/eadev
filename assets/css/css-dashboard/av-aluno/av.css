@@ -1,5 +1,8 @@
 
 
+
+/*area avaliativa*/
+
 .all-av-form{
     background-color: rgb(236, 236, 236);
     margin-top: 20px;
@@ -15,15 +18,15 @@
     border: 4px outset #4ea4a7;
     padding: 15px 0px;
     text-align: center;
-    width: 100%;
+    width: 60%;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 10pt;
     margin-bottom: 20px;
     border-radius: 40px;
-        font-weight: 700;
-        font-size: 12pt;
-    width: 600px;
+    font-weight: 700;
+    font-size: 12pt;
+
 }
 
 #tp-form-av option{
@@ -69,13 +72,14 @@
     align-items: flex-start;
     width: 100%;
     padding: 5px 20px;
+    margin-top: 90px;
 }
 
 .top-div-quest{
     display: flex;
-    flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .title-quest{
     border-left: #4EA4A7 3px outset;
@@ -178,20 +182,43 @@ text-decoration: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    column-gap: 30px;
+    width: 90%;
+    column-gap: 80px;
+    margin-top: 20px;
 }
 
 
 .info-quest li h3{
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 700;
-    color: rgb(49, 49, 49);    
+    color: rgb(49, 49, 49);   
 }
 .info-quest li p{
     font-weight: 600;
     color: rgb(114, 114, 114);   
     font-size: 9pt; 
+}
+
+@media (max-width:1136px){
+    .info-quest{
+        column-gap: 50px;
+    }
+    .info-quest li h3{
+        font-size: 11pt;
+    }
+}
+
+@media (max-width:1136px){
+    .info-quest{
+        column-gap: 30px;
+    }
+    .info-quest li h3{
+        font-size: 10pt;
+    }
+
+    #tp-form-av{
+        width: 80%;
+    }
 }
 
 
@@ -231,11 +258,6 @@ text-decoration: none;
     color: #fff;
     background: #007bff;
 }
-.all-exam2 .start_btn{
-
-}
-
-
 
 .all-exam2 .info_box,
 .all-exam2 .quiz_box,
