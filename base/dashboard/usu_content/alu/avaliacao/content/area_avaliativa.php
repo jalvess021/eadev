@@ -1,33 +1,31 @@
 <h5 class='label-av-form-1'> <i class='bi bi-book-half'></i> Área avaliativa</h5>
     <div class='all-div-quest'>
-        <ul class='info-quest'>
-                <li>
-                    <h3>Concluído <i class='bi bi-patch-check-fill text-success'></i></h3>
-                    <p>O status de concluído será exibido quando o aluno obtiver a nota necessária para a aprovação.</p>
-                </li>
-                <li>
-                    <h3>Disponível <i class='bi bi-patch-plus-fill text-primary'></i></h3>
-                    <p>Quando o aluno estiver apto a realizar o questionário do curso desejado, o status de disponível será exibido.</p>
-                </li>
-                <li>
-                    <h3>Bloqueado <i class='bi bi-patch-exclamation-fill text-secondary'></i></h3>
-                    <p> Ao exceder o número de tentativas, o questionário receberá o status de bloqueado.</p>
-                </li>
-                <li>
-                    <h3>Indisponível <i class='bi bi-patch-minus-fill text-danger'></i></h3>
-                    <p> Para realizar o questionário, o aluno terá que concluir todas as aulas do curso desejado. </p>
-                </li>
-        </ul>
-        <div class='all-quest-1'>
-        <select id='tp-form-av'>
-            <option value='all' selected>Todos os questionários</option>
-            <?php
-            $sqlForm = mysqli_query($con, "SELECT * FROM formacao");
-            while ($resForm = mysqli_fetch_array($sqlForm)) {
-                echo "<option value='".$resForm['id_formacao']."'>Questionários de ".$resForm['nome_formacao']."</option>";
-            }
-            ?>
-        </select>
+    <div class='all-quest-1'>
+        <div class="top-div-quest">
+            <select id='tp-form-av'>
+                <option value='all' selected>Todos os questionários</option>
+                <?php
+                $sqlForm = mysqli_query($con, "SELECT * FROM formacao");
+                while ($resForm = mysqli_fetch_array($sqlForm)) {
+                    echo "<option value='".$resForm['id_formacao']."'>Questionários de ".$resForm['nome_formacao']."</option>";
+                }
+                ?>
+            </select>
+            <ul class='info-quest'>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário concluída'>Concluído <i class='bi bi-patch-check-fill text-success'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário disponível'>Disponível <i class='bi bi-patch-plus-fill text-primary'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário bloqueado'>Bloqueada <i class='bi bi-patch-exclamation-fill text-secondary'></i></h3>
+                    </li>
+                    <li>
+                        <h3 data-toggle='tooltip' data-placement='top' title='Questionário indisponível'>Indisponível <i class='bi bi-patch-minus-fill text-danger'></i></h3>
+                    </li>
+            </ul>
+        </div>
             <div class='all-quest-2'>
                 <?php
                     $sql1 = mysqli_query($con, "SELECT * FROM avaliacoes where id_aluno = ".$id_alu.";");

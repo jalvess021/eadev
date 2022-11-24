@@ -23,6 +23,7 @@
     border-radius: 40px;
         font-weight: 700;
         font-size: 12pt;
+    width: 600px;
 }
 
 #tp-form-av option{
@@ -56,7 +57,7 @@
     height: calc(100% - 110px);
     padding: 10px 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
@@ -65,10 +66,17 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    width: 100%;
+    padding: 5px 20px;
 }
 
+.top-div-quest{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
 .title-quest{
     border-left: #4EA4A7 3px outset;
     padding-left: 5px;
@@ -80,7 +88,7 @@
 .all-quest-2{
     height: 75% !important;
     overflow-y: auto !important; 
-    width: 520px;
+    width: 100%;
     scroll-behavior: smooth;
 }
 
@@ -88,12 +96,17 @@
 .div-quest{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 30px);
     height: 150px;
-    margin-top: -15px;
+    padding-left: 20px;
+    box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.616);
+    margin: 20px 0px 20px 10px !important;
+    border-radius: 20px;
+    
 }
+
 
 .hr-div-quest{
     width: 93%;
@@ -161,23 +174,17 @@ text-decoration: none;
     width: 500px;
 }
 
-
 .info-quest{
-    height: 300px;
-    width: 500px;
-}
-
-.info-quest{
-    margin-top: 100px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    width: 450px !important;
+    width: 100%;
+    column-gap: 30px;
 }
 
 
 .info-quest li h3{
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 700;
     color: rgb(49, 49, 49);    
 }
