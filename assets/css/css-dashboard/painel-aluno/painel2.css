@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
+    margin-top: 25px;
 }
 
 .default-alu-container{
@@ -37,16 +37,9 @@ width: 60%;
 }
 
 .default-alu-body{
-    margin-top: 25px;
-    height: 500px;
-    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    border-radius: 20px;
-    box-shadow: 2px 3px 2px 4px rgba(0, 0, 0, 0.555);
-    
 }
 
 .default-alu-info1{
