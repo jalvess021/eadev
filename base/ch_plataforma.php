@@ -10,7 +10,6 @@
                 include "play-content/play_aula.php";           
                 break;
                 
-
             case 'rel_certificado':
             include "relatorios/cert.php";           
             break;
