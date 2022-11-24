@@ -38,7 +38,7 @@
                     $infoAula = mysqli_fetch_array($sqlAula);
                         if ((mysqli_num_rows($sqlAula) > 0)) {
                             echo "
-                                <div class='all-play-aula'>
+                                <div class='all-play-aula '>
                                     <div class='video-play-aula'>
                                         <div class='iframe-play-aula'>
                                             <iframe src='https://www.youtube-nocookie.com/embed/".$infoAula['id_video']."?&theme=dark&autohide=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&start=".$infoAula['start_aula']."&end=".$infoAula['end_aula']."' title='".$infoAula['tit_aula']." (Via Youtube)' frameborder='0' allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
