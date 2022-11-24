@@ -1,4 +1,47 @@
+<?php 
+    date_default_timezone_set ("America/Sao_Paulo");
+    
+    require "forma_pg/pix.php";
+    
+    use Mpdf\QrCode\QrCode;
+    use Mpdf\QrCode\Output;
+    require "./vendor/autoload.php";
+    //Instancia principal do payload
 
+
+    $codCert = "9ED0924";
+    $obPayLoad = (new Payload) -> 
+        setPixKey('f8f9f844-0ac9-477e-9192-27075bd3155e') -> 
+        setDescription('COMPRA DE CERTIFICADO') ->
+        setMerchantName('EADEV PLATAFORM') ->
+        setMerchantCity('RIO DE JANEIRO') ->
+        setAmount(39.99) ->
+        setTxid($codCert);
+
+    //Codigo de pagamento pix
+    $payLoadQrcode = $obPayLoad-> getPayload();
+
+    $qrCode = new Qrcode($payLoadQrcode);
+    $output = new Output\Svg();
+    $qrCodeGerado = $output->output($qrCode, 200, 'white', 'black');
+
+
+   // Save black on white PNG image 100 px wide to filename.png. Colors are RGB arrays. (salva a imagem)
+    /*
+    $output = new Output\Png();
+    $data = $output->output($qrCode, 100, [255, 255, 255], [0, 0, 0]);
+    file_put_contents('filename.png', $data);
+
+    // Echo a SVG file, 100 px wide, black on white.
+    // Colors can be specified in SVG-compatible formats
+    $output = new Output\Svg();
+    echo $output->output($qrCode, 100, 'white', 'black');
+
+    // Echo an HTML table
+    $output = new Output\Html();
+    echo $output->output($qrCode); */  
+
+?>
 <div class="row">
     <h3 class="content-title col-9 m-0">Pagamento</h3>
     <div class="col-3"><a href="?content_adm=view" class="float-right btn-back btn btn-sm bt-padrao"> <i class="bi bi-arrow-left"></i> Voltar </a></div>
@@ -89,8 +132,10 @@
                         </div>
                         <div class=" group-qrcode-instruction">
                             <div class="group-qrcode">
-                                <img class="qrcode-pix" src="arquivos/img/qrcode.png" alt="">
-                                <button type="button" class=" btn-pix">Código Pix</button>
+                                <div class="qrcode-pix">
+                                    <?php echo $qrCodeGerado;?>
+                                </div>
+                                <button type="button" class="btn-pix">Código Pix</button>
                                 <img class="pix-img" src="arquivos/img/pix.png" alt="">
                             </div>
                             <div class="instruction-pgt">
@@ -123,5 +168,23 @@
         </div>
     </div>
 
+    <script>        
+    /*
+
+                const btnPix = document.querySelector(".btn-pix");
+
+                 btnPix.addEventListener('click', function copiarCodPix(){
+                    copyTextToClipboard('Teste');
+                }); 
+                
+                setTimeout(() => {
+                                if (copyDescIcon.classList.contains("bi-check-all")) {
+                                    copyDescIcon.classList.remove("bi-check-all");
+                                } copyDescIcon.classList.add("bi-paperclip");
+                        }, 2000); */
+                
+
+                    
+    </script>
 
     

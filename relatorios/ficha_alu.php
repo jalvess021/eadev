@@ -25,7 +25,7 @@
     $head ="<div id='header'>
               <div class='div-hd'>
                 <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
-                <span class='text-center emi-rel'>Data de emissão [ <span>'.date('H:i:s | d-m-Y').'</span> ]</span>
+                <span class='text-center emi-rel'>Data de emissão [ <span>".date('H:i:s | d-m-Y')."</span> ]</span>
                 <span class='page'>Página </span>
                 <hr style='margin-top: 4px;'>
               </div>
@@ -43,7 +43,7 @@
                 </th>
                 <th >
                   <p class='perg-rel'>Nome:</p>
-                  <p class='resp-rel'>Mateus de Azevedo Correa de Mello</p>
+                  <p class='resp-rel'>Agnaldo Ferreira Campos</p>
                 </th>
                 <th>
                   <p class='perg-rel'>Nível:</p>

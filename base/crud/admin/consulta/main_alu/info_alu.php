@@ -33,7 +33,7 @@
                         </div>
                         <div class=' col-2 col-xl-3 mt-3'>
                             <div class='d-flex flex-row justify-content-end'>
-                                <a href='/tcc/relatorios/loads/ficha_alu_load.php' target='_blank' class='btn btn-sm btn-secondary mr-xl-4 mr-2 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i><span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
+                                <a href='/tcc/relatorios/loads/ficha_alu_load.php?user=".$_GET['alu']."' target='_blank' class='btn btn-sm btn-secondary mr-xl-4 mr-2 text-white font-weight-bold' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i><span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
                             <div>
                             <a href='?content_adm=consulta_alu' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i><span class='d-none d-xl-inline'> Fechar</span> </a>
                         </div>

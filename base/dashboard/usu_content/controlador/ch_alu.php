@@ -32,6 +32,7 @@ if(isset($_GET['content_alu'])) {
                 case 'emissao_certificado':
                     include "base/dashboard/usu_content/alu/emissao/emissao.php";
                     break;
+                    
                 case 'pagamento_certificado':
                     include "base/dashboard/usu_content/alu/pagamento/pagamento.php";
                     break;
