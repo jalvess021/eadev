@@ -23,13 +23,23 @@
                     </li>
 
 					<li class="submenu">
-                        <a href="#"><i class="bi bi-search"></i> <span> Consultar </span> <span class="menu-arrow"></span></a>
+                        <a href="#"><i class="bi bi-search"></i> <span> Consultar </span></a>
 							<ul class="list-unstyled">
 								<li><a href="?content_adm=consulta_alu"><i class="fa fa-fw fa-graduation-cap"></i>Aluno</a></li>
                                 <li><a href="?content_adm=consulta_adm"><i class="fa fa-fw fa-user"></i>Administrador</a></li>
                                 <li><a href="?content_adm=consulta_atv"><i class='bi bi-bar-chart-line-fill'></i>Atividades</a></li>
 							</ul>
                     </li>	
+
+                    <li class="submenu">
+                    <a href="?content_adm=lista_quest" class='pro'> <i class="bi bi-list-check"></i><span> Questões </span> <span class="label radius-circle bg-primary float-right"> Avaliativo</span></a>
+                       <!-- <a class="pro" href="#"></span><i class="bi bi-arrow-left-right"></i><span>Transações</span><span class="label radius-circle bg-primary float-right"> Financeiro</span></a>
+                            <ul class="list-unstyled">	
+                                <li><a href="#">Identificador de pagamentos</a></li>		
+                                <li><a href="#">Listagem de pagamentos</a></li>
+                            </ul>-->
+                    </li>
+                    <!--
 					
 					<li class="submenu">
                         <a href="?content_adm=lista_quest"> <i class="bi bi-list-check"></i><span> Questões </span></a>
@@ -52,7 +62,7 @@
                                 <li><a href="#"> <i class="bi bi-currency-exchange"></i>Financeiro</a></li>	
                                 <li><a href="#" data-toggle='tooltip' data-placement='right' title='Desempenho Acadêmico'> <i class="bi bi-graph-up"></i> D. Acadêmico</a></li>
                             </ul>
-                    </li>
+                    </li> -->
 					
             </ul>
 

@@ -10,7 +10,7 @@
 <div class="d-flex flex-row justify-content-between">
     <h3 class="content-title">Questões</h3>	
     <!-- Chama o Formulário para adicionar Cursos -->
-    <a href="?content_adm=lista_quest&add=av" class="btn bt-padrao btn-lg float-right">Nova Avaliação</a>
+    <a href="?content_adm=lista_quest&add=av" class="btn bt-padrao btn-lg float-right">Nova Questão</a>
 </div>
 <div class="d-flex flex-row justify-content-between mt-4">
 	<div class="table-responsive col-md-12 col-md-12 all-table">
