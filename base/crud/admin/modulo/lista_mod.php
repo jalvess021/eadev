@@ -52,9 +52,9 @@
                     
                         if(isset($_POST['formacao']) && $_POST['formacao'] != "all") {
                             if (isset($_POST['curso']) && $_POST['curso'] != "all") {
-                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." ORDER BY id_curso, tipo_mod ASC LIMIT $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+                                $data = mysqli_query($con, "SELECT * FROM modulo as m INNER JOIN curso as c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao as f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao']." ORDER BY m.id_curso, m.tipo_mod ASC LIMIT $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
                             }else {
-                                $data = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao']." ORDER BY id_curso, tipo_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
+                                $data = mysqli_query($con, "SELECT * FROM modulo as m INNER JOIN curso as c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao']." ORDER BY m.id_curso, m.tipo_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
                             }
                         }else {
                             $data = mysqli_query($con, "SELECT * from modulo ORDER BY id_curso, tipo_mod asc limit $inicio, $quantidade;") or die(mysqli_error("ERRO: ".$con));
@@ -133,9 +133,9 @@
                 <?php
                         if(isset($_POST['formacao']) && $_POST['formacao'] != "all") {
                             if (isset($_POST['curso']) && $_POST['curso'] != "all") {
-                                $sqlTotal = "SELECT m.id_mod FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao'].";";
+                                $sqlTotal = "SELECT m.id_mod FROM modulo as m INNER JOIN curso as c ON m.id_curso = c.id_curso and c.id_curso = ".$_POST['curso']." INNER JOIN formacao as f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$_POST['formacao'].";";
                             }else {
-                                $sqlTotal = "SELECT m.id_mod FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao'].";";
+                                $sqlTotal = "SELECT m.id_mod FROM modulo as m INNER JOIN curso as c ON m.id_curso = c.id_curso AND c.id_formacao = ".$_POST['formacao'].";";
                             }
                         }else {
                             $sqlTotal = "SELECT id_mod FROM modulo;";

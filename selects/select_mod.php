@@ -12,7 +12,7 @@ if (isset($_GET['filter_form'])) {
                         if (mysqli_num_rows($sqlCur)>0) {
                             $form = $_GET['filter_form'];
                             $cur = $_GET['filter_cur'];
-                                $datam = mysqli_query($con, "SELECT * FROM modulo m INNER JOIN curso c ON m.id_curso = c.id_curso and c.id_curso = ".$cur." INNER JOIN formacao f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$form." ORDER BY id_mod ASC;") or die(mysqli_error("ERRO: ".$con));
+                                $datam = mysqli_query($con, "SELECT * FROM modulo as m INNER JOIN curso as c ON m.id_curso = c.id_curso and c.id_curso = ".$cur." INNER JOIN formacao as f ON c.id_formacao = f.id_formacao AND f.id_formacao = ".$form." ORDER BY m.id_mod ASC;") or die(mysqli_error("ERRO: ".$con));
                                     if (mysqli_num_rows($datam)>0) {
                                         echo "<option value='' title='Selecione' disabled selected>SELECIONE</option>";
                                         while($infom = mysqli_fetch_array($datam)) {

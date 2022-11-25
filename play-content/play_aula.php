@@ -72,7 +72,7 @@
                                 $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
                                 while ($infoMod = mysqli_fetch_array($sqlMod)) {
 
-                                    $sqlIsset = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a inner join modulo m ON a.id_mod = m.id_mod AND m.id_mod = ".$infoMod['id_mod'].";");
+                                    $sqlIsset = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula as a inner join modulo as m ON a.id_mod = m.id_mod AND m.id_mod = ".$infoMod['id_mod'].";");
                                     $resIsset = mysqli_fetch_array($sqlIsset);
 
                                     if ($resIsset[0] > 0) {

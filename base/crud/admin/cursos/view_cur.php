@@ -8,15 +8,15 @@
 	$row = mysqli_fetch_array($sql);
 
 	//Numero de modulos
-	$sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo m WHERE m.id_curso = '".$id_curso."';");
+	$sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo as m WHERE m.id_curso = '".$id_curso."';");
 	$row1 = mysqli_fetch_array($sql1);
 
 	//Numero de aulas
-	$sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$id_curso."' ;");
+	$sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula as a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$id_curso."' ;");
 	$row2 = mysqli_fetch_array($sql2);
 
 	//Derivado da formacao
-    $sql3 = mysqli_query($con, "SELECT f.nome_formacao FROM curso c INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE c.id_curso = ".$id_curso.";");
+    $sql3 = mysqli_query($con, "SELECT f.nome_formacao FROM curso as c INNER JOIN formacao as f ON c.id_formacao = f.id_formacao WHERE c.id_curso = ".$id_curso.";");
 	$row3 = mysqli_fetch_array($sql3);
 
 	$s1 = $row['dt_criacao'];

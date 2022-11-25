@@ -5,7 +5,7 @@
 
     if (mysqli_num_rows($sql) == 1) {
 
-        $sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.tipo_mod FROM questoes q INNER JOIN modulo m ON q.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso INNER JOIN formacao f ON c.id_formacao = f.id_formacao WHERE q.id_quest = ".$id_quest.";");
+        $sql1 = mysqli_query($con, "SELECT f.nome_formacao, c.sigla_curso, m.tipo_mod FROM questoes as q INNER JOIN modulo as m ON q.id_mod = m.id_mod INNER JOIN curso as c ON m.id_curso = c.id_curso INNER JOIN formacao as f ON c.id_formacao = f.id_formacao WHERE q.id_quest = ".$id_quest.";");
         $row1 = mysqli_fetch_array($sql1);
         
         //Data de criação

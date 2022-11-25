@@ -32,11 +32,11 @@
                     $infoAlu = mysqli_fetch_array($resAlu);
                 
                     //Conta todas as aulas que o aluno está inserido
-                    $percentAll = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula INNER JOIN modulo m on a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno'].";");
+                    $percentAll = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula as a ON aa.id_aula = a.id_aula INNER JOIN modulo as m on a.id_mod = m.id_mod INNER JOIN curso as c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno'].";");
                     $numPercentAll = mysqli_num_rows($percentAll);
                 
                     //Conta todas as aulas que o aluno concluiu
-                    $percentCon = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula INNER JOIN modulo m on a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno']." AND aa.status_aula = 2;");
+                    $percentCon = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula as a ON aa.id_aula = a.id_aula INNER JOIN modulo as m on a.id_mod = m.id_mod INNER JOIN curso as c ON m.id_curso = c.id_curso AND c.sigla_curso = '".$_GET['curso']."' WHERE aa.id_aluno = ".$infoAlu['id_aluno']." AND aa.status_aula = 2;");
                     $numPercentCon = mysqli_num_rows($percentCon);
                 
                     //Verifica o progresso em porcentagem
@@ -64,11 +64,11 @@
                     $sqlMod = mysqli_query($con, "SELECT * from modulo where id_curso = ".$cur.";");
 
                     //Selecionando a qntde. de módulos através do curso
-                    $sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo m WHERE m.id_curso = '".$infoCur['id_curso']."';");
+                    $sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo as m WHERE m.id_curso = '".$infoCur['id_curso']."';");
                     $row1 = mysqli_fetch_array($sql1);
 
                     //Selecionando a qntde. de aulas através do curso e do módulo
-                    $sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$infoCur['id_curso']."' ;");
+                    $sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula as a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$infoCur['id_curso']."' ;");
                     $row2 = mysqli_fetch_array($sql2);
                     
             echo "
@@ -124,7 +124,7 @@
                                             <div class='play-view-2'>";
 
                                             while ($infoMod = mysqli_fetch_array($sqlMod)){
-                                               $sqlIsset = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a inner join modulo m ON a.id_mod = m.id_mod AND m.id_mod = ".$infoMod['id_mod'].";");
+                                               $sqlIsset = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula as a inner join modulo as m ON a.id_mod = m.id_mod AND m.id_mod = ".$infoMod['id_mod'].";");
                                                $resIsset = mysqli_fetch_array($sqlIsset);
                                                
                                                         if ($resIsset[0] > 0) {

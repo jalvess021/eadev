@@ -5,9 +5,9 @@ if (isset($_GET['delete_cur'])) {
     $infoDel = mysqli_fetch_array($sqlDel);
 
     if (mysqli_num_rows($sqlDel)>0) {
-                            $sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo m WHERE m.id_curso = '".$_GET['delete_cur']."';");
+                            $sql1 = mysqli_query($con, "SELECT COUNT(id_mod) FROM modulo as m WHERE m.id_curso = '".$_GET['delete_cur']."';");
 							$row1 = mysqli_fetch_array($sql1);
-							$sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$_GET['delete_cur']."' ;");
+							$sql2 = mysqli_query($con, "SELECT COUNT(id_aula) FROM aula as a INNER JOIN modulo AS m ON a.id_mod = m.id_mod AND m.id_curso = '".$_GET['delete_cur']."' ;");
 							$row2 = mysqli_fetch_array($sql2);
         echo"
         <div class='modal fade' id='modalDeleteCur' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true' data-backdrop='static'>

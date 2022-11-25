@@ -18,7 +18,7 @@
                     $sql1 = mysqli_query($con, "SELECT * FROM avaliacoes where id_aluno = ".$id_alu.";");
                     while ($info1 = mysqli_fetch_array($sql1)) {
 
-                        $issetAula1 = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula a ON aa.id_aula = a.id_aula INNER JOIN modulo m on a.id_mod = m.id_mod INNER JOIN curso c ON m.id_curso = c.id_curso AND c.id_curso = '".$info1['id_curso']."' WHERE aa.id_aluno = ".$id_alu.";");
+                        $issetAula1 = mysqli_query($con, "SELECT aa.* from aula_alu aa INNER JOIN aula as a ON aa.id_aula = a.id_aula INNER JOIN modulo as m on a.id_mod = m.id_mod INNER JOIN curso as c ON m.id_curso = c.id_curso AND c.id_curso = '".$info1['id_curso']."' WHERE aa.id_aluno = ".$id_alu.";");
 
                         if (mysqli_num_rows($issetAula1) > 0) {
 

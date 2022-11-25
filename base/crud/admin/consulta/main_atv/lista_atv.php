@@ -253,8 +253,8 @@
                                                     $titDel = preg_replace($regAulaDel, '$3', $info['atv']);
                                                     $id_modDel = preg_replace($regAulaDel, '$4', $info['atv']);
                                                     echo "<strong>Exclusão</strong> da <em>aula</em> <strong>"; 
-                                                    echo (strlen($tit) <= 18) ? $tit : substr($tit, 0, 18)."...";
-                                                    echo " | ".$id_aula." |</strong>  do módulo: <em>{ ".$id_modDel." }</em>";
+                                                    echo (strlen($titDel) <= 18) ? $titDel : substr($titDel, 0, 18)."...";
+                                                    echo " | ".$id_aulaDel." |</strong>  do módulo: <em>{ ".$id_modDel." }</em>";
                                                 }elseif (preg_match($regAvDel, $info['atv'])) {
                                                     $id_questDel = preg_replace($regAvDel, '$1', $info['atv']);
                                                     $enunDel = preg_replace($regAvDel, '$2', $info['atv']);
