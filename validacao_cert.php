@@ -9,18 +9,23 @@
 </head>
     <link rel="stylesheet" href="assets/css/all-valid.css">
   </head>
-  <body class="body-valid">
-      <div class="d-flex flex-column">
-          <h4 class="text-cert">Validação do Certificado</h4>
-          <div class=" group-cert">
-              <div class="input-container">
-                <label class="label-cert"><i class="bi bi-search"></i></label>
-                <input type="text" class="input-cert" placeholder=" Código do certificado">
-              </div>
-              <button type="button" class="button-cert">Pesquisar</button>
-          </div>
-          <p class="valid-cert"><i class="bi bi-upc-scan"></i> Insira acima o código para validar seu certificado de conclusão</p>
-      </div>
+  <body>
+      <div class="body-valid">
+        <div class=" group-valid-cert d-flex flex-column">
+            <h4 class="text-cert">Validação do Certificado</h4>
+            <div class=" group-cert">
+                <div class="input-container">
+                  <label class="label-cert"><i class="bi bi-search"></i></label>
+                  <input type="text" class="input-cert" placeholder=" Código do certificado">
+                </div>
+                <button type="button" class="button-cert">Pesquisar</button>
+            </div>
+            <p class="valid-cert"><i class="bi bi-upc-scan"></i> Insira acima o código para validar seu certificado de conclusão</p>
+            <div class='group-button-valid '>
+              <a href='?content_alu=emissao_certificado'><button type='button' class='back-gradient-valid'><i class='bi bi-arrow-left'></i>Voltar</button></a>
+            </div>
+        </div>
+      </div>  
     
 
 

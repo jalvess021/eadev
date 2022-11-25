@@ -11,7 +11,7 @@
 <h5 class='label-av-form-1'> <i class="bi bi-pencil-square"></i> Questionário avaliativo</h5>
 <div class="all-exam1">
 <button id="btn-back-av"> <i class="bi bi-reply-fill"></i> Voltar </button>
-    <div class="all-exam2">
+    <div class="all-exam2 ">
         <div class="start_btn"><button>Iniciar a avaliação</button></div>
             <div class="back-av">
                 <!-- Info Box -->

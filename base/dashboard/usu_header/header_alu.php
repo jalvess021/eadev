@@ -13,99 +13,9 @@
 
                     <ul class="list-inline float-right mb-0">
 						
-                        <!-- Sessão DÚVIDAS -->
-						<li class="list-inline-item dropdown notif">
-                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="fa fa-fw fa-question-circle c-destaque-1"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                        
 
-                               
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                <h5><small>Help and Support</small></h5>
-                                </div>
-
-                                <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
-                                    <p class="notify-details ml-0">
-                                        <b>Do you want custom development to integrate this theme?</b>
-                                        <span>Contact Us</span>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
-                                    <p class="notify-details ml-0">
-                                        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
-                                        <span>Try Pike Admin PRO</span>
-                                    </p>
-                                </a>                               
-
-                                <!-- All-->
-                                <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
-                                    <i class="fa fa-link"></i> Visit Pike Admin Website
-                                </a>
-
-                            </div>
-                        </li>
-						 <!-- END Sessão DÚVIDAS -->
-
-                        <!-- Sessão notificações -->
-						<li class="list-inline-item dropdown notif">
-                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="fa fa-fw fa-bell-o c-dark"></i><span class="notif-bullet"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
-								<!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
-                                </div>
-								
-                                <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-faded">
-                                        <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
-                                    </div>
-                                    <p class="notify-details">
-                                        <b>John Doe</b>
-                                        <span>User registration</span>
-                                        <small class="text-muted">3 minutes ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-faded">
-                                        <img src="assets/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
-                                    </div>
-                                    <p class="notify-details">
-                                        <b>Michael Cox</b>
-                                        <span>Task 2 completed</span>
-                                        <small class="text-muted">12 minutes ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-faded">
-                                        <img src="assets/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
-                                    </div>
-                                    <p class="notify-details">
-                                        <b>Michelle Dolores</b>
-                                        <span>New job completed</span>
-                                        <small class="text-muted">35 minutes ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- All-->
-                                <a href="#" class="dropdown-item notify-item notify-all">
-                                    View All Allerts
-                                </a>
-
-                            </div>
-                        </li>
-                        <!-- END Sessão notificações -->
+                        
 
                         <!-- Sessão Perfil -->
                         <li class="list-inline-item dropdown notif">
@@ -114,7 +24,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
-                                <div class="dropdown-item noti-title">
+                                <div class="dropdown-item noti-title bg-info">
                                     <h5 class="text-overflow"><small>Olá, Aluno...</small> </h5>
                                 </div>
 

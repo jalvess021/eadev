@@ -13,7 +13,7 @@
                                     <div class='modal modal-edit fade' id='av-".$infoModal1['id_av']."' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
                                         <div class='modal-dialog' role='document'>
                                             <div class='modal-content'>
-                                            <div class='modal-header bg-dark'>
+                                            <div class='modal-header bg-info'>
                                             ";
 
                                             switch ($infoModal1['status_tent']) {
@@ -22,8 +22,8 @@
                                                     $contentModal = "<p> Você precisa concluir as aulas deste curso para prosseguir! <p>";
 
                                                     $footerModal = "
-                                                        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
-                                                        <a href='?page=play_curso&curso=".$infoModal2['sigla_curso']."'><button type='button' class='btn btn-dark'>Assistir <i class='bi bi-youtube'></i></button></a>
+                                                        <button type='button' class='btn btn-secondary ' data-dismiss='modal'>Cancelar</button>
+                                                        <a href='?page=play_curso&curso=".$infoModal2['sigla_curso']."'><button type='button' class='btn btn-dark bg-info'>Assistir <i class='bi bi-youtube'></i></button></a>
                                                     ";
                                                     break;
     
@@ -32,7 +32,7 @@
 
                                                     $footerModal = "
                                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
-                                                        <button type='button' data-avCur='".$infoModal2['id_curso']."' data-dismiss='modal' class='btn btn-dark btnPagAvaliacao'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
+                                                        <button type='button' data-avCur='".$infoModal2['id_curso']."' data-dismiss='modal' class='btn btn-dark btnPagAvaliacao bg-info'>Prosseguir <i class='bi bi-send-check-fill'></i></button>
                                                     ";
                                                     break;
     
@@ -40,7 +40,7 @@
                                                     $contentModal = "<p> Você atingiu o limite de tentativas, novas tentativas estarão disponíveis em 22/11/2022 às 20:32:11 <p>";
 
                                                     $footerModal = "
-                                                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Cancelar</button>
+                                                    <button type='button' class='btn btn-secondary bg-info' data-dismiss='modal'>Cancelar</button>
                                                     ";
                                                     break;
                                             }

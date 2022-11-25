@@ -1,5 +1,5 @@
 .body-valid{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -7,6 +7,28 @@
     background: linear-gradient(45deg,#002B5B, #2B4865, #256D85, #041C32);
     background-size: 250% 250%;
     animation: colors 10s ease infinite;
+}
+.back-gradient-valid{
+    background: transparent;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.432);
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.back-gradient-valid:hover{
+    transition: all 0.4s ease-in-out ;
+    transform: scale(1.05);
+    background-color: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    color: #099898;
+    border: 1px solid rgba(255, 255, 255, 0.432);
 }
 
 .text-cert{
