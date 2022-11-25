@@ -1,3 +1,4 @@
+<?date_default_timezone_set ("America/Sao_Paulo");?>
 <h5 class='label-av-form-1'> <i class='bi bi-book-half'></i> Área avaliativa</h5>
     <div class='all-div-quest'>
     <div class='all-quest-1 '>
@@ -63,12 +64,12 @@
 
                                                 case 2 /*disponível*/:
                                                     echo " <i class='bi bi-patch-plus-fill text-primary'></i>";
-                                                    $info_tent = $info1['status_tent']."/2 | Teste seus conhecimentos e libere seu certificado!";
+                                                    $info_tent = $info1['num_tent_restantes']."/2 | Teste seus conhecimentos e libere seu certificado!";
                                                     break;
 
                                                 case 3 /*Bloqueado*/:
                                                     echo " <i class='bi bi-patch-exclamation-fill text-secondary'></i>";
-                                                    $info_tent = "0/2 | Você poderá realizar este questionário novamente em ...";
+                                                    $info_tent = "0/2 | Você poderá realizar este questionário novamente em ".date('H:i:s | d-m-Y', strtotime('+15 days', strtotime($info1['dt_ultima_tent'])))."";
                                                     break;
                                             }
                                             echo"</a>
