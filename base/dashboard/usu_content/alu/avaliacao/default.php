@@ -7,7 +7,7 @@
     $sql_alu = mysqli_query($con, "SELECT id_aluno from aluno where id_usu = ".$id_usu.";");
     $res_alu = mysqli_fetch_array($sql_alu);
     $id_alu = $res_alu[0];
-    $sqlUpdateTent = mysqli_query($con, "CALL update_num_tent();");
+    //$sqlUpdateTent = mysqli_query($con, "CALL update_num_tent();");
 
     $sqlCurAula = mysqli_query($con, "SELECT * FROM curso;");
     while ($infoCurAula = mysqli_fetch_array($sqlCurAula)) {
@@ -30,9 +30,10 @@
         }
     }
 
-    $attTent1 = mysqli_query($con, "UPDATE avaliacoes AS a SET a.num_tent_restantes = 2, a.status_tent = 2 WHERE a.num_tent_restantes = 0 AND a.status_tent = 3 AND a.status_av = 1 AND a.dt_ultima_tent <= CURRENT_DATE()-15 and id_aluno = $id_usu;");
+    $attTent1 = mysqli_query($con, "UPDATE avaliacoes AS a SET a.num_tent_restantes = 2, a.status_tent = 2 WHERE a.num_tent_restantes = 0 AND a.status_tent = 3 AND a.status_av = 1 AND a.dt_ultima_tent <= CURRENT_DATE()-15 and id_aluno = $id_alu;");
 
     include "base/crud/aluno/msg_alu.php";
+    
 ?>
 
 <h3 class='content-title ct-av'>Avaliações</h3>

@@ -38,7 +38,7 @@ if(isset($_GET['msgs'])){
 			$queryCur = mysqli_query($con, "Select * from curso where id_curso = ".$_GET['data'].";");
 			$infoCur = mysqli_fetch_array($queryCur);
 			echo '	<div class="alert alert-success alert-dismissible fade show text-center font-weight-bold text-muted" role="alert" style="margin-top: -25px;">
-						Você acaba de desbloquear o certificado de <a href="?content_alu=pagamento_certificado&curso='.$infoCur['sigla_curso'].'" class="alert-link text-primary"><strong class="text-uppercase">'.$infoCur['nome_curso'].'</strong> </a> ! clique para obtê-lo.
+						Você acaba de desbloquear o certificado de <span class="alert-link text-primary"><strong class="text-uppercase">'.$infoCur['nome_curso'].'</strong> </span> !
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>

@@ -1,15 +1,14 @@
 <?php 
     date_default_timezone_set ("America/Sao_Paulo");
-    
-    require "forma_pg/pix.php";
+    require "../../../../../forma_pg/pix.php";
     
     use Mpdf\QrCode\QrCode;
     use Mpdf\QrCode\Output;
-    require "./vendor/autoload.php";
+    require "../../../../../vendor/autoload.php";
     //Instancia principal do payload
 
 
-    $codCert = "9ED0924";
+    $codCert = $_GET['cert'];
     $obPayLoad = (new Payload) -> 
         setPixKey('f8f9f844-0ac9-477e-9192-27075bd3155e') -> 
         setDescription('COMPRA DE CERTIFICADO') ->
@@ -44,7 +43,7 @@
 ?>
 <div class="row">
     <h3 class="content-title col-9 m-0">Pagamento</h3>
-    <div class="col-3"><a href="?content_adm=view" class="float-right btn-back btn btn-sm bt-padrao"> <i class="bi bi-arrow-left"></i> Voltar </a></div>
+    <div class="col-3"><a class="float-right btn-back btn btn-sm bt-padrao" id='btnBackPgto'> <i class="bi bi-arrow-left"></i> Voltar </a></div>
 </div>
 
 
@@ -85,8 +84,8 @@
                     </div>
                     <div class="group-pricing ">
                         <div class="group-total-sub">
-                            <h6 class="subtotal-cert">Produto:</h6>
-                            <h6 class="subtotal-cert-pricing">Certificado</h6>
+                            <h6 class="subtotal-cert">Cód. Produto:</h6>
+                            <h6 class="subtotal-cert-pricing"><strong><?php echo $codCert;?></strong></h6>
                         </div>
                         <div class="group-total-sub">
                             <h6 class="subtotal-cert">Subtotal:</h6>
@@ -168,6 +167,8 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <script>        
     /*
 
@@ -183,8 +184,10 @@
                                 } copyDescIcon.classList.add("bi-paperclip");
                         }, 2000); */
                 
-
-                    
+                $("#btnBackPgto").click(()=>{
+                    window.location.reload();
+                })
+ 
     </script>
 
     

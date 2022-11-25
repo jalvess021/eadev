@@ -34,11 +34,13 @@
         $path   = dirname(__FILE__).'/'.$diretorio.$novoNome;
         $upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
 
-        $sql4 = "insert into avaliacoes SELECT 0, a.id_aluno, u.nome, 1, 0, NULL, 1, ".$info1['id_curso']."  
+        $sql4 = "insert into avaliacoes SELECT 0, a.id_aluno, u.nome, 1, 0, NULL, 1, ".$info1['id_curso'].", NULL  
         FROM aluno AS a INNER JOIN usuario AS u ON a.id_usu = u.id_usu ORDER BY id_aluno asc;";
         $res4 = mysqli_query($con, $sql4); 
 
-    if($res1 && $res2 && $res3 && $upload && $sql4){
+       // $res5 = mysqli_query($con, "insert into pagamento SELECT 0, NULL, NULL, 0, NULL, NULL, ".mysqli_insert_id($con).";");
+
+    if($res1 && $res2 && $res3 && $upload && $res4){
             
                 $usu_atv1 = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));
                 if ($usu_atv1) {
