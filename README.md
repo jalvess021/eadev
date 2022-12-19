@@ -10,19 +10,12 @@ TCC (Trabalho de conclusão de curso) - E.M Técnico (FAETEC/ETEOT)
      
 <h1> Membros da equipe/funções:</h1>
   
-### João Alves (Líder) -> 🛠 Full-Stack
-  
- - jalvess021@gmail.com
-  
- - <img height='20' width='20' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-           @jalvess021
- - <ig src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
+- João Alves (Líder) -> <a href='https://github.com/jalvess021'> @jalvess021 </a> | 🛠 Full-Stack
           
-    
-- Mateus de Azevedo -> mello.mateus26@gmail.com | 👨‍💻 Front-End  
+- Mateus de Azevedo -> <a href='https://github.com/#'> @teuzin </a> | 👨‍💻 Front-End
 
-- Ingrid Rangel -> 💻 Content Management System (Wordpress) 
+- Ingrid Rangel -> <a href='https://github.com/#'> @ingrid </a> | 💻 Content Management System (Wordpress) 
   
-- Allanis Castilho -> 📝 Documentação
+- Allanis Castilho -> <a href='https://github.com/#'> @allanis </a> | 📝 Documentação
 
-- Matheus Ferreira -> 🖇 Modelagem de Dados 
+- Matheus Ferreira -> <a href='https://github.com/#'> @teaga </a> | 🖇 Modelagem de Dados 
