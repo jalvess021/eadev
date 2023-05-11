@@ -2,6 +2,9 @@ TCC 2022 (Trabalho de conclusão de curso) - E.M Técnico (FAETEC/ETEOT)
 
 <h1> Sistema <strong>EADev<strong></h1>
 <h3> Sobre o projeto:</h3>
+<p> Desenvolvi uma plataforma Ead completa, onde conta com dois tipos de acesso: Os alunos conseguem acessar e assistir as vídeo-aulas, realizar avaliações, fazer o pagamento (PIX - QrCode), adquirir certificado e acompanhar seu progresso (gráficos e estatísticas); Os administradores fazem o controle (Atividades de LOG, Relatório em PDF, Análise de gráficos) e gerenciam/manipulam (Avaliações, conteúdos, etc) da plataforma.<p>
+
+------------------------------------------------
 
 - Nome: EADEV
 
