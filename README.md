@@ -29,3 +29,25 @@ dependências para PHP (Ex: Composer), entre outras tecnologias.
 - Allanis Castilho -> <a href='https://github.com/allaniscr'> @allaniscr </a> | 📝 Documentação
 
 - Matheus Ferreira -> <a href='https://github.com/teagaF'> @teagaF </a> | 🖇 Modelagem de Dados 
+
+
+## Como rodar o projeto:
+
+### Passo a passo:
+
+```bash
+# Clonar o repositório
+git clone https://github.com/jalvess021/eadev.git
+
+# Entrar no diretório do projeto
+cd eadev
+
+# Instalar as dependências com Composer
+composer install
+
+# Iniciar os containers Docker
+docker-compose up -d
+
+# Copiar o arquivo SQL para o container MySQL e importar o banco de dados
+docker cp eadev-app:/var/www/html/docs/eadev.sql /tmp/eadev.sql
+docker exec -i mysql-container mysql -u root -p SuaSenha < /tmp/eadev.sql
