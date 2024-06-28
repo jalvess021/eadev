@@ -50,4 +50,4 @@ docker-compose up -d
 
 # Copiar o arquivo SQL para o container MySQL e importar o banco de dados
 docker cp eadev-app:/var/www/html/eadev/docs/eadev.sql /tmp/eadev.sql
-docker exec -i mysql-container mysql -u root -p SuaSenha < /tmp/eadev.sql
+docker exec -i mysql-container mysql -uroot -pSuaSenhaAqui  < /tmp/eadev.sql
