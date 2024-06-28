@@ -137,7 +137,7 @@
                     e.preventDefault();
                     location.reload();
                 $.ajax({
-                        url: '/tcc/play-content/aula_alu/control.php',
+                        url: '/eadev/play-content/aula_alu/control.php',
                         method: 'POST',
                         data: { 
                                 usuario: <?php echo $id_usu;?>,

@@ -3,9 +3,9 @@
 <div class="row justify-content-between group-cam">
     <div class="col-md-2 mt-md-4">
     <label for="uploadUserCam" class='labelUserCamp' title='Formato recomendado 1:1'>
-        <img class="perfil-cam" <?php echo "src='\\tcc/assets/images/users/".md5($row['id_usu']).".jpeg'";?>>
+        <img class="perfil-cam" <?php echo "src='\\eadev/assets/images/users/".md5($row['id_usu']).".jpeg'";?>>
         </label> 
-        <form id="alterImgUser" action='\tcc\base\crud\admin\perfil\dados\alter.php' method='post' enctype='multipart/form-data'>
+        <form id="alterImgUser" action='\eadev\base\crud\admin\perfil\dados\alter.php' method='post' enctype='multipart/form-data'>
             <input type="text" value='<?php echo $id_usu;?>' name='id' id='idUserAlterCam'>
             <input id="uploadUserCam" type="file" accept="image/jpeg" name="imagem">
         </form>

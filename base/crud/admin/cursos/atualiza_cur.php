@@ -22,10 +22,10 @@
     if($res){
         $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
         if ($usu_atv) {
-            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=8');
+            header('Location: \eadev/plataforma.php?content_adm=lista_cur&msg=8');
             mysqli_close($con);
         }else{
-            header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
+            header('Location: \eadev/plataforma.php?content_adm=lista_cur&msg=6');
             mysqli_close($con);
         }
         

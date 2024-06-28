@@ -21,7 +21,7 @@
                 echo json_encode($curso);
                 mysqli_close($con);
             }else {
-                header('Location: \tcc/plataforma.php?content_alu=avaliacoes&msgs=2');
+                header('Location: \eadev/plataforma.php?content_alu=avaliacoes&msgs=2');
                 mysqli_close($con);
             }
     }

@@ -43,10 +43,10 @@ $res7 = mysqli_query($con, $sql7);
 //$res8 = mysqli_query("insert into pagamento SELECT 0, NULL, NULL, 0, NULL, NULL av.id_av from avaliacao as av ORDER BY id_av;");
 
 if($res1 && $res2 && $res3 && $res4 && $res5 && $res6 && $res7){
-	header('Location: \tcc/index.php?page=login');
+	header('Location: \eadev/index.php?page=login');
 	mysqli_close($con);
 }else{
-	header('Location: \tcc/index.php?msgs=2');
+	header('Location: \eadev/index.php?msgs=2');
 	mysqli_close($con);
-}/
+}
 ?>

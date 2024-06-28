@@ -3,7 +3,7 @@
 <div class="row justify-content-between group-cam">
     <div class="col-md-2 mt-md-4">
     <label for="uploadUserCam" class='labelUserCamp' title='Formato recomendado 1:1'>
-        <img class="perfil-cam" <?php echo "src='\\tcc/assets/images/users/default.png'";?>>
+        <img class="perfil-cam" <?php echo "src='\\eadev/assets/images/users/default.png'";?>>
         </label> 
         <form id="alterImgUser" method='POST'>
             <input id="uploadUserCam" type="file" accept="image/jpeg" name="foto">

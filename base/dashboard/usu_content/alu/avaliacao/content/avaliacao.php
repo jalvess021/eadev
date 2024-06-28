@@ -81,7 +81,7 @@
 
     let questions = [];
     $.ajax({
-            url: '/tcc/selects/questionario/query_quest.php',
+            url: '/eadev/selects/questionario/query_quest.php',
             method: 'POST',
             data: {curso: <?php echo $_GET['curso'];?>},
             dataType: 'json'
@@ -141,7 +141,7 @@
         info_box.classList.remove("activeInfo"); //hide info box
         quiz_box.classList.add("activeQuiz"); //show quiz box
         $.ajax({
-            url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
+            url: '/eadev/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
             method: 'POST',
             data: {curso: curso, aluno: alu},
             dataType: 'json'
@@ -281,7 +281,7 @@
                 var certCur; //id do curso que obteve o certificado
                 //Ajax para desbloquear o certificado e deixar a avaliacao como concluida
                 $.ajax({
-                    url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/alter_cert/cert.php',
+                    url: '/eadev/base/dashboard/usu_content/alu/avaliacao/content/alter_cert/cert.php',
                     method: 'POST',
                     data: {curso: curso, aluno: alu},
                     dataType: 'json'
@@ -290,10 +290,10 @@
                     certCur = dados.idCurso;
                 }) 
                 sairCert.onclick = () => {
-                    window.location = "/tcc/plataforma.php?content_alu=avaliacoes&msgs=3";
+                    window.location = "/eadev/plataforma.php?content_alu=avaliacoes&msgs=3";
                 }
                 reach_btn.onclick = () => {
-                    window.location = "/tcc/plataforma.php?content_alu=emissao_certificado&msgs=4&data="+certCur;
+                    window.location = "/eadev/plataforma.php?content_alu=emissao_certificado&msgs=4&data="+certCur;
                 }
             
             }
@@ -308,7 +308,7 @@
 
         //Envia a media para a pag que faz a interação com o Banco de dados
         $.ajax({
-            url: '/tcc/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
+            url: '/eadev/base/dashboard/usu_content/alu/avaliacao/content/update_tent.php',
             method: 'POST',
             data: {tentativa: idTent, media: media},
             dataType: 'json'

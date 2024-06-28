@@ -1,6 +1,5 @@
 <?php
 function atvAdm($adm, $atv, $id_usu){
-	
 	$log_atv  = "insert into atv_adm values ";
 	$log_atv .= "('0', '$adm', '$atv', NOW(), '$id_usu');";
     return $log_atv;

@@ -3,10 +3,10 @@
 <script> /*
     $(document).ready(function(){
         $('#selectFormacao').change(function(){
-            $('#selectCurso').load('/tcc/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
+            $('#selectCurso').load('/eadev/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
         });
     $('#selectCurso').change(function(){
-        $('#selectModulo').load('/tcc/selects/select_mod.php?filter_form='+$('#selectFormacao').val()+'&filter_cur='+$('#selectCurso').val());
+        $('#selectModulo').load('/eadev/selects/select_mod.php?filter_form='+$('#selectFormacao').val()+'&filter_cur='+$('#selectCurso').val());
     });
 }); */
 </script>

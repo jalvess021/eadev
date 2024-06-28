@@ -5,7 +5,7 @@
 <script>
     $(document).ready(function(){
         $('#selectFormacao').change(function(){
-            $('#selectCurso').load('/tcc/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
+            $('#selectCurso').load('/eadev/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
         });
     });
 

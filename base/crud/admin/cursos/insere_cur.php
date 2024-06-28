@@ -44,10 +44,10 @@
             
                 $usu_atv1 = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql1), $id_usuario));
                 if ($usu_atv1) {
-                    header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=7');
+                    header('Location: \eadev/plataforma.php?content_adm=lista_cur&msg=7');
                     mysqli_close($con);
                 }else{
-                    header('Location: \tcc/plataforma.php?content_adm=lista_cur&msg=6');
+                    header('Location: \eadev/plataforma.php?content_adm=lista_cur&msg=6');
                     mysqli_close($con);
                 }
                 

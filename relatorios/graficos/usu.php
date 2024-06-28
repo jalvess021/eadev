@@ -1,9 +1,9 @@
 <?php  
       $nivel_necessario = 3;
       include "../../base/testa_nivel.php";
+      require '../../base/config.php';
 
     date_default_timezone_set ("America/Sao_Paulo");
-    $con = mysqli_connect('localhost', 'root', '', 'eadev') or trigger_error(mysqli_error()); 
     mysqli_set_charset($con, "utf8");
 
     $ano = $_GET['periodo'];
@@ -202,9 +202,9 @@ h3{
         </div>
 
       <div align="center" id='div-hidden'>
-      <form method="post" id="make_pdf" action='/tcc/relatorios/loads/gf_load.php'>
+      <form method="post" id="make_pdf" action='/eadev/relatorios/loads/gf_load.php'>
       <input type="hidden" name="hidden_html" id="hidden_html"/>
-      <input type="hidden" name="url" value="<?php echo "/tcc/relatorios/usuarios.php?user=".$_GET['user']."&periodo=".$_GET['periodo'];?>">
+      <input type="hidden" name="url" value="<?php echo "/eadev/relatorios/usuarios.php?user=".$_GET['user']."&periodo=".$_GET['periodo'];?>">
       
       <button type="button" name="create_pdf" id="create_pdf">Gerar relatório</button>
       </form>

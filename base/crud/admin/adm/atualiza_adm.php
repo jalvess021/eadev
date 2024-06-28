@@ -21,10 +21,10 @@ $sql .= "where id_usu = '".$id_usu."';";
 $resultado = mysqli_query($con, $sql)or die(mysqli_error());
 
 if($resultado){
-	header('Location: \tcc/plataforma.php?content_adm=perfil&msg=2');
+	header('Location: \eadev/plataforma.php?content_adm=perfil&msg=2');
     mysqli_close($con);
 }else{
-	header('Location: \tcc/plataforma.php?msg=6');
+	header('Location: \eadev/plataforma.php?msg=6');
     mysqli_close($con);
 }
 

@@ -163,7 +163,7 @@
 
         codigo = $(".pgtoCert").attr("data-codCert");
         $(".pgtoCert").click(()=>{
-            $(".group-cert").load("/tcc/base/dashboard/usu_content/alu/pagamento/pagamento.php?cert="+codigo);
+            $(".group-cert").load("/eadev/base/dashboard/usu_content/alu/pagamento/pagamento.php?cert="+codigo);
         })
             
         

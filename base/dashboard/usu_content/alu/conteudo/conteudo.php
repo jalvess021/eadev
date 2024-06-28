@@ -52,7 +52,7 @@ while ($resForm1 = mysqli_fetch_array($sqlForm1)) {
 
                 echo "
                 <div class='card card-cur'>
-                    <img class='card-img-top card-img' src='\\tcc/base/crud/admin/cursos/imagens/".md5($info2['id_curso']).".jpeg' alt='Curso ".$info2['sigla_curso'].")'>
+                    <img class='card-img-top card-img' src='\\eadev/base/crud/admin/cursos/imagens/".md5($info2['id_curso']).".jpeg' alt='Curso ".$info2['sigla_curso'].")'>
                     <div class='card-cur-body'>
                         <h5 class='title-card'>".$info2['nome_curso']." | ".$info2['sigla_curso']."</h5>
                         <p class='text-card'>";
@@ -101,7 +101,7 @@ while ($resForm1 = mysqli_fetch_array($sqlForm1)) {
 
                   echo "
                   <div class='card card-cur'>
-                    <img class='card-img-top card-img' src='\\tcc/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
+                    <img class='card-img-top card-img' src='\\eadev/base/crud/admin/cursos/imagens/".md5($info4['id_curso']).".jpeg' alt='Imagem do curso (".$info4['sigla_curso'].")'>
                     <div class='card-cur-body'>
                         <h5 class='title-card'>".$info4['nome_curso']." | ".$info4['sigla_curso']."</h5>
                         <p class='text-card'>";

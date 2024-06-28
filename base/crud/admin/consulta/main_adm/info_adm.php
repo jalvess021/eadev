@@ -14,11 +14,11 @@
         <div class='row justify-content-between row-init'>
                 <div class='col-2'>
                     <img class='perfil-cam-adm' src='";
-                    $arq = "\\tcc\assets\images\users\\".md5($resAdm['id_usu']).".jpeg";
-                    if (file_exists($_SERVER['DOCUMENT_ROOT']."/tcc/assets/images/users/".md5($resAdm['id_usu']).".jpeg")) {
+                    $arq = "\\eadev\assets\images\users\\".md5($resAdm['id_usu']).".jpeg";
+                    if (file_exists($_SERVER['DOCUMENT_ROOT']."/eadev/assets/images/users/".md5($resAdm['id_usu']).".jpeg")) {
                        echo $arq;
                     }else {
-                        echo "\\tcc\assets\images\users\\default.png";
+                        echo "\\eadev\assets\images\users\\default.png";
                     }
                 echo"' alt='Foto do usuário'>
                 </div>
@@ -28,7 +28,7 @@
                 <div class='col-2 col-xl-3 mt-3'>
                     <div class='d-flex flex-row justify-content-end'>
                     
-                            <a href='/tcc/relatorios/loads/ficha_adm_load.php?user=".$id_adm."' target='_blank' class='btn btn-sm btn-secondary  mr-xl-4 mr-2 text-white font-weight-bold ' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> <span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
+                            <a href='/eadev/relatorios/loads/ficha_adm_load.php?user=".$id_adm."' target='_blank' class='btn btn-sm btn-secondary  mr-xl-4 mr-2 text-white font-weight-bold ' data-toggle='tooltip' data-placement='top' title='Gerar Relatório'><i class='bi bi-file-earmark-person-fill'></i> <span class='d-none d-xl-inline'> Ficha  Técnica </span></a>
                         <div>
                             <a href='?content_adm=consulta_adm' class=' btn-back btn btn-sm bt-padrao'> <i class='bi bi bi-x-lg'></i> <span class='d-none d-xl-inline'> Fechar</span> </a>
                         </div>

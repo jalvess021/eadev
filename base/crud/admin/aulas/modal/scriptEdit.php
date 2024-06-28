@@ -7,10 +7,10 @@
 
     $(document).ready(function(){
         $('#selectFormacao').change(function(){
-            $('#selectCurso').load('/tcc/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
+            $('#selectCurso').load('/eadev/selects/select_cur.php?filter_form='+$('#selectFormacao').val());
         });
         $('#selectCurso').change(function(){
-            $('#selectModulo').load('/tcc/selects/select_mod.php?filter_form='+$('#selectFormacao').val()+'&filter_cur='+$('#selectCurso').val());
+            $('#selectModulo').load('/eadev/selects/select_mod.php?filter_form='+$('#selectFormacao').val()+'&filter_cur='+$('#selectCurso').val());
         });
     });
 // 5 form-edit id && 
@@ -155,7 +155,7 @@
                                 }
 
                                 //reseta o select de Módulo
-                                $('#selectModulo').load('/tcc/selects/reset_option.php');
+                                $('#selectModulo').load('/eadev/selects/reset_option.php');
                                 if (formEdit[4].classList.contains("is-valid")) {
                                             formEdit[4].classList.remove("is-valid"); 
                                         }
