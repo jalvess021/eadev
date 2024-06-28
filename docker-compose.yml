@@ -1,0 +1,31 @@
+services:
+  php-apache:
+    container_name: eadev-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/eadev
+    networks:
+      - eadev-db
+      
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Senha@1234  # Defina sua senha aqui
+      MYSQL_DATABASE: eadev
+    volumes:
+      - ./docs:/docker-entrypoint-initdb.d  # Mapeia o diretório local com o arquivo SQL para o diretório do MySQL no container
+      - ./mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
+    networks:
+        - eadev-db
+
+networks:
+  eadev-db:
+    driver: bridge
