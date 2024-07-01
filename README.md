@@ -32,7 +32,7 @@ dependências para PHP (Ex: Composer), entre outras tecnologias.
 
 ## Como rodar o projeto:
 
-### Passo a passo:
+### Passo a passo no terminal:
 
 ```bash
 # Clonar o repositório
@@ -47,10 +47,11 @@ composer install
 # Iniciar os containers Docker
 docker-compose up -d
 
-# Copiar o arquivo SQL para o container MySQL e importar o banco de dados
+# Copiar o arquivo SQL para o container MySQL e Importar o banco de dados. 
 docker cp eadev-app:/var/www/html/eadev/docs/eadev.sql /tmp/eadev.sql
-# Caso necessário troque o user(-uSeuUsuario) e o password(-pSuaSenha) do seu Banco de Dados.
 docker exec -i mysql-container mysql -uroot -pSenha@1234  < /tmp/eadev.sql
+
+#Caso necessário troque o user(-uSeuUsuario) e o password(-pSuaSenha) do seu Banco de Dados.
 ```
 
 ### Abra seu navegador e digite o seguinte endereço:
@@ -58,6 +59,18 @@ docker exec -i mysql-container mysql -uroot -pSenha@1234  < /tmp/eadev.sql
 ```bash
 http://localhost:8080/eadev
 ```
+
+### Login
+
+Para acessar o sistema, utilize as seguintes credenciais:
+
+#### Administrador:
+- **Usuário:** jota
+- **Senha:** 123
+
+#### Aluno:
+- **Usuário:** aluno
+- **Senha:** 123
 
 <p>
     Este sistema foi desenvolvido por João Alves e é protegido por direitos autorais. Qualquer reprodução ou distribuição sem autorização é estritamente proibida. Para contatar o desenvolvedor, acesse o GitHub em <a href="https://github.com/jalvess021">@jalvess021</a>.
