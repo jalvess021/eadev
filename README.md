@@ -51,7 +51,7 @@ docker-compose up -d
 docker cp eadev-app:/var/www/html/eadev/docs/eadev.sql /tmp/eadev.sql
 docker exec -i mysql-container mysql -uroot -pSenha@1234  < /tmp/eadev.sql
 
-#Caso necessário troque o user(-uSeuUsuario) e o password(-pSuaSenha) do seu Banco de Dados.
+# Caso necessário troque o user(-uSeuUsuario) e o password(-pSuaSenha) do seu Banco de Dados.
 ```
 
 ### Abra seu navegador e digite o seguinte endereço:
@@ -60,9 +60,7 @@ docker exec -i mysql-container mysql -uroot -pSenha@1234  < /tmp/eadev.sql
 http://localhost:8080/eadev
 ```
 
-### Login
-
-Para acessar o sistema, utilize as seguintes credenciais:
+### Para acessar o sistema, utilize as seguintes credenciais:
 
 #### Administrador:
 - **Usuário:** jota
