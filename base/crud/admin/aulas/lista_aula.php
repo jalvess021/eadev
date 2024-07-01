@@ -2,11 +2,8 @@
 	//Definindo nível de acesso para esta página & fazendo a verificação.
 	$nivel_necessario = 3;
 	include "base/testa_nivel.php"; 
-
-
 	//Incluindo as Mensagens
 	include "base/crud/admin/mensagens/msg_adm.php";
-	
 ?>
 
 <div class="d-flex flex-row justify-content-between">
@@ -180,7 +177,6 @@
 	require_once "modal/modal_delete.php";
 ?>
 <script>
-
     $(document).ready(function(){
         $('#filterFormacao-Aula').change(function(){
            $('#filterCurso-Aula').load('/eadev/selects/select_cur.php?filter_form='+$('#filterFormacao-Aula').val());
@@ -193,5 +189,4 @@
             $('#filterModulo-Aula').load('/eadev/selects/select_mod.php?filter_form='+$('#filterFormacao-Aula').val()+'&filter_cur='+$('#filterCurso-Aula').val());
         });
     });
-	
 </script>

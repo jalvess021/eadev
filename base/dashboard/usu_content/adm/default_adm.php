@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//Definindo nível de acesso para esta página & fazendo a verificação.
     $nivel_necessario = 3;
     include "base/testa_nivel.php"; 
@@ -242,8 +242,4 @@ function gfUsu() {
            $('#filterUserDefaultPer').load('/eadev/selects/select_periodo_user.php?filter_user='+$('#filterUserDefault').val());
         });
     });
-
-  
-
-  
 </script>

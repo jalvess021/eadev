@@ -21,10 +21,10 @@ $sql .= "where id_usu = '".$id_usu."';";
 $resultado = mysqli_query($con, $sql)or die(mysqli_error());
 
 if($resultado){
-	header('Location: \eadev/plataforma.php?content_alu=perfil&msgs=1');
+    echo "<script>window.location.href = '/eadev/plataforma.php?content_alu=perfil&msgs=1';</script>";
     mysqli_close($con);
 }else{
-	header('Location: \eadev/plataforma.php?msgs=2');
+    echo "<script>window.location.href = '/eadev/plataforma.php?msgs=2';</script>";
     mysqli_close($con);
 }
 
