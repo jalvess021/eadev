@@ -2,7 +2,9 @@ TCC 2022 (Trabalho de conclusão de curso) - E.M Técnico (FAETEC/ETEOT)
 
 <h1> Sistema <strong>EADev<strong></h1>
 <h3> Sobre o projeto:</h3>
-<p> Desenvolvi uma plataforma Ead completa, onde conta com dois tipos de acesso: Os alunos conseguem acessar e assistir as vídeo-aulas, realizar avaliações, fazer o pagamento (PIX - QrCode), adquirir certificado e acompanhar seu progresso (gráficos e estatísticas); Os administradores fazem o controle (Atividades de LOG, Relatório em PDF, Análise de gráficos) e gerenciam/manipulam (Avaliações, conteúdos, etc) da plataforma.<p>
+<p> Desenvolvi uma plataforma Ead completa com <strong>PHP</strong> puro (S/ Frameworks), onde conta com dois tipos de acesso: </p>
+- <strong> Alunos: </strong> Conseguem acessar e assistir as vídeo-aulas, realizar avaliações, fazer o pagamento (PIX - QrCode), adquirir certificado e acompanhar seu progresso (gráficos e estatísticas);
+- <strong> Administradores: </strong> Fazem o controle (Atividades de LOG, Relatório em PDF, Análise de gráficos) e gerenciam/manipulam (Avaliações, conteúdos, etc) da plataforma.
 
 ------------------------------------------------
 
@@ -42,7 +44,7 @@ git clone https://github.com/jalvess021/eadev.git
 # Entrar no diretório do projeto
 cd eadev
 
-# Instalar as dependências com Composer (Atualmente não é necessário executar este comando, pois os pacotes necessários já estão disponibilizados na vendor do projeto)
+# Instalar as dependências com Composer (Os pacotes necessários já estão na pasta `vendor` do projeto e não precisam ser instalados novamente)
 composer install
 
 # Iniciar os containers Docker
@@ -50,7 +52,12 @@ docker-compose up -d
 
 # Copiar o arquivo SQL para o container MySQL e importar o banco de dados
 docker cp eadev-app:/var/www/html/eadev/docs/eadev.sql /tmp/eadev.sql
-docker exec -i mysql-container mysql -uroot -pSuaSenhaAqui  < /tmp/eadev.sql
+# Caso necessário troque o user(-uSeuUsuario) e o password(-pSuaSenha) do seu Banco de Dados.
+docker exec -i mysql-container mysql -uroot -pSenha@1234  < /tmp/eadev.sql
+```
 
-#Após isso, para acessar o projeto no navegador, digite o seu localhost na porta 8080 com o diretório eadev. exemplo:
-127.0.0.1:8080/eadev
+### Abra seu navegador e digite o seguinte endereço:
+
+```bash
+http://localhost:8080/eadev
+```
