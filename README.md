@@ -42,7 +42,7 @@ git clone https://github.com/jalvess021/eadev.git
 # Entrar no diretório do projeto
 cd eadev
 
-# Instalar as dependências com Composer
+# Instalar as dependências com Composer (Atualmente não é necessário executar este comando, pois os pacotes necessários já estão disponibilizados na vendor do projeto)
 composer install
 
 # Iniciar os containers Docker
@@ -51,3 +51,6 @@ docker-compose up -d
 # Copiar o arquivo SQL para o container MySQL e importar o banco de dados
 docker cp eadev-app:/var/www/html/eadev/docs/eadev.sql /tmp/eadev.sql
 docker exec -i mysql-container mysql -uroot -pSuaSenhaAqui  < /tmp/eadev.sql
+
+#Após isso, para acessar o projeto no navegador, digite o seu localhost na porta 8080 com o diretório eadev. exemplo:
+127.0.0.1:8080/eadev
