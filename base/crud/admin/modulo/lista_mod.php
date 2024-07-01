@@ -170,7 +170,7 @@
 <script>
     $(document).ready(function(){
         $('#filterFormacao-Mod').change(function(){
-            $('#filterCurso-Mod').load('/tcc/selects/select_cur.php?filter_form='+$('#filterFormacao-Mod').val());
+            $('#filterCurso-Mod').load('/eadev/selects/select_cur.php?filter_form='+$('#filterFormacao-Mod').val());
         });
     });
 </script>

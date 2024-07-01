@@ -18,13 +18,13 @@
         <meta charset='UTF-8'>
         <title>Ficha Técnica do Aluno</title>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
-        <link rel='stylesheet' href='http://localhost/tcc/assets/css/all-rel/info_admin.css'>
+        <link rel='stylesheet' href='http://localhost/eadev/assets/css/all-rel/info_admin.css'>
     </head>
     <body>";
 
     $head ="<div id='header'>
               <div class='div-hd'>
-                <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
+                <img class='icon-rel' src='http://localhost/eadev/arquivos/img/logo/logo1.png' alt=''>
                 <span class='text-center emi-rel'>Data de emissão [ <span>".date('H:i:s | d-m-Y')."</span> ]</span>
                 <span class='page'>Página </span>
                 <hr style='margin-top: 4px;'>
@@ -39,7 +39,7 @@
             <thead>
               <tr class='thead'>
                 <th style='border-right:none;'>
-                <img class='person-admin' src='http://localhost/tcc/arquivos/img/agnaldo.jfif' alt=''>
+                <img class='person-admin' src='http://localhost/eadev/arquivos/img/agnaldo.jfif' alt=''>
                 </th>
                 <th >
                   <p class='perg-rel'>Nome:</p>
@@ -115,7 +115,7 @@
                   <hr>
                   <div id='div-ft'>
                     <span id='copy'> Criado por Tecnodev's | © Eadev - 2022 Todos os direitos reservados </span>
-                    <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
+                    <img class='footer-icon' src='http://localhost/eadev/arquivos/img/icone/icone1.png' alt=''>
                   </div>
                   
                 </div>";

@@ -33,7 +33,7 @@
 	
 <h3 class="content-subtitle-sub">Alterar sua senha</h3>
 <hr>
-<form action="\tcc/base/crud/admin/perfil/dados/alter.php" method="post" autocomplete="off">
+<form action="\eadev/base/crud/admin/perfil/dados/alter.php" method="post" autocomplete="off">
 	<div class="column-password">
 		<p class="view-password-p">Senha Atual</p>
 		<input type="password" class="view-password" id="passwordCurrent" autocomplete="off" required>

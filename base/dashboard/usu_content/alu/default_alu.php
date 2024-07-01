@@ -57,7 +57,7 @@
             <div class="default-alu-body ">
                 <div class="default-alu-info1">
                     <div class="div-alu-col">
-                        <img src="/tcc/assets/images/users/default.png" alt="">
+                        <img src="/eadev/assets/images/users/default.png" alt="">
                         <div class="div-alu-subcol">
                             <h2>Meu perfil</h2>
                             <p>5 aulas concluídas nos últimos 7 dias</p>

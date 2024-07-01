@@ -41,17 +41,13 @@
             case 'insere_alu':
                 include "base/crud/aluno/insere_alu.php";
                 break;
-
-                
-
-    }
-} 
+        }
+    } 
 
     //Se não houver valor no page, ele inclui a tela inicial.
     else {
         //include "inicial.php";
-        include "base/login.php";
-}
-
+        include "inicial.php";
+    }
 ?>
 

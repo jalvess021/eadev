@@ -35,10 +35,10 @@
 
             $usu_atv = mysqli_query($con, atvAdm($usuario, str_replace( array("'"), "\'", $sql), $id_usuario));
             if ($usu_atv) {
-                header('Location: \tcc/plataforma.php?content_adm=lista_quest&msg=16');
+                echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=lista_quest&msg=16';</script>";
                 mysqli_close($con);
             }else{
-                header('Location: \tcc/plataforma.php?content_adm=lista_quest&msg=6');
+                echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=lista_quest&msg=6';</script>";
                 mysqli_close($con);
             }
     } 

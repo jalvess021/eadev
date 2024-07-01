@@ -1,6 +1,5 @@
 <?php 
 	date_default_timezone_set ("America/Sao_Paulo");
-    
 	$nivel_necessario = 2;
     include "base/testa_nivel.php";
 ?> 
@@ -18,8 +17,7 @@
 
 			<!-- Css-local, Boostrap V4.2.1 & Css-Config -->
 			<link href="assets/css/all-dashboard.css" rel="stylesheet" type="text/css"/>
-			
-			<?php// include "base/config.php";?>	
+	
 	</head>
 <!-- Não deixa ficar arrastando o conteúdo -->
 	<body class="adminbody" ondragstart="return false">

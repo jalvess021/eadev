@@ -50,7 +50,7 @@
 
 <script>
     $("#tp-form-av").change(() => {
-        $(".all-quest-2").load('/tcc/selects/questionario/quest.php?filter_quest='+$("#tp-form-av").val()+'&alu=<?php echo $id_alu;?>');
+        $(".all-quest-2").load('/eadev/selects/questionario/quest.php?filter_quest='+$("#tp-form-av").val()+'&alu=<?php echo $id_alu;?>');
     })
     
     var avBtn = document.querySelectorAll(".btnPagAvaliacao");
@@ -58,7 +58,7 @@
         const btn = avBtn[i];
         btn.addEventListener('click', ()=> {
             curso = btn.getAttribute('data-avCur');
-            $('.all-av-form').load('/tcc/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+curso+'&alu=<?php echo $id_alu;?>');
+            $('.all-av-form').load('/eadev/base/dashboard/usu_content/alu/avaliacao/content/avaliacao.php?curso='+curso+'&alu=<?php echo $id_alu;?>');
         })
     }
 </script>

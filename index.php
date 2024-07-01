@@ -1,5 +1,10 @@
-<?php date_default_timezone_set ("America/Sao_Paulo"); ?>
+<?php 
+    date_default_timezone_set ("America/Sao_Paulo"); 
 
+
+    include "base/config.php";
+    include "base/ch_pages.php"; 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -16,10 +21,7 @@
     
      
         <div id="include-allpag">
-            <?php 
-            include "base/config.php";
-            include "base/ch_pages.php"; 
-            ?>
+            <!-- Movido para cima pois causava erro de header BOM utf-8 -->
         </div>
 
         <!-- font awesome-->

@@ -1,5 +1,5 @@
 <?php
- $url = "/tcc/relatorios/ficha_alu.php?user=".$_GET['user'];
+ $url = "/eadev/relatorios/ficha_alu.php?user=".$_GET['user'];
 ?>
 <html>
   <head>
@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="http://localhost/tcc/assets/css/all-rel/load.css">
+    <link rel="stylesheet" href="//<?= $_SERVER['HTTP_HOST']; ?>/eadev/assets/css/all-rel/load.css">
   </head>
   <body class="body-load">
     <div class="center-ring">

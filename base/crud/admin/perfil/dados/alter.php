@@ -2,13 +2,13 @@
     if (isset($_FILES['imagem']) && isset($_POST['id'])) {
         	$id_usu = $_POST['id'];
 			$novoNome = md5($id_usu).".jpeg";
-			$diretorio = '/tcc/assets/images/users/';
-			$path   = $_SERVER['DOCUMENT_ROOT']."/".$diretorio.$novoNome;
+			$diretorio = '/eadev/assets/images/users/';
+			$path   = $_SERVER['DOCUMENT_ROOT'].$diretorio.$novoNome;
 			$upload = move_uploaded_file($_FILES['imagem']['tmp_name'], $path);
 			if($upload){
-				header('Location: \tcc/plataforma.php?content_adm=perfil&msg=19');
+				echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=perfil&msg=19';</script>";
 			}else {
-				header('Location: \tcc/plataforma.php?content_adm=perfil&msg=20');
+				echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=perfil&msg=20';</script>";
 			}
 	}
 
@@ -17,12 +17,11 @@
 		include "../../../../config.php";
 		$query = mysqli_query($con, "update usuario set senha='".sha1($_POST['senha'])."' where id_usu = ".$id_s.";");
 		if ($query) {
-			header('Location: \tcc/plataforma.php?content_adm=perfil&msg=21');
+			echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=perfil&msg=21';</script>";
 			mysqli_close($con);
 		}else {
-			header('Location: \tcc/plataforma.php?content_adm=perfil&msg=22');
+			echo "<script>window.location.href = '/eadev/plataforma.php?content_adm=perfil&msg=22';</script>";
 			mysqli_close($con);
 		}
 	}
-	
 ?>

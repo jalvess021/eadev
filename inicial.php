@@ -19,8 +19,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item text-uppercase "><a class="nav-link" href="?page=cadastro">Cadastrar-se</a></li>
-                        <li class="nav-item text-uppercase ms-4"><a class="nav-link" href="?page=login">Entrar</a></li>
+                        <li class="nav-item text-uppercase "><a class="nav-link" href="index.php?page=cadastro">Cadastrar-se</a></li>
+                        <li class="nav-item text-uppercase ms-4"><a class="nav-link" href="index.php?page=login">Entrar</a></li>
                     </ul>
                 </div>
             </div>

@@ -44,7 +44,7 @@
             );
             echo json_encode($tentativas);
         }else {
-            header('Location: \tcc/plataforma.php?content_alu=avaliacoes&msgs=2');
+            header('Location: \eadev/plataforma.php?content_alu=avaliacoes&msgs=2');
         }
     }
 

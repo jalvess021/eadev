@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//Definindo nível de acesso para esta página & fazendo a verificação.
     $nivel_necessario = 3;
     include "base/testa_nivel.php"; 
@@ -233,17 +233,13 @@ function gfUsu() {
           $("#btnRelUsuPainel").attr('disabled', true);
         }else{
           $("#btnRelUsuPainel").removeAttr('disabled');
-          $("#linkRelUsuPainel").attr('href', '/tcc/relatorios/graficos/usu.php?user='+$('#filterUserDefault').val()+'&periodo='+$('#filterUserDefaultPer').val());
+          $("#linkRelUsuPainel").attr('href', '/eadev/relatorios/graficos/usu.php?user='+$('#filterUserDefault').val()+'&periodo='+$('#filterUserDefaultPer').val());
         }
     }, 0);
 
     $(document).ready(function(){
         $('#filterUserDefault').change(function(){
-           $('#filterUserDefaultPer').load('/tcc/selects/select_periodo_user.php?filter_user='+$('#filterUserDefault').val());
+           $('#filterUserDefaultPer').load('/eadev/selects/select_periodo_user.php?filter_user='+$('#filterUserDefault').val());
         });
     });
-
-  
-
-  
 </script>

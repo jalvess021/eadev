@@ -100,7 +100,13 @@ if (isset($_GET['filter_user'])) {
                 $optAtual = "<option disabled>".$anoAtual." - Sem registros!</option>";
             }
     }
-    echo $optAnteriorAnterior.$optAnterior.$optAtual; 
+    // Verifica se o ano '2022' não está presente em nenhuma das variáveis
+    if (strpos($optAnteriorAnterior, '2022') === false && strpos($optAnterior, '2022') === false && strpos($optAtual, '2022') === false) {
+        // Se nenhuma variável contém '2022', imprime o <option> e as variáveis concatenadas
+        echo "<option value='2022'>2022 - (Período padrão com dados)</option>";
+    }
+
+    echo $optAnteriorAnterior . $optAnterior . $optAtual;
 }       
 
 

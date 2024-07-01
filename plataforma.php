@@ -18,7 +18,7 @@
             <?php
                 include "base/config.php";
                 include "base/ch_plataforma.php";
-                ?>
+            ?>
         </div>
 </body>
 </html>

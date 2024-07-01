@@ -12,10 +12,10 @@ $sql .= "where id_usu = '".$id_usu."';";
 $resultado = mysqli_query($con, $sql)or die(mysqli_error());
 
 if($resultado){
-	header('Location: \eadev/index.php?page=lista_usu&msg=5');
+	echo "<script>window.location.href = '/eadev/index.php?page=lista_usu&msg=5';</script>";
     mysqli_close($con);
 }else{
-	header('Location: \eadev/index.php?page=lista_usu&msg=6');
+	echo "<script>window.location.href = '/eadev/index.php?page=lista_usu&msg=6';</script>";
     mysqli_close($con);
 }
 ?>

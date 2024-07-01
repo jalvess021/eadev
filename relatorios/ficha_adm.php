@@ -4,9 +4,8 @@
     include "../base/testa_nivel.php";
     //Carrega o composer
     require '../vendor/autoload.php';
-
+    require '../base/config.php';
     date_default_timezone_set ("America/Sao_Paulo");
-    $con = mysqli_connect('localhost', 'root', '', 'eadev') or trigger_error(mysqli_error()); 
     mysqli_set_charset($con, "utf8");
 
     $id = $_GET['user'];
@@ -28,10 +27,10 @@
     $queryDel = mysqli_query($con, "SELECT * FROM atv_adm where atv like '%delete%' and id_adm = ".$id.";");
     $resDel = mysqli_num_rows($queryDel);
 
-    if (file_exists($_SERVER['DOCUMENT_ROOT']."/tcc/assets/images/users/".md5($id).".jpeg")) {
-      $img = "http://localhost/tcc/assets/images/users/".md5($id).".jpeg";
+    if (file_exists($_SERVER['DOCUMENT_ROOT']."/eadev/assets/images/users/".md5($id).".jpeg")) {
+      $img = "http://localhost/eadev/assets/images/users/".md5($id).".jpeg";
    }else {
-       $img = "http://localhost/tcc/assets/images/users/default.png";
+       $img = "http://localhost/eadev/assets/images/users/default.png";
    }
 
     switch ($resAdm['status']) {
@@ -100,13 +99,13 @@
         <meta charset='UTF-8'>
         <title>Ficha Técnica Administrativa</title>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
-        <link rel='stylesheet' href='http://localhost/tcc/assets/css/all-rel/info_admin.css'>
+        <link rel='stylesheet' href='http://localhost/eadev/assets/css/all-rel/info_admin.css'>
     </head>
     <body>";
 
     $head ="<div id='header'>
               <div class='div-hd'>
-                <img class='icon-rel' src='http://localhost/tcc/arquivos/img/logo/logo1.png' alt=''>
+                <img class='icon-rel' src='http://localhost/eadev/arquivos/img/logo/logo1.png' alt=''>
                 <span class='text-center emi-rel'>Data de emissão [ <span>".date('H:i:s | d-m-Y')."</span> ]</span>
                 <span class='page'>Página </span>
                 <hr style='margin-top: 4px;'>
@@ -209,7 +208,7 @@
                   <hr>
                   <div id='div-ft'>
                     <span id='copy'> Criado por Tecnodev's | © Eadev - 2022 Todos os direitos reservados </span>
-                    <img class='footer-icon' src='http://localhost/tcc/arquivos/img/icone/icone1.png' alt=''>
+                    <img class='footer-icon' src='http://localhost/eadev/arquivos/img/icone/icone1.png' alt=''>
                   </div>
                   
                 </div>";

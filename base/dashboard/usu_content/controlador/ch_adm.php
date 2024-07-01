@@ -1,7 +1,5 @@
 <?php 
-    
 if(isset($_GET['content_adm'])) {
-    
     switch($_GET['content_adm']) { 
         //Crud perfil (ADM)
                 case 'perfil':
@@ -139,10 +137,8 @@ if(isset($_GET['content_adm'])) {
                 case 'view_quest':
                     include "base/crud/admin/questoes/view_quest.php";
                     break;
-}       
-}  
-else {
+    }       
+} else {
     include "base/dashboard/usu_content/adm/default_adm.php"; 
 }
- 
 ?>

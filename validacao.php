@@ -3,8 +3,7 @@
 if (!empty($_POST) and (empty($_POST['usuario']) or empty($_POST['senha']))) {
 	header("Location: index.php"); exit;
 }
-// Tenta se conectar ao servidor MySQL e ao DB
-$con = mysqli_connect('localhost', 'root', '', 'eadev') or trigger_error(mysqli_error());
+
 $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
@@ -43,8 +42,8 @@ if (mysqli_num_rows($query) != 1) {
 
 	 /// Redireciona o visitante
 	switch($_SESSION['UsuarioNivel']){
-		case 2: header("Location: \\tcc/plataforma.php"); exit;break;
-		case 3: header("Location: \\tcc/plataforma.php"); exit;break;
+		case 2: header("Location: \\eadev/plataforma.php"); exit;break;
+		case 3: header("Location: \\eadev/plataforma.php"); exit;break;
 	}
 }
 ?>
